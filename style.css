@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --main-color: #34699A;
     --normal-size: 24px;
@@ -36,4 +37,8 @@ margin: 0 50px;
 .logo-img{
     margin: 10px;
     height: 3vh;
+=======
+.oke{
+    color: blue
+>>>>>>> 486b630cffb20978b6180f35bb49df8b5374ff5b
 }
