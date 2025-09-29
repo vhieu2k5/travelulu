@@ -1,6 +1,6 @@
 :root{
     --main-color: #34699A;
-    --normal-size: 24px;
+    --normal-size: 20px;
 }
 p,li{
 font-family: "League Spartan";
@@ -8,7 +8,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
-.header{
+.header{ 
     display: flex;
     flex-direction: row;
     position: fixed;
