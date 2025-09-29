@@ -1,6 +1,7 @@
 :root{
     --main-color: #34699A;
     --normal-size: 20px;
+    --hover-blue-color:rgba(52, 105, 154, 0.10);
 }
 p,li{
 font-family: "League Spartan";
@@ -8,32 +9,43 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
-.header{ 
+a{
+    text-decoration: none;
+}
+.header{
     display: flex;
     flex-direction: row;
     position: fixed;
     top: 0;
-    height: 5vh;
+    height: fit-content;
+    width: 100vw;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
 }
 .menu-nav{
 display: flex;
-width: 50%;
 justify-content: space-between;
 align-items: flex-start;
 flex-shrink: 0;
 list-style: none;
 flex-wrap: nowrap;
+margin: 0;
 }
-.menu-nav li{
+.menu-nav li>a{
+padding: 20px 50px ;
 text-wrap: nowrap;
 color: var(--main-color);
 text-align: center;
 font-size: var(--normal-size);
-margin: 0 50px;
+&:hover{
+    transition: background-color ease-in-out 0.5s;
+   background-color: var(--hover-blue-color);
+}
 }
 .logo-img{
     margin: 10px;
-    height: 3vh;
+    width: 238px;
+    height: fit-content;
 }
