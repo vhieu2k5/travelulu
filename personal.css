@@ -2,14 +2,37 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    justify-content: center;
 }
 .personal-nav-site{
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
-    height: fit-content;
+margin: 50px 0;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 30vw;
+height: 2000px;
+border-radius: 20px;
+border: 1px solid #CAC5C5;
+background: #FFF;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .personal-img{
-border-radius: 223px;
+display: flex;
+justify-content: center;
+width: 100%;
+border-radius: 20px;
 box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.personal-img>img{
+   width: 223px; 
+   padding: 10px;
+}
+.option1-panel{
+    margin: 50px 20px;
+    width: 800px;
+    background-color: white;
+    border-radius: 5px;
+border: 1px solid #CAC5C5;
+box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
