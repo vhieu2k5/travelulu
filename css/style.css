@@ -47,7 +47,7 @@ font-size: var(--normal-size);
 }
 }
 .logo-img{
-    margin: 10px;
+    margin: 10px 80px;
     width: 238px;
     height: fit-content;
 }
