@@ -1,7 +1,7 @@
 :root{
     --main-color: #34699A;
     --normal-size: 20px;
-    --hover-blue-color:rgba(52, 105, 154, 0.10);
+    --hover-blue-color:hsla(209, 50%, 40%, 0.1);
 }
 p,li{
 font-family: "League Spartan";

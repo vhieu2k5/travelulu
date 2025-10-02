@@ -1,0 +1,9 @@
+:root{
+    --main-color: #34699A;
+    --normal-size: 20px;
+    --hover-blue-color:hsla(209, 50%, 40%, 0.1);
+}
+
+p{
+    font-family: "League Spartan";
+}
