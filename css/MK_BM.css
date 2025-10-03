@@ -1,5 +1,6 @@
 :root{
     --main-color: #34699A;
+    --grey-color: #a4a4a4;
     --normal-size: 16px;
     --main-nav-size: 15px;
     --main-h1: 18px;
@@ -175,9 +176,7 @@
     position: absolute;
     right: 20px;
     bottom: 13px;
-    color: #a4a4a4;
-
-    
+    color: var(--grey-color);   
 }
 .verify::before{
     content: "";
@@ -199,10 +198,9 @@
     padding-top: 8px;
 }
 
- .verify span1, .delete-account p{
-    font-weight: 50;
+ .verify span1{
     font-size: var(--under-sub-note);
-    color: #a4a4a4;
+    color: var(--grey-color);
 }
 
 .verify p{
@@ -237,7 +235,7 @@
     margin-top: 10px;
 }
 .content-delete span1{
-    color: #B8B8B8;
+    color: var(--grey-color);
     font-size: var(--under-sub-note);
     margin-left: 5px;
 }
@@ -267,6 +265,26 @@
 
 /* Quên mật khẩu */
 
+/* mắt xem mật khẩu */
+.input-eyes input{
+    width: 98%;
+}
+.input-eyes i{
+    position: absolute;
+    right: 15px;
+    font-size: 13px;
+    color:#5b5b5b;
+}
+.icon-eye1{
+    bottom: 215px;
+}
+.icon-eye2{
+    bottom: 145px;
+}
+.icon-eye3{
+    bottom: 75px;
+}
+
 #password-panel{
     margin-top: 20px;
     
@@ -281,11 +299,17 @@
     gap: 10px;
     position: relative;
 }
+
 #password-panel input{
     padding: 10px 10px;
     border: 1px solid #777777;
     border-radius: 5px;
     font-size: 15px;
+}
+#password-panel span1{
+    color: #a4a4a4;
+    font-size: var(--under-sub-note);
+    margin: -5px 0 5px 2px;
 }
 .forgot-password{
     position: absolute;
@@ -295,8 +319,8 @@
     font-size: 15px;
     color: var(--main-color);
     text-decoration: none;
-
 }
+
 .forgot-password:hover{
     text-decoration: underline;
 }
