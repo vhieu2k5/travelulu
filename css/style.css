@@ -62,7 +62,8 @@ font-size: var(--normal-size);
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 400px;
+    height: fit-content;
+    padding-bottom: 50px;
     background: url(../pics/footerBG.png) lightgray 50% / cover no-repeat;
 }
 .bank-group{
@@ -86,6 +87,7 @@ font-size: var(--normal-size);
     flex-direction: row;
 }
 .footer b,.footer p{
+    z-index: 100;
     margin: 10px;
     color: white;
     font-size: 24px;
@@ -95,7 +97,8 @@ font-size: var(--normal-size);
     font-weight: 200;
 }
 .footer-mask{
-    z-index: 0;
+    height: 380px;
     position: absolute;
+    padding: 50px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(92, 92, 92, 0.29) 38.3%, rgba(0, 0, 0, 0.32) 68.35%);
 }
