@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Travelulu - Home</title>
   <meta content="charset=UTF-8">
@@ -16,10 +17,10 @@
   <div class="header">
     <img src="../pics/TRAVELULU-logo.png" alt="" class="logo-img">
     <ul class="menu-nav">
-      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="../html/index.html">Trang chủ</a></li>
       <li><a href="">Đặt tour</a></li>
       <li><a href="">Quản lý tour</a></li>
-      <li><a href="personal.html">Cá nhân</a></li>
+      <li><a href="../html/personal.html">Cá nhân</a></li>
     </ul>
   </div>
   <div class="main-body">
@@ -27,9 +28,10 @@
       <div class="personal-img">
         <img src="../pics/avatar.png" alt="">
         <button title="Change" type="button"
-          style="position: relative; width: 30px; height: 30px; top: 200px; right: 100px; border-radius: 40px; border: var(--main-color);color: var(--main-color);"><i class="fa-solid fa-right-left"></i></button>
-      
-        </div>
+          style="position: relative; width: 30px; height: 30px; top: 200px; right: 100px; border-radius: 40px; border: var(--main-color);color: var(--main-color);"><i
+            class="fa-solid fa-right-left"></i></button>
+
+      </div>
       <p class="id-name">TrinhKien@211</p>
       <div class="left-tab">
         <div id="profileBtn" class="nav-item">
@@ -81,7 +83,7 @@
     <!-- Hết personal nav site -->
     <div class="container section-1">
       <!-- Thông tin tài khoản -->
-      <div class="section">
+      <div class="section ">
         <h2>Thông tin tài khoản</h2>
         <label>Thông tin tài khoản</label>
         <input type="text" placeholder="Kiên Trịnh">
@@ -154,6 +156,65 @@
         </div>
       </div>
     </div>
+    <!-- Phần Mật khẩu và bảo mật -->
+    <div class="container section-2">
+      <!-- Panel Bảo mật -->
+      <div class="title">
+        <a href="#" class="tab-link-security" data-target="security">Bảo mật</a>
+        <a href="#" class="tab-link-password" data-target="change-password">Đổi mật khẩu</a>
+      </div>
+      <section id="security-panel" class="panel active">
+        <div class="verify">
+          <span>Xác thực</span>
+          <div class="content-verify">
+            <span1>Gửi mã OTP khi đăng nhập</span1>
+            <p>Gửi mã xác thực khi tài khoản của tôi được đăng nhập trên thiết bị mới</p>
+
+          </div>
+          <i class="fa-solid fa-toggle-off" style="font-size: 25px;"></i>
+        </div>
+
+        <div class="delete-account">
+          <span>Xóa tài khoản</span>
+          <div class="content-delete">
+            <span1>Sau khi tài khoản của bạn bị xóa, bạn sẽ không thể phục hồi tài khoản hoặc dữ liệu của mình</span1>
+
+          </div>
+          <span2>Xóa</span2>
+        </div>
+      </section>
+
+      <!-- Panel Đổi mật khẩu -->
+      <section id="password-panel" class="panel">
+        <form>
+          <span>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác.</span>
+          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc biệt
+            (!$@%).</span1>
+          <label for="old-password">Mật khẩu cũ</label>
+          <div class="old-password input-eyes">
+            <input type="password" id="old-password" placeholder="Nhập mật khẩu hiện tại">
+            <i class="fa fa-eye-slash icon-eye1"></i>
+          </div>
+
+          <label for="new-password">Mật khẩu mới</label>
+          <div class="new-password input-eyes">
+            <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
+            <i class="fa fa-eye-slash icon-eye2"></i>
+          </div>
+
+          <label for="confirm-password">Xác nhận mật khẩu mới</label>
+          <div class="confirm-password input-eyes">
+            <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới">
+            <i class="fa fa-eye-slash icon-eye3"></i>
+          </div>
+
+          <a href="#" class="forgot-password">Bạn quên mật khẩu?</a>
+
+          <button type="submit" class="btn-primary">Đổi mật khẩu</button>
+        </form>
+      </section>
+    </div>
+  <!-- Hết phần Mật khẩu và bảo mật -->
   </div>
 
   <div class="footer">
@@ -189,6 +250,8 @@
       <img src="../pics/bambooAirLine.png" alt="">
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../jvs/personal.js"></script>
 </body>
+
 </html>

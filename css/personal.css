@@ -7,6 +7,8 @@
 }
 
 .personal-nav-site {
+  position: relative;
+  transition: all 0.5s ease-in-out;
   margin: 50px 0;
   display: flex;
   flex-direction: column;
@@ -49,11 +51,11 @@ h2 {
 }
 
 .section {
+  width: 100%;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 20px;
-  margin: 30px;
-  width: 35vw;
+  margin: 10px;
 }
 
 label {
@@ -196,7 +198,12 @@ input[type="checkbox"] {
   background: var(--main-color);
 }
 
-
+.container{
+  position: relative;
+  height: fit-content;
+  flex-direction: column;
+  margin: 30px;
+}
 #nav-bar {
   width: 380px;
   background: #ffffff;
@@ -251,4 +258,214 @@ input[type="checkbox"] {
 .id-name{
   font-family: 'Titan One';
   font-size: 25px;
+}
+  /* Section 2: MK và Bảo mật*/
+#sub-nav{
+    flex: 1;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: var(--main-note);
+    margin: 0 18px 5px 10px;
+}
+/* Tab-link điều hướng */
+.tab-link-security, .tab-link-password{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.tab-link-security{
+    border-bottom: 2px solid #34699A;
+}
+.tab-link-security, .tab-link-password:hover{
+    color: var(--main-color);
+}
+
+/* Xác thực và xóa tài khoản */
+
+/* xác thực */
+.verify, .delete-account{
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.verify span, .delete-account span{
+    font-size: var(--sub-main-note);
+    font-weight: 600;
+}
+
+
+.verify i{
+    position: absolute;
+    right: 20px;
+    bottom: 13px;
+    color: var(--grey-color);   
+}
+.verify::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background: #34699A;
+    border-radius: 2px;
+}
+
+.content-verify{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0 0 5px;
+    border-top: 1px solid #cac5c5;
+    padding-top: 8px;
+}
+
+ .verify span1{
+    font-size: var(--under-sub-note);
+    color: var(--grey-color);
+}
+
+.verify p{
+    font-size: 14px;
+    font-weight: 50;
+    color: #b8b8b8;
+    margin: 0;
+}
+
+/* xóa tk */
+
+.delete-account::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background: #34699A;
+    border-radius: 2px;
+}
+.delete-account span2{
+    font-size: var(--sub-note);
+    color: #34699A;
+    position: absolute;
+    right: 20px;
+    bottom: 22px;
+    font-weight: 600;
+}
+
+.content-delete{
+    margin-top: 10px;
+}
+.content-delete span1{
+    color: var(--grey-color);
+    font-size: var(--under-sub-note);
+    margin-left: 5px;
+}
+/* .content-delete span1{
+    flex: 1;
+} */
+
+.btn-danger{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #34699A;
+    font-size: 12px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    color: #ffffff;
+    border: none;
+}
+.btn-danger:hover{
+    background:#4b84b8;
+}
+#security-panel .verify p{
+    font-weight: 50;
+    font-size: 15px;
+    color: #d7d7d7;
+}
+
+/* Quên mật khẩu */
+
+/* mắt xem mật khẩu */
+.input-eyes{
+  display: flex;
+  flex-direction: row;
+ align-items: flex-start;
+}
+.input-eyes input{
+  width: 98%;
+}
+.input-eyes i{
+    margin-left: 5px;
+    font-size: 13px;
+    color:#5b5b5b;
+}
+.icon-eye1{
+    bottom: 215px;
+}
+.icon-eye2{
+    bottom: 145px;
+}
+.icon-eye3{
+    bottom: 75px;
+}
+
+#password-panel{
+    margin-top: 20px;
+    
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    padding: 20px;
+}
+#password-panel form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+#password-panel input{
+    padding: 10px 10px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    font-size: 15px;
+}
+#password-panel span1{
+    color: #a4a4a4;
+    font-size: var(--under-sub-note);
+    margin: -5px 0 5px 2px;
+}
+.forgot-password{
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    margin: 30px 0px;
+    font-size: 15px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.forgot-password:hover{
+  text-decoration: underline;
+}
+#password-panel .btn-primary{
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #34699A;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
 }
