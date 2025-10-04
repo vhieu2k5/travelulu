@@ -2,6 +2,7 @@
     --main-color: #34699A;
     --normal-size: 20px;
     --hover-blue-color:rgba(52, 105, 154, 0.10);
+
 }
 p,li{
 font-family: "League Spartan";
@@ -50,4 +51,24 @@ font-size: var(--normal-size);
     margin: 10px;
     width: 238px;
     height: fit-content;
+}
+.menu-nav{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+}
+.menu-nav li{
+    text-wrap: nowrap;
+    color: var(--main-color);
+    text-align: center;
+    font-size: var(--normal-size);
+    margin: 0 50px;
+}
+.logo-img{
+    margin: 10px;
+    height: 3vh;
 }
