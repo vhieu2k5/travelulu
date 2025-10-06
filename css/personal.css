@@ -50,12 +50,16 @@ h2 {
   font-size: 18px;
 }
 
-.section {
-  width: 100%;
+.section{
+  width: 45vw;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 20px;
   margin: 10px;
+}
+.section-3{
+  flex-direction: column;
+  align-items: center;
 }
 
 label {
@@ -284,6 +288,13 @@ input[type="checkbox"] {
 .tab-link-security, .tab-link-password:hover{
     color: var(--main-color);
 }
+.title-section{
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--main-color);
+  border-bottom: 2px solid #34699A;
+}
 
 /* Xác thực và xóa tài khoản */
 
@@ -468,4 +479,20 @@ input[type="checkbox"] {
     color: #ffffff;
     border: none;
     cursor: pointer;
+}
+.card-list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  width: 200px;
+  height: 155px;
+  border-radius: 25px;
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25.02%, rgba(255, 255, 255, 0.39) 92.64%), #6A95BC;
+box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }

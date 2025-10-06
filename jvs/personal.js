@@ -4,6 +4,7 @@ const section2 = document.querySelector(".section-2");
 const section3 = document.querySelector(".section-3");
 const profileBtn = document.getElementById("profileBtn");
 const passwordBtn = document.getElementById("passwordBtn");
+const myCardBtn = document.getElementById("myCardBtn");
 //Start the code
   alltheSections.forEach(element => {
         element.style.display="none";
@@ -22,6 +23,13 @@ passwordBtn.onclick = function(){
         element.style.display="none";
     });
     //alert('Clicked!!!!!!');
-    section2.style.display ="flex";
-    
+    section2.style.display ="flex"; 
 };
+myCardBtn.onclick = function(){
+alltheSections.forEach(element => {
+        element.style.display="none";
+});
+    //alert('Clicked!!!!!!');
+    section3.style.display ="flex"; 
+};
+
