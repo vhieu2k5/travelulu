@@ -194,7 +194,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const recListEl = document.querySelector(".recommendation-list");
   const searchInput = document.querySelector(".search-box input");
   const searchBtn = document.querySelector(".search-btn");
-  const tabs = Array.from(document.querySelectorAll(".filter-tabs .tab-item"));
+  // Exclude the non-selectable "Trạng thái" placeholder from interactive tabs
+  const tabs = Array.from(
+    document.querySelectorAll(".filter-tabs .tab-item")
+  ).filter((t) => (t.textContent || t.innerText || "").trim() !== "Trạng thái");
 
   function getStatusClass(status) {
     switch ((status || "").toLowerCase()) {
@@ -311,8 +314,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tab.classList.add("active");
       const txt = (tab.textContent || tab.innerText || "").trim();
       if (txt === "Tất cả") renderBookedTours(window.TourAPI.getBookedTours());
-      else if (txt === "Trạng thái")
-        renderBookedTours(window.TourAPI.getBookedTours());
       else {
         // try filter by matching status text
         const filtered = window.TourAPI.filterBookedByStatus(txt);
