@@ -21,26 +21,30 @@
       </ul>
     </div>
     <div class="title-section">
-        <h1>Quản lý tour</h1>
-    <p class="subtitle">Quản lý tất cả tour và dịch vụ đã đặt</p>
+      <h1>Quản lý tour</h1>
+      <p class="subtitle">Quản lý tất cả tour và dịch vụ đã đặt</p>
     </div>
-    
+
     <main class="container">
       <section class="search-section">
         <div class="search-box">
-          <i class="fas fa-search"></i>
+          <img
+            src="../pics/manegamentTour/linhlup.png"
+            alt="Tìm kiếm"
+            class="search-icon"
+          />
           <input
             type="text"
             placeholder="Tìm kiếm thông tin qua ID tour hoặc tên tour"
           />
         </div>
-        <button class="search-btn">Search</button>
+        <button class="search-btn">Tìm kiếm</button>
       </section>
 
       <section class="filter-tabs">
-        <a href="#" class="tab-item">Trong thời</a>
-        <a href="#" class="tab-item">Sắp tới</a>
-        <a href="#" class="tab-item active">Đã hoàn thành</a>
+        <a href="#" class="tab-item active">Trạng thái</a>
+        <a href="#" class="tab-item active">Sắp tới</a>
+        <a href="#" class="tab-item ">Đã hoàn thành</a>
         <a href="#" class="tab-item">Đã hủy</a>
         <a href="#" class="tab-item">Tất cả</a>
       </section>
@@ -54,8 +58,13 @@
             <p class="tour-id">ID tour: **D43PL2025**</p>
           </div>
           <div class="tour-status">
-            <span class="status-tag">Đã hoàn thành</span>
-            <i class="fas fa-chevron-right"></i>
+            <span
+              class="status-tag status-completed"
+              role="status"
+              aria-label="Đã hoàn thành"
+              >Đã hoàn thành</span
+            >
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </div>
           <div class="tour-pricing">
             <span class="original-price">3.000.000VND</span>
