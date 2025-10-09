@@ -102,7 +102,7 @@ const fakeBookedTours = [
     guests: 3,
     priceOriginal: 8000000,
     priceFinal: 7800000,
-    status: "Trong thời",
+    status: "Sắp tới",
     imageUrl: "../pics/manegamentTour/trangan.jpeg",
   },
 ];
@@ -249,14 +249,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const statusClass = getStatusClass(b.status);
       statusTag.className = `status-tag ${statusClass}`.trim();
       statusTag.setAttribute("role", "status");
+      // put text and chevron inside the same pill so the arrow appears inside
       statusTag.textContent = b.status || "--";
       // simple chevron glyph so we don't depend on Font Awesome
       const chevron = document.createElement("span");
       chevron.className = "status-chevron";
       chevron.setAttribute("aria-hidden", "true");
       chevron.textContent = "›";
+      // append chevron into the pill
+      statusTag.appendChild(chevron);
       statusWrap.appendChild(statusTag);
-      statusWrap.appendChild(chevron);
 
       const pricing = document.createElement("div");
       pricing.className = "tour-pricing";
