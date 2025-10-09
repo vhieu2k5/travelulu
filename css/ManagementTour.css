@@ -99,13 +99,13 @@ h1 {
   background-color: #4a93c0;
 }
 
-/* Thanh bộ lọc (Tabs) */
+
 .filter-tabs {
   display: flex;
   gap: 50px;
-  margin: 30px auto 40px; /* more vertical spacing and center block */
+  margin: 30px auto 40px; 
   align-items: center;
-  flex-wrap: wrap; /* wrap on small screens */
+  flex-wrap: wrap; 
   width: 100%;
 }
 
@@ -132,7 +132,7 @@ h1 {
   box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.08);
 }
 
-/* Danh sách tour (Tour List) */
+
 .tour-card {
   display: block;
   border: 1px solid rgba(15, 23, 42, 0.06);
@@ -141,20 +141,20 @@ h1 {
   margin-bottom: 20px;
   background: #fff;
   box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
-  position: relative; /* contain absolutely positioned status */
+  position: relative; 
 }
 
 .tour-card.completed {
-  border-left: 5px solid var(--secondary-color); /* Đường viền xanh lá thể hiện đã hoàn thành */
+  border-left: 5px solid var(--secondary-color); 
 }
 
 .tour-image-container {
-  width: 200px; /* Độ rộng của ảnh */
-  height: 180px; /* make image taller so it doesn't appear cut off */
-  background-image: url("https://i.imgur.com/48da40.png"); /* Ảnh ví dụ */
+  width: 200px; 
+  height: 180px; 
+  background-image: url("https://i.imgur.com/48da40.png"); 
   background-size: cover;
-  background-position: center center; /* center the image to avoid awkward cropping */
-  flex: 0 0 200px; /* prevent the image column from shrinking */
+  background-position: center center;
+  flex: 0 0 200px;
 }
 
 /* new card layout rows */
@@ -199,7 +199,6 @@ h1 {
   color: #0f172a;
 }
 
-/* status button positioned in top-right of card */
 .tour-status {
   position: absolute;
   right: 18px;
@@ -231,7 +230,7 @@ h1 {
 
 .card-footer {
   display: block;
-  position: relative; /* contain absolutely positioned pricing */
+  position: relative;
   padding: 12px 20px 18px 20px;
 }
 
@@ -276,10 +275,10 @@ h1 {
   margin-right: 8px;
   display: inline-block;
   position: relative;
-  text-decoration: none; /* we'll draw our own line so it's continuous */
+  text-decoration: none; 
 }
 
-/* draw a single continuous strike-through line across number and currency */
+
 .tour-pricing .original-price::after {
   content: "";
   position: absolute;
@@ -293,7 +292,7 @@ h1 {
 
 .tour-pricing .original-price .currency {
   color: #9aa0a6;
-  text-decoration: none; /* let the pseudo-element handle the strike */
+  text-decoration: none; 
   font-size: 13px;
 }
 
@@ -303,7 +302,7 @@ h1 {
   font-size: 18px;
 }
 
-/* position the pricing block fixed to the right side of the footer */
+
 .card-footer .tour-pricing {
   position: absolute;
   right: 20px;
@@ -313,7 +312,6 @@ h1 {
   text-align: right;
 }
 
-/* small currency label styling */
 .tour-pricing .currency {
   font-size: 12px;
   font-weight: 700;
@@ -321,7 +319,6 @@ h1 {
   color: #16a34a;
 }
 
-/* make final-price and currency align baseline and look like a single unit */
 .tour-pricing .final-price {
   display: inline-block;
 }
@@ -354,10 +351,9 @@ h1 {
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   align-items: stretch;
-  padding: 8px 24px 28px; /* extra left padding so first card isn't flush against edge */
+  padding: 8px 24px 28px; 
   margin-bottom: 50px;
-  justify-content: flex-start; /* left align so the first card is fully visible */
-}
+  justify-content: flex-start; 
 
 .recommended-card {
   width: 260px;
@@ -399,7 +395,6 @@ h1 {
   font-size: 14px;
 }
 
-/* local heart image badge */
 .card-image-container .heart-img {
   position: absolute;
   top: 12px;
@@ -408,16 +403,16 @@ h1 {
   height: 36px;
   border-radius: 50%;
   background: #fff;
-  padding: 6px; /* small padding so the png fits nicely */
+  padding: 6px; 
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
   object-fit: contain;
 }
 
-/* saved badge that appears near the heart (tooltip style) */
+
 .card-image-container .saved-badge {
   position: absolute;
   top: 12px;
-  right: 56px; /* sit left of the heart */
+  right: 56px; 
   background: #fff;
   border-radius: 10px;
   padding: 8px 10px;
@@ -448,7 +443,6 @@ h1 {
   white-space: nowrap;
 }
 
-/* Heart interactions */
 .card-image-container .heart-img {
   cursor: pointer;
   transition: transform 0.12s ease;
@@ -457,7 +451,7 @@ h1 {
   transform: scale(1.06);
 }
 
-/* Ảnh nền cho các tour gợi ý (Sử dụng ảnh từ giao diện mẫu) */
+
 .ha-long-4n3d {
   background-image: url("https://i.imgur.com/48da40.png");
   background-position: center 30%;
@@ -510,7 +504,7 @@ h1 {
 
 /* Footer */
 .footer {
-  background-image: url("https://i.imgur.com/48da40.png"); /* Ảnh nền dưới cùng */
+  background-image: url("https://i.imgur.com/48da40.png"); 
   background-size: cover;
   background-position: bottom;
   color: white;
@@ -526,7 +520,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Lớp phủ mờ */
+  background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .footer-content {
@@ -563,7 +557,7 @@ h1 {
   opacity: 0.8;
 }
 
-/* Icon thanh toán (Mô phỏng) */
+
 .payment-icons {
   display: flex;
   gap: 10px;
@@ -581,7 +575,7 @@ h1 {
   opacity: 0.9;
 }
 
-/* Icon đối tác hàng không (Mô phỏng) */
+
 .airlines {
   text-align: center;
   max-width: 1200px;
@@ -599,10 +593,10 @@ h1 {
   color: white;
   font-weight: 500;
   opacity: 0.7;
-  /* Thực tế sẽ dùng hình ảnh logo hoặc CSS phức tạp hơn */
+
 }
 
-/* Empty state when there are no booked tours */
+
 .empty-state-container {
   padding: 20px 16px 40px;
 }
@@ -640,7 +634,7 @@ h1 {
   background: #075fd6;
 }
 
-/* Confirmation modal */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -695,7 +689,7 @@ h1 {
   font-weight: 700;
 }
 
-/* Info dialog for rebook unavailable */
+
 .info-dialog {
   width: 420px;
   max-width: calc(100% - 48px);
@@ -731,7 +725,7 @@ h1 {
   background: #165fb2;
 }
 
-/* Not-found / search empty state for recommendations */
+
 .notfound-wrap {
   padding: 20px 16px 40px;
 }
