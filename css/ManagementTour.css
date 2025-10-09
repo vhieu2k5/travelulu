@@ -35,7 +35,7 @@ h1 {
   font-weight: 400;
 }
 
-/* done */
+/* hoàn tất */
 
 /* Phần tìm kiếm */
 .search-section {
@@ -103,9 +103,9 @@ h1 {
 .filter-tabs {
   display: flex;
   gap: 50px;
-  margin: 30px auto 40px; /* more vertical spacing and center block */
+  margin: 30px auto 40px; 
   align-items: center;
-  flex-wrap: wrap; /* wrap on small screens */
+  flex-wrap: wrap; 
   width: 100%;
 }
 
@@ -141,7 +141,7 @@ h1 {
   margin-bottom: 20px;
   background: #fff;
   box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
-  position: relative; /* contain absolutely positioned status */
+  position: relative; 
 }
 
 .tour-card.completed {
@@ -150,14 +150,13 @@ h1 {
 
 .tour-image-container {
   width: 200px; /* Độ rộng của ảnh */
-  height: 180px; /* make image taller so it doesn't appear cut off */
-  background-image: url("https://i.imgur.com/48da40.png"); /* Ảnh ví dụ */
+  height: 180px; /* làm cho ảnh cao hơn để không bị cắt */
   background-size: cover;
-  background-position: center center; /* center the image to avoid awkward cropping */
-  flex: 0 0 200px; /* prevent the image column from shrinking */
+  background-position: center center;
+  flex: 0 0 200px; 
 }
 
-/* new card layout rows */
+/* bố cục thẻ (hàng) mới */
 .card-main {
   display: flex;
   align-items: center;
@@ -199,7 +198,7 @@ h1 {
   color: #0f172a;
 }
 
-/* status button positioned in top-right of card */
+/* nút trạng thái đặt ở góc trên bên phải của thẻ */
 .tour-status {
   position: absolute;
   right: 18px;
@@ -231,7 +230,7 @@ h1 {
 
 .card-footer {
   display: block;
-  position: relative; /* contain absolutely positioned pricing */
+  position: relative;
   padding: 12px 20px 18px 20px;
 }
 
@@ -276,10 +275,10 @@ h1 {
   margin-right: 8px;
   display: inline-block;
   position: relative;
-  text-decoration: none; /* we'll draw our own line so it's continuous */
+  text-decoration: none; 
 }
 
-/* draw a single continuous strike-through line across number and currency */
+/* vẽ một đường gạch ngang liên tục qua số và đơn vị tiền */
 .tour-pricing .original-price::after {
   content: "";
   position: absolute;
@@ -303,7 +302,7 @@ h1 {
   font-size: 18px;
 }
 
-/* position the pricing block fixed to the right side of the footer */
+/* đặt khối giá cố định ở phía bên phải của chân thẻ */
 .card-footer .tour-pricing {
   position: absolute;
   right: 20px;
@@ -313,7 +312,7 @@ h1 {
   text-align: right;
 }
 
-/* small currency label styling */
+/* kiểu chữ cho nhãn tiền tệ nhỏ */
 .tour-pricing .currency {
   font-size: 12px;
   font-weight: 700;
@@ -321,7 +320,7 @@ h1 {
   color: #16a34a;
 }
 
-/* make final-price and currency align baseline and look like a single unit */
+/* căn dòng cơ sở cho final-price và currency để trông như một đơn vị */
 .tour-pricing .final-price {
   display: inline-block;
 }
@@ -354,9 +353,9 @@ h1 {
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   align-items: stretch;
-  padding: 8px 24px 28px; /* extra left padding so first card isn't flush against edge */
+  padding: 8px 24px 28px; 
   margin-bottom: 50px;
-  justify-content: flex-start; /* left align so the first card is fully visible */
+  justify-content: flex-start; 
 }
 
 .recommended-card {
@@ -399,7 +398,7 @@ h1 {
   font-size: 14px;
 }
 
-/* local heart image badge */
+/* biểu tượng trái tim dùng hình ảnh cục bộ */
 .card-image-container .heart-img {
   position: absolute;
   top: 12px;
@@ -448,7 +447,7 @@ h1 {
   white-space: nowrap;
 }
 
-/* Heart interactions */
+/* tương tác với trái tim */
 .card-image-container .heart-img {
   cursor: pointer;
   transition: transform 0.12s ease;
@@ -508,7 +507,7 @@ h1 {
   font-weight: 800;
 }
 
-/* Footer */
+/* Chân trang */
 .footer {
   background-image: url("https://i.imgur.com/48da40.png"); /* Ảnh nền dưới cùng */
   background-size: cover;
@@ -602,7 +601,7 @@ h1 {
   /* Thực tế sẽ dùng hình ảnh logo hoặc CSS phức tạp hơn */
 }
 
-/* Empty state when there are no booked tours */
+/* Trạng thái trống khi chưa có tour được đặt */
 .empty-state-container {
   padding: 20px 16px 40px;
 }
@@ -640,7 +639,7 @@ h1 {
   background: #075fd6;
 }
 
-/* Confirmation modal */
+/* Hộp thoại xác nhận */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -695,7 +694,7 @@ h1 {
   font-weight: 700;
 }
 
-/* Info dialog for rebook unavailable */
+/* Hộp thoại thông tin khi không thể đặt lại */
 .info-dialog {
   width: 420px;
   max-width: calc(100% - 48px);
@@ -731,7 +730,7 @@ h1 {
   background: #165fb2;
 }
 
-/* Not-found / search empty state for recommendations */
+/* Không tìm thấy / trạng thái rỗng khi tìm kiếm cho phần gợi ý */
 .notfound-wrap {
   padding: 20px 16px 40px;
 }

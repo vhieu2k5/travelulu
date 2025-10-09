@@ -1,9 +1,9 @@
 /**
- * Fake data module for tours and user's booked tours.
- * Exposes a simple API on window.TourAPI for UI use and testing.
+ * Module dữ liệu giả cho các tour và các tour đã đặt của người dùng.
+ * Cung cấp API đơn giản trên window.TourAPI để giao diện sử dụng và kiểm thử.
  */
 
-/* --- Sample available tours --- */
+/* --- Danh sách tour có sẵn (mẫu) --- */
 const fakeTours = [
   {
     id: "TRG4N3D",
@@ -67,7 +67,7 @@ const fakeTours = [
   },
 ];
 
-/* --- Sample user's booked tours (subset of available tours with booking details) --- */
+/* --- Danh sách tour đã đặt của người dùng (mẫu, là tập con của tour có sẵn) --- */
 const fakeBookedTours = [
   {
     id: "D43PL2025",
@@ -107,30 +107,34 @@ const fakeBookedTours = [
   },
 ];
 
-/** Helpers and API
- * Expose a small API on window.TourAPI so the HTML can consume fake data.
+/** Hàm tiện ích và API
+ * Cung cấp API nhỏ trên window.TourAPI để HTML có thể sử dụng dữ liệu giả.
  */
 
 function formatCurrency(v) {
-  // format number with dot thousands separator and return HTML with a small currency span
+  // Định dạng số với dấu chấm phân tách hàng nghìn và trả về HTML có đơn vị tiền tệ nhỏ
   const num = v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  // include a non-breaking space before the currency and wrap currency for styling
+  // Thêm khoảng trắng không ngắt trước đơn vị tiền và bọc đơn vị để dễ style
   return `${num}&nbsp;<span class="currency">VND</span>`;
 }
 
 function getAllTours() {
+  // Trả về danh sách tất cả tour có sẵn
   return fakeTours.slice();
 }
 
 function getBookedTours() {
+  // Trả về danh sách tất cả tour đã đặt
   return fakeBookedTours.slice();
 }
 
 function findTourById(id) {
+  // Tìm tour theo id
   return fakeTours.find((t) => t.id === id) || null;
 }
 
 function searchTours(query) {
+  // Tìm kiếm tour theo tên, địa điểm hoặc id
   if (!query || !query.trim()) return getAllTours();
   const q = query.trim().toLowerCase();
   return fakeTours.filter(
@@ -142,11 +146,13 @@ function searchTours(query) {
 }
 
 function filterBookedByStatus(status) {
+  // Lọc tour đã đặt theo trạng thái
   if (!status) return getBookedTours();
   return fakeBookedTours.filter((b) => b.status === status);
 }
 
 function bookTour(tourId, { guests = 1, date = null } = {}) {
+  // Đặt tour mới
   const tour = findTourById(tourId);
   if (!tour) return null;
   const booking = {
@@ -166,13 +172,14 @@ function bookTour(tourId, { guests = 1, date = null } = {}) {
 }
 
 function cancelBooking(bookingId) {
+  // Hủy tour đã đặt
   const idx = fakeBookedTours.findIndex((b) => b.id === bookingId);
   if (idx === -1) return false;
   fakeBookedTours[idx].status = "Đã hủy";
   return true;
 }
 
-// Attach to window for simple access from UI scripts
+// Gắn API vào window để giao diện dễ truy cập
 window.TourAPI = {
   getAllTours,
   getBookedTours,
@@ -181,23 +188,23 @@ window.TourAPI = {
   bookTour,
   cancelBooking,
   formatCurrency,
-  // raw arrays (use cautiously)
+  // mảng dữ liệu thô (chỉ dùng khi cần)
   _raw: {
     tours: fakeTours,
     bookings: fakeBookedTours,
   },
 };
 
-// quick debugging
-console.info("TourAPI initialized", window.TourAPI);
+// debug nhanh
+console.info("TourAPI đã khởi tạo", window.TourAPI);
 
-/* ---------- UI rendering and event wiring ---------- */
+/* ---------- Kết xuất giao diện và xử lý sự kiện ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   const tourListEl = document.querySelector(".tour-list");
   const recListEl = document.querySelector(".recommendation-list");
   const searchInput = document.querySelector(".search-box input");
   const searchBtn = document.querySelector(".search-btn");
-  // Exclude the non-selectable "Trạng thái" placeholder from interactive tabs
+  // Loại bỏ tab "Trạng thái" (chỉ là placeholder, không chọn được) khỏi danh sách tab tương tác
   const tabs = Array.from(
     document.querySelectorAll(".filter-tabs .tab-item")
   ).filter((t) => (t.textContent || t.innerText || "").trim() !== "Trạng thái");
@@ -222,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tourListEl) return;
     tourListEl.innerHTML = "";
     if (!list || list.length === 0) {
-      // If there is an active search query show a search-specific empty state
+      // Nếu có từ khóa tìm kiếm thì hiển thị trạng thái trống cho tìm kiếm
       const query =
         searchInput && searchInput.value ? searchInput.value.trim() : "";
       tourListEl.innerHTML = "";
@@ -246,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = "Xóa tìm kiếm";
         btn.addEventListener("click", () => {
           if (searchInput) searchInput.value = "";
-          // restore lists
+          // Khôi phục lại danh sách
           renderBookedTours(window.TourAPI.getBookedTours());
           renderRecommendations(window.TourAPI.getAllTours());
           if (searchInput) searchInput.focus();
@@ -260,14 +267,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // render the original empty state (no bookings at all)
+      // Hiển thị trạng thái trống khi chưa có tour nào được đặt
       const emptyWrap = document.createElement("div");
       emptyWrap.className = "empty-state-container";
       const emptyBox = document.createElement("div");
       emptyBox.className = "empty-box";
       const icon = document.createElement("img");
       icon.className = "empty-icon";
-      // use a local placeholder if available, otherwise fallback to inline SVG
+      // Dùng hình ảnh cục bộ nếu có, nếu không thì dùng SVG inline
       icon.src = "../pics/manegamentTour/box.png";
       icon.alt = "empty";
       const text = document.createElement("div");
@@ -293,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.className =
         "tour-card" + (b.status === "Đã hoàn thành" ? " completed" : "");
 
-      // build a two-row card: main row (image + info) and footer (pricing)
+      // Xây dựng thẻ gồm 2 hàng: hàng chính (ảnh + thông tin) và hàng chân thẻ (giá)
       const imgWrap = document.createElement("div");
       imgWrap.className = "tour-image-container";
       if (b.imageUrl) imgWrap.style.backgroundImage = `url('${b.imageUrl}')`;
@@ -310,14 +317,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const statusClass = getStatusClass(b.status);
       statusTag.className = `status-tag ${statusClass}`.trim();
       statusTag.setAttribute("role", "status");
-      // put text and chevron inside the same pill so the arrow appears inside
+      // Đặt text và dấu chevron vào cùng một pill để mũi tên nằm bên trong
       statusTag.textContent = b.status || "--";
-      // simple chevron glyph so we don't depend on Font Awesome
+      // Dùng ký tự chevron đơn giản, không phụ thuộc vào Font Awesome
       const chevron = document.createElement("span");
       chevron.className = "status-chevron";
       chevron.setAttribute("aria-hidden", "true");
       chevron.textContent = "›";
-      // append chevron into the pill
+      // Thêm chevron vào pill
       statusTag.appendChild(chevron);
       statusWrap.appendChild(statusTag);
 
@@ -328,28 +335,28 @@ document.addEventListener("DOMContentLoaded", () => {
       )}</span>
         <span class="final-price">${formatCurrency(b.priceFinal)}</span>`;
 
-      // main row
+      // Hàng chính
       const mainRow = document.createElement("div");
       mainRow.className = "card-main";
       mainRow.appendChild(imgWrap);
       mainRow.appendChild(info);
 
-      // divider
+      // Đường phân cách
       const divider = document.createElement("hr");
       divider.className = "card-divider";
 
-      // footer row
+      // Hàng chân thẻ
       const footer = document.createElement("div");
       footer.className = "card-footer";
 
-      // if booking is upcoming, add a cancel button on the left
+      // Nếu tour sắp tới, thêm nút hủy bên trái
       if ((b.status || "").toLowerCase() === "sắp tới") {
         const cancelBtn = document.createElement("button");
         cancelBtn.className = "cancel-btn";
         cancelBtn.textContent = "Hủy";
         cancelBtn.addEventListener("click", (e) => {
           e.preventDefault();
-          // show confirmation modal
+          // Hiển thị hộp thoại xác nhận
           const overlay = document.createElement("div");
           overlay.className = "modal-overlay";
           const dialog = document.createElement("div");
@@ -378,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           btnConfirm.addEventListener("click", () => {
-            // perform cancel and re-render
+            // Thực hiện hủy và render lại danh sách
             window.TourAPI.cancelBooking(b.id);
             closeModal();
             renderBookedTours(window.TourAPI.getBookedTours());
@@ -387,19 +394,18 @@ document.addEventListener("DOMContentLoaded", () => {
         footer.appendChild(cancelBtn);
       }
 
-      // if booking is cancelled, offer a "Đặt lại" (rebook) button
+      // Nếu tour đã hủy, hiển thị nút "Đặt lại"
       if ((b.status || "").toLowerCase() === "đã hủy") {
         const rebookBtn = document.createElement("button");
         rebookBtn.className = "rebook-btn";
         rebookBtn.textContent = "Đặt lại";
         rebookBtn.addEventListener("click", (e) => {
           e.preventDefault();
-          // show an informational modal saying the tour is not available to rebook
+          // Hiển thị hộp thoại thông báo tour không thể đặt lại
           const overlay = document.createElement("div");
           overlay.className = "modal-overlay";
           const dialog = document.createElement("div");
           dialog.className = "info-dialog";
-          // inline SVG warning icon + message + single close button
           dialog.innerHTML = `
             <div style="text-align:center; padding:18px 22px;">
               <div class="warning-icon" aria-hidden="true">
@@ -424,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
       footer.appendChild(pricing);
 
       card.appendChild(mainRow);
-      // status is positioned absolutely in CSS, append to card so it sits over top-right
+      // Trạng thái được đặt tuyệt đối bằng CSS, thêm vào thẻ để nằm ở góc trên bên phải
       card.appendChild(statusWrap);
       card.appendChild(divider);
       card.appendChild(footer);
@@ -456,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
       recListEl.appendChild(wrap);
       return;
     }
-    // keep track of saved favorites in-memory for this session
+    // Lưu trạng thái tour đã yêu thích trong phiên hiện tại (bộ nhớ tạm)
     if (!window.__savedTours) window.__savedTours = new Set();
 
     list.forEach((t) => {
@@ -466,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const imgWrap = document.createElement("div");
       imgWrap.className = "card-image-container";
       if (t.imageUrl) imgWrap.style.backgroundImage = `url('${t.imageUrl}')`;
-      // use local heart image instead of font-awesome icon
+      // Dùng hình trái tim cục bộ thay vì icon font-awesome
       const heartImg = document.createElement("img");
       heartImg.src = window.__savedTours.has(t.id)
         ? "../pics/manegamentTour/heart2.png"
@@ -475,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heartImg.className = "heart-img";
       imgWrap.appendChild(heartImg);
 
-      // saved-badge tooltip (hidden by default)
+      // Tooltip "đã lưu" (ẩn mặc định)
       const savedBadge = document.createElement("div");
       savedBadge.className = "saved-badge";
       const sbIcon = document.createElement("img");
@@ -488,7 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
       savedBadge.appendChild(sbText);
       imgWrap.appendChild(savedBadge);
 
-      // interaction handlers: hover shows badge only when tour is already saved
+      // Xử lý sự kiện: hover chỉ hiển thị badge khi tour đã được lưu
       imgWrap.addEventListener("mouseenter", () => {
         if (window.__savedTours.has(t.id)) savedBadge.classList.add("visible");
       });
@@ -502,15 +508,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (saved) {
           window.__savedTours.delete(t.id);
           heartImg.src = "../pics/manegamentTour/heart.png";
-          // update badge text briefly to show removed
+          // Cập nhật text badge ngắn để báo đã bỏ lưu
           sbText.textContent = "Đã bỏ lưu";
-          // hide badge if it was visible
+          // Ẩn badge nếu đang hiển thị
           savedBadge.classList.remove("visible");
         } else {
           window.__savedTours.add(t.id);
           heartImg.src = "../pics/manegamentTour/heart2.png";
           sbText.textContent = "Đã lưu vào: Chuyến đi của bạn";
-          // show the badge briefly to give feedback even if it wasn't saved before
+          // Hiển thị badge ngắn để báo cho người dùng khi vừa lưu
           savedBadge.classList.add("visible");
           setTimeout(() => savedBadge.classList.remove("visible"), 1200);
         }
@@ -536,11 +542,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // initial render
+  // render lần đầu
   renderBookedTours(window.TourAPI.getBookedTours());
   renderRecommendations(window.TourAPI.getAllTours());
 
-  // tabs behavior: filter booked tours by status (or show all)
+  // Xử lý tab: lọc tour đã đặt theo trạng thái (hoặc hiển thị tất cả)
   tabs.forEach((tab) => {
     tab.addEventListener("click", (e) => {
       e.preventDefault();
@@ -549,14 +555,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const txt = (tab.textContent || tab.innerText || "").trim();
       if (txt === "Tất cả") renderBookedTours(window.TourAPI.getBookedTours());
       else {
-        // try filter by matching status text
+        // Lọc theo trạng thái
         const filtered = window.TourAPI.filterBookedByStatus(txt);
         renderBookedTours(filtered);
       }
     });
   });
 
-  // search behavior: search booked tours by id or name
+  // Xử lý tìm kiếm: tìm tour đã đặt theo id hoặc tên
   function handleSearch() {
     const q =
       searchInput && searchInput.value
@@ -564,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
     if (!q) {
       renderBookedTours(window.TourAPI.getBookedTours());
-      // show all recommendations when search is cleared
+      // Hiển thị tất cả gợi ý khi xóa tìm kiếm
       renderRecommendations(window.TourAPI.getAllTours());
       return;
     }
@@ -572,9 +578,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return b.id.toLowerCase().includes(q) || b.name.toLowerCase().includes(q);
     });
     renderBookedTours(results);
-    // also filter available tours and update recommendations area
+    // Đồng thời lọc tour có sẵn và cập nhật phần gợi ý
     const recResults = window.TourAPI.searchTours(q);
-    // if no recommended tours match the query, keep the original recommendation list
+    // Nếu không có tour gợi ý nào khớp, giữ nguyên danh sách gợi ý ban đầu
     if (recResults && recResults.length > 0) {
       renderRecommendations(recResults);
     } else {
