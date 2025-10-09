@@ -6,7 +6,7 @@
 
 body {
   font-family: "League Spartan";
-  background-color: #fff; /* Nền trắng cho phần thân chính */
+  background-color: #f3f5f7; /* subtle gray background like the screenshot */
 }
 
 .container {
@@ -148,11 +148,11 @@ h1 {
 
 .tour-image-container {
   width: 200px; /* Độ rộng của ảnh */
-  height: 150px;
+  height: 180px; /* make image taller so it doesn't appear cut off */
   background-image: url("https://i.imgur.com/48da40.png"); /* Ảnh ví dụ */
   background-size: cover;
-  background-position: center 20%;
-  flex-shrink: 0;
+  background-position: center center; /* center the image to avoid awkward cropping */
+  flex: 0 0 200px; /* prevent the image column from shrinking */
 }
 
 .tour-info {
@@ -218,47 +218,45 @@ h1 {
 
 /* Phần tour gợi ý */
 .recommendation-title {
-  font-size: 40px;
-  font-style: normal;
+  font-size: 20px;
   font-weight: 700;
-  line-height: normal;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 44px;
+  margin-bottom: 18px;
   color: #34699a;
-  font-family: "League Spartan";
 }
 
 .recommendation-list {
   display: flex;
   gap: 20px;
-  /* horizontally scroll when there are many cards */
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
-  align-items: flex-start;
-  padding: 10px 8px;
+  align-items: stretch;
+  padding: 8px 24px 28px; /* extra left padding so first card isn't flush against edge */
   margin-bottom: 50px;
+  justify-content: flex-start; /* left align so the first card is fully visible */
 }
 
 .recommended-card {
-  width: 250px; /* Chiều rộng cố định cho mỗi thẻ */
-  border-radius: 8px;
+  width: 260px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   cursor: pointer;
-  transition: transform 0.2s;
-  flex: 0 0 auto; /* prevent shrinking so horizontal scroll works */
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  flex: 0 0 auto;
   scroll-snap-align: start;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
 }
 
 .recommended-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(16, 24, 40, 0.12);
 }
 
 .card-image-container {
-  height: 150px;
+  height: 180px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -266,11 +264,18 @@ h1 {
 
 .card-image-container .heart-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  font-size: 20px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e11d48;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  font-size: 14px;
 }
 
 /* Ảnh nền cho các tour gợi ý (Sử dụng ảnh từ giao diện mẫu) */
@@ -293,32 +298,35 @@ h1 {
 
 .recommended-card h3 {
   font-size: 16px;
-  font-weight: bold;
-  padding: 10px 15px 0;
+  font-weight: 700;
+  padding: 12px 16px 4px;
 }
 
 .recommended-card .location {
   font-size: 13px;
-  color: var(--light-text-color);
-  padding: 0 15px 10px;
+  color: #6b7280;
+  padding: 0 16px 10px;
 }
 
 .recommended-card .price {
-  padding: 10px 15px 15px;
-  border-top: 1px solid var(--border-color);
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
 }
 
 .recommended-card .price .original {
   text-decoration: line-through;
-  color: var(--light-text-color);
+  color: #9ca3af;
   font-size: 13px;
-  margin-right: 10px;
 }
 
 .recommended-card .price .sale {
-  color: var(--secondary-color);
-  font-size: 18px;
-  font-weight: bold;
+  color: #059669;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 /* Footer */
