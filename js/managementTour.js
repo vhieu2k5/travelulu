@@ -62,7 +62,7 @@ const fakeTours = [
     seats: 10,
     priceOriginal: 8000000,
     priceFinal: 7800000,
-    imageUrl: "../pics/manegamentTour/linhlup.png",
+    imageUrl: "../pics/manegamentTour/trangan.jpeg",
     tags: ["Khám phá", "Văn hoá"],
   },
 ];
@@ -103,7 +103,7 @@ const fakeBookedTours = [
     priceOriginal: 8000000,
     priceFinal: 7800000,
     status: "Trong thời",
-    imageUrl: "../pics/manegamentTour/linhlup.png",
+    imageUrl: "../pics/manegamentTour/trangan.jpeg",
   },
 ];
 
@@ -112,7 +112,10 @@ const fakeBookedTours = [
  */
 
 function formatCurrency(v) {
-  return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
+  // format number with dot thousands separator and return HTML with a small currency span
+  const num = v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  // include a non-breaking space before the currency and wrap currency for styling
+  return `${num}&nbsp;<span class="currency">VND</span>`;
 }
 
 function getAllTours() {
@@ -229,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.className =
         "tour-card" + (b.status === "Đã hoàn thành" ? " completed" : "");
 
+      // build a two-row card: main row (image + info) and footer (pricing)
       const imgWrap = document.createElement("div");
       imgWrap.className = "tour-image-container";
       if (b.imageUrl) imgWrap.style.backgroundImage = `url('${b.imageUrl}')`;
@@ -246,9 +250,11 @@ document.addEventListener("DOMContentLoaded", () => {
       statusTag.className = `status-tag ${statusClass}`.trim();
       statusTag.setAttribute("role", "status");
       statusTag.textContent = b.status || "--";
-      const chevron = document.createElement("i");
-      chevron.className = "fas fa-chevron-right";
+      // simple chevron glyph so we don't depend on Font Awesome
+      const chevron = document.createElement("span");
+      chevron.className = "status-chevron";
       chevron.setAttribute("aria-hidden", "true");
+      chevron.textContent = "›";
       statusWrap.appendChild(statusTag);
       statusWrap.appendChild(chevron);
 
@@ -259,10 +265,42 @@ document.addEventListener("DOMContentLoaded", () => {
       )}</span>
         <span class="final-price">${formatCurrency(b.priceFinal)}</span>`;
 
-      card.appendChild(imgWrap);
-      card.appendChild(info);
+      // main row
+      const mainRow = document.createElement("div");
+      mainRow.className = "card-main";
+      mainRow.appendChild(imgWrap);
+      mainRow.appendChild(info);
+
+      // divider
+      const divider = document.createElement("hr");
+      divider.className = "card-divider";
+
+      // footer row
+      const footer = document.createElement("div");
+      footer.className = "card-footer";
+
+      // if booking is upcoming, add a cancel button on the left
+      if ((b.status || "").toLowerCase() === "sắp tới") {
+        const cancelBtn = document.createElement("button");
+        cancelBtn.className = "cancel-btn";
+        cancelBtn.textContent = "Hủy";
+        cancelBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          // update fake data and re-render
+          window.TourAPI.cancelBooking(b.id);
+          // re-render current list (simple approach: show all bookings)
+          renderBookedTours(window.TourAPI.getBookedTours());
+        });
+        footer.appendChild(cancelBtn);
+      }
+
+      footer.appendChild(pricing);
+
+      card.appendChild(mainRow);
+      // status is positioned absolutely in CSS, append to card so it sits over top-right
       card.appendChild(statusWrap);
-      card.appendChild(pricing);
+      card.appendChild(divider);
+      card.appendChild(footer);
 
       tourListEl.appendChild(card);
     });
