@@ -249,6 +249,20 @@ h1 {
   background: #d6ecfb;
 }
 
+.rebook-btn {
+  background: #0b74ff;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-left: 8px;
+}
+.rebook-btn:hover {
+  background: #075fd6;
+}
+
 .tour-pricing {
   display: flex;
   align-items: center;
@@ -635,4 +649,40 @@ h1 {
   color: #263140;
   cursor: pointer;
   font-weight: 700;
+}
+
+/* Info dialog for rebook unavailable */
+.info-dialog {
+  width: 420px;
+  max-width: calc(100% - 48px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(16, 24, 40, 0.25);
+  z-index: 10000;
+}
+.info-dialog .warning-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #fff, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-dialog .warning-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.info-dialog .btn-close-info {
+  background: #1f6ed4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.info-dialog .btn-close-info:hover {
+  background: #165fb2;
 }

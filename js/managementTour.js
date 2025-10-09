@@ -350,6 +350,40 @@ document.addEventListener("DOMContentLoaded", () => {
         footer.appendChild(cancelBtn);
       }
 
+      // if booking is cancelled, offer a "Đặt lại" (rebook) button
+      if ((b.status || "").toLowerCase() === "đã hủy") {
+        const rebookBtn = document.createElement("button");
+        rebookBtn.className = "rebook-btn";
+        rebookBtn.textContent = "Đặt lại";
+        rebookBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          // show an informational modal saying the tour is not available to rebook
+          const overlay = document.createElement("div");
+          overlay.className = "modal-overlay";
+          const dialog = document.createElement("div");
+          dialog.className = "info-dialog";
+          // inline SVG warning icon + message + single close button
+          dialog.innerHTML = `
+            <div style="text-align:center; padding:18px 22px;">
+              <div class="warning-icon" aria-hidden="true">
+                <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
+              </div>
+              <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
+              <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
+            </div>
+          `;
+          overlay.appendChild(dialog);
+          document.body.appendChild(overlay);
+
+          const btnClose = dialog.querySelector(".btn-close-info");
+          btnClose.addEventListener("click", () => {
+            if (overlay && overlay.parentNode)
+              overlay.parentNode.removeChild(overlay);
+          });
+        });
+        footer.appendChild(rebookBtn);
+      }
+
       footer.appendChild(pricing);
 
       card.appendChild(mainRow);
