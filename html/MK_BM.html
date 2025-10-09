@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../css/MK_BM.css">
         <link rel="stylesheet" href="../css/personal.css">
         <link rel="stylesheet" href="../css/style.css">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="/On_tap_lai/assets/font/themify-icons">
         <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
@@ -36,37 +37,37 @@
                 </div>
         <!--BÊN TRÁI  -->
                 <div class="left-nav">
-                    <div class="nav-item">
+                    <div id="profileBtn" class="nav-item">
                         <i class="fa-solid fa-user"></i>
                         <span>Hồ sơ</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="passwordBtn" class="nav-item">
                         <i class="fa-solid fa-lock"></i>
                         <span>Mật khẩu & Bảo mật</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="myCardBtn" class="nav-item">
                         <i class="fa-solid fa-credit-card"></i>
                         <span>Thẻ của tôi</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="listBtn" class="nav-item">
                         <i class="fa-solid fa-receipt"></i>
                         <span>Danh sách giao dịch</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="refundBtn" class="nav-item">
                         <i class="fa-solid fa-rotate-left"></i>
                         <span>Refunds</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="noticeBtn" class="nav-item">
                         <i class="fa-solid fa-bell"></i>
                         <span>Cài đặt thông báo</span>
                     </div>
 
-                    <div class="nav-item">
+                    <div id="list_loveBtn" class="nav-item">
                         <i class="fa-solid fa-heart"></i>
                         <span>Danh sách yêu thích</span>
                     </div>
@@ -135,25 +136,76 @@
 
                         <a href="#" class="forgot-password">Bạn quên mật khẩu?</a>
 
-                        <button type="submit" class="btn-primary">Đổi mật khẩu</button>
+                        <button type="submit" class="change-password-btn">Đổi mật khẩu</button>
                     </form>
                 </section>
             </div>
         </div>
         
+        <!-- Quên mật khẩu-->
         <div class="overlay">
+                    <!-- Quên mật khẩu 1-->
             <div class="retrieve-password">
                 <span>Lấy lại mật khẩu</span>
-                <div class="retrieval-panel">
-                <label for="email-input">Nhập email của bạn để nhận mật mã xác nhận lại mật khẩu.</label>
-                    <!-- <label for="your-email">Nhập email của bạn</label> -->
-                    <input type="email" id="email-input" placeholder="Nhập email của bạn">
-                    <button type="continue" class="btn-continue">Tiếp tục</button>
-                    <a href="#">Phương thức khác</a>
+                    <div class="retrieval-panel">
+                        <label for="email-input">Nhập email của bạn để nhận mật mã xác nhận lại mật khẩu.</label>
+                        <input type="email" id="email-input" placeholder="Nhập email của bạn">
+                        <button type="submit" class="btn-continue">Tiếp tục</button>
+                        <a href="#">Phương thức khác</a>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+            </div>
+
+                    <!-- Quên mật khẩu  2-->
+            <div class="otp-panel">
+                <span>Lấy lại mật khẩu</span>
+                    <div class="enter-otp">
+                        <label for="otp-input">Nhập mã OTP được gửi đến email của bạn.</label>
+                        <a class="time-run">Mã có hiệu lực trong 00:45</a>
+                        <div class="otp-input">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="1">
+                        </div>
+                        <button type="submit" class="btn-verify">Xác nhận</button>
+                        <div class="resend">
+                            <span1>Bạn chưa nhận được email? </span1>
+                            <a href="#">Gửi lại mã OTP</a>
+                        </div>
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>Trở lại trang trước</p>
+                    </div>
+            </div>
+
+            <div class="reinput-pass">
+                <span>Lấy lại mật khẩu</span>
+                <div class="input-newpass">
+                    <p>Mật khẩu của bạn phải có tối thiểu 6 ký tự.</p>
+
+                    <label for="newpass">Nhập mật khẩu mới</label>
+                    <input type="text" placeholder="Vui lòng nhập mật khẩu">
+                    <label for="renewpass">Nhập lại mật khẩu mới</label>
+                    <input type="text" placeholder="Vui lòng nhập lại mật khẩu">
                     <i class="fa-solid fa-xmark"></i>
+
+                    <button type="submit" class="btn-newpass-verify">Xác nhận</button>
+
                 </div>
             </div>
+
+            <div class="password-done">
+                <span>Xác thực mật khẩu mới thành công!</span>
+                <button type="continue" class="btn-done">Xong</button>
+            </div>
+    
         </div>
 
+
+
+
+        <script src="../js/MK_BM.js"></script>
     </body>
 </html>
