@@ -222,8 +222,45 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tourListEl) return;
     tourListEl.innerHTML = "";
     if (!list || list.length === 0) {
-      // render a nice empty state box with icon and CTA
+      // If there is an active search query show a search-specific empty state
+      const query =
+        searchInput && searchInput.value ? searchInput.value.trim() : "";
       tourListEl.innerHTML = "";
+      if (query) {
+        const wrap = document.createElement("div");
+        wrap.className = "empty-state-container search-empty";
+        const box = document.createElement("div");
+        box.className = "empty-box notfound-search";
+        const icon = document.createElement("img");
+        icon.className = "empty-icon";
+        icon.src = "../pics/manegamentTour/canhbao.png";
+        icon.alt = "not found";
+        const text = document.createElement("div");
+        text.className = "empty-text";
+        text.textContent = "Không tìm thấy tour phù hợp";
+        const hint = document.createElement("div");
+        hint.className = "empty-hint";
+        hint.textContent = `Từ khóa: "${query}"`;
+        const btn = document.createElement("button");
+        btn.className = "explore-btn";
+        btn.textContent = "Xóa tìm kiếm";
+        btn.addEventListener("click", () => {
+          if (searchInput) searchInput.value = "";
+          // restore lists
+          renderBookedTours(window.TourAPI.getBookedTours());
+          renderRecommendations(window.TourAPI.getAllTours());
+          if (searchInput) searchInput.focus();
+        });
+        box.appendChild(icon);
+        box.appendChild(text);
+        box.appendChild(hint);
+        box.appendChild(btn);
+        wrap.appendChild(box);
+        tourListEl.appendChild(wrap);
+        return;
+      }
+
+      // render the original empty state (no bookings at all)
       const emptyWrap = document.createElement("div");
       emptyWrap.className = "empty-state-container";
       const emptyBox = document.createElement("div");
@@ -399,6 +436,29 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderRecommendations(list) {
     if (!recListEl) return;
     recListEl.innerHTML = "";
+    if (!list || list.length === 0) {
+      const wrap = document.createElement("div");
+      wrap.className = "notfound-wrap";
+      const box = document.createElement("div");
+      box.className = "notfound-box";
+      const icon = document.createElement("div");
+      icon.className = "notfound-icon";
+      const img = document.createElement("img");
+      img.src = "../pics/manegamentTour/delete.png";
+      img.alt = "not found";
+      icon.appendChild(img);
+      const txt = document.createElement("div");
+      txt.className = "notfound-text";
+      txt.textContent = "Không có dữ liệu tour trên web";
+      box.appendChild(icon);
+      box.appendChild(txt);
+      wrap.appendChild(box);
+      recListEl.appendChild(wrap);
+      return;
+    }
+    // keep track of saved favorites in-memory for this session
+    if (!window.__savedTours) window.__savedTours = new Set();
+
     list.forEach((t) => {
       const card = document.createElement("div");
       card.className = "recommended-card";
@@ -408,10 +468,53 @@ document.addEventListener("DOMContentLoaded", () => {
       if (t.imageUrl) imgWrap.style.backgroundImage = `url('${t.imageUrl}')`;
       // use local heart image instead of font-awesome icon
       const heartImg = document.createElement("img");
-      heartImg.src = "../pics/manegamentTour/heart.png";
+      heartImg.src = window.__savedTours.has(t.id)
+        ? "../pics/manegamentTour/heart2.png"
+        : "../pics/manegamentTour/heart.png";
       heartImg.alt = "Yêu thích";
       heartImg.className = "heart-img";
       imgWrap.appendChild(heartImg);
+
+      // saved-badge tooltip (hidden by default)
+      const savedBadge = document.createElement("div");
+      savedBadge.className = "saved-badge";
+      const sbIcon = document.createElement("img");
+      sbIcon.className = "saved-badge-icon";
+      sbIcon.src = "../pics/manegamentTour/heart2.png";
+      const sbText = document.createElement("div");
+      sbText.className = "saved-badge-text";
+      sbText.textContent = "Đã lưu vào: Chuyến đi của bạn";
+      savedBadge.appendChild(sbIcon);
+      savedBadge.appendChild(sbText);
+      imgWrap.appendChild(savedBadge);
+
+      // interaction handlers: hover shows badge only when tour is already saved
+      imgWrap.addEventListener("mouseenter", () => {
+        if (window.__savedTours.has(t.id)) savedBadge.classList.add("visible");
+      });
+      imgWrap.addEventListener("mouseleave", () => {
+        savedBadge.classList.remove("visible");
+      });
+
+      heartImg.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const saved = window.__savedTours.has(t.id);
+        if (saved) {
+          window.__savedTours.delete(t.id);
+          heartImg.src = "../pics/manegamentTour/heart.png";
+          // update badge text briefly to show removed
+          sbText.textContent = "Đã bỏ lưu";
+          // hide badge if it was visible
+          savedBadge.classList.remove("visible");
+        } else {
+          window.__savedTours.add(t.id);
+          heartImg.src = "../pics/manegamentTour/heart2.png";
+          sbText.textContent = "Đã lưu vào: Chuyến đi của bạn";
+          // show the badge briefly to give feedback even if it wasn't saved before
+          savedBadge.classList.add("visible");
+          setTimeout(() => savedBadge.classList.remove("visible"), 1200);
+        }
+      });
 
       const title = document.createElement("h3");
       title.textContent = t.name;
@@ -461,12 +564,22 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
     if (!q) {
       renderBookedTours(window.TourAPI.getBookedTours());
+      // show all recommendations when search is cleared
+      renderRecommendations(window.TourAPI.getAllTours());
       return;
     }
     const results = window.TourAPI.getBookedTours().filter((b) => {
       return b.id.toLowerCase().includes(q) || b.name.toLowerCase().includes(q);
     });
     renderBookedTours(results);
+    // also filter available tours and update recommendations area
+    const recResults = window.TourAPI.searchTours(q);
+    // if no recommended tours match the query, keep the original recommendation list
+    if (recResults && recResults.length > 0) {
+      renderRecommendations(recResults);
+    } else {
+      renderRecommendations(window.TourAPI.getAllTours());
+    }
   }
 
   if (searchBtn) searchBtn.addEventListener("click", handleSearch);

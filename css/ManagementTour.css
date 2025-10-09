@@ -413,6 +413,50 @@ h1 {
   object-fit: contain;
 }
 
+/* saved badge that appears near the heart (tooltip style) */
+.card-image-container .saved-badge {
+  position: absolute;
+  top: 12px;
+  right: 56px; /* sit left of the heart */
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+  z-index: 6;
+}
+.card-image-container .saved-badge.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.saved-badge .saved-badge-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.saved-badge .saved-badge-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Heart interactions */
+.card-image-container .heart-img {
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.card-image-container .heart-img:hover {
+  transform: scale(1.06);
+}
+
 /* Ảnh nền cho các tour gợi ý (Sử dụng ảnh từ giao diện mẫu) */
 .ha-long-4n3d {
   background-image: url("https://i.imgur.com/48da40.png");
@@ -685,4 +729,33 @@ h1 {
 }
 .info-dialog .btn-close-info:hover {
   background: #165fb2;
+}
+
+/* Not-found / search empty state for recommendations */
+.notfound-wrap {
+  padding: 20px 16px 40px;
+}
+.notfound-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 46px 36px;
+  text-align: center;
+}
+.notfound-box .notfound-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+}
+.notfound-box .notfound-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.notfound-box .notfound-text {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
 }
