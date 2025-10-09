@@ -276,24 +276,18 @@ input[type="checkbox"] {
     margin: 0 18px 5px 10px;
 }
 /* Tab-link điều hướng */
-.tab-link-security, .tab-link-password{
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-.tab-link-security{
-    border-bottom: 2px solid #34699A;
-}
-.tab-link-security, .tab-link-password:hover{
-    color: var(--main-color);
-}
 .title-sec{
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 5px;
+  color: grey;
+}
+.title-selected{
   color: var(--main-color);
-  border-bottom: 2px solid #34699A;
+  border-bottom: 2px solid var(--main-color);
+}
+.title-sec:hover{
+  color: var(--main-color);
 }
 
 /* Xác thực và xóa tài khoản */
@@ -575,4 +569,36 @@ box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 .btn-primary:active{
   background-color: #777777 !important;
+}
+.notification-section{
+  display: flex;
+  flex-direction: column;  
+  margin-top: 15px;
+}
+.notification-section>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 15px;
+}
+.notification-section>div>div p:last-child{
+  font-weight: 100 !important;
+  font-size: 15px;
+  color: grey;
+}
+.notification-section>div>div p{
+ margin: 2px 0;
+}
+.fa-toggle-off:before{
+  font-size: 30px;
+  color: gray;
+}
+.fa-toggle-on:before{
+  font-size: 30px;
+  color: var(--main-color);
+}
+.notification-section b{
+  font-size: 20px;
 }

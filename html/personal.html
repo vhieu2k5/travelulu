@@ -59,7 +59,7 @@
           <span>Refunds</span>
         </div>
 
-        <div class="nav-item">
+        <div id="notificationBtn" class="nav-item">
           <i class="fa-solid fa-bell"></i>
           <span>Cài đặt thông báo</span>
         </div>
@@ -160,8 +160,8 @@
     <div class="container section-2">
       <!-- Panel Bảo mật -->
       <div class="title">
-        <a href="#" class="tab-link-security" data-target="security">Bảo mật</a>
-        <a href="#" class="tab-link-password" data-target="change-password">Đổi mật khẩu</a>
+        <a href="#" class="tab-link-security title-sec" data-target="security">Bảo mật</a>
+        <a href="#" class="tab-link-password title-sec" data-target="change-password">Đổi mật khẩu</a>
       </div>
       <section id="security-panel" class="section">
         <div class="verify">
@@ -171,7 +171,7 @@
             <p>Gửi mã xác thực khi tài khoản của tôi được đăng nhập trên thiết bị mới</p>
 
           </div>
-          <i class="fa-solid fa-toggle-off" style="font-size: 25px;"></i>
+          <i class="fa-solid fa-toggle-off toggle"></i>
         </div>
 
         <div class="delete-account">
@@ -188,7 +188,8 @@
       <section id="password-panel" class="section">
         <form>
           <span>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác.</span>
-          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc biệt(!$@%).</span1>
+          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc
+            biệt(!$@%).</span1>
           <label for="old-password">Mật khẩu cũ</label>
           <div class="old-password input-eyes">
             <input type="password" id="old-password" placeholder="Nhập mật khẩu hiện tại">
@@ -226,7 +227,135 @@
           <div class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
         </div>
         <img src="../pics/img1.png" style="width: 200px;" alt="">
-        <p style="font-weight: 300;">Bắt đầu thêm thẻ của bạn và tận hưởng trải nghiệm thanh toán của bạn bằng một cú ‘click’</p>
+        <p style="font-weight: 300;">Bắt đầu thêm thẻ của bạn và tận hưởng trải nghiệm thanh toán của bạn bằng một cú
+          ‘click’</p>
+      </div>
+    </div>
+    <div class="container section-6">
+      <div class="title">
+        <a href="#" class="title-sec" id="emailNotiBtn" data-target="">Email</a>
+        <a href="#" class="title-sec" id="smsNotiBtn" data-target="">SMS</a>
+      </div>
+      <div id="emailNotiPanel" class="notification-section">
+
+        <b>Khuyến mãi và ưu đãi</b>
+        <div class="section">
+          <div>
+            <p>Khuyến mãi Travelulu</p>
+            <p>Khuyến mãi và ưu đãi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Thông báo giá</p>
+            <p>Giá đã thay đổi trên các mục đã lưu.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <b>Phản hồi</b>
+        <div class="section">
+          <div>
+            <p>Lời nhắc đưa ra nhận xét</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Khảo sát</p>
+            <p>Cơ hội phản hồi để nâng cao trải nghiệm của bạn</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Xem lại câu trả lời</p>
+            <p>Nhận thông báo khi nhận xét của bạn được phản hồi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <b>Tài khoản và đặt chỗ</b>
+        <div class="section">
+          <div>
+            <p>Nhật ký hoạt động</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Đặt chỗ</p>
+            <p>Trạng thái đặt chỗ, cập nhật và nhắc nhở.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Tài chính</p>
+            <p>PayLater và các dịch vụ tài chính khác.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Phần thưởng và chương trình thành viên thân thiết</p>
+            <p>Xu và phần thưởng bạn kiếm được từ đặt chỗ.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+      </div>
+      <div class="notification-section" id="smsNotiPanel">
+        <b>Khuyến mãi và ưu đãi</b>
+        <div class="section">
+          <div>
+            <p>Khuyến mãi Travelulu</p>
+            <p>Khuyến mãi và ưu đãi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Thông báo giá</p>
+            <p>Giá đã thay đổi trên các mục đã lưu.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+
+        <b>Tài khoản và đặt chỗ</b>
+        <div class="section">
+          <div>
+            <p>Nhật ký hoạt động</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Đặt chỗ</p>
+            <p>Trạng thái đặt chỗ, cập nhật và nhắc nhở.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Tài chính</p>
+            <p>PayLater và các dịch vụ tài chính khác.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Phần thưởng và chương trình thành viên thân thiết</p>
+            <p>Xu và phần thưởng bạn kiếm được từ đặt chỗ.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -278,7 +407,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../jvs/personal.js"></script>
 </body>
