@@ -218,18 +218,26 @@ h1 {
 
 /* Phần tour gợi ý */
 .recommendation-title {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
+  color: #34699a;
+  font-family: "League Spartan";
 }
 
 .recommendation-list {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+  /* horizontally scroll when there are many cards */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  scroll-snap-type: x mandatory;
+  align-items: flex-start;
+  padding: 10px 8px;
   margin-bottom: 50px;
 }
 
@@ -241,6 +249,8 @@ h1 {
   background-color: #fff;
   cursor: pointer;
   transition: transform 0.2s;
+  flex: 0 0 auto; /* prevent shrinking so horizontal scroll works */
+  scroll-snap-align: start;
 }
 
 .recommended-card:hover {
