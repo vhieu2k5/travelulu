@@ -163,7 +163,7 @@
         <a href="#" class="tab-link-security" data-target="security">Bảo mật</a>
         <a href="#" class="tab-link-password" data-target="change-password">Đổi mật khẩu</a>
       </div>
-      <section id="security-panel" class="panel active">
+      <section id="security-panel" class="section">
         <div class="verify">
           <span>Xác thực</span>
           <div class="content-verify">
@@ -185,11 +185,10 @@
       </section>
 
       <!-- Panel Đổi mật khẩu -->
-      <section id="password-panel" class="panel">
+      <section id="password-panel" class="section">
         <form>
           <span>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác.</span>
-          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc biệt
-            (!$@%).</span1>
+          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc biệt(!$@%).</span1>
           <label for="old-password">Mật khẩu cũ</label>
           <div class="old-password input-eyes">
             <input type="password" id="old-password" placeholder="Nhập mật khẩu hiện tại">
@@ -210,14 +209,15 @@
 
           <a href="#" class="forgot-password">Bạn quên mật khẩu?</a>
 
-          <button type="submit" class="btn-primary">Đổi mật khẩu</button>
+          <button type="submit" class="btn-primary change-password-Btn">Đổi mật khẩu</button>
         </form>
       </section>
     </div>
-  <!-- Hết phần Mật khẩu và bảo mật -->
+    <!-- Hết phần Mật khẩu và bảo mật -->
     <div class="container section-3">
       <div class="title">
-        <a href="#" class="title-section">Thẻ của tôi</div>
+        <a href="#" class="title-sec">Thẻ của tôi</a>
+      </div>
       <div class="section" style="display: flex; flex-direction: column; align-items: center;">
         <!-- Card List -->
         <div class="card-list">
@@ -225,8 +225,8 @@
           <div class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
           <div class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
         </div>
-         <img src="../pics/img1.png" style="width: 200px;" alt="">
-         <p style="font-weight: 300;">Bắt đầu thêm thẻ của bạn và tận hưởng trải nghiệm thanh toán của bạn bằng một cú ‘tap’</p>
+        <img src="../pics/img1.png" style="width: 200px;" alt="">
+        <p style="font-weight: 300;">Bắt đầu thêm thẻ của bạn và tận hưởng trải nghiệm thanh toán của bạn bằng một cú ‘click’</p>
       </div>
     </div>
   </div>
@@ -264,6 +264,21 @@
       <img src="../pics/bambooAirLine.png" alt="">
     </div>
   </div>
+
+  <div id="overlay">
+    <div class="retrieve-password">
+      <b>Lấy lại mật khẩu</b>
+      <div class="retrieval-panel">
+        <label for="email-input">Nhập email của bạn để nhận mật mã xác nhận lại mật khẩu.</label>
+        <!-- <label for="your-email">Nhập email của bạn</label> -->
+        <input type="email" id="email-input" placeholder="Nhập email của bạn">
+        <button type="continue" class="btn-continue">Tiếp tục</button>
+        <a href="#">Phương thức khác</a>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+  </div>
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../jvs/personal.js"></script>
 </body>

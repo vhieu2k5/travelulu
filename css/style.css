@@ -1,6 +1,8 @@
 :root{
     --main-color: #34699A;
+    --grey-color: grey;
     --normal-size: 20px;
+    --under-sub-note: 15px;
     --hover-blue-color:rgba(52, 105, 154, 0.10);
 }
 p,li{

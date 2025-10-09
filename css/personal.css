@@ -51,7 +51,7 @@ h2 {
 }
 
 .section{
-  width: 45vw;
+  width: 55vw;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 20px;
@@ -288,7 +288,7 @@ input[type="checkbox"] {
 .tab-link-security, .tab-link-password:hover{
     color: var(--main-color);
 }
-.title-section{
+.title-sec{
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 5px;
@@ -490,9 +490,89 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   margin: 10px 20px;
-  width: 200px;
+  width: 300px;
   height: 155px;
   border-radius: 25px;
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25.02%, rgba(255, 255, 255, 0.39) 92.64%), #6A95BC;
 box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+/* Lấy lại mật khẩu panel */
+#overlay{
+    background: rgba(51,51,51,0.74);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}               
+
+.retrieve-password b{
+    color: #ffffff;
+    font-size: 25px;
+    padding: 0  170px;  
+}
+
+.retrieval-panel{
+    width: 500px;
+    height: 220px;
+    border-radius: 10px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center ;
+}
+
+.retrieval-panel label{
+    font-size: var(--sub-main-note);
+    margin: 30px 0 0px 0;
+    font-weight: 300;
+    color: black;
+}
+.retrieval-panel #email-input{
+    height: 35px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.retrieval-panel .btn-continue{
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    background: #34699A;
+    margin: 0;
+    height: 35px;
+    font-size: var(--font-button);
+    cursor: pointer;
+}
+.retrieval-panel a{
+    color: var(--grey-color);
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: var(--under-sub-note);
+    border: none;
+}
+.retrieval-panel>a:hover{
+  border-bottom: 1px solid var(--grey-color);
+}
+.retrieval-panel i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+.btn-primary:hover{
+  background-color: green !important;
+}
+.btn-primary:active{
+  background-color: #777777 !important;
 }
