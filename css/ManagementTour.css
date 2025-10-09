@@ -278,6 +278,20 @@ h1 {
   font-size: 14px;
 }
 
+/* local heart image badge */
+.card-image-container .heart-img {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px; /* small padding so the png fits nicely */
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  object-fit: contain;
+}
+
 /* Ảnh nền cho các tour gợi ý (Sử dụng ảnh từ giao diện mẫu) */
 .ha-long-4n3d {
   background-image: url("https://i.imgur.com/48da40.png");

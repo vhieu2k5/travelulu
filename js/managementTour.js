@@ -278,9 +278,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const imgWrap = document.createElement("div");
       imgWrap.className = "card-image-container";
       if (t.imageUrl) imgWrap.style.backgroundImage = `url('${t.imageUrl}')`;
-      const heart = document.createElement("i");
-      heart.className = "far fa-heart heart-icon";
-      imgWrap.appendChild(heart);
+      // use local heart image instead of font-awesome icon
+      const heartImg = document.createElement("img");
+      heartImg.src = "../pics/manegamentTour/heart.png";
+      heartImg.alt = "Yêu thích";
+      heartImg.className = "heart-img";
+      imgWrap.appendChild(heartImg);
 
       const title = document.createElement("h3");
       title.textContent = t.name;
