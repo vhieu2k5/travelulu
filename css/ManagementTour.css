@@ -98,7 +98,6 @@ h1 {
   background-color: #4a93c0;
 }
 
-
 .filter-tabs {
   display: flex;
   gap: 50px;
@@ -130,7 +129,6 @@ h1 {
   font-weight: 700;
   box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.08);
 }
-
 
 .tour-card {
   display: block;
@@ -336,7 +334,7 @@ h1 {
   margin-left: 8px;
 }
 
-/* Phần tour gợi ý */
+
 .recommendation-title {
   font-size: 20px;
   font-weight: 700;
@@ -456,7 +454,6 @@ h1 {
   transform: scale(1.06);
 }
 
-
 .ha-long-4n3d {
   background-image: url("https://i.imgur.com/48da40.png");
   background-position: center 30%;
@@ -562,7 +559,6 @@ h1 {
   opacity: 0.8;
 }
 
-
 .payment-icons {
   display: flex;
   gap: 10px;
@@ -579,7 +575,6 @@ h1 {
   font-weight: bold;
   opacity: 0.9;
 }
-
 
 .airlines {
   text-align: center;
