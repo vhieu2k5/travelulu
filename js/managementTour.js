@@ -222,8 +222,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tourListEl) return;
     tourListEl.innerHTML = "";
     if (!list || list.length === 0) {
-      tourListEl.innerHTML =
-        '<p style="padding:20px;color:#666">Không có lịch đặt tour.</p>';
+      // render a nice empty state box with icon and CTA
+      tourListEl.innerHTML = "";
+      const emptyWrap = document.createElement("div");
+      emptyWrap.className = "empty-state-container";
+      const emptyBox = document.createElement("div");
+      emptyBox.className = "empty-box";
+      const icon = document.createElement("img");
+      icon.className = "empty-icon";
+      // use a local placeholder if available, otherwise fallback to inline SVG
+      icon.src = "../pics/manegamentTour/box.png";
+      icon.alt = "empty";
+      const text = document.createElement("div");
+      text.className = "empty-text";
+      text.textContent = "Bạn chưa có tour nào được đặt";
+      const btn = document.createElement("button");
+      btn.className = "explore-btn";
+      btn.textContent = "Khám phá ngay các tour hot";
+      btn.addEventListener("click", () => {
+        const rec = document.querySelector(".recommendation-list");
+        if (rec) rec.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      emptyBox.appendChild(icon);
+      emptyBox.appendChild(text);
+      emptyBox.appendChild(btn);
+      emptyWrap.appendChild(emptyBox);
+      tourListEl.appendChild(emptyWrap);
       return;
     }
 
@@ -288,10 +312,40 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelBtn.textContent = "Hủy";
         cancelBtn.addEventListener("click", (e) => {
           e.preventDefault();
-          // update fake data and re-render
-          window.TourAPI.cancelBooking(b.id);
-          // re-render current list (simple approach: show all bookings)
-          renderBookedTours(window.TourAPI.getBookedTours());
+          // show confirmation modal
+          const overlay = document.createElement("div");
+          overlay.className = "modal-overlay";
+          const dialog = document.createElement("div");
+          dialog.className = "confirm-dialog";
+          dialog.innerHTML = `
+            <div class="confirm-title">Hủy chuyến sắp tới</div>
+            <div class="confirm-body">Bạn có chắc chắn không?</div>
+            <div class="confirm-actions">
+              <button class="btn-cancel-dialog">Hủy</button>
+              <button class="btn-confirm-dialog">Có</button>
+            </div>
+          `;
+          overlay.appendChild(dialog);
+          document.body.appendChild(overlay);
+
+          const btnCancel = dialog.querySelector(".btn-cancel-dialog");
+          const btnConfirm = dialog.querySelector(".btn-confirm-dialog");
+
+          function closeModal() {
+            if (overlay && overlay.parentNode)
+              overlay.parentNode.removeChild(overlay);
+          }
+
+          btnCancel.addEventListener("click", () => {
+            closeModal();
+          });
+
+          btnConfirm.addEventListener("click", () => {
+            // perform cancel and re-render
+            window.TourAPI.cancelBooking(b.id);
+            closeModal();
+            renderBookedTours(window.TourAPI.getBookedTours());
+          });
         });
         footer.appendChild(cancelBtn);
       }
