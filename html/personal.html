@@ -395,18 +395,65 @@
 
 
   <div id="overlay">
+    <!-- Quên mật khẩu 1-->
     <div class="retrieve-password">
-      <b>Lấy lại mật khẩu</b>
+      <span>Lấy lại mật khẩu</span>
       <div class="retrieval-panel">
         <label for="email-input">Nhập email của bạn để nhận mật mã xác nhận lại mật khẩu.</label>
-        <!-- <label for="your-email">Nhập email của bạn</label> -->
         <input type="email" id="email-input" placeholder="Nhập email của bạn">
-        <button type="continue" class="btn-continue">Tiếp tục</button>
+        <button type="submit" class="btn-continue">Tiếp tục</button>
         <a href="#">Phương thức khác</a>
         <i class="fa-solid fa-xmark"></i>
       </div>
     </div>
+
+    <!-- Quên mật khẩu  2-->
+    <div class="otp-panel">
+      <span>Lấy lại mật khẩu</span>
+      <div class="enter-otp">
+        <label for="otp-input">Nhập mã OTP được gửi đến email của bạn.</label>
+        <a class="time-run">Mã có hiệu lực trong 00:45</a>
+        <div class="otp-input">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+        </div>
+        <button type="submit" class="btn-verify">Xác nhận</button>
+        <div class="resend">
+          <span1>Bạn chưa nhận được email? </span1>
+          <a href="#">Gửi lại mã OTP</a>
+        </div>
+        <i class="fa-solid fa-xmark"></i>
+        <p>Trở lại trang trước</p>
+      </div>
+    </div>
+
+    <div class="reinput-pass">
+      <span>Lấy lại mật khẩu</span>
+      <div class="input-newpass">
+        <p>Mật khẩu của bạn phải có tối thiểu 6 ký tự.</p>
+
+        <label for="newpass">Nhập mật khẩu mới</label>
+        <input type="text" placeholder="Vui lòng nhập mật khẩu">
+        <label for="renewpass">Nhập lại mật khẩu mới</label>
+        <input type="text" placeholder="Vui lòng nhập lại mật khẩu">
+        <i class="fa-solid fa-xmark"></i>
+
+        <button type="submit" class="btn-newpass-verify">Xác nhận</button>
+
+      </div>
+    </div>
+
+    <div class="password-done">
+      <span>Xác thực mật khẩu mới thành công!</span>
+      <button type="continue" class="btn-done">Xong</button>
+    </div>
+
   </div>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../jvs/personal.js"></script>

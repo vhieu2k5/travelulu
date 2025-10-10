@@ -10,6 +10,9 @@ const myCardBtn = document.getElementById("myCardBtn");
 const notificationBtn = document.getElementById("notificationBtn");
 
 const overlay = document.getElementById("overlay");
+const otpPanel = document.querySelector(".otp-panel");
+const passDonePanel = document.querySelector(".password-done");
+const reInputPanel = document.querySelector(".reinput-pass");
 const retrievePasswordPanel = document.querySelector(".retrieve-password");
 const changePasswordPanel = document.getElementById("password-panel");
 const securityPanel = document.getElementById("security-panel");
@@ -24,86 +27,187 @@ const emailNotiBtn = document.getElementById("emailNotiBtn");
 const smsNotiBtn = document.getElementById("smsNotiBtn");
 
 //Start the code
-  alltheSections.forEach(element => {
-        element.style.display="none";
-    });
-section1.style.display="flex";
-overlay.style.display="none";
-changePasswordPanel.style.display="none";
-smsNotiPanel.style.display="none";
+alltheSections.forEach(element => {
+    element.style.display = "none";
+});
+section1.style.display = "flex";
+overlay.style.display = "none";
+changePasswordPanel.style.display = "none";
+smsNotiPanel.style.display = "none";
 emailNotiBtn.classList.add("title-selected");
 securityBtn.classList.add("title-selected");
 //Nút Hồ sơ
-profileBtn.onclick = function(){
+profileBtn.onclick = function () {
     alltheSections.forEach(element => {
-    element.style.display="none";
+        element.style.display = "none";
     });
-section1.style.display="flex";
+    section1.style.display = "flex";
 }
 //Nút bảo mật và Mật khẩu
-passwordBtn.onclick = function(){
+passwordBtn.onclick = function () {
     alltheSections.forEach(element => {
-        element.style.display="none";
+        element.style.display = "none";
     });
     //alert('Clicked!!!!!!');
-    section2.style.display ="flex"; 
+    section2.style.display = "flex";
 };
-myCardBtn.onclick = function(){
-alltheSections.forEach(element => {
-        element.style.display="none";
-});
-    //alert('Clicked!!!!!!');
-    section3.style.display ="flex"; 
-};
-notificationBtn.onclick = function(){
-    alltheSections.forEach(element =>{
-        element.style.display="none";
+myCardBtn.onclick = function () {
+    alltheSections.forEach(element => {
+        element.style.display = "none";
     });
-    section6.style.display="flex";
+    //alert('Clicked!!!!!!');
+    section3.style.display = "flex";
+};
+notificationBtn.onclick = function () {
+    alltheSections.forEach(element => {
+        element.style.display = "none";
+    });
+    section6.style.display = "flex";
 }
-changePasswordPanelBtn.onclick = function(){
+changePasswordPanelBtn.onclick = function () {
     changePasswordPanelBtn.classList.add("title-selected");
     securityBtn.classList.remove("title-selected");
-    securityPanel.style.display ="none";
-    changePasswordPanel.style.display="block";
+    securityPanel.style.display = "none";
+    changePasswordPanel.style.display = "block";
 };
-securityBtn.onclick = function(){
-   securityBtn.classList.add("title-selected");
+securityBtn.onclick = function () {
+    securityBtn.classList.add("title-selected");
     changePasswordPanelBtn.classList.remove("title-selected");
-    changePasswordPanel.style.display="none";
-    securityPanel.style.display="block";
+    changePasswordPanel.style.display = "none";
+    securityPanel.style.display = "block";
 };
-retrievePasswordBtn.onclick = function(){
-    overlay.style.display="flex";
+retrievePasswordBtn.onclick = function () {
+    overlay.style.display = "flex";
 };
-Xbutton.onclick = function(){
+Xbutton.onclick = function () {
     overlay.style.display = "none";
 };
 //Notification Buttons
 const toggles = document.querySelectorAll(".toggle");
 
 toggles.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
 
-    if (btn.classList.contains("active")) {
-      btn.classList.replace("fa-toggle-off", "fa-toggle-on");
-    } else {
-      btn.classList.replace("fa-toggle-on", "fa-toggle-off");
-    }
-  });
+        if (btn.classList.contains("active")) {
+            btn.classList.replace("fa-toggle-off", "fa-toggle-on");
+        } else {
+            btn.classList.replace("fa-toggle-on", "fa-toggle-off");
+        }
+    });
 });
-emailNotiBtn.onclick = function(){
+emailNotiBtn.onclick = function () {
     emailNotiBtn.classList.add("title-selected");
     smsNotiBtn.classList.remove("title-selected");
-    smsNotiPanel.style.display="none";
-    emailNotiPanel.style.display="flex";
+    smsNotiPanel.style.display = "none";
+    emailNotiPanel.style.display = "flex";
 }
-smsNotiBtn.onclick = function(){
-  smsNotiBtn.classList.add("title-selected");
+smsNotiBtn.onclick = function () {
+    smsNotiBtn.classList.add("title-selected");
     emailNotiBtn.classList.remove("title-selected");
-     emailNotiPanel.style.display="none";
-    smsNotiPanel.style.display="flex";
+    emailNotiPanel.style.display = "none";
+    smsNotiPanel.style.display = "flex";
 }
+// Khi bấm "Đổi mật khẩu"
+changePasswordPanelBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    securityPanel.style.display = "none";
+    changePasswordPanel.style.display = "block";
+    changePasswordPanel.style.borderBottom = "2px solid #34699A";
+    changePasswordPanel.style.color = "#34699A";
+    securityBtn.style.color = "black";
+    securityBtn.style.borderBottom = "none";
+    reInputPanel.style.display="none";
+});
+
+// Chuyển tab quên mật khẩu 2 -> nhập OTP
+if (otpPanel && retrievePasswordPanel) {
+    otpPanel.style.display = "none";
+    retrievePasswordPanel.style.display = "block";
+
+    const continueBtn = document.querySelector(".btn-continue");
+    const closeOverlay2 = document.querySelector(".enter-otp i.fa-xmark");
+    const otpbackBtn = document.querySelector(".enter-otp p");
+
+
+    if (continueBtn) {
+        continueBtn.addEventListener("click", () => {
+            otpPanel.style.display = "block";
+            retrievePasswordPanel.style.display = "none";
+        });
+    }
+
+    if (closeOverlay2) {
+        closeOverlay2.addEventListener("click", () => {
+            overlay.style.display = "none";
+        });
+    }
+
+    if (otpbackBtn) {
+        otpbackBtn.addEventListener("click", () => {
+            otpPanel.style.display = "none";
+            retrievePasswordPanel.style.display = "block";
+        });
+    }
+
+    // Chuyển tab quên mật khẩu 3 -> nhập mk mới
+    if (reInputPanel) {
+        reInputPanel.style.display = "none";
+        retrievePasswordPanel.style.display = "block";
+
+        const verifyBtn = document.querySelector(".btn-verify");
+        const closeOverlay3 = document.querySelector(".input-newpass i.fa-xmark");
+        if (verifyBtn) {
+            verifyBtn.addEventListener("click", () => {
+                reInputPanel.style.display = "block";
+                otpPanel.style.display = "none";
+                retrievePasswordPanel.style.display = "none";
+            });
+        }
+        if (closeOverlay3) {
+            closeOverlay3.addEventListener("click", () => {
+                overlay.style.display = "none";
+                reInputPanel.style.display = "none";
+            })
+        }
+    }
+
+    // Chuyển tab quên mật 4 -> done
+    if (passDonePanel) {
+        passDonePanel.style.display = "none";
+        reInputPanel.style.display = "block";
+
+        const donePassBtn = document.querySelector(".btn-newpass-verify");
+        if (donePassBtn) {
+            donePassBtn.addEventListener("click", () => {
+                reInputPanel.style.display = "none";
+                passDonePanel.style.display = "flex";
+            })
+        }
+    }
+    const outPanel = document.querySelector(".btn-done");
+    if (outPanel) {
+        outPanel.addEventListener("click", () => {
+            overlay.style.display = "none";
+        })
+    }
+}
+
+
+// Ẩn/hiện mật khẩu
+const eyeIcons = document.querySelectorAll(".input-eyes i");
+eyeIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        const input = icon.previousElementSibling;
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+        } else {
+            input.type = "password";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+        }
+    });
+});
+
 
 
