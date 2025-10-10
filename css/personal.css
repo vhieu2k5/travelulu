@@ -14,7 +14,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 25vw;
-  height: 1000px;
+  height: 810px;
   border-radius: 20px;
   border: 1px solid #CAC5C5;
   background: #FFF;
@@ -23,13 +23,15 @@
 
 .personal-img {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   border-radius: 20px;
 }
 
 .personal-img>img {
-  margin-left: 25px;
+  /* margin-left: 25px; */
   width: 200px;
   padding: 50px 50px 10px 50px;
 }
@@ -43,10 +45,20 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-h2 {
+.section h2{
   color: var(--main-color);
   margin-bottom: 15px;
   font-size: 18px;
+  margin-top: 0;
+}
+.title-1{
+  color: var(--main-color);
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 8px;
+  border-bottom: 2px solid #34699A;
+  width: 145px;
 }
 
 .section {
@@ -54,19 +66,24 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 20px;
-  margin: 10px;
+  margin: 10px 10px 10px 10px;
+  position: relative;
 }
 
 .section-3 {
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+}
+.section-3 .title-sec{
+  color: #34699A !important;
+  border-bottom: 2px solid #34699A;
 }
 
 label {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 input,
@@ -77,6 +94,7 @@ select {
   border-radius: 4px;
   margin-bottom: 15px;
   font-weight: 100;
+  font-size: 15px;
   /* // color: #ccc; */
 }
 
@@ -104,6 +122,9 @@ select {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
 
 .btn:hover {
@@ -227,7 +248,7 @@ input[type="checkbox"] {
   flex-direction: row;
   justify-content: left;
   margin: 0 10px;
-  padding: 15px 6vw;
+  padding: 15px 90px;
   cursor: pointer;
 }
 
@@ -264,7 +285,13 @@ input[type="checkbox"] {
 
 .id-name {
   font-family: 'Titan One';
-  font-size: 25px;
+  font-size: 20px;
+  margin-top: 0;
+}
+.line {
+  width: 80%;
+  margin: 5px auto 0;
+  border-bottom: 1px solid #ccc;
 }
 
 /* Section 2: MK và Bảo mật*/
@@ -284,13 +311,16 @@ input[type="checkbox"] {
 .title-sec {
   text-decoration: none;
   font-weight: 600;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   color: grey;
+  font-size: 18px;
 }
 
 .title-selected {
   color: var(--main-color);
   border-bottom: 2px solid var(--main-color);
+  font-size: 18px;
+  color: #34699A;
 }
 
 .title-sec:hover {
@@ -388,10 +418,6 @@ input[type="checkbox"] {
   margin-left: 5px;
 }
 
-/* .content-delete span1{
-    flex: 1;
-} */
-
 .btn-danger {
   position: absolute;
   bottom: 15px;
@@ -431,33 +457,39 @@ input[type="checkbox"] {
   margin-left: 5px;
   font-size: 13px;
   color: #5b5b5b;
+  position: absolute;
 }
 
 .icon-eye1 {
-  bottom: 215px;
+  bottom: 249px;
+  right: 10px;
 }
 
 .icon-eye2 {
-  bottom: 145px;
+  bottom: 168px;
+  right: 10px;
 }
 
 .icon-eye3 {
-  bottom: 75px;
+  bottom: 88px;
+  right: 10px;
 }
 
 #password-panel {
-  margin-top: 20px;
-
+  margin-top: 10px;
   background: #ffffff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   padding: 20px;
 }
+#password-panel label{
+  margin-bottom: 0 !important;
+}
 
 #password-panel form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   position: relative;
 }
 
@@ -536,7 +568,7 @@ input[type="checkbox"] {
 .reinput-pass span {
   color: #ffffff;
   font-size: 25px;
-  padding: 0 170px;
+  padding: 0 180px;
 }
 
 .retrieval-panel,
@@ -566,6 +598,7 @@ input[type="checkbox"] {
 .retrieval-panel #email-input,
 .input-newpass input {
   height: 35px;
+  width: 478px;
   border: 1px solid #777777;
   border-radius: 5px;
   font-size: 15px;
@@ -583,6 +616,11 @@ input[type="checkbox"] {
   height: 35px;
   font-size: var(--font-button);
   cursor: pointer;
+}
+.retrieval-panel .btn-continue, 
+.enter-otp .btn-verify
+{
+  width: 500px;
 }
 
 .retrieval-panel a {
@@ -619,6 +657,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  margin-left: 10px;
 }
 
 .notification-section>div {
@@ -651,7 +690,7 @@ input[type="checkbox"] {
 }
 
 .notification-section b {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /*Lấy lại mật khẩu 2 - nhập OTP*/
@@ -664,7 +703,9 @@ input[type="checkbox"] {
   border-radius: 10px;
   border-color: #a4a4a4;
   text-align: center;
+  margin-bottom: 0;
 }
+
 
 .otp-input {
   display: flex;
@@ -675,6 +716,10 @@ input[type="checkbox"] {
 
 .enter-otp span1 {
   font-size: var(--sub-note);
+}
+.enter-otp label{
+  margin: 10px 0 20px 0;
+  font-weight: 700;
 }
 
 .enter-otp {
@@ -717,7 +762,6 @@ input[type="checkbox"] {
 
 /* Lấy lại mật khẩu 3 - newpassword*/
 .input-newpass {
-  /* gap: 10px; */
   padding: 15px;
   width: 500px;
   height: 260px;
@@ -726,7 +770,7 @@ input[type="checkbox"] {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
   position: relative;
 }
@@ -737,7 +781,7 @@ input[type="checkbox"] {
 
 
 .input-newpass .btn-newpass-verify {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 /* Đổi mật khẩu thành công */
