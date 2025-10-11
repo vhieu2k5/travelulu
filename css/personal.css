@@ -273,12 +273,23 @@ input[type="checkbox"] {
 .nav-item:hover {
   background: var(--main-color);
 
-  i {
-    color: #ffffff;
+  i,a{
+    color: #ffffff !important;
   }
 
   span {
     color: #ffffff;
+  }
+}
+.nav-item-selected{
+   background: var(--main-color);
+
+  i,a{
+    color: #ffffff !important;
+  }
+
+  span {
+    color: #ffffff !important;
   }
 }
 

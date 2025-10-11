@@ -35,8 +35,17 @@ const smsNotiPanel = document.getElementById("smsNotiPanel");
 const emailNotiBtn = document.getElementById("emailNotiBtn");
 const smsNotiBtn = document.getElementById("smsNotiBtn");
 
-// origin
+const navBtns = document.querySelectorAll(".nav-item");
 
+navBtns.forEach (btn=>{
+    btn.addEventListener("click", () => {
+    navBtns.forEach(bt =>{
+       if(bt.classList.contains("nav-item-selected")) 
+        bt.classList.remove("nav-item-selected");
+    });
+      btn.classList.add("nav-item-selected");
+    });
+});
 
 //Start the code
 alltheSections.forEach(element => {
@@ -48,6 +57,7 @@ changePasswordPanel.style.display = "none";
 smsNotiPanel.style.display = "none";
 emailNotiBtn.classList.add("title-selected");
 securityBtn.classList.add("title-selected");
+profileBtn.classList.add("nav-item-selected");
 //Nút Hồ sơ
 profileBtn.onclick = function () {
     alltheSections.forEach(element => {
