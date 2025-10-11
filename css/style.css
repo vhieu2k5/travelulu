@@ -3,11 +3,16 @@
     --normal-size: 20px;
     --hover-blue-color:hsla(209, 50%, 40%, 0.1);
 }
+html{
+    height: 2000px;
+}
+
 p,li{
 font-family: "League Spartan";
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+color: var(--main-color);
 }
 a{
     text-decoration: none;
@@ -34,6 +39,7 @@ flex-shrink: 0;
 list-style: none;
 flex-wrap: nowrap;
 margin: 0;
+
 }
 .menu-nav li>a{
 padding: 20px 50px ;
@@ -51,3 +57,4 @@ font-size: var(--normal-size);
     width: 238px;
     height: fit-content;
 }
+/* This is Nhan's */
