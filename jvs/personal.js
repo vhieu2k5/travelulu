@@ -2,7 +2,9 @@ const alltheSections = document.querySelectorAll(".container");
 const section1 = document.querySelector(".section-1");
 const section2 = document.querySelector(".section-2");
 const section3 = document.querySelector(".section-3");
+const section5 = document.querySelector(".section-5");
 const section6 = document.querySelector(".section-6");
+
 
 const profileBtn = document.getElementById("profileBtn");
 const iconProfileBtn = document.querySelector(".nav-item i.fa-user");
@@ -10,6 +12,11 @@ const passwordBtn = document.getElementById("passwordBtn");
 const iconPasswordBtn = document.querySelector(".nav-item i.fa-lock");
 const myCardBtn = document.getElementById("myCardBtn");
 const notificationBtn = document.getElementById("notificationBtn");
+const reFundBtn = document.getElementById("refundBtn");
+
+const linkBankBtn = document.querySelector(".bankBtn");
+const linkBankPanel = document.querySelector(".link-bank");
+
 
 const overlay = document.getElementById("overlay");
 const otpPanel = document.querySelector(".otp-panel");
@@ -70,12 +77,32 @@ myCardBtn.onclick = function () {
     //alert('Clicked!!!!!!');
     section3.style.display = "flex";
 };
+
 notificationBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
     section6.style.display = "flex";
+};
+        // Refund
+reFundBtn.onclick = function () {
+    alltheSections.forEach(element => {
+        element.style.display = "none";
+    });
+    section5.style.display = "flex";
 }
+
+// Liên kết ngân hàng
+if(linkBankBtn){
+    linkBankPanel.style.display = "none";
+    linkBankBtn.addEventListener("click", () => {
+        section5.style.display = "none";
+        linkBankPanel.style.display = "flex";
+    })
+}
+
+        // Refund
+
 changePasswordPanelBtn.onclick = function () {
     changePasswordPanelBtn.classList.add("title-selected");
     securityBtn.classList.remove("title-selected");

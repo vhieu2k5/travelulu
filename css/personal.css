@@ -51,7 +51,7 @@
   font-size: 18px;
   margin-top: 0;
 }
-.title-1{
+.title-1, .section-5>p{
   color: var(--main-color);
   margin: 0 0 5px 0;
   font-size: 18px;
@@ -61,7 +61,7 @@
   width: 145px;
 }
 
-.section {
+.section{
   width: 55vw;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -238,36 +238,39 @@ input[type="checkbox"] {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.left-nav {
+.left-tab {
   display: flex;
-  align-items: left;
+  flex-direction: column;
+  padding: 0 20px 20px 20px;
+  margin-top: 25px;
 }
 
-.nav-item {
+.left-tab .nav-item {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  margin: 0 10px;
-  padding: 15px 90px;
+  align-items: center;
+  gap: 12px; 
   cursor: pointer;
+  padding: 15px 85px;
 }
 
-.nav-item i {
-  font-size: 20px;
-  color: #000000;
-  margin: 0px 20px 0px 10px;
+.left-tab .nav-item i {
+  width: 22px; 
+  text-align: center; 
+  font-size: 18px;
+    margin: 0px 20px 0px 10px;
+      font-size: 20px;
 }
 
-.nav-item span {
+.left-tab .nav-item span {
+  flex: 1;
   font-size: var(--main-nav-size);
   font-family: var(--font-family);
-  font-weight: 200;
+  color: #000;
+  font-weight: 500;
   width: 150px;
-
 }
 
 .nav-item:hover {
-  /* transition: all 1s ease-in-out; */
   background: var(--main-color);
 
   i {
@@ -279,9 +282,6 @@ input[type="checkbox"] {
   }
 }
 
-.left-tab {
-  margin-top: 30px;
-}
 
 .id-name {
   font-family: 'Titan One';
@@ -607,7 +607,8 @@ input[type="checkbox"] {
 
 .retrieval-panel .btn-continue,
 .enter-otp .btn-verify,
-.input-newpass .btn-newpass-verify {
+.input-newpass .btn-newpass-verify,
+#link-bank-panel button {
   border-radius: 5px;
   border: none;
   color: #ffffff;
@@ -681,7 +682,7 @@ input[type="checkbox"] {
 
 .fa-toggle-off:before {
   font-size: 30px;
-  color: gray;
+  color: #d4d4d4;
 }
 
 .fa-toggle-on:before {
@@ -809,4 +810,152 @@ input[type="checkbox"] {
   background: #34699A;
   font-size: var(--font-button);
   cursor: pointer;
+}
+
+            /* Refund */
+
+.section-5>p{
+  width: 192px !important;
+}
+
+.section-5 .section{
+  padding: 0 !important;
+  width: 57.6vw !important;
+
+}
+
+#reFundPanel{
+  border-radius: 6px;
+  margin: 10;
+}
+
+.banner-refund{
+  height: 100px;
+  background: linear-gradient(90deg, #34699A 0%, #74a9d1 100%);
+  border-radius: 6px 6px 0px 0px;
+  position: relative;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #c3c3c3;
+  /* padding: 0 !important; */
+}
+.banner-refund img:nth-child(1){
+  position: absolute;
+  width: 110px;
+  height: 95px;
+  bottom: 0;
+  left: 70px;
+}
+.banner-refund img:nth-child(4){
+  position: absolute;
+  width: 300px;
+  height: 95px;
+  left: 574px;
+  bottom: 0;
+  margin: 0;
+  border: none;
+}
+.banner-refund img:nth-child(5){
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  width: 80px;
+  height: 80px;
+}
+
+.banner-refund button{
+  width: 180px;
+  height: 40px;
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  border-radius: 30px;
+  border: none;
+  background: #98cdff;
+  cursor: pointer;
+}
+.banner-refund button:hover{
+  background: #ebf6ff;
+}
+
+.banner-refund h1, .banner-refund h2{
+  color: white;
+  position: absolute;
+  font-size: 15px;
+  left: 200px;
+  top: 30px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+.banner-refund h2{
+  top: 58px !important;
+  left: 266px !important;
+}
+
+.refund-tabs{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d4d4d4;
+}
+.refund-tabs a{
+  font-size: 17px;
+  color: #a4a4a4;
+  font-weight: bold;
+}
+.refund-content{
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.refund-tabs a:first-child{
+  color: #34699A;
+  border-bottom: 3px solid #34699A;
+  padding: 11px;
+}
+      /* Link-bank-refund */
+
+.back-link{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #34699a;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#link-bank-panel input{
+  width: 53.5vw !important;
+}
+#link-bank-panel .notice{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #b3dafe;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #34699A;
+}
+#link-bank-panel > a:nth-of-type(1){
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #34699A;
+  font-size: 20px;
+}
+#link-bank-panel button{
+  width: 55vw !important;
+}
+#link-bank-panel .DK{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
 }
