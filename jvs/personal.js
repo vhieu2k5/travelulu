@@ -2,12 +2,21 @@ const alltheSections = document.querySelectorAll(".container");
 const section1 = document.querySelector(".section-1");
 const section2 = document.querySelector(".section-2");
 const section3 = document.querySelector(".section-3");
+const section5 = document.querySelector(".section-5");
 const section6 = document.querySelector(".section-6");
 
+
 const profileBtn = document.getElementById("profileBtn");
+const iconProfileBtn = document.querySelector(".nav-item i.fa-user");
 const passwordBtn = document.getElementById("passwordBtn");
+const iconPasswordBtn = document.querySelector(".nav-item i.fa-lock");
 const myCardBtn = document.getElementById("myCardBtn");
 const notificationBtn = document.getElementById("notificationBtn");
+const reFundBtn = document.getElementById("refundBtn");
+
+const linkBankBtn = document.querySelector(".bankBtn");
+const linkBankPanel = document.querySelector(".link-bank");
+
 
 const overlay = document.getElementById("overlay");
 const otpPanel = document.querySelector(".otp-panel");
@@ -26,6 +35,9 @@ const smsNotiPanel = document.getElementById("smsNotiPanel");
 const emailNotiBtn = document.getElementById("emailNotiBtn");
 const smsNotiBtn = document.getElementById("smsNotiBtn");
 
+// origin
+
+
 //Start the code
 alltheSections.forEach(element => {
     element.style.display = "none";
@@ -42,6 +54,10 @@ profileBtn.onclick = function () {
         element.style.display = "none";
     });
     section1.style.display = "flex";
+    // profileBtn.style.background = "#34699a";
+    // profileBtn.style.color = "white";
+    // iconProfileBtn.style.color = "white";
+
 }
 //Nút bảo mật và Mật khẩu
 passwordBtn.onclick = function () {
@@ -50,6 +66,9 @@ passwordBtn.onclick = function () {
     });
     //alert('Clicked!!!!!!');
     section2.style.display = "flex";
+    // passwordBtn.style.background = "#34699a";
+    // passwordBtn.style.color = "white";
+    // iconPasswordBtn.style.color = "white";
 };
 myCardBtn.onclick = function () {
     alltheSections.forEach(element => {
@@ -58,26 +77,56 @@ myCardBtn.onclick = function () {
     //alert('Clicked!!!!!!');
     section3.style.display = "flex";
 };
+
 notificationBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
     section6.style.display = "flex";
+};
+        // Refund
+reFundBtn.onclick = function () {
+    alltheSections.forEach(element => {
+        element.style.display = "none";
+    });
+    section5.style.display = "flex";
 }
+
+// Liên kết ngân hàng
+if(linkBankBtn){
+    linkBankPanel.style.display = "none";
+    linkBankBtn.addEventListener("click", () => {
+        section5.style.display = "none";
+        linkBankPanel.style.display = "flex";
+    })
+}
+
+        // Refund
+
 changePasswordPanelBtn.onclick = function () {
     changePasswordPanelBtn.classList.add("title-selected");
     securityBtn.classList.remove("title-selected");
     securityPanel.style.display = "none";
     changePasswordPanel.style.display = "block";
 };
+    securityPanel.style.display = "block";
+    securityPanel.style.color = "#34699a";
+    securityBtn.style.borderBottom = "block";
 securityBtn.onclick = function () {
     securityBtn.classList.add("title-selected");
     changePasswordPanelBtn.classList.remove("title-selected");
     changePasswordPanel.style.display = "none";
     securityPanel.style.display = "block";
+    securityPanel.style.color = "#34699a";
+    securityBtn.style.borderBottom = "block";
+    
 };
 retrievePasswordBtn.onclick = function () {
     overlay.style.display = "flex";
+    otpPanel.style.display = "none";
+    retrievePasswordPanel.style.display = "block";
+    reInputPanel.style.display = "none";
+    passDonePanel.style.display = "none";
 };
 Xbutton.onclick = function () {
     overlay.style.display = "none";
@@ -109,16 +158,16 @@ smsNotiBtn.onclick = function () {
     smsNotiPanel.style.display = "flex";
 }
 // Khi bấm "Đổi mật khẩu"
-changePasswordPanelBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    securityPanel.style.display = "none";
-    changePasswordPanel.style.display = "block";
-    changePasswordPanel.style.borderBottom = "2px solid #34699A";
-    changePasswordPanel.style.color = "#34699A";
-    securityBtn.style.color = "black";
-    securityBtn.style.borderBottom = "none";
-    reInputPanel.style.display="none";
-});
+// changePasswordPanelBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     securityPanel.style.display = "none";
+//     changePasswordPanel.style.display = "block";
+//     changePasswordPanel.style.borderBottom = "2px solid #34699A";
+//     changePasswordPanel.style.color = "#34699A";
+//     securityBtn.style.color = "grey";
+//     securityBtn.style.borderBottom = "none";
+//     reInputPanel.style.display="none";
+// });
 
 // Chuyển tab quên mật khẩu 2 -> nhập OTP
 if (otpPanel && retrievePasswordPanel) {

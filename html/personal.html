@@ -28,13 +28,15 @@
       <div class="personal-img">
         <img src="../pics/avatar.png" alt="">
         <button title="Change" type="button"
-          style="position: relative; width: 30px; height: 30px; top: 200px; right: 100px; border-radius: 40px; border: var(--main-color);color: var(--main-color);"><i
+          style="position: absolute; width: 30px; height: 30px; top: 215px; right: 110px; border-radius: 40px; border: var(--main-color);color: var(--main-color);"><i
             class="fa-solid fa-right-left"></i></button>
-
+          <p class="id-name">TrinhKien@1211</p>
+          <div class="line"></div>
       </div>
-      <p class="id-name">TrinhKien@211</p>
+
+
       <div class="left-tab">
-        <div id="profileBtn" class="nav-item">
+        <div id="profileBtn" class="nav-item active">
           <i class="fa-solid fa-user"></i>
           <span>Hồ sơ</span>
         </div>
@@ -54,7 +56,7 @@
           <span>Danh sách giao dịch</span>
         </div>
 
-        <div class="nav-item">
+        <div id="refundBtn" class="nav-item">
           <i class="fa-solid fa-rotate-left"></i>
           <span>Refunds</span>
         </div>
@@ -83,8 +85,8 @@
     <!-- Hết personal nav site -->
     <div class="container section-1">
       <!-- Thông tin tài khoản -->
+      <p class="title-1">Thông tin tài khoản</p>
       <div class="section ">
-        <h2>Thông tin tài khoản</h2>
         <label>Thông tin tài khoản</label>
         <input type="text" placeholder="Kiên Trịnh">
 
@@ -357,7 +359,80 @@
         </div>
       </div>
     </div>
+
+    <!-- Refund -->
+    <div class="container section-5">
+      <p>Quản lí hoàn tiền của bạn</p>
+      <section id="reFundPanel" class="section">
+        <div class="banner-refund">
+          <img src="../pics/refund1.png" alt="">
+          <h1>Gửi chi tiết ngân hàng để </h1>
+          <h2>tiết kiệm thời gian</h2>
+          <img src="../pics/line.png"alt="">
+          <img src="../pics/ngoi sao.png"alt="">
+          <button type="button" class="bankBtn">
+            Gửi chi tiết ngân hàng
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </div>
+
+        <div class="refund-tabs">
+          <a href="#">Đang chờ xử lí</a>
+          <a href="#">Đang xử lí</a>
+          <a href="#">Hoàn tất</a>
+        </div>
+
+        <div class="refund-content">
+          <img style="margin-top: 50px;" src="../pics/refund.png" alt="">
+          <label>Bạn không có bất kỳ yêu cầu hoàn tiền nào</label>
+          <p style="margin: 10px 0 50px 0;">Hãy yên tâm, bạn không cần lo lắng về bất kỳ khoản tiền nào</p>
+        </div>
+      </section>
+    </div>
+    
+    <div class="container link-bank">
+      <div class="back-link" style="margin: 0 0 5px 8px;">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        <p style="margin: 0; font-size: 18px;">Quay lại danh sách hoàn tiền.</p>
+      </div>
+
+      <section id="link-bank-panel" class="section">
+        <h2 style="margin-bottom: 0;">Thêm tài khoản ngân hàng mới</h2>
+        <p style="margin-top: 5px;">Đảm bảo tên chủ tài khoản ngân hàng của bạn khớp với tài khoản Travelulu của bạn.</p>
+
+        <form action="">
+          <label for="">Tên ngân hàng</label>
+          <input type="text" placeholder="Chọn tên ngân hàng của bạn">
+          <label for="">Số tài khoản ngân hàng</label>
+          <input type="text" placeholder="Nhập số tài khoản ngân hàng của bạn">
+          <label for="">Tên chủ tài khoản</label>
+          <input type="text" placeholder="Nhập tên chủ tài khoản của bạn">
+        </form>
+
+        <div class="notice">
+          <span>Đọc trước khi xác nhận tài khoản ngân hàng của bạn:</span>
+          <span style="padding-left: 5px;">1.Bạn chỉ có thể lưu 1 (một) tài khoản ngân hàng để được hoàn tiền.</span>
+          <span style="padding-left: 5px;">2.Travelulu không chịu trách nhiệm nếu thông tin bạn gửi không hợp lệ.</span>
+        </div>
+
+        <div class="agree">
+          <input type="checkbox">
+          <p>Tôi đồng ý gửi tự động tất cả khoản hoàn tiền của tôi đến tài khoản này.</p>
+        </div>
+        <button type="verify">Save</button>
+        <div class="DK">
+          <p>Khi ấn nút ở trên, bạn đã đọc, hiểu và đồng ý với</p>
+          <a href="#" style="font-size: 16px;color: #34669a; border-bottom: 1px solid #34699a;">Điều khoản sử dụng Tài khoản ngân hàng để hoàn tiền.</a>
+        </div>
+        
+        <a href="#">VND</a>
+      </section>
+    </div>
+    
+
+
   </div>
+  <!-- Hết nội dung chính -->
 
   <div class="footer">
     <div class="footer footer-mask"></div>
@@ -430,7 +505,7 @@
         <p>Trở lại trang trước</p>
       </div>
     </div>
-
+    <!-- Quên mật khẩu 3 -->
     <div class="reinput-pass">
       <span>Lấy lại mật khẩu</span>
       <div class="input-newpass">
@@ -451,7 +526,6 @@
       <span>Xác thực mật khẩu mới thành công!</span>
       <button type="continue" class="btn-done">Xong</button>
     </div>
-
   </div>
 
 
