@@ -13,6 +13,10 @@ const iconPasswordBtn = document.querySelector(".nav-item i.fa-lock");
 const myCardBtn = document.getElementById("myCardBtn");
 const notificationBtn = document.getElementById("notificationBtn");
 const reFundBtn = document.getElementById("refundBtn");
+const logOutBtn = document.getElementById("log_outBtn");
+const logOutPanel = document.getElementById("logout");
+const nologOut = document.getElementById("no");
+const yeslogOut = document.getElementById("yes");
 
 const linkBankBtn = document.querySelector(".bankBtn");
 const linkBankPanel = document.querySelector(".link-bank");
@@ -91,6 +95,17 @@ reFundBtn.onclick = function () {
     });
     section5.style.display = "flex";
 }
+// Đăng xuất
+if(logOutBtn){
+    logOutPanel.style.display = "none";
+    logOutBtn.addEventListener("click", () => {
+        logOutPanel.style.display = "flex";
+    })
+    nologOut.addEventListener("click", () => {
+        logOutPanel.style.display = "none";
+    })
+}
+
 
 // Liên kết ngân hàng
 if(linkBankBtn){

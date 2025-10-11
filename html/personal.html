@@ -76,7 +76,7 @@
           <span>Tài khoản</span>
         </div>
 
-        <div class="nav-item">
+        <div id="log_outBtn" class="nav-item">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span>Đăng xuất</span>
         </div>
@@ -408,6 +408,7 @@
           <label for="">Tên chủ tài khoản</label>
           <input type="text" placeholder="Nhập tên chủ tài khoản của bạn">
         </form>
+        <i class="fa-solid fa-angle-down"></i>
 
         <div class="notice">
           <span>Đọc trước khi xác nhận tài khoản ngân hàng của bạn:</span>
@@ -416,9 +417,10 @@
         </div>
 
         <div class="agree">
-          <input type="checkbox">
-          <p>Tôi đồng ý gửi tự động tất cả khoản hoàn tiền của tôi đến tài khoản này.</p>
+          <i class="fa-regular fa-square" style="cursor: pointer;"></i>
+          <label for="agree-box" style="margin: 0;">Tôi đồng ý gửi tự động tất cả khoản hoàn tiền của tôi đến tài khoản này.</label>
         </div>
+
         <button type="verify">Save</button>
         <div class="DK">
           <p>Khi ấn nút ở trên, bạn đã đọc, hiểu và đồng ý với</p>
@@ -468,7 +470,7 @@
     </div>
   </div>
 
-
+<!-- Quên mật khẩu -->
   <div id="overlay">
     <!-- Quên mật khẩu 1-->
     <div class="retrieve-password">
@@ -527,6 +529,16 @@
       <button type="continue" class="btn-done">Xong</button>
     </div>
   </div>
+
+  <!-- Đăng xuất -->
+   <div id="logout">
+    <div>
+      <h2 style="color: #34669a;">Bạn có chắc muốn đăng xuất?</h2>
+      <p style="color: #34669a;">Bạn sẽ bỏ lỡ nhiều thông tin thú vị ở Travelulu khi đăng xuất đó!</p>
+       <button id="yes" type="button" style="width: 150px;">Có</button>
+       <button id="no" type="button" style="width: 100px; margin-top: 10px; background: #9c9c9c;">Quay lại</button>
+    </div>
+   </div>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
