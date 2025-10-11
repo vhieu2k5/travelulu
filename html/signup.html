@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travelulu - Signup</title>
+        <meta  content="charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+        <link rel="stylesheet" href="../css/signup.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <script src="../js/header.js" defer></script>
+        <script src="../js/signup.js" defer></script>
+    </head>
+    <body>
+        <!-- INDEX  -->
+        <div data-include="header.html"></div>
+
+        <!-- LOGIN -->
+        <div class="signup-section">
+            <img src="../pics/bglogin.png" class="bg-signup">
+            <div class="signup-box">
+                <h2>Đăng ký tài khoản</h2>
+                <form>
+                    <label>Họ tên</label>
+                    <input type="text" placeholder="Nhập họ tên đầy đủ của bạn">
+                    <label>Số điện thoại</label>
+                    <input type="number" placeholder="Nhập số điện thoai của bạn">
+                    <label>Email</label>
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <label>Mật khẩu</label>
+                    <div class="password-field">
+                        <i class="fa-solid fa-eye" id="togglePassword1"></i>
+                        <input type="password" id="passwordInput1" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                    <label>Xác nhận mật khẩu</label>
+                    <div class="password-field">
+                        <i class="fa-solid fa-eye" id="togglePassword2"></i>
+                        <input type="password" id="passwordInput2" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                    <button type="submit" class="signup-cont">Tiếp tục</button>
+                </form>
+                <div class="signup-or">hoặc</div>
+                <button class="signup-fb"><i class="fa-brands fa-facebook"></i>Đăng ký với Facebook</button>
+            </div>
+        </div>
+
+        <!-- OUTRO -->
+        <div class="outro-section">Một chạm khởi hành, vạn hành trình xanh</div>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+.signup-section {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-signup{
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    z-index: -1;
+}
+.signup-box {
+    height: 570px;
+    width: 900px;
+    transform: translate(0%, 3%);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 50px;
+    text-align: center;
+}
+.signup-box h2 {
+    font-size: 40px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-box label {
+    font-size: 18px;
+    width: 53%;
+    text-align: left;
+    margin: 10px 0 5px;
+    color: #ffffff;
+}
+
+.signup-box input {
+    font-size: 18px;
+    width: 50%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+.password-field {
+    position: relative;
+    width: 53%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.password-field input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+.password-field i {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    color: #888;
+    cursor: pointer;
+    font-size: 18px;
+}
+.password-field i:hover {
+    color: #000;
+}
+.signup-cont {
+    width: 53%;
+    background-color: #34699A;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.signup-or {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #E0E0E0;
+}
+.signup-fb {
+    background-color: #1877F2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-fb i {
+    font-size: 22px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.outro-section {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 80px;
+    font-size: 18px;
+    color: #939393;
+    width: 35%;
+}
