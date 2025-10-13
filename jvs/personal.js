@@ -37,13 +37,18 @@ const smsNotiBtn = document.getElementById("smsNotiBtn");
 
 const navBtns = document.querySelectorAll(".nav-item");
 
-navBtns.forEach (btn=>{
+//Card List
+const creditCard1 = document.getElementById("credit-card-1");
+const creditCard2 = document.getElementById("credit-card-2");
+const creditCard3 = document.getElementById("credit-card-3");
+const InputCardPanel = document.querySelectorAll(".inputBankBox");
+navBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-    navBtns.forEach(bt =>{
-       if(bt.classList.contains("nav-item-selected")) 
-        bt.classList.remove("nav-item-selected");
-    });
-      btn.classList.add("nav-item-selected");
+        navBtns.forEach(bt => {
+            if (bt.classList.contains("nav-item-selected"))
+                bt.classList.remove("nav-item-selected");
+        });
+        btn.classList.add("nav-item-selected");
     });
 });
 
@@ -94,7 +99,7 @@ notificationBtn.onclick = function () {
     });
     section6.style.display = "flex";
 };
-        // Refund
+// Refund
 reFundBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
@@ -103,7 +108,7 @@ reFundBtn.onclick = function () {
 }
 
 // Liên kết ngân hàng
-if(linkBankBtn){
+if (linkBankBtn) {
     linkBankPanel.style.display = "none";
     linkBankBtn.addEventListener("click", () => {
         section5.style.display = "none";
@@ -111,7 +116,7 @@ if(linkBankBtn){
     })
 }
 
-        // Refund
+// Refund
 
 changePasswordPanelBtn.onclick = function () {
     changePasswordPanelBtn.classList.add("title-selected");
@@ -119,9 +124,9 @@ changePasswordPanelBtn.onclick = function () {
     securityPanel.style.display = "none";
     changePasswordPanel.style.display = "block";
 };
-    securityPanel.style.display = "block";
-    securityPanel.style.color = "#34699a";
-    securityBtn.style.borderBottom = "block";
+securityPanel.style.display = "block";
+securityPanel.style.color = "#34699a";
+securityBtn.style.borderBottom = "block";
 securityBtn.onclick = function () {
     securityBtn.classList.add("title-selected");
     changePasswordPanelBtn.classList.remove("title-selected");
@@ -129,7 +134,7 @@ securityBtn.onclick = function () {
     securityPanel.style.display = "block";
     securityPanel.style.color = "#34699a";
     securityBtn.style.borderBottom = "block";
-    
+
 };
 retrievePasswordBtn.onclick = function () {
     overlay.style.display = "flex";
@@ -267,6 +272,56 @@ eyeIcons.forEach(icon => {
         }
     });
 });
+
+//Set input box credit card
+
+function togglePanel(cardClass) {
+    InputCardPanel.forEach(panel => {
+        if (panel.classList.contains(cardClass)) {
+
+            const isOpen = panel.classList.toggle("active");
+            //  panel.style.display = isOpen ? "flex" : "none";
+            panel.style.opacity = isOpen ? "1" : "0";
+            panel.style.height = isOpen ? "fit-content" : "0";
+        } else {
+            panel.classList.remove("active");
+            // panel.style.display = "none";
+            panel.style.opacity = "0";
+            panel.style.height = "0"
+        }
+    });
+}
+
+// Detect double click manually
+function addDoubleClickHandler(element, panelClass) {
+    let clickCount = 0;
+    let timer = null;
+
+    element.addEventListener("click", function () {
+        clickCount++;
+        if (clickCount === 1) {
+            timer = setTimeout(() => {
+                //single click
+                togglePanel(panelClass);
+                clickCount = 0;
+            }, 500);
+        } else if (clickCount === 2) {
+            clearTimeout(timer);
+            //double click
+            InputCardPanel.forEach(panel => {
+                if (panel.classList.contains(panelClass)) {
+                    panel.classList.remove("active");
+                    panel.style.display = "none";
+                }
+            });
+            clickCount = 0;
+        }
+    });
+}
+
+addDoubleClickHandler(creditCard1, "credit-card-1");
+addDoubleClickHandler(creditCard2, "credit-card-2");
+addDoubleClickHandler(creditCard3, "credit-card-3");
 
 
 
