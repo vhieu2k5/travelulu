@@ -76,10 +76,11 @@
           <span>Tài khoản</span>
         </div>
 
-        <div class="nav-item">
+        <div id="log_outBtn" class="nav-item">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span>Đăng xuất</span>
         </div>
+
       </div>
     </div>
     <!-- Hết personal nav site -->
@@ -448,11 +449,11 @@
 
         <form action="">
           <label for="">Tên ngân hàng</label>
-          <input type="text" placeholder="Chọn tên ngân hàng của bạn">
+          <input class="field" type="text" placeholder="Chọn tên ngân hàng của bạn">
           <label for="">Số tài khoản ngân hàng</label>
-          <input type="text" placeholder="Nhập số tài khoản ngân hàng của bạn">
+          <input class="field" type="text" placeholder="Nhập số tài khoản ngân hàng của bạn">
           <label for="">Tên chủ tài khoản</label>
-          <input type="text" placeholder="Nhập tên chủ tài khoản của bạn">
+          <input class="field" type="text" placeholder="Nhập tên chủ tài khoản của bạn">
         </form>
 
         <div class="notice">
@@ -462,7 +463,7 @@
         </div>
 
         <div class="agree">
-          <input type="checkbox">
+          <input style="margin: 0 !important;" class="check" type="checkbox">
           <p>Tôi đồng ý gửi tự động tất cả khoản hoàn tiền của tôi đến tài khoản này.</p>
         </div>
         <button type="verify">Save</button>
@@ -473,6 +474,23 @@
         </div>
 
         <a href="#">VND</a>
+        <img id="downBtn" src="../pics/nút xổ xuống.png" alt="">
+        <img id="downPanel" src="../pics/Group 233.png" alt="">
+      </section>
+
+      <section id="linked-bank-panel" class="section">
+         <img style="width: 30px; height: 30px;" src="../pics/tabler_credit-card-refund.png" alt="">
+         <div>
+          <label>Tên ngân hàng:</label>
+          <h3>VIETNAM TECHNOLOGICAL AND COMMERCIAL JOINT STOCK BANK</h3>
+          <label>Tên chủ tài khoản:</label>
+          <h3>TRINH TRUNG KIEN</h3>
+          <label for="">Số tài khoản:</label>
+          <h3>012345678910</h3>
+          <input type="checkbox">
+          <button type="button">Xóa tài khoản ngân hàng</button>
+
+         </div>
       </section>
     </div>
 
@@ -573,6 +591,26 @@
     <div class="password-done">
       <span>Xác thực mật khẩu mới thành công!</span>
       <button type="continue" class="btn-done">Xong</button>
+    </div>
+  </div>
+
+    <!-- Đăng xuất -->
+  <div id="logout">
+    <div>
+      <h2 style="color: #34669a;">Bạn có chắc muốn đăng xuất?</h2>
+      <p style="color: #34669a;">Bạn sẽ bỏ lỡ nhiều thông tin thú vị ở Travelulu khi đăng xuất đó!</p>
+       <button id="yes" type="button" style="width: 150px;">Có</button>
+       <button id="no" type="button" style="width: 100px; margin-top: 10px; background: #9c9c9c;">Quay lại</button>
+    </div>
+  </div>
+
+    <!-- Xóa tài khoản -->
+  <div id="deleteAccPanel">
+    <div>
+      <h2 style="color: #34669a;">Bạn có chắc muốn xóa tài khoản?</h2>
+      <p style="color: #34669a;">Khi xác nhận xóa tài khoản, mọi dữ liệu của bạn sẽ bị xóa vĩnh viễn!</p>
+       <button id="yesDelete" type="button" style="width: 150px;">Có</button>
+       <button id="noDelete" type="button" style="width: 100px; margin-top: 10px; background: #9c9c9c;">Quay lại</button>
     </div>
   </div>
 
