@@ -18,14 +18,23 @@
         <div class="signup-section">
             <img src="../pics/bglogin.png" class="bg-signup">
             <div class="signup-box">
+                <a href="login.html" class="back-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
                 <h2>Đăng ký tài khoản</h2>
                 <form>
                     <label>Họ tên</label>
-                    <input type="text" placeholder="Nhập họ tên đầy đủ của bạn">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Nhập họ tên đầy đủ của bạn">
+                    </div>
                     <label>Số điện thoại</label>
-                    <input type="number" placeholder="Nhập số điện thoai của bạn">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Nhập số điện thoai của bạn">
+                    </div>
                     <label>Email</label>
-                    <input type="email" placeholder="Nhập email của bạn">
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Nhập email của bạn">
+                    </div>
                     <label>Mật khẩu</label>
                     <div class="password-field">
                         <i class="fa-solid fa-eye" id="togglePassword1"></i>
@@ -45,5 +54,13 @@
 
         <!-- OUTRO -->
         <div class="outro-section">Một chạm khởi hành, vạn hành trình xanh</div>
+        <!-- POPUP -->
+        <div id="successPopup" class="popup">
+            <div class="popup-content">
+                <h2>Thành công</h2>
+                <p>Bạn đã đăng ký tài khoản thành công <br> Vui lòng đăng nhập</p>
+                <button id="closePopup">Trở lại trang đăng nhập</button>
+            </div>
+        </div>
     </body>
 </html>

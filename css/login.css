@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 }
-.bglogin{
+.bg-login{
     position: absolute;
     width: 100%;
     height: 650px;
@@ -22,7 +22,6 @@
     border-radius: 50px;
     text-align: center;
 }
-
 .login-box h2 {
     font-size: 40px;
     margin-top: -10px;
@@ -85,10 +84,17 @@ display: none;
     color: #000;
 }
 .forgot {
+    display: inline-block;
+    width: auto;
     color: #E0E0E0;
-    text-align: right;
-    width: 53%;
     margin-bottom: 20px;
+    cursor: pointer;
+    transform: translate(170%, 0%);
+}
+
+.forgot:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 .login-cont {
     width: 53%;
@@ -100,6 +106,11 @@ display: none;
     padding: 10px 0;
     cursor: pointer;
     margin-top: 10px;
+    box-shadow: 0 4px 3px rgba(255, 255, 255, 0.2);
+}
+.login-cont:hover {
+    background-color: #407eb8;
+    transform: translateY(-2px);
 }
 .login-or {
     margin: 20px 0;
@@ -115,7 +126,10 @@ display: none;
     cursor: pointer;
     font-size: 16px;
 }
-
+.login-fb:hover {
+    background-color: #1665cd;
+    transform: translateY(-2px);
+}
 .login-fb i {
     font-size: 22px;
     vertical-align: middle;
@@ -124,12 +138,15 @@ display: none;
 .signup-text {
     font-size: 20px;
     margin-top: 30px;
-    color: #E0E0E0;
+    color: #b4b4b4;
 }
 
 .signup-text a {
-    color: #ffffff;
+    color: #E0E0E0;
     text-decoration: underline;
+}
+.signup-text a:hover {
+    color: #ffffff;
 }
 .note{
     font-size: 25px;
@@ -148,4 +165,33 @@ display: none;
     font-size: 16px;
     color: #939393;
     width: 35%;
+}
+.input-error {
+    border: 3px solid #E96767 !important;
+}
+
+.error-message {
+    position: absolute;
+    bottom: 45%;
+    color: #FF9A9A;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 48%;
+}
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    flex: 1;
+}
+
+.password-field .error-message {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    width: 100%;
 }
