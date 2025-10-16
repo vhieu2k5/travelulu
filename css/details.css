@@ -185,6 +185,15 @@ a{
     margin-top: 8px;
 }
 
+.datvaicon i{
+    cursor: pointer;
+}
+
+.datvaicon i:hover{
+    color: rgb(101, 101, 101);
+    transition: color ease-in-out 0.3s;
+}
+
 .shareicon{
     width: 20px;
     height: 20px;
@@ -541,3 +550,124 @@ a{
     width: fit-content;
 }
 
+.darkpanel{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51, 0.74);
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}   
+
+.favouritebox{
+    background: white;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    height: 110px;
+    border-radius: 10px;
+    gap: 6px;
+}
+
+.favouritebox>div{
+    display:flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.favouritebox button:first-child{
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: rgb(211, 211, 211);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--main-color);
+    font-weight: 700;
+    cursor: pointer;
+    border: none; 
+}
+
+.favouritebox button:first-child:hover{
+    background: rgb(169, 169, 169);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.favouritebox button:nth-child(2){
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: var(--main-color);
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none; 
+    letter-spacing: 1px;
+}
+
+.favouritebox button:nth-child(2):hover{
+    background: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.unfavouritebox{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    height: 180px;
+    border-radius: 10px;
+    gap: 6px;
+}
+
+.unfavouritebox>div{
+    display:flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.unfavouritebox button:first-child{
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: rgb(211, 211, 211);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--main-color);
+    font-weight: 700;
+    cursor: pointer;
+    border: none; 
+}
+
+.unfavouritebox button:first-child:hover{
+    background: rgb(169, 169, 169);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.unfavouritebox button:nth-child(2){
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: var(--main-color);
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none; 
+    letter-spacing: 1px;
+}
+
+.unfavouritebox button:nth-child(2):hover{
+    background: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
