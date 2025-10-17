@@ -1,14 +1,46 @@
-const heartIcon = document.querySelector(".datvaicon i.fa-heart");
-const darkPanel = document.querySelector(".darkpanel");
-const closeFavBtn = document.getElementById("closefav");
-const favPanel = document.querySelector(".favouritebox");
-const unfavPanel = document.querySelector(".unfavouritebox");
-const confirmRemove = document.getElementById("confirmRemove");
-const cancelRemove = document.getElementById("cancelRemove");
-const sharePanel = document.querySelector(".sharebox");
-const closeShare = document.getElementById("close-sharebox");
-const shareIcon = document.querySelector(".shareicon")
-let liked = false;
+const heartIcon = document.querySelector(".datvaicon i.fa-heart"); //icon trai tim
+const darkPanel = document.querySelector(".darkpanel"); //bg den (cua phan trai tim va share)
+const closeFavBtn = document.getElementById("closefav"); // nut dong tab fav
+const favPanel = document.querySelector(".favouritebox"); // box fav
+const unfavPanel = document.querySelector(".unfavouritebox"); // box unfav
+const confirmRemove = document.getElementById("confirmRemove"); // nut xac nhan xoa khoi yeu thich (OK)
+const cancelRemove = document.getElementById("cancelRemove"); //  nut huy bo (HUY)
+const sharePanel = document.querySelector(".sharebox"); // box chia se tour
+const closeShare = document.getElementById("close-sharebox"); // nut dong box chia se
+const shareIcon = document.querySelector(".shareicon") //icon share
+let liked = false; // check tinh trang cua icon trai tim
+
+// bat dau cua phan lich trinh tour
+const darkPanel1 = document.querySelector(".darkpanel1");
+const tab_day = document.querySelectorAll(".daybutton");
+const all_content = document.querySelectorAll(".content_day");
+const closeLichtrinh = document.getElementById("close-lichtrinh");
+const checkLichtrinh = document.querySelector(".xemlichtrinhdaydu");
+
+tab_day.forEach((daybutton, index) => {
+    daybutton.addEventListener("click", () => {
+        tab_day.forEach(daybutton=>{daybutton.classList.remove("active")});
+        daybutton.classList.add("active");
+    
+    all_content.forEach(content_day=>{content_day.classList.remove("active")});    
+    all_content[index].classList.add("active");
+    })
+})
+
+if(checkLichtrinh){
+    darkPanel1.style.display = "none";
+    checkLichtrinh.addEventListener("click", () => {
+        darkPanel1.style.display = "flex";
+    })
+}
+
+if(closeLichtrinh){
+    closeLichtrinh.addEventListener("click", () => {
+        darkPanel1.style.display = "none";
+    })
+}
+// ket thuc cua lich tỉnh tour
+
 
 if (heartIcon) {
     darkPanel.style.display = "none";
