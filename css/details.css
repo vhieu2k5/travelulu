@@ -798,6 +798,8 @@ body{
     padding: 28px;
     border-radius: 16px;
     width: 850px;
+    display: none;
+    flex-direction: column;
 }
 
 .popup-lichtrinhtour i{
@@ -869,3 +871,87 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.ticketinfo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.headerofticket{
+    background: #ffffff;
+    width: 100%;
+}
+
+.info-all{
+    overflow: hidden;
+    overflow-y: scroll;
+    animation: moving .5s ease;
+}
+
+.ticketinfo i{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.ticketinfo h2{
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.info-all>p{
+    color: rgb(91, 91, 91); 
+    font-size: 16px; 
+    font-weight: 500;
+    line-height: 18px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    border-bottom: 1px dashed black;
+}
+
+.ticketinfo h3{
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.ticketcont{
+    border-bottom: 1px dashed black;
+}
+
+.ticketcont ul{
+    padding-left: 10px;
+}
+
+.ticketcont p{
+    color: black;
+    margin-bottom: 6px;
+}
+
+.ticketcont li{
+    margin-left: 30px;
+    line-height: 20px;
+    color: black;
+    font-weight: 100;
+}
+
+.ticketcont dd{
+    line-height: 20px;
+    padding-left: 20px;
+    font-style: italic;
+}
+

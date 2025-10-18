@@ -10,12 +10,16 @@ const closeShare = document.getElementById("close-sharebox"); // nut dong box ch
 const shareIcon = document.querySelector(".shareicon") //icon share
 let liked = false; // check tinh trang cua icon trai tim
 
-// bat dau cua phan lich trinh tour
+// bat dau cua phan lich trinh tour va chi tiet ve tour
 const darkPanel1 = document.querySelector(".darkpanel1");
 const tab_day = document.querySelectorAll(".daybutton");
 const all_content = document.querySelectorAll(".content_day");
 const closeLichtrinh = document.getElementById("close-lichtrinh");
 const checkLichtrinh = document.querySelector(".xemlichtrinhdaydu");
+const checktick_infoTab = document.querySelector(".xemchitietve");
+const closetick_infoTab = document.getElementById("close-ticketinfo");
+const ticketInfoTab = document.querySelector(".ticketinfo");
+const popupLichTrinh = document.querySelector(".popup-lichtrinhtour")
 
 tab_day.forEach((daybutton, index) => {
     daybutton.addEventListener("click", () => {
@@ -27,19 +31,36 @@ tab_day.forEach((daybutton, index) => {
     })
 })
 
-if(checkLichtrinh){
+if (checkLichtrinh) {
     darkPanel1.style.display = "none";
     checkLichtrinh.addEventListener("click", () => {
         darkPanel1.style.display = "flex";
-    })
+        popupLichTrinh.style.display = "flex";
+        ticketInfoTab.style.display = "none";
+    });
 }
 
-if(closeLichtrinh){
+if (closeLichtrinh) {
     closeLichtrinh.addEventListener("click", () => {
         darkPanel1.style.display = "none";
-    })
+    });
 }
-// ket thuc cua lich tỉnh tour
+
+if (checktick_infoTab) {
+    darkPanel1.style.display = "none";
+    checktick_infoTab.addEventListener("click", () => {
+        darkPanel1.style.display = "flex";
+        popupLichTrinh.style.display = "none";
+        ticketInfoTab.style.display = "flex"; 
+    });
+}
+
+if (closetick_infoTab) {
+    closetick_infoTab.addEventListener("click", () => {
+        darkPanel1.style.display = "none";
+    });
+}
+// ket thuc cua lich trinh tour va chi tiet ve tour
 
 
 if (heartIcon) {
