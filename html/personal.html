@@ -1,62 +1,584 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Travelulu - Home</title>
-        <meta  content="charset=UTF-8">
-        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/personal.css">
-    </head>
-    <body>
-        <!-- This is the header -->
-       <div class="header">
-        <img src="../pics/TRAVELULU-logo.png" alt="" class="logo-img">
-        <ul class="menu-nav">
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="">Đặt tour</a></li>
-            <li><a href="">Quản lý tour</a></li>
-            <li><a href="personal.html">Cá nhân</a></li>
-        </ul>
-       </div>
-     <div class="main-body">
-        <div class="personal-nav-site">
+
+<head>
+  <title>Travelulu - Home</title>
+  <meta content="charset=UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Titan One' rel='stylesheet'>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/personal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/On_tap_lai/assets/font/themify-icons">
+</head>
+
+<body>
+  <!-- This is the header -->
+  <div class="header">
+    <img src="../pics/TRAVELULU-logo.png" alt="" class="logo-img">
+    <ul class="menu-nav">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="">Đặt tour</a></li>
+      <li><a href="ManagementTour.html">Quản lý tour</a></li>
+      <li><a href="personal.html">Cá nhân</a></li>
+    </ul>
+  </div>
+  <div class="main-body">
+    <div class="personal-nav-site">
       <div class="personal-img">
         <img src="../pics/avatar.png" alt="">
-        <button title="Change" type="button" style="position: absolute; width: 50px; height: 50px; top: 223px; left: 223px; border-radius: 40px;" ></button>
+        <button title="Change" type="button"
+          style="position: absolute; width: 30px; height: 30px; top: 215px; right: 110px; border-radius: 40px; border: var(--main-color);color: var(--main-color);"><i
+            class="fa-solid fa-right-left"></i></button>
+        <p class="id-name">TrinhKien@1211</p>
+        <div class="line"></div>
       </div>
-      <div class="nav-bar">
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+
+      <div class="left-tab">
+        <div id="profileBtn" class="nav-item active">
+          <i class="fa-solid fa-user"></i>
+          <span>Hồ sơ</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div id="passwordBtn" class="nav-item">
+          <i class="fa-solid fa-lock"></i>
+          <span>Mật khẩu & Bảo mật</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div id="myCardBtn" class="nav-item">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Thẻ của tôi</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div class="nav-item">
+          <i class="fa-solid fa-receipt"></i>
+          <span>Danh sách giao dịch</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div id="refundBtn" class="nav-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <span>Refunds</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div id="notificationBtn" class="nav-item">
+          <i class="fa-solid fa-bell"></i>
+          <span>Cài đặt thông báo</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <a class="nav-item" href="wishlist.html">
+          <i style="color: black;" class="fa-solid fa-heart"></i>
+          <span>Danh sách yêu thích</span>
+        </a>
+
+        <div class="nav-item">
+          <i class="fa-solid fa-gear"></i>
+          <span>Tài khoản</span>
         </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
-        </div>
-        <div>
-            <div><img src="" alt="" class="icon"></div>
+
+        <div class="nav-item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Đăng xuất</span>
         </div>
       </div>
+    </div>
+    <!-- Hết personal nav site -->
+    <div class="container section-1">
+      <!-- Thông tin tài khoản -->
+      <p class="title-1">Thông tin tài khoản</p>
+      <div class="section ">
+        <label>Thông tin tài khoản</label>
+        <input type="text" placeholder="Kiên Trịnh">
+
+        <div class="grid-3">
+          <div>
+            <label>Giới tính</label>
+            <select>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div>
+            <label>Ngày sinh</label>
+            <input type="date" name="" id="">
+          </div>
         </div>
-        <!-- Hết personal nav site -->
-        <div class="option1-panel">
+        <label>Thành phố cư trú</label>
+        <input type="text" placeholder="Hải Phòng">
+
+        <label>Email</label>
+        <input type="email" placeholder="trinhkienah@gmail.com">
+
+        <label>Số di động</label>
+        <input type="text" placeholder="0123456789">
+
+        <label>CCCD/CMND</label>
+        <input type="text">
+
+        <button class="btn">Save</button>
+      </div>
+
+      <!-- Sở thích -->
+      <div class="section">
+        <h2>Sở thích</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox" checked> Thiên nhiên & Phiêu lưu</label>
+          <label><input type="checkbox" checked> Nghỉ dưỡng biển</label>
+          <label><input type="checkbox"> Văn hóa & Lịch sử</label>
+          <label><input type="checkbox" checked> Party & Overnight</label>
+          <label><input type="checkbox"> Ẩm thực</label>
+          <label><input type="checkbox" checked> Mạo hiểm & Thể thao</label>
+          <label><input type="checkbox"> Mua sắm & Giải trí</label>
         </div>
-     </div>
-    </body>
+      </div>
+
+      <!-- Chế độ ăn uống -->
+      <div class="section">
+        <h2>Chế độ ăn uống đặc biệt</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Ăn chay</label>
+          <label><input type="checkbox"> Thuần chay</label>
+          <label><input type="checkbox"> Không gluten</label>
+          <label><input type="checkbox" checked> Không lactose</label>
+          <label><input type="checkbox" checked> Dị ứng hải sản</label>
+          <label><input type="checkbox" checked> Không có yêu cầu gì đặc biệt</label>
+        </div>
+      </div>
+
+      <!-- Liên kết tài khoản -->
+      <div class="section">
+        <h2>Tài khoản đã liên kết</h2>
+        <div class="link-accounts">
+          <div class="account-link"><span>Facebook</span><a href="#">Liên kết</a></div>
+          <div class="account-link"><span>Google</span><span>✔ Đã liên kết</span></div>
+          <div class="account-link"><span>LINE</span><a href="#">Liên kết</a></div>
+          <div class="account-link"><span>Apple</span><a href="#">Liên kết</a></div>
+          <div class="account-link"><span>NAVER</span><a href="#">Liên kết</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Phần Mật khẩu và bảo mật -->
+    <div class="container section-2">
+      <!-- Panel Bảo mật -->
+      <div class="title">
+        <a href="#" class="tab-link-security title-sec" data-target="security">Bảo mật</a>
+        <a href="#" class="tab-link-password title-sec" data-target="change-password">Đổi mật khẩu</a>
+      </div>
+      <section id="security-panel" class="section">
+        <div class="verify">
+          <span>Xác thực</span>
+          <div class="content-verify">
+            <span1>Gửi mã OTP khi đăng nhập</span1>
+            <p>Gửi mã xác thực khi tài khoản của tôi được đăng nhập trên thiết bị mới</p>
+
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="delete-account">
+          <span>Xóa tài khoản</span>
+          <div class="content-delete">
+            <span1>Sau khi tài khoản của bạn bị xóa, bạn sẽ không thể phục hồi tài khoản hoặc dữ liệu của mình</span1>
+
+          </div>
+          <span2>Xóa</span2>
+        </div>
+      </section>
+
+      <!-- Panel Đổi mật khẩu -->
+      <section id="password-panel" class="section">
+        <form>
+          <span>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác.</span>
+          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc
+            biệt(!$@%).</span1>
+          <label for="old-password">Mật khẩu cũ</label>
+          <div class="old-password input-eyes">
+            <input type="password" id="old-password" placeholder="Nhập mật khẩu hiện tại">
+            <i class="fa fa-eye-slash icon-eye1"></i>
+          </div>
+
+          <label for="new-password">Mật khẩu mới</label>
+          <div class="new-password input-eyes">
+            <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
+            <i class="fa fa-eye-slash icon-eye2"></i>
+          </div>
+
+          <label for="confirm-password">Xác nhận mật khẩu mới</label>
+          <div class="confirm-password input-eyes">
+            <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới">
+            <i class="fa fa-eye-slash icon-eye3"></i>
+          </div>
+
+          <a href="#" class="forgot-password change-password-Btn">Bạn quên mật khẩu?</a>
+
+          <button type="submit" class="btn-primary">Đổi mật khẩu</button>
+        </form>
+      </section>
+    </div>
+    <!-- Hết phần Mật khẩu và bảo mật -->
+    <div class="container section-3">
+      <div class="title">
+        <a href="#" class="title-sec">Thẻ của tôi</a>
+      </div>
+      <div class="section" style="display: flex; flex-direction: column; align-items: center;">
+        <!-- Card List -->
+        <div class="card-list">
+          <div id="credit-card-1" class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
+          <div id="credit-card-2" class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
+          <div id="credit-card-3" class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
+        </div>
+        <div class="inputBankBox credit-card-1">
+
+          <img src="../pics/inputBankPanel.png" alt="">
+          <p>Thêm thẻ thanh toán</p>
+          <img style="z-index: 1;" src="../pics/cardList.png" alt="">
+          <p>Tên chủ thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="VU TRUNG KIEN">
+          <p>Số thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="💳">
+          <p>Ngày hết hạn<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
+          <input type="button" value="Save">
+          <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
+            alt="">
+        </div>
+        <div class="inputBankBox credit-card-2">
+
+          <img src="../pics/inputBankPanel.png" alt="">
+          <p>Thêm thẻ thanh toán</p>
+          <img style="z-index: 1;" src="../pics/cardList.png" alt="">
+          <p>Tên chủ thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="VU TRUNG KIEN">
+          <p>Số thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="💳">
+          <p>Ngày hết hạn<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
+          <input type="button" value="Save">
+          <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
+            alt="">
+        </div>
+        <div class="inputBankBox credit-card-3">
+
+          <img src="../pics/inputBankPanel.png" alt="">
+          <p>Thêm thẻ thanh toán</p>
+          <img style="z-index: 1;" src="../pics/cardList.png" alt="">
+          <p>Tên chủ thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="VU TRUNG KIEN">
+          <p>Số thẻ<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" placeholder="💳">
+          <p>Ngày hết hạn<b style="color: red;">*</b></p>
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
+          <input type="button" value="Save">
+          <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
+            alt="">
+        </div>
+        <img src="../pics/img1.png" style="width: 200px;" alt="">
+        <p style="font-weight: 300;">Bắt đầu thêm thẻ của bạn và tận hưởng trải nghiệm thanh toán của bạn bằng một cú
+          ‘click’</p>
+      </div>
+    </div>
+    <div class="container section-6">
+      <div class="title">
+        <a href="#" class="title-sec" id="emailNotiBtn" data-target="">Email</a>
+        <a href="#" class="title-sec" id="smsNotiBtn" data-target="">SMS</a>
+      </div>
+      <div id="emailNotiPanel" class="notification-section">
+
+        <b>Khuyến mãi và ưu đãi</b>
+        <div class="section">
+          <div>
+            <p>Khuyến mãi Travelulu</p>
+            <p>Khuyến mãi và ưu đãi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Thông báo giá</p>
+            <p>Giá đã thay đổi trên các mục đã lưu.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <b>Phản hồi</b>
+        <div class="section">
+          <div>
+            <p>Lời nhắc đưa ra nhận xét</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Khảo sát</p>
+            <p>Cơ hội phản hồi để nâng cao trải nghiệm của bạn</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Xem lại câu trả lời</p>
+            <p>Nhận thông báo khi nhận xét của bạn được phản hồi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <b>Tài khoản và đặt chỗ</b>
+        <div class="section">
+          <div>
+            <p>Nhật ký hoạt động</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Đặt chỗ</p>
+            <p>Trạng thái đặt chỗ, cập nhật và nhắc nhở.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Tài chính</p>
+            <p>PayLater và các dịch vụ tài chính khác.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Phần thưởng và chương trình thành viên thân thiết</p>
+            <p>Xu và phần thưởng bạn kiếm được từ đặt chỗ.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+      </div>
+      <div class="notification-section" id="smsNotiPanel">
+        <b>Khuyến mãi và ưu đãi</b>
+        <div class="section">
+          <div>
+            <p>Khuyến mãi Travelulu</p>
+            <p>Khuyến mãi và ưu đãi</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+        <div class="section">
+          <div>
+            <p>Thông báo giá</p>
+            <p>Giá đã thay đổi trên các mục đã lưu.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+
+
+        <b>Tài khoản và đặt chỗ</b>
+        <div class="section">
+          <div>
+            <p>Nhật ký hoạt động</p>
+            <p>Một sự khích lệ chia sẻ suy nghĩ của bạn về trải nghiệm gần đây.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Đặt chỗ</p>
+            <p>Trạng thái đặt chỗ, cập nhật và nhắc nhở.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Tài chính</p>
+            <p>PayLater và các dịch vụ tài chính khác.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+        <div class="section">
+          <div>
+            <p>Phần thưởng và chương trình thành viên thân thiết</p>
+            <p>Xu và phần thưởng bạn kiếm được từ đặt chỗ.</p>
+          </div>
+          <i class="fa-solid fa-toggle-off toggle"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Refund -->
+    <div class="container section-5">
+      <p>Quản lí hoàn tiền của bạn</p>
+      <section id="reFundPanel" class="section">
+        <div class="banner-refund">
+          <img src="../pics/refund1.png" alt="">
+          <h1>Gửi chi tiết ngân hàng để </h1>
+          <h2>tiết kiệm thời gian</h2>
+          <img src="../pics/line.png" alt="">
+          <img src="../pics/ngoi sao.png" alt="">
+          <button type="button" class="bankBtn">
+            Gửi chi tiết ngân hàng
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </div>
+
+        <div class="refund-tabs">
+          <a href="#">Đang chờ xử lí</a>
+          <a href="#">Đang xử lí</a>
+          <a href="#">Hoàn tất</a>
+        </div>
+
+        <div class="refund-content">
+          <img style="margin-top: 50px;" src="../pics/refund.png" alt="">
+          <label>Bạn không có bất kỳ yêu cầu hoàn tiền nào</label>
+          <p style="margin: 10px 0 50px 0;">Hãy yên tâm, bạn không cần lo lắng về bất kỳ khoản tiền nào</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="container link-bank">
+      <div class="back-link" style="margin: 0 0 5px 8px;">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        <p style="margin: 0; font-size: 18px;">Quay lại danh sách hoàn tiền.</p>
+      </div>
+
+      <section id="link-bank-panel" class="section">
+        <h2 style="margin-bottom: 0;">Thêm tài khoản ngân hàng mới</h2>
+        <p style="margin-top: 5px;">Đảm bảo tên chủ tài khoản ngân hàng của bạn khớp với tài khoản Travelulu của bạn.
+        </p>
+
+        <form action="">
+          <label for="">Tên ngân hàng</label>
+          <input type="text" placeholder="Chọn tên ngân hàng của bạn">
+          <label for="">Số tài khoản ngân hàng</label>
+          <input type="text" placeholder="Nhập số tài khoản ngân hàng của bạn">
+          <label for="">Tên chủ tài khoản</label>
+          <input type="text" placeholder="Nhập tên chủ tài khoản của bạn">
+        </form>
+
+        <div class="notice">
+          <span>Đọc trước khi xác nhận tài khoản ngân hàng của bạn:</span>
+          <span style="padding-left: 5px;">1.Bạn chỉ có thể lưu 1 (một) tài khoản ngân hàng để được hoàn tiền.</span>
+          <span style="padding-left: 5px;">2.Travelulu không chịu trách nhiệm nếu thông tin bạn gửi không hợp lệ.</span>
+        </div>
+
+        <div class="agree">
+          <input type="checkbox">
+          <p>Tôi đồng ý gửi tự động tất cả khoản hoàn tiền của tôi đến tài khoản này.</p>
+        </div>
+        <button type="verify">Save</button>
+        <div class="DK">
+          <p>Khi ấn nút ở trên, bạn đã đọc, hiểu và đồng ý với</p>
+          <a href="#" style="font-size: 16px;color: #34669a; border-bottom: 1px solid #34699a;">Điều khoản sử dụng Tài
+            khoản ngân hàng để hoàn tiền.</a>
+        </div>
+
+        <a href="#">VND</a>
+      </section>
+    </div>
+
+
+
+  </div>
+  <!-- This is the footer -->
+  <!-- Hết nội dung chính -->
+
+  <div class="footer">
+    <div class="footer footer-mask"></div>
+    <div>
+      <div>
+        <b>Đối tác thanh toán</b>
+        <div class="bank-group">
+          <img src="../pics/debitCard.png" alt="">
+          <img src="../pics/visaCard.png" alt="">
+          <img src="../pics/jcbCard.png" alt="">
+          <img src="../pics/VIBCard.png" alt="">
+          <img src="../pics/BIDVCard.png" alt="">
+          <img src="../pics/TPBankCard.png" alt="">
+        </div>
+      </div>
+      <div>
+        <b>Liên hệ với chúng tôi</b>
+        <div>
+          <p><b>HotLine</b>: 0986 868 686</p>
+          <p><b>Email</b>: TheTeamProduction@gamil.com</p>
+          <p><b>Facebook</b>: The Team Production</p>
+          <p><b>Địa chỉ</b>: Km 10 Nguyễn Trãi Hà Đông, Hà Nội</p>
+        </div>
+      </div>
+    </div>
+    <div style="width: 1000px; height: 2px;background: white; margin: 10px 0"></div>
+    <p>Travelulu là nền tảng du lịch trực tuyến, đồng hành cùng bạn trên mọi hành trình khám phá vẻ đẹp Việt Nam.</p>
+    <p>Bản quyền © 2025 Travelulu. Bảo lưu mọi quyền.</p>
+    <div class="bank-group">
+      <img src="../pics/vietnamAirLine.png" alt="">
+      <img src="../pics/vietjet.png" alt="">
+      <img src="../pics/bambooAirLine.png" alt="">
+    </div>
+  </div>
+
+
+  <div id="overlay">
+    <!-- Quên mật khẩu 1-->
+    <div class="retrieve-password">
+      <span>Lấy lại mật khẩu</span>
+      <div class="retrieval-panel">
+        <label for="email-input">Nhập email của bạn để nhận mật mã xác nhận lại mật khẩu.</label>
+        <input type="email" id="email-input" placeholder="Nhập email của bạn">
+        <button type="submit" class="btn-continue">Tiếp tục</button>
+        <a href="#">Phương thức khác</a>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <!-- Quên mật khẩu  2-->
+    <div class="otp-panel">
+      <span>Lấy lại mật khẩu</span>
+      <div class="enter-otp">
+        <label for="otp-input">Nhập mã OTP được gửi đến email của bạn.</label>
+        <a class="time-run">Mã có hiệu lực trong 00:45</a>
+        <div class="otp-input">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+        </div>
+        <button type="submit" class="btn-verify">Xác nhận</button>
+        <div class="resend">
+          <span1>Bạn chưa nhận được email? </span1>
+          <a href="#">Gửi lại mã OTP</a>
+        </div>
+        <i class="fa-solid fa-xmark"></i>
+        <p>Trở lại trang trước</p>
+      </div>
+    </div>
+    <!-- Quên mật khẩu 3 -->
+    <div class="reinput-pass">
+      <span>Lấy lại mật khẩu</span>
+      <div class="input-newpass">
+        <p>Mật khẩu của bạn phải có tối thiểu 6 ký tự.</p>
+
+        <label for="newpass">Nhập mật khẩu mới</label>
+        <input type="text" placeholder="Vui lòng nhập mật khẩu">
+        <label for="renewpass">Nhập lại mật khẩu mới</label>
+        <input type="text" placeholder="Vui lòng nhập lại mật khẩu">
+        <i class="fa-solid fa-xmark"></i>
+
+        <button type="submit" class="btn-newpass-verify">Xác nhận</button>
+
+      </div>
+    </div>
+
+    <div class="password-done">
+      <span>Xác thực mật khẩu mới thành công!</span>
+      <button type="continue" class="btn-done">Xong</button>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../jvs/personal.js"></script>
+</body>
+
 </html>

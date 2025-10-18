@@ -1,0 +1,662 @@
+
+
+body {
+  font-family: "League Spartan";
+  background-color: #f3f5f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+.title-section {
+  margin-top: 60px;
+  margin-left: 8%;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #34699a;
+}
+
+.subtitle {
+  color: #000;
+  font-family: "League Spartan";
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* hoàn tất */
+
+/* Phần tìm kiếm */
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.search-box {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 30px 30px 30px 30px;
+  padding: 8px 16px;
+  height: 48px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.search-box i {
+  color: #444;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.search-box .search-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 12px;
+  opacity: 0.95;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 16px;
+  background: transparent;
+}
+
+.search-btn {
+  background-color: #5ea8d9;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px 30px 30px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  box-shadow: 0 8px 20px rgba(94, 168, 217, 0.25);
+  transition: transform 0.12s ease, background-color 0.12s;
+}
+
+.search-btn:hover {
+  background-color: #4a93c0;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 50px;
+  margin: 30px auto 40px; 
+  align-items: center;
+  flex-wrap: wrap; 
+  width: 100%;
+}
+
+.filter-tabs .tab-item {
+  color: #000;
+  font-family: "League Spartan";
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 28px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s, color 0.18s;
+  cursor: pointer;
+  min-width: 80px;
+  box-sizing: border-box;
+}
+
+.filter-tabs .tab-item.active {
+  color: #34699a;
+  background: linear-gradient(90deg, #cce0eb 0%, #b1d0e0 100%);
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.08);
+}
+
+.tour-card {
+  display: block;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+  overflow: visible;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
+  position: relative; 
+}
+
+.tour-card.completed {
+  border-left: 5px solid var(--secondary-color); 
+}
+
+.tour-image-container {
+  width: 200px; /* Độ rộng của ảnh */
+  height: 180px; /* làm cho ảnh cao hơn để không bị cắt */
+  background-size: cover;
+  background-position: center center;
+  flex: 0 0 200px; 
+}
+
+/* bố cục thẻ (hàng) mới */
+.card-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px 12px 20px;
+  position: relative;
+}
+
+.tour-image-container {
+  border-radius: 10px;
+  width: 120px;
+  height: 78px;
+  flex: 0 0 120px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06) inset;
+}
+
+.tour-info {
+  padding: 0 8px 0 0;
+  flex-grow: 1;
+}
+
+.tour-info h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.tour-info p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.tour-info .date-guests {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* nút trạng thái đặt ở góc trên bên phải của thẻ */
+.tour-status {
+  position: absolute;
+  right: 18px;
+  top: 70px;
+  min-width: auto;
+  padding: 0;
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.status-tag {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #e9f3fb, #d7eaf8);
+  color: #0f4e77;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+}
+
+.card-divider {
+  border: none;
+  height: 1px;
+  background: rgba(15, 23, 42, 0.06);
+  margin: 8px 20px 0 20px;
+}
+
+.card-footer {
+  display: block;
+  position: relative;
+  padding: 12px 20px 18px 20px;
+}
+
+.cancel-btn {
+  background: #e6f2fb;
+  border: none;
+  color: #0f5b8a;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn:hover {
+  background: #d6ecfb;
+}
+
+.rebook-btn {
+  background: #0b74ff;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-left: 8px;
+}
+.rebook-btn:hover {
+  background: #075fd6;
+}
+
+.tour-pricing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.tour-pricing .original-price {
+  font-size: 13px;
+  color: #9aa0a6;
+  margin-right: 8px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none; 
+}
+
+/* vẽ một đường gạch ngang liên tục qua số và đơn vị tiền */
+
+.tour-pricing .original-price::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.6px;
+  background: #9aa0a6;
+  transform: translateY(-50%);
+}
+
+.tour-pricing .original-price .currency {
+  color: #9aa0a6;
+  text-decoration: none; 
+  font-size: 13px;
+}
+
+.tour-pricing .final-price {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* đặt khối giá cố định ở phía bên phải của chân thẻ */
+.card-footer .tour-pricing {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 180px;
+  text-align: right;
+}
+
+/* kiểu chữ cho nhãn tiền tệ nhỏ */
+.tour-pricing .currency {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #16a34a;
+}
+
+/* căn dòng cơ sở cho final-price và currency để trông như một đơn vị */
+.tour-pricing .final-price {
+  display: inline-block;
+}
+
+.tour-pricing .original-price {
+  opacity: 0.8;
+}
+
+.status-chevron {
+  display: inline-block;
+  font-size: 20px;
+  color: #0f4e77;
+  margin-left: 8px;
+}
+
+
+.recommendation-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 44px;
+  margin-bottom: 18px;
+  color: #34699a;
+}
+
+.recommendation-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  align-items: stretch;
+  padding: 8px 24px 28px; 
+  margin-bottom: 50px;
+  justify-content: flex-start; 
+}
+.recommendation-list::-webkit-scrollbar{
+  display: none;
+}
+
+.recommended-card {
+  width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+}
+
+.recommended-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(16, 24, 40, 0.12);
+}
+
+.card-image-container {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-image-container .heart-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e11d48;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  font-size: 14px;
+}
+
+/* biểu tượng trái tim dùng hình ảnh cục bộ */
+.card-image-container .heart-img {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px; 
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  object-fit: contain;
+}
+
+
+.card-image-container .saved-badge {
+  position: absolute;
+  top: 12px;
+  right: 56px; 
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+  z-index: 6;
+}
+.card-image-container .saved-badge.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.saved-badge .saved-badge-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.saved-badge .saved-badge-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* tương tác với trái tim */
+.card-image-container .heart-img {
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.card-image-container .heart-img:hover {
+  transform: scale(1.06);
+}
+
+.ha-long-4n3d {
+  background-image: url("https://i.imgur.com/48da40.png");
+  background-position: center 30%;
+}
+.ha-long-2n2d {
+  background-image: url("https://i.imgur.com/48da40.png");
+  background-position: center 50%;
+}
+.trang-an-2n1d {
+  background-image: url("https://i.imgur.com/48da40.png");
+  background-position: center 70%;
+}
+.trang-an-3n2d {
+  background-image: url("https://i.imgur.com/48da40.png");
+  background-position: center 90%;
+}
+
+.recommended-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 16px 4px;
+}
+
+.recommended-card .location {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 0 16px 10px;
+}
+
+.recommended-card .price {
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
+
+.recommended-card .price .original {
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.recommended-card .price .sale {
+  color: #059669;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+/* Trạng thái trống khi chưa có tour được đặt */
+.empty-state-container {
+  padding: 20px 16px 40px;
+}
+.empty-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 46px 36px;
+  text-align: center;
+}
+.empty-box .empty-icon {
+  width: 72px;
+  height: 72px;
+  opacity: 0.75;
+  margin-bottom: 14px;
+}
+.empty-box .empty-text {
+  color: #9aa0a6;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+.explore-btn {
+  background: #0b74ff;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(11, 116, 255, 0.18);
+}
+.explore-btn:hover {
+  background: #075fd6;
+}
+
+/* Hộp thoại xác nhận */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.confirm-dialog {
+  width: 380px;
+  max-width: calc(100% - 48px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(16, 24, 40, 0.25);
+  padding: 18px 20px 20px;
+  text-align: left;
+}
+.confirm-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+.confirm-body {
+  color: #374151;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.btn-cancel-dialog {
+  background: #1f6ed4;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  color: #fff;
+
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-confirm-dialog {
+  background: #e6e9ee;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  color: #263140;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Hộp thoại thông tin khi không thể đặt lại */
+.info-dialog {
+  width: 420px;
+  max-width: calc(100% - 48px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(16, 24, 40, 0.25);
+  z-index: 10000;
+}
+.info-dialog .warning-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #fff, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-dialog .warning-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.info-dialog .btn-close-info {
+  background: #1f6ed4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.info-dialog .btn-close-info:hover {
+  background: #165fb2;
+}
+
+/* Không tìm thấy / trạng thái rỗng khi tìm kiếm cho phần gợi ý */
+.notfound-wrap {
+  padding: 20px 16px 40px;
+}
+.notfound-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 46px 36px;
+  text-align: center;
+}
+.notfound-box .notfound-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+}
+.notfound-box .notfound-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.notfound-box .notfound-text {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+}
