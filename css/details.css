@@ -356,7 +356,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid gray;
     width: fit-content;
     height: 42px;
     box-sizing: border-box;
@@ -370,7 +370,7 @@ body{
     font-weight: 100;
     padding-right: 160px;
     padding-left: 10px;
-    border-right: 2px solid black;
+    border-right: 2px solid gray;
     height: 100%;
     display: flex;
     align-items: center;
@@ -388,9 +388,7 @@ body{
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     border-left: 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border: none;
     font-size: 16px;
     color: #FFFFFF;
     cursor: pointer;
@@ -413,7 +411,7 @@ body{
 
 .chonve{
     display: block;
-    border: 2px solid black;
+    border: 2px solid gray;
     width: 980px;
     border-radius: 10px;
     position: relative;
@@ -437,6 +435,10 @@ body{
     margin-left: 15px;
     margin-bottom: 10px;
     color: #5f5f5f;
+}
+
+.xemchitietve{
+    width: fit-content;
 }
 
 .chonve .xemchitietve p{
@@ -501,19 +503,64 @@ body{
     margin-top: 10px;
 }
 
+.danhgiacuakhach{
+    width: 980px;
+}
+
 .danhgiacuakhach h2{
-    margin-top: 36px;
+    margin-top: 20px;
     margin-bottom: 16px;
 }
 
 .cacdanhgia{
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 12px;
+}
+
+.switchcmtpage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 980px;
+}
+
+.switchcmtpage h2{
+    line-height: 24px;
+    margin: 10px 0px;
+    opacity: .5;
+    width: 800px;
+    font-size: 20px;
+}
+
+.page{
+    display: flex;
+    gap: 10px;
+}
+
+.switch{
+    display: flex;
+    gap: 10px;
+}
+
+.switch i{
+    font-size: 12px;
+    border: 2px solid black;
+    width: 16px;
+    height: 16px;
+    padding: 6px;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
 }
 
 .danhgia1{
-    width: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 16px;
 }
 
 .danhgia1 img{
@@ -800,6 +847,7 @@ body{
     width: 850px;
     display: none;
     flex-direction: column;
+    height: 590px;
 }
 
 .popup-lichtrinhtour i{
@@ -825,11 +873,17 @@ body{
 
 .content_day ul{
     padding-left: 20px;
+
 }
 
 .content_day li{
     color: black;
     font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.content_day dt{
     line-height: 20px;
 }
 
@@ -955,3 +1009,85 @@ body{
     font-style: italic;
 }
 
+.boxchinhsoluong{
+    display: flex;
+    position: absolute;
+    top: 45px;
+    left: 340px;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    background: #ffffff;
+    z-index: 10;
+    width: 400px;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.object{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.object>p{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    border: none;
+}
+
+.increase_decrease{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    height: 10px;
+    border: 1px solid black;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px !important; 
+    gap: 20px;
+    color: #34699A;
+    border-radius: 6px;
+}
+
+.increase_decrease p{
+    color: black;
+    font-weight: 100;
+    padding: 0;
+    border: 0;
+}
+
+.increase_decrease i{
+    cursor: pointer;
+}
+
+.kid p{
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    font-weight: 500;
+    border: 0;
+}
+
+.kid p:last-child{
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+}
+
+.boxchinhsoluong button{
+    background: var(--main-color);
+    color: white;
+    width: 280px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
