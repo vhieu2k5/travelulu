@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travelulu - Login</title>
+        <meta  content="charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <script src="../js/header.js" defer></script>
+        <script src="../js/login.js" defer></script>
+    </head>
+    <body>
+        <!-- INDEX  -->
+        <div data-include="header.html"></div>
+
+        <!-- LOGIN -->
+        <div class="login-section">
+            <img src="../pics/bglogin.png" class="bg-login">
+            <div class="login-box">
+                <h2>Đăng nhập</h2>
+                <form id="loginForm">
+                    <label>Địa chỉ email</label>
+                    <input type="text" class="input-field" id="emailInput" placeholder="Nhập email của bạn">
+                    <label>Mật khẩu</label>
+                    <div class="password-field">
+                        <i class="fa-solid fa-eye" id="togglePassword"></i>
+                        <input type="password" class="input-field" id="passwordInput" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                    <a href="forgotpass.html" class="forgot">Quên mật khẩu?</a>
+                    <button type="submit" class="login-cont">Tiếp tục</button>
+                </form>
+                <div class="login-or">hoặc</div>
+                <button class="login-fb"><i class="fa-brands fa-facebook"></i>Đăng nhập bằng Facebook</button>
+                <div class="signup-text">Chưa có tài khoản? <a href="signup.html">Đăng ký tài khoản</a></div>
+                <div class="note">Một chạm khởi hành, vạn hành trình xanh</div>
+            </div>
+        </div>
+
+        <!-- OUTRO -->
+        <div class="outro-section">
+            Qua việc đăng nhập hoặc tạo tài khoản, bạn đồng ý với các Điều khoản và Điều kiện cũng như Chính sách An toàn và Bảo mật của chúng tôi  
+            <br> <br>
+            Bảo lưu mọi quyền. <br> 
+            Bản quyền (2006 - 2025)
+        </div>
+    </body>
+</html>
