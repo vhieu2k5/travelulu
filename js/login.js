@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       errorMessage = 'Vui lòng nhập email và mật khẩu';
       if (email.value.trim() === '') email.classList.add('input-error');
       if (password.value.trim() === '') password.classList.add('input-error');
-    } 
+    }
     // Kiểm tra định dạng sai
     else if (!email.value.includes('@') || password.value.length < 8) {
       errorMessage = 'Email hoặc mật khẩu không đúng';
@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       passwordField.insertAdjacentElement('afterend', errorMsg);
     } else {
       form.submit(); // gửi nếu hợp lệ
+     // window.location.href = "index.html"; 
+      Loader.isLoaded = true;
+      window.location.href = "index.html";
     }
   });
 });
