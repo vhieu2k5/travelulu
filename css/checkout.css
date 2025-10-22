@@ -4,6 +4,11 @@ body {
     background-color: #f5f5f5;
 }
 
+.main-body1 {
+    display: flex;
+    width: 70%;
+    justify-self: center;
+}
 
 .box {
     box-sizing: border-box;
@@ -13,17 +18,18 @@ body {
     border-color: black;
     border-width: 1px;
     height: fit-content;
-    width: 726px;
+    width: 100%;
     position: relative;
     padding: 0 27px 0 27px;
     margin: 50px 0 0 0;
 }
 
 .tieude1 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
     margin: 27px 0 0 0;
 }
+
 
 .thanhtientrinh {
     box-sizing: border-box;
@@ -72,7 +78,7 @@ body {
 
 .sao,
 .tit {
-    font-size: 20px;
+    font-size: var(--normal-size);
     font-weight: 400;
     position: relative;
     text-align: left;
@@ -172,7 +178,7 @@ input.o-trong:focus {
     margin: 50px 0 0 0;
 }
 
-.main-body {
+.main-body1 {
     display: flex;
     gap: 50px;
     justify-content: center;
