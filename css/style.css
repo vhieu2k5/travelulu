@@ -1,4 +1,4 @@
-:root{
+:root {
     --main-color: #34699A;
     --grey-color: grey;
     --normal-size: 20px;
@@ -23,13 +23,26 @@ body::-webkit-scrollbar{
     font-family: "League Spartan";
     line-height: normal;
 }
-a{
-    text-decoration: none;
+
+li {
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
-.header{
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    /* bo gach chan */
+}
+
+.header {
     display: flex;
     flex-direction: row;
-    position: static;
+    position:fixed;
     top: 0;
     height: 55px;
     width: 100vw;
@@ -40,6 +53,11 @@ a{
     background-color: white;
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
 }
+.header-buffer{
+    height: 55px;
+    width: 100vw;
+    position: static;
+}
 .menu-nav{
 display: flex;
 justify-content: space-between;
@@ -48,21 +66,22 @@ flex-shrink: 0;
 list-style: none;
 flex-wrap: nowrap;
 margin: 0;
+}
 
-}
-.menu-nav li>a{
-padding: 20px 50px ;
-text-wrap: nowrap;
-color: var(--main-color);
-text-align: center;
-font-size: var(--normal-size);
-&:hover{
-    transition: background-color ease-in-out 0.5s;
-   background-color: var(--hover-blue-color);
-}
+.menu-nav li>a {
+    padding: 3vh 50px;
+    text-wrap: nowrap;
+    color: var(--main-color);
+    text-align: center;
+    font-size: var(--normal-size);
+
+    &:hover {
+        transition: background-color ease-in-out 0.5s;
+        background-color: var(--hover-blue-color);
+    }
 }
 .logo-img{
-    margin: 10px 80px;
+    margin: 10px 20px;
     width: 238px;
     height: fit-content;
 }
