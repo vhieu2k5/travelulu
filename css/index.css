@@ -79,9 +79,13 @@
   left: 25px;
 }
 
-.search-box .search-icon {
+.search-box .search-icon-button {
   width: max-content;
   object-fit: contain;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   margin-right: 12px;
 }
 
@@ -204,16 +208,100 @@
 /* Popular tours section */
 .popular-tours-section{
     width: 100%;
-    height: auto;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 60px;
+    margin-left: 155px;
 }
 
 .popular-tours-section h2{
+    align-self: center;
     font-size: 22px;
+}
+
+.tours-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap; /* Không xuống dòng, cho phép cuộn ngang */
+    overflow-x: auto; /* Hiển thị thanh cuộn ngang nếu cần */
+    gap: 30px;
+    padding-bottom: 25px; /* Khoảng cách dưới cùng để tránh bị cắt */
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: flex-start;
+    cursor: grab; /* Thay đổi con trỏ khi di chuyển */
+    user-select: none; /* Ngăn bôi đen text khi kéo */
+}
+
+.tours-container::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn */
+}
+
+.tour-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6.1px 0 rgba(0, 0, 0, 0.16);
+    border: 1px solid var(--mu-b-tr-2-vin-box-nu-cn, rgba(217, 217, 217, 0.50));
+    overflow: hidden; /* Bo tròn góc của hình ảnh bên trong */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 240px;
+}
+
+/* Hiệu ứng khi di chuột vào card */
+.tour-card:hover {
+    transform: translateY(-5px); /* Nhấc card lên một chút */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Đổ bóng rõ hơn */
+}
+
+/* Hình ảnh bên trong card */
+.tour-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Giữ tỉ lệ ảnh và cắt nếu cần */
+    display: block;
+}
+
+/* Khu vực nội dung text bên dưới ảnh */
+.tour-content {
+    padding: 15px;
+    min-height: 105px; 
+}
+
+.tour-content h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin: 0 0 10px 0;
+    
+    /* Giới hạn text trong 4 dòng và thêm dấu "..." */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 76px; /* Chiều cao tương đương 4 dòng text */
+}
+
+.tour-pricing {
+    margin-top: 10px;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    display: block; /* Hiển thị trên một dòng riêng */
+    margin-bottom: 5px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #22ab1b;
+    display: block; /* Hiển thị trên một dòng riêng */
 }
 
 /* Lý do nên chọn travelulu */
