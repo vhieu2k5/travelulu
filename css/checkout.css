@@ -6,8 +6,16 @@ body {
 
 .main-body1 {
     display: flex;
-    width: 70%;
+    width: 75%;
     justify-self: center;
+}
+
+.thongtin {
+    width: 55%;
+}
+
+.cot-tt {
+    width: 45%;
 }
 
 .box {
@@ -66,7 +74,7 @@ body {
 
 .chu-y {
     color: #FF0000;
-    font-size: 17px;
+    font-size: 16px;
     margin: 5px 0;
 }
 
@@ -172,7 +180,7 @@ input.o-trong:focus {
     border-color: black;
     border-width: 1px;
     height: fit-content;
-    width: 580px;
+    width: 100%;
     position: relative;
     padding: 0 27px 0 27px;
     margin: 50px 0 0 0;
@@ -191,7 +199,7 @@ input.o-trong:focus {
 }
 
 .text {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .date {
@@ -244,7 +252,7 @@ input.o-trong:focus {
     background-color: var(--main-color);
     border-radius: 13px;
     height: fit-content;
-    width: 580px;
+    width: 100%;
     margin: 50px 0 0 0;
     justify-items: center;
 }
@@ -256,3 +264,7 @@ input.o-trong:focus {
     text-align: center;
 }
 
+.anh-tour {
+    width: 38%;
+    height: auto;
+}
