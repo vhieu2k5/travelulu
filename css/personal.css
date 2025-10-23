@@ -1004,7 +1004,14 @@ input[type="checkbox"] {
   font-weight: 100;
   padding-left: 5px;
 }
-#linked-bank-panel img:first-child{
+#linked-bank-panel{
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.595)),
+      url(../pics/anhnen_00000.png);
+    
+  background-size: cover;
+
+}
+#linked-bank-panel img{
   position: absolute;
   top: 12px;
   left: 15px;

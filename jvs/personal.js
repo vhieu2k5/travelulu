@@ -66,10 +66,9 @@ changePasswordPanel.style.display = "none";
 smsNotiPanel.style.display = "none";
 emailNotiBtn.classList.add("title-selected");
 securityBtn.classList.add("title-selected");
-//Nút Hồ sơ
 
 profileBtn.classList.add("nav-item-selected");
-
+// Nút Hồ sơ
 profileBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
