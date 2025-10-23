@@ -485,6 +485,14 @@ input[type="checkbox"] {
 #password-panel label{
   margin-bottom: 0 !important;
 }
+#password-panel p{
+  margin: 0;
+  color: red;
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: none;
+}
 
 #password-panel form {
   display: flex;
@@ -500,10 +508,10 @@ input[type="checkbox"] {
   font-size: 15px;
 }
 
-#password-panel span1 {
+#password-panel span1{
   color: #a4a4a4;
   font-size: var(--under-sub-note);
-  margin: -5px 0 5px 2px;
+  margin-bottom: 2px;
 }
 
 .forgot-password {
@@ -980,6 +988,66 @@ input[type="checkbox"] {
   margin: 20px;
   font-size: 15px;
   gap: 10px;
+  margin: 10px 0;
+}
+              /*Linked-bank-refund  */
+
+#linked-bank-panel{
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.315)),
+      url(../pics/anhnen_00000.png);
+    background-size: cover;
+    position: relative;
+}
+#linked-bank-panel h3{
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 5px;
+}
+#linked-bank-panel img:first-child{
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  
+}
+#linked-bank-panel > div {
+  margin-left: 35px;
+}
+#linked-bank-panel button{
+  height: 25px;
+  width: 100px;
+  color: gray;
+  border-radius: 5px;
+  border: none;
+}
+#linked-bank-panel button:hover{
+  color: white;
+  background: #34699A;
+}
+
+#linked-bank-panel input{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  height: 20px;
+  width: 20px;
+}
+
+              /* conCuMeo */
+#mascot{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  right: -60px;
+  bottom: 0;
+
+}
+#logout > img, #deleteAccPanel > img{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  top: 346px;
+  left: 500px;
 }
 
               /* Đăng xuất */
@@ -995,5 +1063,5 @@ input[type="checkbox"] {
 }
 #logout p{
   padding: 0 40px;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 }

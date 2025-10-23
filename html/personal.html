@@ -189,26 +189,29 @@
       <section id="password-panel" class="section">
         <form>
           <span>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác.</span>
-          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự, đồng thời bao gồm cả chữ số, chữ cái, và ký tự đặc
-            biệt(!$@%).</span1>
+          <span1>Mật khẩu của bạn phải có tối thiểu 6 ký tự - Đổi mật khẩu sau 30 ngày đăng kí. </span1>
           <label for="old-password">Mật khẩu cũ</label>
+          <p class="error" style="top: 54px">Bạn chưa điển mật khẩu cũ</p>
           <div class="old-password input-eyes">
-            <input type="password" id="old-password" placeholder="Nhập mật khẩu hiện tại">
+            <input type="text" placeholder="Nhập mật khẩu hiện tại">
             <i class="fa fa-eye-slash icon-eye1"></i>
           </div>
 
           <label for="new-password">Mật khẩu mới</label>
+          <p class="error" style="top: 134px">Bạn chưa nhập mật khẩu mới</p>
           <div class="new-password input-eyes">
-            <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
+            <input type="text" placeholder="Nhập mật khẩu mới">
             <i class="fa fa-eye-slash icon-eye2"></i>
           </div>
 
           <label for="confirm-password">Xác nhận mật khẩu mới</label>
+          <p class="error" style="top: 215px;">Bạn xác nhận mật khẩu mới</p>
+          <p class="no-similar" style="top: 215px;">Mật khẩu không khớp nhau</p>
           <div class="confirm-password input-eyes">
-            <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới">
+            <input type="text" placeholder="Nhập lại mật khẩu mới">
             <i class="fa fa-eye-slash icon-eye3"></i>
           </div>
-
+          
           <a href="#" class="forgot-password change-password-Btn">Bạn quên mật khẩu?</a>
 
           <button type="submit" class="btn-primary">Đổi mật khẩu</button>
@@ -428,6 +431,23 @@
         </div>
         
         <a href="#">VND</a>
+        <img id="downBtn" src="../pics/nút xổ xuống.png" alt="">
+        <img id="downPanel" src="../pics/Group 233.png" alt="">
+      </section>
+
+      <section id="linked-bank-panel" class="section">
+         <img style="width: 30px; height: 30px;" src="../pics/tabler_credit-card-refund.png" alt="">
+         <div>
+          <label>Tên ngân hàng:</label>
+          <h3>VIETNAM TECHNOLOGICAL AND COMMERCIAL JOINT STOCK BANK</h3>
+          <label>Tên chủ tài khoản:</label>
+          <h3>TRINH TRUNG KIEN</h3>
+          <label for="">Số tài khoản:</label>
+          <h3>012345678910</h3>
+          <input type="checkbox">
+          <button type="button">Xóa tài khoản ngân hàng</button>
+
+         </div>
       </section>
     </div>
     
@@ -535,10 +555,22 @@
     <div>
       <h2 style="color: #34669a;">Bạn có chắc muốn đăng xuất?</h2>
       <p style="color: #34669a;">Bạn sẽ bỏ lỡ nhiều thông tin thú vị ở Travelulu khi đăng xuất đó!</p>
-       <button id="yes" type="button" style="width: 150px;">Có</button>
-       <button id="no" type="button" style="width: 100px; margin-top: 10px; background: #9c9c9c;">Quay lại</button>
+      <div>
+        <button id="yes" type="button"style="width: 100px; margin-top: 10px; background: #9c9c9c;">Có</button>
+        <button id="no" type="button" style="width: 150px; margin-left: 20px;">Quay lại</button>
+      </div>
     </div>
-   </div>
+  </div>
+
+    <!-- Xóa tài khoản -->
+  <div id="deleteAccPanel">
+    <div>
+      <h2 style="color: #34669a;">Bạn có chắc muốn xóa tài khoản?</h2>
+      <p style="color: #34669a;">Khi xác nhận xóa tài khoản, mọi dữ liệu của bạn sẽ bị xóa vĩnh viễn!</p>
+       <button id="yesDelete" type="button" style="width: 150px;">Có</button>
+       <button id="noDelete" type="button" style="width: 100px; margin-top: 10px; background: #9c9c9c;">Quay lại</button>
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -41,8 +41,22 @@ const smsNotiBtn = document.getElementById("smsNotiBtn");
 
 // origin
 
+// Card List
+const creditCard1 = document.getElementById("credit-card-1");
+const creditCard2 = document.getElementById("credit-card-2");
+const creditCard3 = document.getElementById("credit-card-3");
+const InputCardPanel = document.querySelectorAll(".inputBankBox");
+navBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        navBtns.forEach(bt => {
+            if (bt.classList.contains("nav-item-selected"))
+                bt.classList.remove("nav-item-selected");
+        });
+        btn.classList.add("nav-item-selected");
+    });
+});
 
-//Start the code
+// Start the code
 alltheSections.forEach(element => {
     element.style.display = "none";
 });
@@ -53,6 +67,9 @@ smsNotiPanel.style.display = "none";
 emailNotiBtn.classList.add("title-selected");
 securityBtn.classList.add("title-selected");
 //Nút Hồ sơ
+
+profileBtn.classList.add("nav-item-selected");
+
 profileBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
@@ -63,7 +80,7 @@ profileBtn.onclick = function () {
     // iconProfileBtn.style.color = "white";
 
 }
-//Nút bảo mật và Mật khẩu
+// Nút bảo mật và Mật khẩu
 passwordBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
@@ -146,7 +163,7 @@ retrievePasswordBtn.onclick = function () {
 Xbutton.onclick = function () {
     overlay.style.display = "none";
 };
-//Notification Buttons
+// Notification Buttons
 const toggles = document.querySelectorAll(".toggle");
 
 toggles.forEach(btn => {
@@ -272,6 +289,92 @@ eyeIcons.forEach(icon => {
         }
     });
 });
+// Báo lỗi mật khẩu khi chưa điền mật khẩu
+const btnChangePass = document.querySelector("#password-panel .btn-primary");
+const inputsChangePass = document.querySelectorAll("#password-panel input[type = 'text']");
+const errorChangePass = document.querySelectorAll("#password-panel .error");
+const compareTxt = document.querySelector(".no-similar");
+
+btnChangePass.addEventListener("click", function (e) {
+    e.preventDefault();
+    let isFill = true;
+    inputsChangePass.forEach((input, index) => {
+            if(input.value.trim() === ""){
+                input.style.border = "1px solid red";
+                input.classList.add("error");
+                errorChangePass[index].style.display = "block";
+                isFill = false;
+            }
+            else{
+                input.style.border = "1px solid #777777";
+                errorChangePass[index].style.display = "none";
+            }
+    });
+
+    const newPass = inputsChangePass[1].value.trim();
+    const confirmPass = inputsChangePass[2].value.trim();
+
+    if (newPass !== "" && confirmPass !== "" && newPass !== confirmPass) {
+        inputsChangePass[2].classList.add("no-similar");
+        inputsChangePass[2].style.border = "1px solid red";
+        compareTxt.style.display = "block";
+
+        isFill = false;
+    }
+    else{
+        compareTxt.style.display = "none";
+
+    }
+});
+
+// Set input box credit card
+function togglePanel(cardClass) {
+    InputCardPanel.forEach(panel => {
+        if (panel.classList.contains(cardClass)) {
+
+            const isOpen = panel.classList.toggle("active");
+            //  panel.style.display = isOpen ? "flex" : "none";
+            panel.style.opacity = isOpen ? "1" : "0";
+            panel.style.height = isOpen ? "fit-content" : "0";
+        } else {
+            panel.classList.remove("active");
+            // panel.style.display = "none";
+            panel.style.opacity = "0";
+            panel.style.height = "0"
+        }
+    });
+}
+
+// Detect double click manually
+function addDoubleClickHandler(element, panelClass) {
+    let clickCount = 0;
+    let timer = null;
+
+    element.addEventListener("click", function () {
+        clickCount++;
+        if (clickCount === 1) {
+            timer = setTimeout(() => {
+                //single click
+                togglePanel(panelClass);
+                clickCount = 0;
+            }, 500);
+        } else if (clickCount === 2) {
+            clearTimeout(timer);
+            //double click
+            InputCardPanel.forEach(panel => {
+                if (panel.classList.contains(panelClass)) {
+                    panel.classList.remove("active");
+                    panel.style.display = "none";
+                }
+            });
+            clickCount = 0;
+        }
+    });
+}
+
+addDoubleClickHandler(creditCard1, "credit-card-1");
+addDoubleClickHandler(creditCard2, "credit-card-2");
+addDoubleClickHandler(creditCard3, "credit-card-3");
 
 
 
