@@ -45,13 +45,15 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.section h2{
+.section h2 {
   color: var(--main-color);
   margin-bottom: 15px;
   font-size: 18px;
   margin-top: 0;
 }
-.title-1, .section-5>p{
+
+.title-1,
+.section-5>p {
   color: var(--main-color);
   margin: 0 0 5px 0;
   font-size: 18px;
@@ -61,7 +63,7 @@
   width: 145px;
 }
 
-.section{
+.section {
   width: 55vw;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -74,7 +76,8 @@
   flex-direction: column;
   /* align-items: center; */
 }
-.section-3 .title-sec{
+
+.section-3 .title-sec {
   color: #34699A !important;
   border-bottom: 2px solid #34699A;
 }
@@ -128,7 +131,7 @@ select {
 }
 
 .btn:hover {
-  background: var(--main-color);
+  background: #4a93d7;
 }
 
 .link-accounts {
@@ -248,17 +251,17 @@ input[type="checkbox"] {
 .left-tab .nav-item {
   display: flex;
   align-items: center;
-  gap: 12px; 
+  gap: 12px;
   cursor: pointer;
   padding: 15px 85px;
 }
 
 .left-tab .nav-item i {
-  width: 22px; 
-  text-align: center; 
+  width: 22px;
+  text-align: center;
   font-size: 18px;
-    margin: 0px 20px 0px 10px;
-      font-size: 20px;
+  margin: 0px 20px 0px 10px;
+  font-size: 20px;
 }
 
 .left-tab .nav-item span {
@@ -273,12 +276,26 @@ input[type="checkbox"] {
 .nav-item:hover {
   background: var(--main-color);
 
-  i {
-    color: #ffffff;
+  i,
+  a {
+    color: #ffffff !important;
   }
 
   span {
     color: #ffffff;
+  }
+}
+
+.nav-item-selected {
+  background: var(--main-color);
+
+  i,
+  a {
+    color: #ffffff !important;
+  }
+
+  span {
+    color: #ffffff !important;
   }
 }
 
@@ -288,6 +305,7 @@ input[type="checkbox"] {
   font-size: 20px;
   margin-top: 0;
 }
+
 .line {
   width: 80%;
   margin: 5px auto 0;
@@ -406,6 +424,10 @@ input[type="checkbox"] {
   right: 20px;
   bottom: 22px;
   font-weight: 600;
+  cursor: pointer;
+}
+.delete-account span2:hover{
+  color: #4a93d7;
 }
 
 .content-delete {
@@ -413,7 +435,7 @@ input[type="checkbox"] {
 }
 
 .content-delete span1 {
-  color: var(--grey-color);
+  color: black;
   font-size: var(--under-sub-note);
   margin-left: 5px;
 }
@@ -442,7 +464,7 @@ input[type="checkbox"] {
 
 /* Quên mật khẩu */
 
-/* mắt xem mật khẩu */
+            /* mắt xem mật khẩu */
 .input-eyes {
   display: flex;
   flex-direction: row;
@@ -482,7 +504,8 @@ input[type="checkbox"] {
   border-radius: 5px;
   padding: 20px;
 }
-#password-panel label{
+
+#password-panel label {
   margin-bottom: 0 !important;
 }
 #password-panel p{
@@ -555,10 +578,17 @@ input[type="checkbox"] {
   border-radius: 25px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25.02%, rgba(255, 255, 255, 0.39) 92.64%), #6A95BC;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  transition: all 0.5s ease-in-out;
+  background: #6A95BC;
+  filter: drop-shadow(2px -1px 26px rgba(0, 98, 197, 0.21));
 }
 
 /* Lấy lại mật khẩu panel */
-#overlay , #logout{
+#overlay , #logout, #deleteAccPanel{
   background: rgba(51, 51, 51, 0.74);
   position: fixed;
   top: 0;
@@ -616,8 +646,9 @@ input[type="checkbox"] {
 .retrieval-panel .btn-continue,
 .enter-otp .btn-verify,
 .input-newpass .btn-newpass-verify,
-#link-bank-panel button,
-#logout button{
+#link-bank-panel button, 
+#logout button, 
+#deleteAccPanel button{
   border-radius: 5px;
   border: none;
   color: #ffffff;
@@ -627,9 +658,9 @@ input[type="checkbox"] {
   font-size: var(--font-button);
   cursor: pointer;
 }
-.retrieval-panel .btn-continue, 
-.enter-otp .btn-verify
-{
+
+.retrieval-panel .btn-continue,
+.enter-otp .btn-verify {
   width: 500px;
 }
 
@@ -656,7 +687,7 @@ input[type="checkbox"] {
 }
 
 .btn-primary:hover {
-  background-color: green !important;
+  background-color: #4a93d7 !important;
 }
 
 .btn-primary:active {
@@ -727,7 +758,8 @@ input[type="checkbox"] {
 .enter-otp span1 {
   font-size: var(--sub-note);
 }
-.enter-otp label{
+
+.enter-otp label {
   margin: 10px 0 20px 0;
   font-weight: 700;
 }
@@ -821,24 +853,24 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-            /* Refund */
+/* Refund */
 
-.section-5>p{
+.section-5>p {
   width: 192px !important;
 }
 
-.section-5 .section{
+.section-5 .section {
   padding: 0 !important;
   width: 57.6vw !important;
 
 }
 
-#reFundPanel{
+#reFundPanel {
   border-radius: 6px;
   margin: 10;
 }
 
-.banner-refund{
+.banner-refund {
   height: 100px;
   background: linear-gradient(90deg, #34699A 0%, #74a9d1 100%);
   border-radius: 6px 6px 0px 0px;
@@ -847,14 +879,16 @@ input[type="checkbox"] {
   border-bottom: 1px solid #c3c3c3;
   /* padding: 0 !important; */
 }
-.banner-refund img:nth-child(1){
+
+.banner-refund img:nth-child(1) {
   position: absolute;
   width: 110px;
   height: 95px;
   bottom: 0;
   left: 70px;
 }
-.banner-refund img:nth-child(4){
+
+.banner-refund img:nth-child(4) {
   position: absolute;
   width: 300px;
   height: 95px;
@@ -863,7 +897,8 @@ input[type="checkbox"] {
   margin: 0;
   border: none;
 }
-.banner-refund img:nth-child(5){
+
+.banner-refund img:nth-child(5) {
   position: absolute;
   right: -5px;
   top: -10px;
@@ -871,7 +906,7 @@ input[type="checkbox"] {
   height: 80px;
 }
 
-.banner-refund button{
+.banner-refund button {
   width: 180px;
   height: 40px;
   position: absolute;
@@ -882,11 +917,13 @@ input[type="checkbox"] {
   background: #98cdff;
   cursor: pointer;
 }
-.banner-refund button:hover{
+
+.banner-refund button:hover {
   background: #ebf6ff;
 }
 
-.banner-refund h1, .banner-refund h2{
+.banner-refund h1,
+.banner-refund h2 {
   color: white;
   position: absolute;
   font-size: 15px;
@@ -895,12 +932,13 @@ input[type="checkbox"] {
   letter-spacing: 3px;
   font-weight: 100;
 }
-.banner-refund h2{
+
+.banner-refund h2 {
   top: 58px !important;
   left: 266px !important;
 }
 
-.refund-tabs{
+.refund-tabs {
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -909,12 +947,14 @@ input[type="checkbox"] {
   justify-content: center;
   border: 1px solid #d4d4d4;
 }
-.refund-tabs a{
+
+.refund-tabs a {
   font-size: 17px;
   color: #a4a4a4;
   font-weight: bold;
 }
-.refund-content{
+
+.refund-content {
   border: 1px solid #d4d4d4;
   border-top: none;
   display: flex;
@@ -922,15 +962,22 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
 }
-
-.refund-tabs a:first-child{
+/* 
+.refund-tabs a:first-child {
   color: #34699A;
   border-bottom: 3px solid #34699A;
   padding: 11px;
+} */
+.refund-tabs a.active {
+  padding: 11px;
+  color: #34699A;                
+  border-bottom: 3px solid #34699A;
 }
-      /* Link-bank-refund */
 
-.back-link{
+
+              /* Link-bank-refund */
+
+.back-link {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -942,10 +989,23 @@ input[type="checkbox"] {
   width: 245px;
 }
 
-#link-bank-panel input{
+#link-bank-panel .field {
   width: 53.5vw !important;
 }
-#link-bank-panel .notice{
+#link-bank-panel > img {
+  position: absolute;
+  top: 97px;
+  right: 35px;
+  width: 20px;
+  cursor: pointer;
+}
+#link-bank-panel img:last-child{
+  width: 60%;
+  top: 123px;
+  right: 33px;
+}
+
+#link-bank-panel .notice {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -954,17 +1014,23 @@ input[type="checkbox"] {
   border-radius: 5px;
   border-left: 4px solid #34699A;
 }
-#link-bank-panel > a:nth-of-type(1){
+
+#link-bank-panel>a:nth-of-type(1) {
   position: absolute;
   top: 20px;
   right: 20px;
   color: #34699A;
   font-size: 20px;
 }
-#link-bank-panel button{
+
+#link-bank-panel button {
   width: 55vw !important;
 }
-#link-bank-panel .DK{
+#link-bank-panel button:hover{
+  background: #4a93d7;
+}
+
+#link-bank-panel .DK {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1011,6 +1077,7 @@ input[type="checkbox"] {
   background-size: cover;
 
 }
+
 #linked-bank-panel img{
   position: absolute;
   top: 12px;
@@ -1059,6 +1126,7 @@ input[type="checkbox"] {
 
               /* Đăng xuất */
 #logout > div{
+
   height: 210px;
   width: 400px;
   background: #ffffff;
@@ -1068,7 +1136,70 @@ input[type="checkbox"] {
   text-align: center;
   border-radius: 10px;
 }
-#logout p{
+
+#logout p, #deleteAccPanel p{
   padding: 0 40px;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
 }
+
+
+              /*  */
+.inputBankBox {
+  transition: all 0.2s ease;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%;
+  height: 0;
+  padding: 20px 50px;
+  position: relative;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #8BAECE 0%, #FFF 100%);
+  box-shadow: 0 13px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.inputBankBox p,
+.inputBankBox input {
+  margin: 5px 0;
+  width: 70%;
+  z-index: 1;
+}
+
+.inputBankBox input[type="button"] {
+  width: 60px;
+  height: 30px;
+  background-color: var(--main-color);
+  color: white;
+  position: relative;
+  margin-top: 10px;
+}
+
+.inputBankBox img:first-child {
+  width: 50px;
+  position: absolute;
+  top: -15px;
+  z-index: 0;
+}
+
+.credit-card-2 img:first-child {
+  left: 47%;
+}
+
+.credit-card-3 img:first-child {
+  left: 85%;
+}
+
+.credit-card-1 {
+  top: 10px;
+}
+
+.credit-card-2 {
+  top: -30px;
+}
+
+.credit-card-3 {
+  top: -70px;
+}
+

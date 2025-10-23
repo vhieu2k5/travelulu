@@ -357,6 +357,55 @@ btnChangePass.addEventListener("click", function (e) {
                 errorChangePass[index].style.display = "none";
             }
     });
+//Set input box credit card
+function togglePanel(cardClass) {
+    InputCardPanel.forEach(panel => {
+        if (panel.classList.contains(cardClass)) {
+
+            const isOpen = panel.classList.toggle("active");
+            //  panel.style.display = isOpen ? "flex" : "none";
+            panel.style.opacity = isOpen ? "1" : "0";
+            panel.style.height = isOpen ? "fit-content" : "0";
+        } else {
+            panel.classList.remove("active");
+            // panel.style.display = "none";
+            panel.style.opacity = "0";
+            panel.style.height = "0"
+        }
+    });
+}
+
+// Detect double click manually
+function addDoubleClickHandler(element, panelClass) {
+    let clickCount = 0;
+    let timer = null;
+
+    element.addEventListener("click", function () {
+        clickCount++;
+        if (clickCount === 1) {
+            timer = setTimeout(() => {
+                //single click
+                togglePanel(panelClass);
+                clickCount = 0;
+            }, 500);
+        } else if (clickCount === 2) {
+            clearTimeout(timer);
+            //double click
+            InputCardPanel.forEach(panel => {
+                if (panel.classList.contains(panelClass)) {
+                    panel.classList.remove("active");
+                    panel.style.display = "none";
+                }
+            });
+            clickCount = 0;
+        }
+    });
+}
+
+addDoubleClickHandler(creditCard1, "credit-card-1");
+addDoubleClickHandler(creditCard2, "credit-card-2");
+addDoubleClickHandler(creditCard3, "credit-card-3");
+
 
     const newPass = inputsChangePass[1].value.trim();
     const confirmPass = inputsChangePass[2].value.trim();

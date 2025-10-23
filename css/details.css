@@ -1,0 +1,1093 @@
+:root{
+    --main-color: #34699A;
+    --normal-size: 20px;
+    --hover-blue-color:hsla(209, 50%, 40%, 0.1);
+}
+
+*{
+    font-family: "League Spartan";
+}
+
+html{
+    width: 100%;
+}
+
+p,li{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--main-color);
+}
+a{
+    text-decoration: none;
+}
+/* 
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.header{
+    display: flex;
+    flex-direction: row;
+    position: static;
+    top: 0;
+    height: fit-content;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    background-color: white;
+    box-shadow:rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.menu-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+    margin: 0;
+    top: 0
+}
+.menu-nav li>a{
+    padding: 20px 50px ;
+    text-wrap: nowrap;
+    color: var(--main-color);
+    text-align: center;
+    font-size: var(--normal-size);
+    &:hover{
+        transition: background-color ease-in-out 0.5s;
+    background-color: var(--hover-blue-color);
+    }
+}
+.logo-img{
+    margin: 10px;
+    width: 238px;
+    height: fit-content;
+}
+/* This is Nhan's */
+
+.all{
+    width: 980px;
+    height: 2183px;
+    flex-shrink: 0;
+    display: block;
+    /* background-color: rgb(255, 255, 255); */
+    margin: auto;
+    margin-top: 32px;
+}
+
+.layout{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.phantren{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.part1 h2{
+    font-family: "League Spartan";
+    font-style: normal;
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 4px;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    align-self: stretch;
+}
+
+.cacloaigia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-family: "League Spartan";
+}
+
+.oldprice{
+    font-style: normal;
+    font-size: 15px;
+    color: #808080;
+    text-decoration-line: line-through;
+}
+
+.newprice{
+    font-style: normal;
+    font-size: 24px;
+    color: #22AB1B;
+    font-weight: 700;
+}
+
+.luuy{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-size: 12px;
+    color: #808080;
+    font-weight: 100;
+    margin: 0;
+}
+
+.discount{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-size: 14px;
+    display: block;
+    width: fit-content;
+    background: #22AB1B;
+    border-radius: 3px;
+    padding: 4px 6px;
+    text-align: center;
+    color: #fff;
+}
+
+.datngaybutton{
+    box-sizing: border-box;
+    height: 42px;
+    width: 108px;
+    background: var(--main-color);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+
+.datngaybutton:hover{
+    background-color: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.datvaicon{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+}
+
+.danhgiachung{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.datvaicon i{
+    cursor: pointer;
+}
+
+.datvaicon i:hover{
+    color: rgb(101, 101, 101);
+    transition: color ease-in-out 0.3s;
+}
+
+.shareicon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.likeicon{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.staricon{
+    width: 16px;
+    height: 16px;
+}
+.badstar{
+    filter: grayscale(100%);
+}
+
+.picsall{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.picslayout1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.pic1, .pic2{
+    width: 100%;
+    height: auto;
+}
+
+.picslayout2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.pic3, .pic4, .pic5{
+    width: 100%;
+    height: auto;
+}
+
+.part2{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+.mota h2{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.hanhtrinh{
+    color: #000;
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+    max-width: 920px;    
+    margin-left: auto;   
+    margin-right: auto; 
+}
+
+.xemlichtrinhdaydu{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-size: 16px;
+    color: var(--main-color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+    width: fit-content;
+}
+
+.xemlichtrinhdaydu:hover{
+    text-decoration: underline;
+}
+
+.arrowicon{
+    width: 20px;
+    height: 20px;
+    fill: var(--main-color);
+}
+
+
+.vetrong{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vetrongchoban{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+}
+
+.hinhngay-soluong {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vetrong p{
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.chinhngay-soluong{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid gray;
+    width: fit-content;
+    height: 42px;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.chinhngay-soluong p{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 100;
+    padding-right: 160px;
+    padding-left: 10px;
+    border-right: 2px solid gray;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chinhngay-soluong i:first-child{
+    margin-right: 8px;
+}
+
+.chinhngay-soluong button{
+    box-sizing: border-box;
+    height: 42px;
+    width: 200px;
+    background: var(--main-color);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 0px;
+    border: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.chinhngay-soluong button:hover{
+    background-color: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.box i:nth-child(2){
+    position: absolute;
+    right: 340px;
+}
+
+.box i:nth-child(4){
+    position: absolute;
+    right: 23px;
+}
+
+.chonve{
+    display: block;
+    border: 2px solid gray;
+    width: 980px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.chonve p:first-child{
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 55%;
+    line-height: 24px;
+}
+
+.chonve p:nth-child(2){
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    color: #5f5f5f;
+}
+
+.xemchitietve{
+    width: fit-content;
+}
+
+.chonve .xemchitietve p{
+    font-style: normal;
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 15px;
+    color: var(--main-color);
+    width: fit-content;
+}
+.chonve .xemchitietve p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.giacuachonve{
+    position: absolute;     
+    top: 15px;              
+    right: 15px;       
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;    
+}
+
+.benphaicuachonve button{
+    position: absolute;
+    top: 40px;              
+    right: 15px;   
+    box-sizing: border-box;
+    height: 42px;
+    width: 35%;
+    background: var(--main-color);
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.benphaicuachonve button:hover{
+    background-color: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.motacuadiadiem h2{
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.motacuadiadiem p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.danhgiacuakhach{
+    width: 980px;
+}
+
+.danhgiacuakhach h2{
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.cacdanhgia{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.switchcmtpage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 980px;
+}
+
+.switchcmtpage h2{
+    line-height: 24px;
+    margin: 10px 0px;
+    opacity: .5;
+    width: 800px;
+    font-size: 20px;
+}
+
+.page{
+    display: flex;
+    gap: 10px;
+}
+
+.switch{
+    display: flex;
+    gap: 10px;
+}
+
+.switch i{
+    font-size: 12px;
+    border: 2px solid black;
+    width: 16px;
+    height: 16px;
+    padding: 6px;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.danhgia1{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.danhgia1 img{
+    padding-right: 6px;
+    color: black;
+}
+
+.danhgia1 p:first-child{
+    margin: 0;
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+}
+
+.cacdanhgia .stars{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 2px;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.danhgia1 p{
+    margin: 0;
+    color: #000;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+}
+.cacdanhgia>p{
+    &:hover{
+        text-decoration: underline;
+        color: var(--main-color);
+        cursor: pointer;
+    }
+    width: fit-content;
+}
+
+.darkpanel{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51, 0.74);
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}   
+
+.favouritebox{
+    background: white;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    height: 110px;
+    border-radius: 10px;
+    gap: 6px;
+}
+
+.favouritebox>div{
+    display:flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.favouritebox button:first-child{
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: rgb(211, 211, 211);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--main-color);
+    font-weight: 700;
+    cursor: pointer;
+    border: none; 
+}
+
+.favouritebox button:first-child:hover{
+    background: rgb(169, 169, 169);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.favouritebox button:nth-child(2){
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: var(--main-color);
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none; 
+    letter-spacing: 1px;
+}
+
+.favouritebox button:nth-child(2):hover{
+    background: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.unfavouritebox{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    height: 180px;
+    border-radius: 10px;
+    gap: 6px;
+}
+
+.unfavouritebox>div{
+    display:flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.unfavouritebox button:first-child{
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: rgb(211, 211, 211);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--main-color);
+    font-weight: 700;
+    cursor: pointer;
+    border: none; 
+}
+
+.unfavouritebox button:first-child:hover{
+    background: rgb(169, 169, 169);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.unfavouritebox button:nth-child(2){
+    box-sizing: border-box;
+    height: 32px;
+    width: 128px;
+    background: var(--main-color);
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none; 
+    letter-spacing: 1px;
+}
+
+.unfavouritebox button:nth-child(2):hover{
+    background: hsla(209, 52%, 39%, 0.8);
+    transition: background-color ease-in-out 0.3s;
+}
+
+.sharebox{
+    position: relative;
+    display: none;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    padding-top: 0;
+    padding-left: 20px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.sharebox i{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.sharebox img{
+    width: 144px;
+    height: 108px;
+    border-radius: 10px;
+}
+
+.anh-text-link{
+    display: flex;
+    flex-direction: row;
+}
+
+.text-linkbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+}
+
+.text-linkbox p:nth-child(2){
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: fit-content;
+    height: 36px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 8px;
+    gap: 16px;
+}
+
+.text-linkbox p:nth-child(2) button{
+    background: #BBE9FF;
+    border: none;
+    border-radius: 16px;
+    padding: 4px 8px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.otherapps{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+}
+
+.otherapps p{
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8xp;
+    cursor: pointer;
+}
+
+.otherapps img{
+    height: 42px; 
+    width: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.dayspanel button{
+    box-sizing: border-box;
+    background: white;
+    width: 140px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;   
+}
+
+.dayspanel button.active{
+    background: var(--main-color);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.popup-lichtrinhtour{
+    position: relative;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    width: 850px;
+    display: none;
+    flex-direction: column;
+    height: 590px;
+}
+
+.popup-lichtrinhtour i{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.dayspanel{
+    box-sizing: border-box;
+    display: flex;
+    border-bottom: 2px solid var(--main-color);
+    width: fit-content;
+}
+
+.content_day ul{
+    padding-left: 20px;
+
+}
+
+.content_day li{
+    color: black;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.content_day dt{
+    line-height: 20px;
+}
+
+.anhlichtrinh{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.anhlichtrinh>img{
+    border-radius: 10px;
+    margin-top: 4px;
+    width: 150px;
+    height: auto;
+}
+
+.contentbox .content_day{
+    display: none;
+}
+
+.contentbox .content_day.active{
+    display: flex;
+    animation: moving .5s ease;
+}
+
+@keyframes moving{
+    from{transform: translateX(20px); opacity: 0;}
+    to{transform: translateX(0px); opacity: 1;}
+}
+
+.darkpanel1{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 51, 51, 0.74);
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticketinfo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.headerofticket{
+    background: #ffffff;
+    width: 100%;
+}
+
+.info-all{
+    overflow: hidden;
+    overflow-y: scroll;
+    animation: moving .5s ease;
+}
+
+.ticketinfo i{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.ticketinfo h2{
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.info-all>p{
+    color: rgb(91, 91, 91); 
+    font-size: 16px; 
+    font-weight: 500;
+    line-height: 18px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    border-bottom: 1px dashed black;
+}
+
+.ticketinfo h3{
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.ticketcont{
+    border-bottom: 1px dashed black;
+}
+
+.ticketcont ul{
+    padding-left: 10px;
+}
+
+.ticketcont p{
+    color: black;
+    margin-bottom: 6px;
+}
+
+.ticketcont li{
+    margin-left: 30px;
+    line-height: 20px;
+    color: black;
+    font-weight: 100;
+}
+
+.ticketcont dd{
+    line-height: 20px;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.boxchinhsoluong{
+    display: flex;
+    position: absolute;
+    top: 45px;
+    left: 340px;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    background: #ffffff;
+    z-index: 10;
+    width: 400px;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.object{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.object>p{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    border: none;
+}
+
+.increase_decrease{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    height: 10px;
+    border: 1px solid black;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px !important; 
+    gap: 20px;
+    color: #34699A;
+    border-radius: 6px;
+}
+
+.increase_decrease p{
+    color: black;
+    font-weight: 100;
+    padding: 0;
+    border: 0;
+}
+
+.increase_decrease i{
+    cursor: pointer;
+}
+
+.kid p{
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    font-weight: 500;
+    border: 0;
+}
+
+.kid p:last-child{
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+}
+
+.boxchinhsoluong button{
+    background: var(--main-color);
+    color: white;
+    width: 280px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
