@@ -17,9 +17,19 @@ const logOutBtn = document.getElementById("log_outBtn");
 const logOutPanel = document.getElementById("logout");
 const nologOut = document.getElementById("no");
 const yeslogOut = document.getElementById("yes");
+const backBtn = document.querySelector(".back-link");
+const deleteAccBtn = document.querySelector(".delete-account span2");
+const deleteAccPanel = document.getElementById("deleteAccPanel");
+const noDelete = document.getElementById("noDelete");
+const yesDelete = document.getElementById("yesDelete");
 
 const linkBankBtn = document.querySelector(".bankBtn");
 const linkBankPanel = document.querySelector(".link-bank");
+const dropDownBtn = document.getElementById("downBtn");
+const dropDownPanel = document.getElementById("downPanel");
+const SaveBtnLinkBank = document.querySelector("#link-bank-panel button");
+const linkedBankPanel = document.getElementById("linked-bank-panel");
+const linkBankPanel_son = document.getElementById("link-bank-panel");
 
 
 const overlay = document.getElementById("overlay");
@@ -39,9 +49,9 @@ const smsNotiPanel = document.getElementById("smsNotiPanel");
 const emailNotiBtn = document.getElementById("emailNotiBtn");
 const smsNotiBtn = document.getElementById("smsNotiBtn");
 
-// origin
+const navBtns = document.querySelectorAll(".nav-item");
 
-// Card List
+//Card List
 const creditCard1 = document.getElementById("credit-card-1");
 const creditCard2 = document.getElementById("credit-card-2");
 const creditCard3 = document.getElementById("credit-card-3");
@@ -56,7 +66,7 @@ navBtns.forEach(btn => {
     });
 });
 
-// Start the code
+//Start the code
 alltheSections.forEach(element => {
     element.style.display = "none";
 });
@@ -66,35 +76,39 @@ changePasswordPanel.style.display = "none";
 smsNotiPanel.style.display = "none";
 emailNotiBtn.classList.add("title-selected");
 securityBtn.classList.add("title-selected");
-
 profileBtn.classList.add("nav-item-selected");
-// Nút Hồ sơ
+//Nút Hồ sơ
 profileBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
     section1.style.display = "flex";
-    // profileBtn.style.background = "#34699a";
-    // profileBtn.style.color = "white";
-    // iconProfileBtn.style.color = "white";
 
 }
-// Nút bảo mật và Mật khẩu
+//Nút bảo mật và Mật khẩu
 passwordBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
-    //alert('Clicked!!!!!!');
+
     section2.style.display = "flex";
-    // passwordBtn.style.background = "#34699a";
-    // passwordBtn.style.color = "white";
-    // iconPasswordBtn.style.color = "white";
 };
+// Xóa tài khoản
+if(deleteAccBtn){
+    deleteAccPanel.style.display = "none";
+    deleteAccBtn.addEventListener("click", () => {
+        deleteAccPanel.style.display = "flex";
+    })
+    noDelete.addEventListener("click", () => {
+        deleteAccPanel.style.display = "none";
+    })
+}
+
 myCardBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
-    //alert('Clicked!!!!!!');
+
     section3.style.display = "flex";
 };
 
@@ -104,13 +118,60 @@ notificationBtn.onclick = function () {
     });
     section6.style.display = "flex";
 };
-        // Refund
+// Refund
 reFundBtn.onclick = function () {
     alltheSections.forEach(element => {
         element.style.display = "none";
     });
     section5.style.display = "flex";
 }
+    // Wait-processing -- processing - processed
+document.querySelectorAll(".refund-tabs a").forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    document.querySelectorAll(".refund-tabs a").forEach(el => el.classList.remove("active"));
+    a.classList.add("active");
+  });
+});
+
+// Link-bank BACK -> Refund
+if(backBtn){
+    section5.style.display = "none";
+    backBtn.addEventListener("click", () => {
+        section5.style.display = "flex";
+        linkBankPanel.style.display = "none";
+    })
+}
+// Refund -> DROPDOWN
+if (dropDownBtn && dropDownPanel) {
+    dropDownPanel.style.display = "none";
+    let isOpen = false; 
+
+    dropDownBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        if (isOpen) {
+        dropDownPanel.style.display = "block"; 
+        dropDownBtn.style.transform = "rotate(180deg)"; 
+        } else {
+        dropDownPanel.style.display = "none"; 
+        dropDownBtn.style.transform = "rotate(0deg)"; 
+        }
+    });
+}
+// Linked-Bank thành công
+if(SaveBtnLinkBank){
+    linkedBankPanel.style.display = "none";
+    SaveBtnLinkBank.addEventListener("click", () => {
+        linkBankPanel_son.style.display = "none";
+        linkedBankPanel.style.display = "flex";
+    })
+    backBtn.addEventListener("click", () => {
+        linkBankPanel_son.style.display = "block";
+        linkedBankPanel.style.display = "none";
+    })
+}
+
 // Đăng xuất
 if(logOutBtn){
     logOutPanel.style.display = "none";
@@ -122,9 +183,8 @@ if(logOutBtn){
     })
 }
 
-
 // Liên kết ngân hàng
-if(linkBankBtn){
+if (linkBankBtn) {
     linkBankPanel.style.display = "none";
     linkBankBtn.addEventListener("click", () => {
         section5.style.display = "none";
@@ -132,17 +192,15 @@ if(linkBankBtn){
     })
 }
 
-        // Refund
-
 changePasswordPanelBtn.onclick = function () {
     changePasswordPanelBtn.classList.add("title-selected");
     securityBtn.classList.remove("title-selected");
     securityPanel.style.display = "none";
     changePasswordPanel.style.display = "block";
 };
-    securityPanel.style.display = "block";
-    securityPanel.style.color = "#34699a";
-    securityBtn.style.borderBottom = "block";
+securityPanel.style.display = "block";
+securityPanel.style.color = "#34699a";
+securityBtn.style.borderBottom = "block";
 securityBtn.onclick = function () {
     securityBtn.classList.add("title-selected");
     changePasswordPanelBtn.classList.remove("title-selected");
@@ -150,7 +208,7 @@ securityBtn.onclick = function () {
     securityPanel.style.display = "block";
     securityPanel.style.color = "#34699a";
     securityBtn.style.borderBottom = "block";
-    
+
 };
 retrievePasswordBtn.onclick = function () {
     overlay.style.display = "flex";
@@ -162,7 +220,7 @@ retrievePasswordBtn.onclick = function () {
 Xbutton.onclick = function () {
     overlay.style.display = "none";
 };
-// Notification Buttons
+//Notification Buttons
 const toggles = document.querySelectorAll(".toggle");
 
 toggles.forEach(btn => {
@@ -171,6 +229,7 @@ toggles.forEach(btn => {
 
         if (btn.classList.contains("active")) {
             btn.classList.replace("fa-toggle-off", "fa-toggle-on");
+            
         } else {
             btn.classList.replace("fa-toggle-on", "fa-toggle-off");
         }
@@ -188,17 +247,6 @@ smsNotiBtn.onclick = function () {
     emailNotiPanel.style.display = "none";
     smsNotiPanel.style.display = "flex";
 }
-// Khi bấm "Đổi mật khẩu"
-// changePasswordPanelBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     securityPanel.style.display = "none";
-//     changePasswordPanel.style.display = "block";
-//     changePasswordPanel.style.borderBottom = "2px solid #34699A";
-//     changePasswordPanel.style.color = "#34699A";
-//     securityBtn.style.color = "grey";
-//     securityBtn.style.borderBottom = "none";
-//     reInputPanel.style.display="none";
-// });
 
 // Chuyển tab quên mật khẩu 2 -> nhập OTP
 if (otpPanel && retrievePasswordPanel) {
@@ -326,7 +374,7 @@ btnChangePass.addEventListener("click", function (e) {
     }
 });
 
-// Set input box credit card
+//Set input box credit card
 function togglePanel(cardClass) {
     InputCardPanel.forEach(panel => {
         if (panel.classList.contains(cardClass)) {
@@ -374,6 +422,3 @@ function addDoubleClickHandler(element, panelClass) {
 addDoubleClickHandler(creditCard1, "credit-card-1");
 addDoubleClickHandler(creditCard2, "credit-card-2");
 addDoubleClickHandler(creditCard3, "credit-card-3");
-
-
-
