@@ -142,3 +142,53 @@ margin: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2); 
 } */
+/* Phần này con chat box fix pos */
+.chatbot-button {
+  cursor: pointer;
+   /* // transform: translateX(-50%); */
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top:-25px;
+    transition: all 0.3s ease;
+&:hover {
+    width: 120px;
+    height: 120px;
+    transition: all 0.3s ease;
+
+  }
+}
+.bubble-box{
+  text-decoration: none;
+    z-index: 1000;
+     display: flex;
+    position: fixed;
+    right: 2%;
+    bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 ;
+    width: 130px;
+    transition: all 0.3s ease;
+&:hover {
+    width: 150px;
+    transition: all 0.3s ease;
+  }
+}
+.bubble-box>p{
+  color: black;
+  font-size: 12px;
+  margin :0; 
+  padding: 5px; 
+  background-color: aliceblue; 
+  border-radius: 10px;
+}
+@keyframes shake {
+  0%  { transform:  rotate(-10deg); }
+50%  { transform: rotate(0deg); }
+  100%  { transform:   rotate(-10deg); }
+}
+/* apply animation */
+.shake {
+  animation: shake 1s ease-in-out infinite;
+}
