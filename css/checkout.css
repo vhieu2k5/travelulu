@@ -6,7 +6,7 @@ body {
 
 .main-body1 {
     display: flex;
-    width: 75%;
+    width: 65%;
     justify-self: center;
 }
 
@@ -42,39 +42,61 @@ body {
 .thanhtientrinh {
     box-sizing: border-box;
     background-color: var(--main-color);
+    padding: 0 30vw;
     width: 100vw;
     height: 8vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+    align-items: center;
 }
 
-.vongtron {
+.active {
     background-color: white;
+    color: var(--main-color);
+    border-style: solid;
     border-radius: 50%;
     border-color: #d7d7d7;
     border-width: 1px;
-    width: 18px;
-    height: 18px;
-    color: var(--main-color);
+    width: 13px;
+    height: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 10px;
 }
+
+.vongtron {
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #d7d7d7;
+    border-width: 1px;
+    width: 13px;
+    height: 13px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
 
 .nd {
     color: white;
+    font-size: 13px;
+    margin-top: 5px;
 }
 
 .gr1 {
+    box-sizing: border-box;
     justify-items: center;
     align-items: center;
+    
 }
 
 .chu-y {
     color: #FF0000;
-    font-size: 16px;
+    font-size: 13px;
     margin: 5px 0;
 }
 
@@ -86,7 +108,7 @@ body {
 
 .sao,
 .tit {
-    font-size: var(--normal-size);
+    font-size: 16px;
     font-weight: 400;
     position: relative;
     text-align: left;
@@ -256,13 +278,18 @@ input.o-trong:focus {
     margin: 50px 0 0 0;
     justify-items: center;
 }
+.thanhtoan>a {
+color: white;
+}
 
 .thanhtoan {
-    font-size: 20px;
-    color: white;
+    text-decoration: none;
+    
     padding: 25px 0;
     text-align: center;
 }
+
+
 
 .anh-tour {
     width: 38%;
