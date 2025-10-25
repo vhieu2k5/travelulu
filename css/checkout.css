@@ -28,12 +28,14 @@ body {
     position: relative;
     padding: 0 27px 0 27px;
     margin: 50px 0 0 0;
+
 }
 
 .tieude1 {
     font-size: 24px;
     font-weight: 400;
     margin: 27px 0 0 0;
+
 }
 
 
@@ -287,7 +289,7 @@ body {
 
 
 .anh-tour {
-    width: 38%;
+    width: auto;
     height: auto;
 }
 
@@ -302,6 +304,7 @@ body {
 
 
 
+/*method*/
 
 .chonphuongthuc {
     box-sizing: border-box;
@@ -316,8 +319,11 @@ body {
     margin: 50px 0 0 0;
 }
 
-.payment-option {
-    width: 100%;
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
 }
 
 input[type="radio"] {
@@ -335,12 +341,82 @@ input[type="radio"] {
     height: 57px;
     display: flex;
     align-items: center;
-    gap: 8px;
     background: #d4eaff;
     padding: 0 27px 0 27px;
+    justify-content: space-between;
 }
 
 .chon {
     background-color: var(--main-color);
     color: white;
+}
+
+.hinhthuc {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*complete*/
+
+.ve{
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 13px;
+    width: 85%;
+    height: 228px;
+    margin: 27px auto;
+}
+
+.tt-ma {
+    width: 100%;
+    display: flex;
+    margin: 35px;
+    justify-content: space-between;
+}
+.ma-dat-cho {
+    box-sizing: border-box;    
+    border-radius: 13px;
+    border: 0.5px solid black;
+    width: 22%;
+
+}
+
+.madat, .ma{
+    width: 100%;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+.ma {
+    height: 75%;
+}
+
+.madat {
+    background-color: var(--main-color);
+    border-radius: 13px 13px 0 0;
+    color: white;
+    height: 25%;
+}
+
+.chiphitour {
+    width: 50%;
+    margin: 0 auto;
 }
