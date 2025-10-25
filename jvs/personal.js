@@ -93,6 +93,7 @@ passwordBtn.onclick = function () {
 
     section2.style.display = "flex";
 };
+
 // Xóa tài khoản
 if(deleteAccBtn){
     deleteAccPanel.style.display = "none";
