@@ -368,7 +368,7 @@ body{
     margin: 0;
     font-size: 16px;
     font-weight: 100;
-    padding-right: 160px;
+    padding-right: 150px;
     padding-left: 10px;
     border-right: 2px solid gray;
     height: 100%;
@@ -1090,4 +1090,28 @@ body{
     border: none;
     border-radius: 6px;
     font-size: 14px;
+}
+#lich{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 100;
+    padding-right: 140px;
+    padding-left: 30px;
+    border: none;
+    border-right: 2px solid gray !important;
+    background-color: rgba(183, 227, 255, 0.2);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+input[type="text"]{
+    outline: none !important;
+}
+#soluongng{
+    cursor: pointer;
+}
+.fa-caret-down{
+    margin-left: -40px;
+    margin-right: 10px;
 }

@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../css/details.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="../js/header.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
@@ -80,8 +84,11 @@
                 <p>Vé trống cho bạn</p>
                 <div class="chinhngay-soluong">
                     <div class="box">
-                        <p id="lich"> <i class="fa-solid fa-calendar-days"></i>T2, 15 Th9 - T4, 17 Th9</p>
-                        <i class="fa fa-caret-down"></i>
+                        <!-- //input -->
+                        <i style="position: absolute; left: 5px;" class="fa-solid fa-calendar"></i>
+                        <input type="text" id="lich">
+                        <i class="fa fa-caret-down" style="margin-left: -20px;"></i>
+
                         <p id="soluongng" style="border:none"> <i class="fa fa-user"></i>2 Người - 0 trẻ em</p>
                         <i class="fa fa-caret-down"></i>
                         <div class="boxchinhsoluong">

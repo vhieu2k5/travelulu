@@ -192,3 +192,14 @@ margin: 0;
 .shake {
   animation: shake 1s ease-in-out infinite;
 }
+
+/* Thay icon input date mặc định */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: relative;
+  left: 170%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url("../pics/calender-icon.png") no-repeat center;
+background-size: contain;
+}

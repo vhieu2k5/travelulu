@@ -153,3 +153,8 @@ if(confirmAdjust){
     })
 }
 // box chinh so luong
+  $('#lich').daterangepicker({
+    startDate: moment().startOf('day'),
+    endDate: moment().add(1, 'days').endOf('day'),
+    locale: { format: 'DD/MM/YYYY' }
+  });

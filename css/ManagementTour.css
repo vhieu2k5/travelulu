@@ -234,9 +234,9 @@ h1 {
 }
 
 .cancel-btn {
-  background: #e6f2fb;
+  background: #dbdbdb;
   border: none;
-  color: #0f5b8a;
+  color: rgb(255, 255, 255);
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -534,7 +534,7 @@ h1 {
   margin-bottom: 18px;
 }
 .explore-btn {
-  background: #0b74ff;
+  background: var(--main-color);
   color: #fff;
   border: none;
   padding: 10px 22px;
