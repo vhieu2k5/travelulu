@@ -713,11 +713,12 @@ input[type="checkbox"] {
 .notification-section>div>div p:last-child {
   font-weight: 100 !important;
   font-size: 15px;
-  color: grey;
+  color: #747474;
 }
 
 .notification-section>div>div p {
   margin: 2px 0;
+  color: #000;
 }
 
 .fa-toggle-off:before {
@@ -728,6 +729,12 @@ input[type="checkbox"] {
 .fa-toggle-on:before {
   font-size: 30px;
   color: var(--main-color);
+}
+.verify.active .content-verify span1{
+  color: #000;
+}
+.verify.active .content-verify p {
+  color: rgb(116, 116, 116) !important;
 }
 
 .notification-section b {
@@ -961,6 +968,39 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.refund-card{
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  height: 250px;
+}
+.content-show{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 150px;
+  width: 100%;
+  color: white;
+  border-bottom: 2px dashed #34699A;
+  background: linear-gradient(135deg, #9AB8C2, #D6E0F0);
+  padding: 10px 30px;
+  position: relative;
+}
+.content-show p {
+  padding-left: 150px;
+}
+.content-show > img {
+  height: 100px;
+  position: absolute;
+  top: 30px;
+  border: 2px dashed #34699A;
+}
+.content-show h4{
+  position: absolute;
+  font-size: 23px;
+  top: 90px;
+  left: 62px;
 }
 /* 
 .refund-tabs a:first-child {

@@ -22,6 +22,9 @@ const deleteAccBtn = document.querySelector(".delete-account span2");
 const deleteAccPanel = document.getElementById("deleteAccPanel");
 const noDelete = document.getElementById("noDelete");
 const yesDelete = document.getElementById("yesDelete");
+const refundDone = document.querySelector(".refund-tabs a:last-child");
+const refundList_Done = document.querySelector(".refund-card");
+const refundContent1 = document.querySelector(".refund-content");
 
 const linkBankBtn = document.querySelector(".bankBtn");
 const linkBankPanel = document.querySelector(".link-bank");
@@ -126,12 +129,26 @@ reFundBtn.onclick = function () {
     });
     section5.style.display = "flex";
 }
+
     // Wait-processing -- processing - processed
+document.querySelector(".refund-tabs a:first-child").classList.add("active");
+refundList_Done.style.display = "none";
+
 document.querySelectorAll(".refund-tabs a").forEach(a => {
   a.addEventListener("click", e => {
     e.preventDefault();
     document.querySelectorAll(".refund-tabs a").forEach(el => el.classList.remove("active"));
     a.classList.add("active");
+
+    const tabText = a.textContent.trim();
+    if(tabText == "Hoàn tất"){
+        refundContent1.style.display = "none";
+        refundList_Done.style.display = "flex";
+    }
+    else{
+        refundContent1.style.display = "flex";
+        refundList_Done.style.display = "none";
+    }
   });
 });
 
@@ -223,19 +240,24 @@ Xbutton.onclick = function () {
 };
 //Notification Buttons
 const toggles = document.querySelectorAll(".toggle");
+const verifyBox = document.querySelector(".verify");
 
 toggles.forEach(btn => {
     btn.addEventListener("click", () => {
         btn.classList.toggle("active");
+        verifyBox.classList.toggle("active");
 
         if (btn.classList.contains("active")) {
             btn.classList.replace("fa-toggle-off", "fa-toggle-on");
+
             
         } else {
             btn.classList.replace("fa-toggle-on", "fa-toggle-off");
         }
     });
 });
+
+
 emailNotiBtn.onclick = function () {
     emailNotiBtn.classList.add("title-selected");
     smsNotiBtn.classList.remove("title-selected");
