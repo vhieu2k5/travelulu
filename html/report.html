@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travelulu - Report</title>
+    <meta content="charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/report.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/report.js" defer></script>
+</head>
+
+<body>
+    <!-- INDEX  -->
+    <div class="header">
+        <img src="../pics/TRAVELULU-logo.png" alt="" class="logo-img">
+        <ul class="menu-nav">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="">Đặt tour</a></li>
+            <li><a href="">Quản lý tour</a></li>
+            <li><a href="personal.html">Cá nhân</a></li>
+        </ul>
+    </div>
+
+    <!-- REPORT -->
+    <div class="report-page">
+        <div class="report-title">
+            <i class="fa-solid fa-paper-plane left"></i>
+            <h2>Phản hồi kĩ thuật</h2>
+            <i class="fa-solid fa-paper-plane right"></i>
+        </div>
+        <div class="report-section">
+            <div class="report-note">Nếu bạn thấy có bất kỳ lỗi gì từ hệ thống hay dịch vụ, hãy viết phản hồi gửi tới
+                chúng tôi để ứng dụng Travelulu được cải thiện tốt nhất.</div>
+            <form id="reportForm">
+                <label>
+                    <span class="must">*</span>
+                    Loại phản hồi:
+                </label>
+                <select id="reportSelect">
+                    <option value="" disabled selected>-- Chọn loại phản hồi --</option>
+                    <option>Báo lỗi hiển thị</option>
+                    <option>Khuyến nghị đặt tour / thanh toán</option>
+                    <option>Gợi ý cải thiện</option>
+                    <option>Khác</option>
+                </select>
+                <label>
+                    <span class="must">*</span>
+                    Nội dung phản hồi:
+                </label>
+                <textarea class="report-input" id="reportInput"
+                    placeholder="Nhập nội dung chi tiết phản hồi"></textarea>
+                <label>File đính kèm:</label>
+                <label class="report-file">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Chọn tệp:</span>
+                    <input type="file" id="reportFile" multiple>
+                    <div class="file-list"></div> <!-- hiển thị tên file ở đây -->
+                </label>
+                <button type="submit" class="report-submit">Gửi</button>
+            </form>
+            <div class="report-history" id="reportHistory">
+                <h3>Lịch sử phản hồi:</h3>
+            </div>
+            <template id="historyItemTemplate">
+                <div class="history-item">
+                    <div class="type">
+                        Phản hồi hệ thống - <span class="time">26/10/2025 14:30</span>
+                    </div>
+                    <div class="content"></div>
+                    <div class="files"></div>
+                    <div class="history-actions">
+                        <button class="edit-btn">Chỉnh sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</body>
+
+</html>

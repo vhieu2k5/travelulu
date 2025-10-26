@@ -1,0 +1,253 @@
+.report-page {
+    min-height: 100vh;
+    background-color: #eeeeee;
+    background-image: linear-gradient(to bottom,
+            #34699A 0px,
+            #34699A 100px,
+            #eeeeee 100px,
+            #eeeeee 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.report-title {
+    position: relative;
+    text-align: center;
+}
+
+.report-title h2 {
+    display: inline-block;
+    font-size: 50px;
+    color: #ffffff;
+    margin-top: 30px;
+    position: relative;
+}
+
+.report-note {
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #888888;
+}
+
+.report-title i {
+    position: absolute;
+    font-size: 40px;
+    color: #ffffff;
+    top: 30%;
+    transition: transform 0.8s ease;
+}
+
+.report-title i.left {
+    left: 28%;
+    transform: scaleX(-1);
+}
+
+.report-title i.right {
+    right: 28%;
+}
+
+.report-title:hover i.left {
+    transform: translate(-540px, -50%) rotate(-50deg) scaleX(-1);
+}
+
+.report-title:hover i.right {
+    transform: translate(540px, -50%) rotate(50deg);
+}
+
+.report-section {
+    width: 700px;
+    height: 100%;
+    margin: 20px auto 0px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report-section label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.must {
+    color: #ff0000;
+}
+
+.report-section select,
+.report-section textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.report-section select:focus,
+.report-section textarea:focus {
+    border-color: #34699A;
+    box-shadow: 0 0 5px rgba(52, 105, 154, 0.3);
+}
+
+.report-input {
+    padding: 10px;
+    border-radius: 8px;
+    resize: vertical;
+    /* người dùng có thể kéo dọc nếu muốn */
+    height: 4em;
+    /* khoảng 4 dòng chữ */
+    overflow-y: auto;
+    /* hiện thanh cuộn nếu vượt quá */
+}
+
+.report-file {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.report-file input[type="file"] {
+    display: none;
+    /* ẩn input mặc định */
+}
+
+.report-file span {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.report-file .file-list {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.report-submit {
+    background-color: #34699A;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.report-submit:hover {
+    transform: translateY(-2px);
+    background-color: #4b87c0;
+}
+
+.report-history {
+    margin-top: 30px;
+}
+
+.report-history h3 {
+    color: #34699A;
+    margin-bottom: 15px;
+}
+
+.report-history {
+    border-top: 1px solid #888888;
+    margin-top: 30px;
+}
+
+.report-history h3 {
+    color: #34699A;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.history-item {
+    background-color: #e7f3ff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.history-item .type {
+    font-weight: bold;
+    color: #1f4f75;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.history-item .type .time {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.history-item .content {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.history-item .files ul {
+    padding-left: 20px;
+}
+
+.history-item .files li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.3;
+}
+
+.history-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.history-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.history-actions .edit-btn {
+    background-color: #adcff0;
+    color: #000000;
+}
+.history-actions .edit-btn:hover {
+    background-color: #4b87c0;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.history-actions .delete-btn {
+    background-color: #ffc2c2;
+    color: #000000;
+}
+.history-actions .delete-btn:hover {
+    background-color: #E96767;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.input-error {
+    border: 2px solid #E96767 !important;
+}
+
+.error-message {
+    color: #E96767;
+    font-size: 14px;
+}

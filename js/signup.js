@@ -1,33 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
+  const signupForm = document.querySelector('.signup-box:not(.form-verify) form');
 
-  // Tìm input theo id nếu có, nếu không thì fallback bằng selector khác
-  const nameInput =
-    document.querySelector('#nameInput') ||
-    form.querySelector('input[type="text"]') ||
-    form.querySelector('input[placeholder*="họ tên"]');
-
-  const phoneInput =
-    document.querySelector('#phoneInput') ||
-    form.querySelector('input[type="number"]') ||
-    // fallback: tìm input text thứ 2 (nếu không có loại number)
-    (form.querySelectorAll('input[type="text"]')[1] || form.querySelector('input[placeholder*="số"]'));
-
-  const emailInput =
-    document.querySelector('#emailInput') ||
-    form.querySelector('input[type="email"]') ||
-    form.querySelector('input[placeholder*="email"]');
-
-  const password = document.querySelector('#passwordInput1');
-  const confirmPassword = document.querySelector('#passwordInput2');
+  // --- Inputs signup ---
+  const nameInput = signupForm.querySelector('input[type="text"]');
+  const phoneInput = signupForm.querySelectorAll('input[type="text"]')[1];
+  const emailInput = signupForm.querySelector('#emailInput');
+  const password = signupForm.querySelector('#passwordInput1');
+  const confirmPassword = signupForm.querySelector('#passwordInput2');
 
   // Nếu bất kỳ input quan trọng nào bị null, dừng và log để debug
-  if (!form || !nameInput || !phoneInput || !emailInput || !password || !confirmPassword) {
+  if (!signupForm || !nameInput || !phoneInput || !emailInput || !password || !confirmPassword) {
     console.error('Một hoặc nhiều input không tìm thấy:', { nameInput, phoneInput, emailInput, password, confirmPassword });
     return;
   }
 
-  // Toggle ẩn/hiện 2 mắt (nếu bạn chưa có phần này chung)
+  // Toggle ẩn/hiện 2 mắt
   const toggle1 = document.querySelector('#togglePassword1');
   if (toggle1) {
     toggle1.addEventListener('click', () => {
@@ -47,11 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  form.addEventListener('submit', (e) => {
+  signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Xóa lỗi cũ
-    form.querySelectorAll('.error-message').forEach(el => el.remove());
+    signupForm.querySelectorAll('.error-message').forEach(el => el.remove());
+    //xóa lỗi khi người dùng bấm vào để sửa
+    [nameInput, phoneInput, emailInput, password, confirmPassword].forEach(input => {
+      input.addEventListener('focus', () => {
+        input.classList.remove('input-error');
+        input.closest('.input-wrapper, .password-field')?.querySelector('.error-message')?.remove();
+      });
+    });
     [nameInput, phoneInput, emailInput, password, confirmPassword].forEach(i => i.classList.remove('input-error'));
 
     let isValid = true;
@@ -60,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = document.createElement('div');
       msg.className = 'error-message';
       msg.textContent = text;
-      // đặt lỗi ngay trên input để không đẩy layout (căn bạn đang dùng)
+      // đặt lỗi ngay trên input để không đẩy layout
       input.insertAdjacentElement('beforebegin', msg);
       input.classList.add('input-error');
       isValid = false;
@@ -112,8 +106,182 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } else {
         // fallback: nếu không có popup thì submit
-        form.submit();
+        signupForm.submit();
       }
     }
   });
+  const fbBtn = document.querySelector(".signup-fb");
+  const fbPopup = document.querySelector("#fbSignupPopup");
+  const closeFbBtn = document.querySelector("#closeFbPopup");
+  const fbLoginBtn = document.querySelector("#fbLoginBtn");
+  const allowBtn = document.querySelector("#allowBtn");
+  const popupfb = document.querySelector("#popupfb");
+  const popupallow = document.querySelector("#popupallow");
+  const fbUsername = document.querySelector("#fbUsername");
+  const fbPassword = document.querySelector("#fbPassword");
+  const toggleFbPassword = document.querySelector("#toggleFbPassword");
+
+  if (!fbPopup) return;
+
+  // Ẩn/hiện mật khẩu
+  if (toggleFbPassword && fbPassword) {
+    toggleFbPassword.addEventListener("click", () => {
+      const isHidden = fbPassword.type === "password";
+      fbPassword.type = isHidden ? "text" : "password";
+      toggleFbPassword.classList.toggle("fa-eye");
+      toggleFbPassword.classList.toggle("fa-eye-slash");
+    });
+  }
+
+  // Mở popup
+  if (fbBtn) {
+    fbBtn.addEventListener("click", () => {
+      fbPopup.style.display = "flex";
+      popupfb.style.display = "flex";
+      popupallow.style.display = "none";
+    });
+  }
+
+  // Đóng popup
+  if (closeFbBtn) {
+    closeFbBtn.addEventListener("click", () => {
+      fbPopup.style.display = "none";
+      fbUsername.value = "";
+      fbPassword.value = "";
+      document.querySelector(".error-message")?.remove();
+      fbUsername.classList.remove("input-error");
+      fbPassword.classList.remove("input-error");
+    });
+  }
+
+  // Xóa lỗi khi người dùng click vào ô input
+  [fbUsername, fbPassword].forEach(input => {
+    input.addEventListener("focus", () => {
+      input.classList.remove("input-error");
+      input.closest("signupForm")?.querySelector(".error-message")?.remove();
+    });
+  });
+
+  // Khi nhấn "Tiếp tục"
+  if (fbLoginBtn) {
+    fbLoginBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      document.querySelector(".error-message")?.remove();
+      [fbUsername, fbPassword].forEach(el => el.classList.remove("input-error"));
+
+      let errorMessage = "";
+
+      if (!fbUsername.value.trim() || !fbPassword.value.trim()) {
+        errorMessage = "Vui lòng nhập tài khoản và mật khẩu Facebook";
+        if (!fbUsername.value.trim()) fbUsername.classList.add("input-error");
+        if (!fbPassword.value.trim()) fbPassword.classList.add("input-error");
+      }
+
+      if (errorMessage) {
+        const msg = document.createElement("div");
+        msg.className = "error-message";
+        msg.textContent = errorMessage;
+        fbPassword.insertAdjacentElement("afterend", msg);
+        return;
+      }
+
+      // Nếu hợp lệ → chuyển sang form cho phép
+      popupfb.style.display = "none";
+      popupallow.style.display = "flex";
+    });
+  }
+
+  // Khi nhấn "Cho phép"
+  if (allowBtn) {
+    allowBtn.addEventListener("click", () => {
+      fbPopup.style.display = "none"; // ẩn popup FB
+
+      // ẩn form signup bình thường, hiện form verify
+      const signupForm = document.querySelector('.signup-box:not(.form-verify)');
+      const verifyForm = document.querySelector('.form-verify');
+
+      if (signupForm && verifyForm) {
+        signupForm.style.display = 'none';
+        verifyForm.style.display = 'block';
+      }
+    });
+  }
+  const verifyFormBox = document.querySelector('.form-verify');
+  const verifyForm = verifyFormBox.querySelector('form');
+
+  // --- Inputs verify ---
+  const verifyName = verifyForm.querySelector('input[type="text"]');
+  const verifyPhone = verifyForm.querySelectorAll('input[type="text"]')[1];
+  const verifyEmail = verifyForm.querySelector('#emailInput2');
+
+  // --- Xóa lỗi khi người dùng focus (verify form) ---
+  [verifyName, verifyPhone, verifyEmail].forEach(input => {
+    input.addEventListener('focus', () => {
+      input.classList.remove('input-error');
+      input.closest('.input-wrapper')?.querySelector('.error-message')?.remove();
+    });
+  });
+  // --- Hàm hiện popup thành công (dùng chung cho signup và verify)
+  const showSuccessPopup = () => {
+    const popup = document.querySelector('#successPopup');
+    const closeBtn = document.querySelector('#closePopup');
+    if (popup) {
+      popup.style.display = 'flex';
+      if (closeBtn) closeBtn.focus();
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+          window.location.href = 'login.html';
+        }, { once: true });
+      }
+    }
+  };
+
+  // --- Submit verify form ---
+  verifyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Xóa tất cả lỗi cũ
+    verifyForm.querySelectorAll('.error-message').forEach(el => el.remove());
+    [verifyName, verifyPhone, verifyEmail].forEach(i => i.classList.remove('input-error'));
+
+    let isValid = true;
+    const showError = (input, text) => {
+      const msg = document.createElement('div');
+      msg.className = 'error-message';
+      msg.textContent = text;
+      input.insertAdjacentElement('beforebegin', msg);
+      input.classList.add('input-error');
+      isValid = false;
+    };
+
+    // Kiểm tra trống
+    if (verifyName.value.trim() === '') showError(verifyName, 'Vui lòng nhập họ tên');
+    if (verifyPhone.value.trim() === '') showError(verifyPhone, 'Vui lòng nhập số điện thoại');
+    if (verifyEmail.value.trim() === '') showError(verifyEmail, 'Vui lòng nhập email');
+
+    // validate phone/email
+    const phoneRegex = /^[0-9]{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (verifyPhone.value.trim() && !phoneRegex.test(verifyPhone.value.trim())) {
+      showError(verifyPhone, 'Số điện thoại không hợp lệ');
+    }
+    if (verifyEmail.value.trim() && !emailRegex.test(verifyEmail.value.trim())) {
+      showError(verifyEmail, 'Email không hợp lệ');
+    }
+
+    if (isValid) showSuccessPopup();
+  });
+
+  // --- Back button ---
+  const backBtn = verifyForm.querySelector('.signup-verify-back');
+  if (backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      verifyFormBox.style.display = 'none';
+      document.querySelector('.signup-box:not(.form-verify)').style.display = 'block';
+    });
+  }
 });
