@@ -55,20 +55,23 @@
 
 
                 <div class="payment-option">
-                    <div class="the">
-                        <div class="option"><input type="radio" name="payment" /> Thẻ tín dụng / Ghi nợ</div>
+                    <input type="radio" name="payment" id="pay-card" checked>
+                    <label class="the" for="pay-card">
+                        <div class="option">Thẻ tín dụng / Ghi nợ</div>
                         <div class="anh">
                             <img src="../pics/visa.png" class="hinhthuc">
-                        <img src="../pics/mastercard.png" class="hinhthuc">
-                        <img src="../pics/jcb.png" class="hinhthuc">
+                            <img src="../pics/mastercard.png" class="hinhthuc">
+                            <img src="../pics/jcb.png" class="hinhthuc">
                         </div>
-                    </div>
+                    </label>
+
+
                     <ul class="bang-dien" style="padding: 0 27px 0 27px;">
 
                         <ul class="dong1 - dientt">
                             <li>
                                 <span class="sao">*</span><span class="tit">Hình thức thanh toán:</span>
-                                <input type="text" class="o-trong" >
+                                <input type="text" class="o-trong">
                             </li>
                         </ul>
 
@@ -84,7 +87,12 @@
                         <ul class="dong3 - dientt">
                             <li>
                                 <span class="sao">*</span><span class="tit">Số thẻ tín dụng/thẻ ghi nợ:</span>
-                                <input type="text" class="o-trong">
+                                <div class="so-the">
+                                    <input type="text" class="o-trong">
+                                    
+                                    <img src="../pics/lock.svg" class="khoa">
+                                    
+                                </div>
                             </li>
 
                         </ul>
@@ -101,13 +109,18 @@
                             </li>
                         </ul>
                     </ul>
+
                 </div>
 
                 <div class="payment-option">
-                    <div class="the - chon">
-                        <div class="option"><input type="radio" name="payment" /> Thanh toán điện tử</div>
-                    </div>
+                    <input type="radio" name="payment" id="pay-wallet">
 
+                    <label class="the" for="pay-wallet">
+                        <div class="option">Thanh toán điện tử</div>
+                        <div class="anh">
+                            <img src="../pics/paypal.png" class="hinhthuc">
+                        </div>
+                    </label>
                     <ul class="bang-dien" style="padding: 0 27px 0 27px;">
 
                         <ul class="dong1 - dientt">
@@ -118,13 +131,15 @@
                                 </div>
                             </li>
                         </ul>
-                    </ul>
 
+                        <div class="note" style="text-align: left;">Quý khách đã chọn thanh toán bằng PayPal. Quý khách
+                            sẽ được chuyển đến website PayPal để tiến hành giao dịch này.</div>
+                        <div class="line"></div>
+                    </ul>
                 </div>
 
-                <div class="note" style="padding: 0 27px 0 27px; text-align: left;">Quý khách đã chọn thanh toán bằng PayPal. Quý khách sẽ được chuyển đến website PayPal để tiến hành giao dịch này.</div>
 
-                <div class="line" style="margin: 0 27px 0 27px;"></div>
+
 
                 <div class="note" style="padding: 0 27px 0 27px;">Chúng tôi sẽ gửi xác nhận chuyến đi của quý khách đến
                     abc@gmail.com</div>
