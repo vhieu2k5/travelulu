@@ -5,7 +5,7 @@
     <title>Travelulu - Login</title>
     <meta content="charset=UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=League Spartan'>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/header.css">
     <script src="../js/header.js" defer></script>
@@ -23,13 +23,16 @@
             <h2>Đăng nhập</h2>
             <form id="loginForm">
                 <label>Địa chỉ email</label>
-                <input type="text" class="input-field" id="emailInput" placeholder="Nhập email của bạn">
+                <input type="text" class="email-field" id="emailInput" placeholder="Nhập email của bạn"
+                    autocomplete="off">
                 <label>Mật khẩu</label>
                 <div class="password-field">
+                    <input type="password" id="passwordInput" placeholder="Nhập mật khẩu của bạn">
                     <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
-                    <input type="password" class="input-field" id="passwordInput" placeholder="Nhập mật khẩu của bạn">
                 </div>
-                <a href="forgotpass.html" class="forgot">Quên mật khẩu?</a>
+                <div class="forgot">
+                    <a href="forgotpass.html">Quên mật khẩu?</a>
+                </div>
                 <button type="submit" class="login-cont">Tiếp tục</button>
             </form>
             <div class="login-or">hoặc</div>
@@ -70,7 +73,7 @@
             <!-- Đăng nhập fb -->
             <form id="popupfb">
                 <label>Tài khoản</label> <br>
-                <input type="text" placeholder="Nhập tài khoản Facebook của bạn" id="fbUsername" />
+                <input type="text" placeholder="Nhập tài khoản Facebook của bạn" id="fbUsername" autocomplete="off" />
                 <br>
                 <label>Mật khẩu</label> <br>
                 <div class="popup-password-field">

@@ -26,13 +26,17 @@
     <!-- REPORT -->
     <div class="report-page">
         <div class="report-title">
-            <i class="fa-solid fa-paper-plane left"></i>
+            <i class="fa-solid fa-gear left"></i>
             <h2>Phản hồi kĩ thuật</h2>
-            <i class="fa-solid fa-paper-plane right"></i>
+            <i class="fa-solid fa-gear right"></i>
         </div>
+        <a href="index.html" class="back-arrow" id="backArrow">
+            <i class="fa-solid fa-arrow-left"></i>
+            Trở lại
+        </a>
         <div class="report-section">
-            <div class="report-note">Nếu bạn thấy có bất kỳ lỗi gì từ hệ thống hay dịch vụ, hãy viết phản hồi gửi tới
-                chúng tôi để ứng dụng Travelulu được cải thiện tốt nhất.</div>
+            <div class="report-note">Nếu bạn thấy có bất kỳ lỗi gì từ hệ thống hay dịch vụ, hãy liên hệ hoặc viết phản
+                hồi gửi tới chúng tôi để ứng dụng Travelulu được cải thiện tốt nhất.</div>
             <form id="reportForm">
                 <label>
                     <span class="must">*</span>
@@ -63,6 +67,7 @@
             <div class="report-history" id="reportHistory">
                 <h3>Lịch sử phản hồi:</h3>
             </div>
+            <!-- Mẫu phản hồi -->
             <template id="historyItemTemplate">
                 <div class="history-item">
                     <div class="type">
@@ -70,12 +75,22 @@
                     </div>
                     <div class="content"></div>
                     <div class="files"></div>
+                    <strong>Phản hồi phía chúng tôi:</strong>
                     <div class="history-actions">
                         <button class="edit-btn">Chỉnh sửa</button>
                         <button class="delete-btn">Xóa</button>
                     </div>
                 </div>
             </template>
+            <!-- Popup xác nhận xóa -->
+            <div id="deletePopup" class="popup">
+                <div class="popup-content">
+                    <h2>Xóa phản hồi?</h2>
+                    <p>Bạn có chắc chắn muốn xóa phản hồi này không?</p>
+                    <button id="confirmDelete" class="confirm-btn">Xóa</button>
+                    <button id="cancelDelete" class="cancel-btn">Trở lại</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

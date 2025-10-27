@@ -29,13 +29,14 @@
                 <form id="forgotForm" class="form-panel active">
                     <label style="margin-top: 20px;">Nhập email hoặc số điện thoại bạn đã đăng ký để nhận mã xác nhận
                         lấy lại mật khẩu</label>
-                    <input type="text" class="input-field" id="recoverInput" placeholder="Nhập email của bạn">
+                    <input type="text" class="input-field" id="recoverInput" placeholder="Nhập email của bạn" autocomplete="off">
                     <button type="submit" class="forgot-cont">Lấy mã</button>
                 </form>
 
                 <!-- Form nhập mã xác nhận -->
                 <form id="verifyForm" class="form-panel">
-                    <label>Mã xác nhận lấy lại mật khẩu đã được gửi tới email hoặc số điện thoại bạn đã nhập. Vui lòng nhập mã này để tiếp tục.</label>
+                    <label>Mã xác nhận lấy lại mật khẩu đã được gửi tới email hoặc số điện thoại bạn đã nhập. Vui lòng
+                        nhập mã này để tiếp tục.</label>
                     <div class="code-inputs">
                         <input type="text" maxlength="1" class="code-box" />
                         <input type="text" maxlength="1" class="code-box" />
@@ -53,7 +54,8 @@
                 </form>
                 <!-- Form tạo mật khẩu mới -->
                 <form id="newpassForm" class="form-panel">
-                    <label style="margin-bottom: 10px;">Tạo mật khẩu mới <span style="color: #dde8ff;">(tối thiểu 8 ký tự)</span></label>
+                    <label style="margin-bottom: 10px;">Tạo mật khẩu mới <span style="color: #dde8ff;">(tối thiểu 8 ký
+                            tự)</span></label>
                     <div class="password-field">
                         <i class="fa-solid fa-eye-slash" id="togglePassword1"></i>
                         <input type="password" id="passwordInput1" placeholder="Nhập mật khẩu mới của bạn">
@@ -67,8 +69,8 @@
                 </form>
             </div>
         </div>
+        <div class="note">Một chạm khởi hành, vạn hành trình xanh</div>
     </div>
-    <div class="note">Một chạm khởi hành, vạn hành trình xanh</div>
     </div>
 
     <!-- OUTRO -->

@@ -47,6 +47,20 @@
     transform: translate(540px, -50%) rotate(50deg);
 }
 
+.back-arrow {
+    position: absolute;
+    left: 50px;
+    color: #848484;
+    font-size: 20px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+.back-arrow:hover {
+    color: #000000;
+    transform: translateX(-2px);
+}
+
 .notification-list {
     display: flex;
     align-items: center;
@@ -141,14 +155,14 @@
 
 .notification-item:hover .noti-icon-plane {
     right: 300px;
-    opacity: 0.7;
+    opacity: 1;
     transform: translateX(0) scaleX(-1);
 }
 
 .notification-item:hover .noti-icon-plane::before {
     width: 285px;
     /* độ dài đường bay */
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .notification-item:not(:hover) .noti-icon-plane {
@@ -227,8 +241,9 @@
     border-left: 5px solid #34699A;
     border-right: 5px solid #34699A;
     margin: -5px auto 15px;
-    width: 58%;
-    padding: 5px 10px 20px 20px;
+    width: 55%;
+    text-align: justify;
+    padding: 5px 20px 20px 20px;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
     font-size: 16px;

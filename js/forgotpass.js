@@ -50,23 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const verifyForm = document.querySelector('#verifyForm');
     const newpassForm = document.querySelector('#newpassForm');
 
-    // 1. Xử lý back: newpassForm -> verifyForm (FIX LỖI TẠI ĐÂY)
+    // 1. Xử lý back: newpassForm -> verifyForm
     if (newpassForm && newpassForm.classList.contains('active')) {
       // newpassForm trượt sang phải (đi ra)
       newpassForm.classList.add('slide-out-right');
-
+      // verifyForm trượt VÀO TỪ TRÁI
+      verifyForm.classList.add('from-left'); // Đặt form ở vị trí -100%
       // Sau khi form cũ trượt ra (600ms)
       setTimeout(() => {
         newpassForm.classList.remove('active', 'slide-out-right');
-
-        // verifyForm trượt VÀO TỪ TRÁI
-        verifyForm.classList.add('from-left'); // Đặt form ở vị trí -100%
-
         // 🔥 Bắt buộc trình duyệt tính toán lại vị trí CSS (REFOW)
         void verifyForm.offsetWidth;
-
         verifyForm.classList.add('active'); // Kích hoạt trượt từ -100% về 0%
-
         // Dọn dẹp class sau khi hiệu ứng kết thúc (600ms)
         setTimeout(() => {
           verifyForm.classList.remove('from-left');
@@ -106,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // 🔹 Xóa lỗi khi người dùng sửa
       input.classList.remove('code-error');
       document.querySelector('.code-error-message')?.remove();
+      // 🔹 Xóa thông báo thành công (nếu có)
+      document.querySelector('.code-success-message')?.remove();
     });
 
     // Sự kiện input để tự nhảy ô
@@ -300,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!isValid) return;
 
-      // ✅ Hợp lệ → Hiện popup
+      //Hợp lệ → Hiện popup
       const popup = document.getElementById('successPopup');
       const closePopup = document.getElementById('closePopup');
       popup.style.display = 'flex';

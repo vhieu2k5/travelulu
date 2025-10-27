@@ -113,12 +113,8 @@
 .note {
     font-size: 25px;
     color: #ffffff;
-    text-align: center;
-    position: fixed;
-    bottom: 154px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    position: absolute;  
+    bottom: 30px;
 }
 
 .outro-section {
@@ -172,8 +168,8 @@
 .code-success-message {
     position: absolute;
     transform: translateY(145px);
-    color: #ffffff;
-    font-size: 14px;
+    color: #c6efff;
+    font-size: 16px;
     text-align: left;
     width: 53%;
 }
