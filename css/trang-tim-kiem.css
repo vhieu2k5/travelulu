@@ -1,11 +1,21 @@
-
+.mascot{
+    position: fixed;
+    z-index: -1;
+    margin-left: 35%;
+    margin-top: -160px;
+    width: 30vw;
+    opacity: 0.3;
+}
+body{
+  background: linear-gradient(180deg, #FFF 0%, #c8e5ff 100%);
+}
 .banner1{
-    height: fit-content;
+    height: 150px;
 }
 .page-container{
     display: flex;
     flex-direction: row;
-    margin: 80px 155px;
+    margin: 30px 155px;
     gap: 30px;
 }
 
@@ -64,6 +74,7 @@
   border: 1px solid #ccc;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: white;
 }
 
 /* Hiệu ứng khi di chuột vào card */
