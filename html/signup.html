@@ -1,66 +1,152 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Travelulu - Signup</title>
-        <meta  content="charset=UTF-8">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-        <link rel="stylesheet" href="../css/signup.css">
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../js/header.js" defer></script>
-        <script src="../js/signup.js" defer></script>
-    </head>
-    <body>
-        <!-- INDEX  -->
-        <div data-include="header.html"></div>
 
-        <!-- LOGIN -->
-        <div class="signup-section">
-            <img src="../pics/bglogin.png" class="bg-signup">
-            <div class="signup-box">
-                <a href="login.html" class="back-arrow">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                <h2>Đăng ký tài khoản</h2>
-                <form>
-                    <label>Họ tên</label>
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="Nhập họ tên đầy đủ của bạn">
-                    </div>
-                    <label>Số điện thoại</label>
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="Nhập số điện thoai của bạn">
-                    </div>
-                    <label>Email</label>
-                    <div class="input-wrapper">
-                        <input type="email" placeholder="Nhập email của bạn">
-                    </div>
-                    <label>Mật khẩu</label>
-                    <div class="password-field">
-                        <i class="fa-solid fa-eye" id="togglePassword1"></i>
-                        <input type="password" id="passwordInput1" placeholder="Nhập mật khẩu của bạn">
-                    </div>
-                    <label>Xác nhận mật khẩu</label>
-                    <div class="password-field">
-                        <i class="fa-solid fa-eye" id="togglePassword2"></i>
-                        <input type="password" id="passwordInput2" placeholder="Nhập mật khẩu của bạn">
-                    </div>
-                    <button type="submit" class="signup-cont">Tiếp tục</button>
-                </form>
+<head>
+    <title>Travelulu - Signup</title>
+    <meta content="charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/header.js" defer></script>
+    <script src="../js/signup.js" defer></script>
+</head>
+
+<body>
+    <!-- INDEX  -->
+    <div data-include="header.html"></div>
+
+    <!-- Signup -->
+    <div class="signup-section">
+        <img src="../pics/bglogin.png" class="bg-signup">
+        <div class="signup-box">
+            <a href="login.html" class="back-arrow">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h2>Đăng ký tài khoản</h2>
+            <!-- FORM SIGNUP -->
+            <form>
+                <label>Họ tên</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Nhập họ tên đầy đủ của bạn">
+                </div>
+                <label>Số điện thoại</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Nhập số điện thoai của bạn">
+                </div>
+                <label>Email</label>
+                <div class="input-wrapper">
+                    <input type="text" id="emailInput" placeholder="Nhập email của bạn" autocomplete="off">
+                </div>
+                <label>Mật khẩu</label>
+                <div class="password-field">
+                    <i class="fa-solid fa-eye-slash" id="togglePassword1"></i>
+                    <input type="password" id="passwordInput1" placeholder="Nhập mật khẩu của bạn">
+                </div>
+                <label>Xác nhận mật khẩu</label>
+                <div class="password-field">
+                    <i class="fa-solid fa-eye-slash" id="togglePassword2"></i>
+                    <input type="password" id="passwordInput2" placeholder="Nhập mật khẩu của bạn">
+                </div>
+                <button type="submit" class="signup-cont">Đăng ký</button>
+            </form>
+            <div class="signup-or">hoặc</div>
+            <button class="signup-fb"><i class="fa-brands fa-facebook"></i>Đăng ký với Facebook</button>
+        </div>
+        <!-- FORM VERIFY -->
+        <div class="signup-box form-verify">
+            <h2>Đăng ký tài khoản</h2>
+            <p>
+                Dưới đây là thông tin chúng tôi nhận được từ tài khoản Facebook của bạn. <br>
+                Hãy kiểm tra và chỉnh sửa nếu cần.
+            </p>
+            <div class="allow-popup2">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-solid fa-right-left"></i>
+                    <img src="../pics/logo travelulu.jpg" alt="">
+                </div>
+            <form>
+                <label>Họ tên</label>
+                <div class="input-wrapper">
+                    <input type="text" value="Nguyễn Văn A" placeholder="Nhập họ tên đầy đủ của bạn">
+                </div>
+                <label>Số điện thoại</label>
+                <div class="input-wrapper">
+                    <input type="text" value="0368686868" placeholder="Nhập số điện thoai của bạn">
+                </div>
+                <label>Email</label>
+                <div class="input-wrapper">
+                    <input type="text" value="An@gmail.com" id="emailInput2" placeholder="Nhập email của bạn" autocomplete="off">
+                </div>
+                <button type="submit" class="signup-cont">Đăng ký</button>
                 <div class="signup-or">hoặc</div>
-                <button class="signup-fb"><i class="fa-brands fa-facebook"></i>Đăng ký với Facebook</button>
-            </div>
+                <button class="signup-verify-back">Hủy</a></button>
+            </form>
         </div>
+    </div>
 
-        <!-- OUTRO -->
-        <div class="outro-section">Một chạm khởi hành, vạn hành trình xanh</div>
-        <!-- POPUP -->
-        <div id="successPopup" class="popup">
-            <div class="popup-content">
-                <h2>Thành công</h2>
-                <p>Bạn đã đăng ký tài khoản thành công <br> Vui lòng đăng nhập</p>
-                <button id="closePopup">Trở lại trang đăng nhập</button>
-            </div>
+    <!-- OUTRO -->
+    <div class="outro-section">Một chạm khởi hành, vạn hành trình xanh</div>
+    <!-- POPUP -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <h2>Thành công</h2>
+            <p>Bạn đã đăng ký tài khoản thành công <br> Vui lòng đăng nhập</p>
+            <button id="closePopup">Trở lại trang đăng nhập</button>
         </div>
-    </body>
+    </div>
+    <!-- POPUP-FB -->
+    <div id="fbSignupPopup" class="popup2">
+        <div class="popup2-content">
+            <div class="head-popup2">
+                <i class="fa-brands fa-facebook"></i>
+                Đăng nhập Facebook - Google Chrome
+                <span class="head-popup2-right">
+                    <i class="fa-solid fa-minus"></i>
+                    <i class="fa-regular fa-square"></i>
+                    <i class="fa-solid fa-xmark" id="closeFbPopup"></i>
+                </span>
+            </div>
+            <div class="head2-popup2">
+                <i class="fa-solid fa-link"></i>
+                facebook.com/login/device-based/regular/login/?login_attempt=1&next=htt...
+                <i class="fa-solid fa-key"></i>
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <div class="head3-popup2"><i class="fa-brands fa-facebook"></i> Facebook.com</div>
+            <h2>Đăng ký bằng Facebook</h2>
+            <!-- Đăng nhập fb -->
+            <form id="popupfb">
+                <label>Tài khoản</label>
+                <input type="text" placeholder="Nhập tài khoản Facebook của bạn" id="fbUsername" autocomplete="off"/>
+                <label>Mật khẩu</label>
+                <div class="popup2-password-field">
+                    <i class="fa-solid fa-eye-slash" id="toggleFbPassword"></i>
+                    <input type="password" placeholder="Nhập mật khẩu Facebook của bạn" id="fbPassword" />
+                </div>
+                <button id="fbLoginBtn" class="popup2-cont">Tiếp tục</button>
+                <div class="popup2-or">hoặc</div>
+                <button class="popup2-back">Hủy</a></button>
+            </form>
+            <!-- Cho phép -->
+            <form id="popupallow">
+                Ứng dụng Travelulu sẽ nhận các thông tin cơ bản từ Facebook của bạn:
+                <div class="note">
+                    1. Họ tên <br>
+                    2. Số điện thoại <br>
+                    3. Địa chỉ email <br>
+                </div>
+                <div class="allow-popup2">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-solid fa-right-left"></i>
+                    <img src="../pics/logo travelulu.jpg" alt="">
+                </div>
+                <button id="allowBtn" type="button" class="popup2-cont">Cho phép</button>
+                <div class="popup2-or">hoặc</div>
+                <button class="popup2-back">Hủy</a></button>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>

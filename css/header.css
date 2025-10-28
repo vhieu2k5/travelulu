@@ -1,0 +1,104 @@
+:root{
+    --main-color: #34699A;
+    --normal-size: 20px;
+    --hover-blue-color:rgba(52, 105, 154, 0.10);
+}
+p,li{
+font-style: normal;
+font-weight: 500;
+}
+body{
+    overflow-x:hidden;
+}
+*{
+    font-family: "League Spartan";
+    line-height: normal;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    position: static;
+    top: 0;
+    height: fit-content;
+    width: 100vw;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    background-color: white;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
+}
+.menu-nav{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-shrink: 0;
+list-style: none;
+flex-wrap: nowrap;
+margin: 0;
+}
+.menu-nav li>a{
+padding: 20px 50px ;
+text-wrap: nowrap;
+color: var(--main-color);
+text-align: center;
+font-size: var(--normal-size);
+&:hover{
+    transition: background-color ease-in-out 0.5s;
+   background-color: var(--hover-blue-color);
+}
+}
+.logo-img{
+    margin: 10px 80px;
+    width: 238px;
+    height: fit-content;
+}
+.footer{
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 50px;
+    background: url(../pics/footerBG.png) lightgray 50% / cover no-repeat;
+}
+.bank-group{
+  display: grid;
+  grid-template-columns: repeat(3,0fr);
+  gap: 10px;
+}
+.bank-group img{
+    width: 100px;
+}
+.footer>div>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    margin: 50px 10vw;
+}
+.footer>div{
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+}
+.footer b,.footer p{
+    z-index: 100;
+    margin: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+.footer p{
+    font-weight: 200;
+}
+.footer-mask{
+    height: 380px;
+    position: absolute;
+    padding: 50px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(92, 92, 92, 0.29) 38.3%, rgba(0, 0, 0, 0.32) 68.35%);
+}
