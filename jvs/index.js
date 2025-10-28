@@ -50,3 +50,28 @@ slider.addEventListener('mousemove', (e) => {
     // Cập nhật vị trí cuộn của slider
     slider.scrollLeft = scrollLeft - walk;
 });
+
+
+// SLider ảnh tự động
+const imgs = document.querySelectorAll(".quangcao1");
+const dots = document.querySelector(".dots").children;
+imgs[0].style.opacity=1;
+let timer = 3;
+let i = 0;
+const count = setInterval(()=>{
+    timer--;
+    if (timer <0 ){
+        imgs[i].style.opacity = 0;
+        dots[i].style.width= "10px";
+        dots[i].style.background= "var(--main-color)";
+        timer =5;
+        i++;
+        if (i >= imgs.length)
+        {
+            i=0;
+        }
+        imgs[i].style.opacity=1;
+        dots[i].style.width="40px";
+        dots[i].style.background= "white";
+    }
+},1000);
