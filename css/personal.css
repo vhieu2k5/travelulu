@@ -508,6 +508,14 @@ input[type="checkbox"] {
 #password-panel label {
   margin-bottom: 0 !important;
 }
+#password-panel p{
+  margin: 0;
+  color: red;
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: none;
+}
 
 #password-panel form {
   display: flex;
@@ -523,10 +531,10 @@ input[type="checkbox"] {
   font-size: 15px;
 }
 
-#password-panel span1 {
+#password-panel span1{
   color: #a4a4a4;
   font-size: var(--under-sub-note);
-  margin: -5px 0 5px 2px;
+  margin-bottom: 2px;
 }
 
 .forgot-password {
@@ -705,11 +713,12 @@ input[type="checkbox"] {
 .notification-section>div>div p:last-child {
   font-weight: 100 !important;
   font-size: 15px;
-  color: grey;
+  color: #747474;
 }
 
 .notification-section>div>div p {
   margin: 2px 0;
+  color: #000;
 }
 
 .fa-toggle-off:before {
@@ -720,6 +729,12 @@ input[type="checkbox"] {
 .fa-toggle-on:before {
   font-size: 30px;
   color: var(--main-color);
+}
+.verify.active .content-verify span1{
+  color: #000;
+}
+.verify.active .content-verify p {
+  color: rgb(116, 116, 116) !important;
 }
 
 .notification-section b {
@@ -954,6 +969,39 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
 }
+
+.refund-card{
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  height: 250px;
+}
+.content-show{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 150px;
+  width: 100%;
+  color: white;
+  border-bottom: 2px dashed #34699A;
+  background: linear-gradient(135deg, #9AB8C2, #D6E0F0);
+  padding: 10px 30px;
+  position: relative;
+}
+.content-show p {
+  padding-left: 150px;
+}
+.content-show > img {
+  height: 100px;
+  position: absolute;
+  top: 30px;
+  border: 2px dashed #34699A;
+}
+.content-show h4{
+  position: absolute;
+  font-size: 23px;
+  top: 90px;
+  left: 62px;
+}
 /* 
 .refund-tabs a:first-child {
   color: #34699A;
@@ -977,6 +1025,8 @@ input[type="checkbox"] {
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+  border-bottom: 1px solid #34699A;
+  width: 245px;
 }
 
 #link-bank-panel .field {
@@ -1026,27 +1076,48 @@ input[type="checkbox"] {
   gap: 6px;
   justify-content: center;
 }
-
-.agree .check{
-  width: 5%;
-  height: 30%;
-
-
+#link-bank-panel{
+  position: relative;
 }
-.agree{
+#link-bank-panel > i{
+  position: absolute;
+  right: 35px;
+  top: 100px;
+  color: #a4a4a4;
+  cursor: pointer;
+}
+/*  */
+.agree {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-size: 15px;
+  gap: 10px;
   margin: 10px 0;
 }
               /*Linked-bank-refund  */
+
+#linked-bank-panel{
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.315)),
+      url(../pics/anhnen_00000.png);
+    background-size: cover;
+    position: relative;
+}
 #linked-bank-panel h3{
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 100;
   padding-left: 5px;
 }
-#linked-bank-panel img{
+#linked-bank-panel{
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.595)),
+      url(../pics/anhnen_00000.png);
+    
+  background-size: cover;
+}
+
+#linked-bank-panel img:first-child{
   position: absolute;
   top: 12px;
   left: 15px;
@@ -1056,10 +1127,9 @@ input[type="checkbox"] {
   margin-left: 35px;
 }
 #linked-bank-panel button{
-  height: 35px;
-  width: 100%;
-  margin-left: 180px;
-  color: red;
+  height: 25px;
+  width: 100px;
+  color: gray;
   border-radius: 5px;
   border: none;
 }
@@ -1076,8 +1146,28 @@ input[type="checkbox"] {
   width: 20px;
 }
 
+              /* conCuMeo */
+/* #mascot{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  right: -60px;
+  bottom: 0;
+  z-index: -1;
+
+} */
+#logout > img, #deleteAccPanel > img{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  top: 180px;
+  right: 47%;
+  z-index: -1;
+}
+
               /* Đăng xuất */
 #logout > div, #deleteAccPanel > div{
+
   height: 210px;
   width: 400px;
   background: #ffffff;
@@ -1087,9 +1177,10 @@ input[type="checkbox"] {
   text-align: center;
   border-radius: 10px;
 }
+
 #logout p, #deleteAccPanel p{
   padding: 0 40px;
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
 }
 
 
@@ -1152,3 +1243,4 @@ input[type="checkbox"] {
 .credit-card-3 {
   top: -70px;
 }
+
