@@ -153,8 +153,11 @@ if(confirmAdjust){
     })
 }
 // box chinh so luong
+<<<<<<< HEAD
   $('#lich').daterangepicker({
     startDate: moment().startOf('day'),
     endDate: moment().add(1, 'days').endOf('day'),
     locale: { format: 'DD/MM/YYYY' }
   });
+=======
+>>>>>>> 8455995719fe15b2ebe9b9736a4557a071115a4c

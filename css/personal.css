@@ -132,6 +132,7 @@ select {
 
 .btn:hover {
   background: #4a93d7;
+  background: #4a93d7;
 }
 
 .link-accounts {
@@ -428,6 +429,10 @@ input[type="checkbox"] {
 }
 .delete-account span2:hover{
   color: #4a93d7;
+  cursor: pointer;
+}
+.delete-account span2:hover{
+  color: #4a93d7;
 }
 
 .content-delete {
@@ -435,6 +440,7 @@ input[type="checkbox"] {
 }
 
 .content-delete span1 {
+  color: black;
   color: black;
   font-size: var(--under-sub-note);
   margin-left: 5px;
@@ -464,6 +470,7 @@ input[type="checkbox"] {
 
 /* Quên mật khẩu */
 
+            /* mắt xem mật khẩu */
             /* mắt xem mật khẩu */
 .input-eyes {
   display: flex;
@@ -687,6 +694,7 @@ input[type="checkbox"] {
 }
 
 .btn-primary:hover {
+  background-color: #4a93d7 !important;
   background-color: #4a93d7 !important;
 }
 
@@ -1012,9 +1020,16 @@ input[type="checkbox"] {
   padding: 11px;
   color: #34699A;                
   border-bottom: 3px solid #34699A;
+} */
+.refund-tabs a.active {
+  padding: 11px;
+  color: #34699A;                
+  border-bottom: 3px solid #34699A;
 }
 
 
+
+              /* Link-bank-refund */
               /* Link-bank-refund */
 
 .back-link {
@@ -1031,6 +1046,18 @@ input[type="checkbox"] {
 
 #link-bank-panel .field {
   width: 53.5vw !important;
+}
+#link-bank-panel > img {
+  position: absolute;
+  top: 97px;
+  right: 35px;
+  width: 20px;
+  cursor: pointer;
+}
+#link-bank-panel img:last-child{
+  width: 60%;
+  top: 123px;
+  right: 33px;
 }
 #link-bank-panel > img {
   position: absolute;
@@ -1065,6 +1092,9 @@ input[type="checkbox"] {
 
 #link-bank-panel button {
   width: 55vw !important;
+}
+#link-bank-panel button:hover{
+  background: #4a93d7;
 }
 #link-bank-panel button:hover{
   background: #4a93d7;
@@ -1243,4 +1273,3 @@ input[type="checkbox"] {
 .credit-card-3 {
   top: -70px;
 }
-

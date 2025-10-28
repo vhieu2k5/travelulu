@@ -22,9 +22,11 @@ const deleteAccBtn = document.querySelector(".delete-account span2");
 const deleteAccPanel = document.getElementById("deleteAccPanel");
 const noDelete = document.getElementById("noDelete");
 const yesDelete = document.getElementById("yesDelete");
+
 const refundDone = document.querySelector(".refund-tabs a:last-child");
 const refundList_Done = document.querySelector(".refund-card");
 const refundContent1 = document.querySelector(".refund-content");
+
 
 const linkBankBtn = document.querySelector(".bankBtn");
 const linkBankPanel = document.querySelector(".link-bank");
@@ -128,6 +130,63 @@ reFundBtn.onclick = function () {
         element.style.display = "none";
     });
     section5.style.display = "flex";
+}
+    // Wait-processing -- processing - processed
+document.querySelectorAll(".refund-tabs a").forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    document.querySelectorAll(".refund-tabs a").forEach(el => el.classList.remove("active"));
+    a.classList.add("active");
+  });
+});
+
+// Link-bank BACK -> Refund
+if(backBtn){
+    section5.style.display = "none";
+    backBtn.addEventListener("click", () => {
+        section5.style.display = "flex";
+        linkBankPanel.style.display = "none";
+    })
+}
+// Refund -> DROPDOWN
+if (dropDownBtn && dropDownPanel) {
+    dropDownPanel.style.display = "none";
+    let isOpen = false; 
+
+    dropDownBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        if (isOpen) {
+        dropDownPanel.style.display = "block"; 
+        dropDownBtn.style.transform = "rotate(180deg)"; 
+        } else {
+        dropDownPanel.style.display = "none"; 
+        dropDownBtn.style.transform = "rotate(0deg)"; 
+        }
+    });
+}
+// Linked-Bank thành công
+if(SaveBtnLinkBank){
+    linkedBankPanel.style.display = "none";
+    SaveBtnLinkBank.addEventListener("click", () => {
+        linkBankPanel_son.style.display = "none";
+        linkedBankPanel.style.display = "flex";
+    })
+    backBtn.addEventListener("click", () => {
+        linkBankPanel_son.style.display = "block";
+        linkedBankPanel.style.display = "none";
+    })
+}
+
+// Đăng xuất
+if(logOutBtn){
+    logOutPanel.style.display = "none";
+    logOutBtn.addEventListener("click", () => {
+        logOutPanel.style.display = "flex";
+    })
+    nologOut.addEventListener("click", () => {
+        logOutPanel.style.display = "none";
+    })
 }
 
     // Wait-processing -- processing - processed
