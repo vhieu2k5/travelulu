@@ -5,29 +5,14 @@
 </head>
 
 <body>
-    <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div class="ba">3</div>
-    </div>
+    <input type="text" placeholder="Nhập mật khẩu của bạn">
 
     <style>
-        .container {
-            display: flex;
-            justify-content:flex-start;
-            /* căn giữa ngang */
-            flex-direction:column ;
-            align-items: center;
-            height: 100px;
-            background: #eee;
-        }
-
-        .container div {
-            width: 20px;
-            margin-bottom: 10px;
-            text-align: center;
-            background: lightcoral;
-            padding: 10px;
+        input:focus {
+            outline: none;
+            /* bỏ viền mặc định */
+            border: 2px solid blue;
+            /* bo viền xanh khi click vào */
         }
     </style>
 

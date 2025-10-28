@@ -46,4 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Đóng trang
+    const backArrow = document.getElementById("backArrow");
+
+    backArrow.addEventListener("click", (e) => {
+        e.preventDefault();      // chặn href mặc định nếu có
+        window.history.back();   // quay về trang trước đó trong lịch sử trình duyệt
+    });
 });

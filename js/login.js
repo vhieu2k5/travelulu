@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 👁️ Toggle ẩn/hiện mật khẩu
+  // Toggle ẩn/hiện mật khẩu
   const toggle = document.querySelector("#togglePassword");
   const pass = document.querySelector("#passwordInput");
   const form = document.querySelector("#loginForm");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🧩 Xác thực form đăng nhập chính
+  // Xác thực form đăng nhập chính
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleFb.classList.toggle("fa-eye-slash");
     });
   }
-  // 🧠 Xử lý đăng nhập Facebook (hiệu ứng trượt)
+  // Xử lý đăng nhập Facebook (hiệu ứng trượt)
   const fbForm = document.querySelector("#popupfb");
   const fbAllow = document.querySelector("#popupallow");
   const fbUsername = document.querySelector("#fbUsername");

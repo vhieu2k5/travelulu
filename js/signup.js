@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   [fbUsername, fbPassword].forEach(input => {
     input.addEventListener("focus", () => {
       input.classList.remove("input-error");
-      input.closest("signupForm")?.querySelector(".error-message")?.remove();
+      input.closest("#popupfb")?.querySelector(".error-message")?.remove();
     });
   });
 
@@ -182,13 +182,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const msg = document.createElement("div");
         msg.className = "error-message";
         msg.textContent = errorMessage;
-        fbPassword.insertAdjacentElement("afterend", msg);
+        fbPassword.closest(".popup2-password-field").insertAdjacentElement("afterend", msg);
         return;
       }
 
       // Nếu hợp lệ → chuyển sang form cho phép
-      popupfb.style.display = "none";
-      popupallow.style.display = "flex";
+      popupfb.classList.add("slide-out");
+      setTimeout(() => {
+        popupfb.style.display = "none";
+        popupfb.classList.remove("slide-out");
+
+        popupallow.style.display = "flex";
+        popupallow.classList.add("slide-in");
+        setTimeout(() => popupallow.classList.remove("slide-in"), 600);
+      }, 500);
     });
   }
 
