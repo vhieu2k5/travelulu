@@ -7,7 +7,9 @@
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/trang-tim-kiem.css">
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
@@ -22,10 +24,879 @@
 
     <!-- Anh banner dai dien -->
     <div class="banner1"></div>
+    <!-- Phần hiển thị kết quả tìm kiếm -->
+    <div class="page-container">
+        <!-- Navigation bar -->
+        <div class="navigation-bar">
+            <div class="filter-group">
+                <h4>Khoảng giá</h4>
+                <div class="price-range">0 VNĐ - 4.000.000 VNĐ+</div>
+            </div>
+            <!-- Lọc điểm khởi hành -->
+            <div class="filter-group">
+                <h3>Điểm khởi hành</h3>
+                <ul class="filter-list">
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-hn"
+                            value="ha-noi">
+                        <label for="dh-hn">Hà Nội</label>
+                    </li>
 
-    <!-- Phan hien thi ket qua tim kiem -->
-     
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-dn"
+                            value="da-nang">
+                        <label for="dh-dn">Đà Nẵng</label>
+                    </li>
 
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-hcm"
+                            value="ho-chi-minh">
+                        <label for="dh-hcm">Hồ Chí Minh</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-hp"
+                            value="hai-phong">
+                        <label for="dh-hp">Hải Phòng</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-th"
+                            value="thanh-hoa">
+                        <label for="dh-th">Thanh Hoá</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-vinh"
+                            value="vinh">
+                        <label for="dh-vinh">Vinh</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-hue"
+                            value="hue">
+                        <label for="dh-hue">Huế</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-dl"
+                            value="da-lat">
+                        <label for="dh-dl">Đà Lạt</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-nt"
+                            value="nha-trang">
+                        <label for="dh-nt">Nha Trang</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-qn"
+                            value="quy-nhon">
+                        <label for="dh-qn">Quy Nhơn</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="khoi-hanh" id="dh-rg"
+                            value="rach-gia">
+                        <label for="dh-rg">Rạch Giá</label>
+                    </li>
+                </ul>
+            </div>
+            <!-- Lọc điểm đến -->
+            <div class="filter-group">
+                <h3>Điểm đến</h3>
+                <ul class="filter-list">
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-hg"
+                            value="ha-giang">
+                        <label for="dd-hg">Hà Giang</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-cb"
+                            value="cao-bang">
+                        <label for="dd-cb">Cao Bằng</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-lc"
+                            value="lao-cai">
+                        <label for="dd-lc">Lào Cai</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-sl"
+                            value="son-la">
+                        <label for="dd-sl">Sơn La</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-hn"
+                            value="ha-noi">
+                        <label for="dd-hn">Hà Nội</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-qn"
+                            value="quang-ninh">
+                        <label for="dd-qn">Quảng Ninh</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-hue"
+                            value="hue">
+                        <label for="dd-hue">Huế</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-dn"
+                            value="da-nang">
+                        <label for="dd-dn">Đà Nẵng</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-qna"
+                            value="quang-nam">
+                        <label for="dd-qna">Quảng Nam</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-qb1"
+                            value="quang-binh">
+                        <label for="dd-qb1">Quảng Bình</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-qb2"
+                            value="quang-binh">
+                        <label for="dd-qb2">Quảng Bình</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-dl"
+                            value="da-lat">
+                        <label for="dd-dl">Đà Lạt</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-nt"
+                            value="nha-trang">
+                        <label for="dd-nt">Nha Trang</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-pq"
+                            value="phu-quoc">
+                        <label for="dd-pq">Phú Quốc</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-mt"
+                            value="my-tho">
+                        <label for="dd-mt">Mỹ Tho</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-bt"
+                            value="ben-tre">
+                        <label for="dd-bt">Bến Tre</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-rg"
+                            value="rach-gia">
+                        <label for="dd-rg">Rạch Giá</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-ct"
+                            value="can-tho">
+                        <label for="dd-ct">Cần Thơ</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="diem-den" id="dd-cm"
+                            value="ca-mau">
+                        <label for="dd-cm">Cà Mau</label>
+                    </li>
+                </ul>
+            </div>
+            <!-- Lọc thời lượng tour -->
+            <div class="filter-group">
+                <h3>Thời lượng</h3>
+                <ul class="filter-list">
+                    <li><input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-1n"
+                            value="1-ngay">
+                        <label for="tl-1n">1 ngày</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-2n1d"
+                            value="2-ngay-1-dem">
+                        <label for="tl-2n1d">2 ngày 1 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-3n2d"
+                            value="3-ngay-2-dem">
+                        <label for="tl-3n2d">3 ngày 2 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-4n3d"
+                            value="4-ngay-3-dem">
+                        <label for="tl-4n3d">4 ngày 3 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-5n4d"
+                            value="5-ngay-4-dem">
+                        <label for="tl-5n4d">5 ngày 4 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-6n5d"
+                            value="6-ngay-5-dem">
+                        <label for="tl-6n5d">6 ngày 5 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-7n6d"
+                            value="7-ngay-6-dem">
+                        <label for="tl-7n6d">7 ngày 6 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-2n2d"
+                            value="2-ngay-2-dem">
+                        <label for="tl-2n2d">2 ngày 2 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-3n3d"
+                            value="3-ngay-3-dem">
+                        <label for="tl-3n3d">3 ngày 3 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-4n4d"
+                            value="4-ngay-4-dem">
+                        <label for="tl-4n4d">4 ngày 4 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-5n5d"
+                            value="5-ngay-5-dem">
+                        <label for="tl-5n5d">5 ngày 5 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-6n6d"
+                            value="6-ngay-6-dem">
+                        <label for="tl-6n6d">6 ngày 6 đêm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="thoi-luong" id="tl-7n7d"
+                            value="7-ngay-7-dem">
+                        <label for="tl-7n7d">7 ngày 7 đêm</label>
+                    </li>
+                </ul>
+            </div>
+            <!-- Lọc loại hình tour -->
+            <div class="filter-group">
+                <h3>Loại hình tour</h3>
+                <ul class="filter-list">
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-nui"
+                            value="tour-nui-cao-nguyen">
+                        <label for="lht-nui">Tour du lịch núi, cao nguyên</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-bien"
+                            value="tour-bien-dao">
+                        <label for="lht-bien">Tour du lịch biển, đảo</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-sinhthai"
+                            value="tour-sinh-thai-rung-quoc-gia">
+                        <label for="lht-sinhthai">Tour sinh thái, rừng quốc gia</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-disan"
+                            value="tour-di-san-lich-su">
+                        <label for="lht-disan">Tour di sản, lịch sử</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-lehoi"
+                            value="tour-le-hoi-mua-sam">
+                        <label for="lht-lehoi">Tour lễ hội, mua sắm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-khampha"
+                            value="tour-kham-pha-mao-hiem">
+                        <label for="lht-khampha">Tour khám phá, mạo hiểm</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour"
+                            id="lht-nghiduong" value="tour-nghi-duong">
+                        <label for="lht-nghiduong">Tour nghỉ dưỡng</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-dongbac"
+                            value="tour-dong-bac">
+                        <label for="lht-dongbac">Tour Đông Bắc</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-taybac"
+                            value="tour-tay-bac">
+                        <label for="lht-taybac">Tour Tây Bắc</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-mienbac"
+                            value="tour-mien-bac">
+                        <label for="lht-mienbac">Tour Miền Bắc</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="loai-hinh-tour" id="lht-mientay"
+                            value="tour-mien-tay">
+                        <label for="lht-mientay">Tour Miền Tây</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Tours content -->
+        <div class="tour-content">
+            <div id="no-results-message">
+                <h2>Không tìm thấy tour phù hợp</h2>
+                <p>Tour cho lựa chọn này đang được cập nhật. Vui lòng thử lại sau!</p>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-ha-giang-4n3d-danang.png"
+                    alt="Tour Hà Giang 4N3Đ - khởi hành từ Đà Nẵng">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang 4N3Đ - khởi hành từ Đà Nẵng</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Đà Nẵng</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">7,499,000đ</span>
+                            <span class="current-price">6,799,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-ha-giang-3n2d-danang.png"
+                    alt="Tour Hà Giang 3N2Đ - khởi hành từ Đà Nẵng">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang 3N2Đ - khởi hành từ Đà Nẵng</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Đà Nẵng</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,799,000đ</span>
+                            <span class="current-price">2,650,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-hagiang-3n2d-song-nho-que-hanoi.png"
+                    alt="Tour Hà Giang 3N2Đ - Du Thuyền Sông Nho Quế">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang 3N2Đ - Du Thuyền Sông Nho Quế - khởi hành từ Hà Nội</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,959,000đ</span>
+                            <span class="current-price">2,690,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-hagiang-3n2d-hoang-su-phi-hanoi.png"
+                    alt="Tour Hà Giang Hoàng Su Phì">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang Hoàng Su Phì - Bản Phùng - Suối Thầu - Bắc Hà mùa lúa chín 3N2Đ - khởi hành từ Hà
+                        Nội</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">3,729,000đ</span>
+                            <span class="current-price">3,390,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-hagiang-4n3d-hoang-su-phi-hcm.png"
+                    alt="Tour Hà Giang - Hoàng Su Phì 4N3Đ - từ TP HCM">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang - Hoàng Su Phì 4N3Đ - khởi hành từ TP HCM</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">9,499,000đ</span>
+                            <span class="current-price">8,388,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/tour-hagiang-3n2d-hcm.png" alt="Tour Hà Giang 3N2Đ - từ TP HCM">
+                <div class="tour-info">
+                    <h2>Tour Hà Giang 3N2Đ - khởi hành từ TP HCM</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">8,650,000đ</span>
+                            <span class="current-price">7,388,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-noi, ha-giang, cao-bang"
+                data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/dulich-mienbac-4n3d-danang.png"
+                    alt="Du Lịch Miền Bắc: Đà Nẵng - Hà Nội - Hà Giang">
+                <div class="tour-info">
+                    <h2>Du Lịch Miền Bắc: Đà Nẵng - Hà Nội - Hà Giang - Cao Bằng 4N3Đ - khởi hành từ Đà Nẵng</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Đà Nẵng</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">7,949,000đ</span>
+                            <span class="current-price">7,199,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-1-dem"
+                data-loai-hinh-tour="tour-tay-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
+                <img class="tour-image" src="../pics/dulich-sapa-2n1d-hanoi.png"
+                    alt="Du Lịch Sapa: Hà Nội - Sapa - Cát Cát - Fansipan">
+                <div class="tour-info">
+                    <h2>Du Lịch Sapa: Hà Nội - Sapa - Cát Cát - Chinh Phục Đỉnh Fansipan - 2N1Đ - khởi hành từ Hà Nội
+                    </h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,090,000đ</span>
+                            <span class="current-price">1,850,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-2-dem"
+                data-loai-hinh-tour="tour-tay-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen, tour-le-hoi-mua-sam">
+                <img class="tour-image" src="../pics/dulich-sapa-2n2d-hanoi.png"
+                    alt="Du lịch Sapa - 2N2Đ (đi tàu hỏa, và ô tô)">
+                <div class="tour-info">
+                    <h2>Du lịch Sapa - 2N2Đ (đi tàu hỏa, và ô tô) - khởi hành từ Hà Nội</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 2 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,780,000đ</span>
+                            <span class="current-price">2,360,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+                data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-halong-catamaran.png"
+                    alt="Du thuyền 5 sao Catamaran thăm Vịnh Hạ Long">
+                <div class="tour-info">
+                    <h2>Du thuyền 5 sao Catamaran thăm Vịnh Hạ Long - Tour trong ngày</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 1 ngày</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">1,879,000đ</span>
+                            <span class="current-price">1,625,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+                data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-halong-symphony.png"
+                    alt="Tour du thuyền 5 sao Symphony thăm Vịnh Hạ Long">
+                <div class="tour-info">
+                    <h2>Tour du thuyền 5 sao Symphony thăm Vịnh Hạ Long - Tour trong ngày</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 1 ngày</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,255,000đ</span>
+                            <span class="current-price">1,960,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+                data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-halong-queen.jpg"
+                    alt="Tour du thuyền 5 sao Queen thăm Vịnh Hạ Long">
+                <div class="tour-info">
+                    <h2>Tour du thuyền 5 sao Queen thăm Vịnh Hạ Long - Tour trong ngày</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 1 ngày</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">2,889,000đ</span>
+                            <span class="current-price">2,460,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
+                data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-halong-ambassader.png"
+                    alt="Tour du thuyền 5 sao Ambassador Signature - 2N1Đ">
+                <div class="tour-info">
+                    <h2>Tour du thuyền 5 sao Ambassador Signature - 2N1Đ - Ngủ đêm trên Vịnh Hạ Long</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">11,260,000đ</span>
+                            <span class="current-price">9,350,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
+                data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-halong-Grand-Pioneers.png" alt="Du thuyen Grand Pioneers">
+                <div class="tour-info">
+                    <h2>Tour du thuyền 6 sao Grand Pioneers ngủ đêm trên Vịnh Hạ Long - 2N1Đ</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">15,050,000đ</span>
+                            <span class="current-price">12,540,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="da-nang, hoi-an, hue, quang-binh"
+                data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam,tour-nghi-duong">
+                <img class="tour-image" src="../pics/tour-mientrung-4n3d-hn.png"
+                    alt="Tour Miền Trung: Hà Nội - Đà Nẵng">
+                <div class="tour-info">
+                    <h2>Tour Miền Trung: Hà Nội - Đà Nẵng - Sơn Trà - Bà Nà - Phố Cổ Hội An - 4N3Đ - khởi hành từ Hà Nội
+                        bay Vietjet</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">7,499,000đ</span>
+                            <span class="current-price">6,190,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, hue, quang-binh"
+                data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam,tour-nghi-duong,tour-sinh-thai-rung-quoc-gia">
+                <img class="tour-image" src="../pics/tour-mientrung-4n3d-tphcm.png"
+                    alt="Tour miền Trung HCM - Đà Nẵng - Bà Nà">
+                <div class="tour-info">
+                    <h2>Tour miền Trung HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình - 4N3Đ + khách sạn 4 sao -
+                        khởi hành từ TP HCM</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">7,259,000đ</span>
+                            <span class="current-price">5,990,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, ba-na-hills, hue"
+                data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam">
+                <img class="tour-image" src="../pics/tour-danang-hoian-3n2d.png"
+                    alt="Tour Đà Nẵng - Hội An - Ngủ Đêm Trên Đỉnh Bà Nà Hills">
+                <div class="tour-info">
+                    <h2>Tour Đà Nẵng - Hội An - Ngủ Đêm Trên Đỉnh Bà Nà Hills - Cố Đô Huế - 3N2Đ</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">6,469,000đ</span>
+                            <span class="current-price">5,469,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="quang-binh"
+                data-thoi-luong="3-ngay-2-dem"
+                data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-sinh-thai-rung-quoc-gia, tour-kham-pha-mao-hiem">
+                <img class="tour-image" src="../pics/tour-dong-phongnha.png" alt="Tour Quảng Bình - Động Phong Nha">
+                <div class="tour-info">
+                    <h2>Tour Quảng Bình - Động Phong Nha - Động Thiên Đường - 3N2Đ</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">3,095,000đ</span>
+                            <span class="current-price">2,488,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quy-nhon" data-thoi-luong="5-ngay-4-dem"
+                data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-nghi-duong, tour-di-san-lich-su">
+                <img class="tour-image" src="../pics/tour-quy-nhon-5n4d.png" alt="Tour Hà Nội - Quy Nhơn - 5N4Đ">
+                <div class="tour-info">
+                    <h2>Tour Hà Nội - Quy Nhơn - 5N4Đ</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 5 ngày 4 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">9,499,000đ</span>
+                            <span class="current-price">7,870,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc" data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-kham-pha-mao-hiem,tour-di-san-lich-su">
+                <img class="tour-image" src="../pics/tour-phuquoc-4n3d.png"
+                    alt="Du Lịch Phú Quốc: Hà Nội - Đảo Ngọc Phú Quốc">
+                <div class="tour-info">
+                    <h2>Du Lịch Phú Quốc: Hà Nội - Đảo Ngọc Phú Quốc - 4N3Đ bay Vietnam Airlines</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">8,599,000đ</span>
+                            <span class="current-price">7,090,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, ben-tre, can-tho,rach-gia"
+                data-thoi-luong="5-ngay-4-dem"
+                data-loai-hinh-tour="tour-mien-nam,tour-mien-tay,tour-bien-dao,tour-kham-pha-mao-hiem, tour-le-hoi-mua-sam">
+                <img class="tour-image" src="../pics/tour-phuquoc-5n4d.png"
+                    alt="Du Lịch Phú Quốc: Hà Nội - Phú Quốc & Các Tỉnh Miền Tây">
+                <div class="tour-info">
+                    <h2>Du Lịch Phú Quốc: Hà Nội - Phú Quốc & Các Tỉnh Miền Tây 5N4Đ + Vé Máy Bay</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 5 ngày 4 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">8,560,000đ</span>
+                            <span class="current-price">6,990,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, my-tho,ben-tre,can-tho,rach-gia"
+                data-thoi-luong="6-ngay-5-dem"
+                data-loai-hinh-tour="tour-mien-nam,tour-mien-tay,tour-bien-dao,tour-kham-pha-mao-hiem, tour-le-hoi-mua-sam">
+                <img class="tour-image" src="../pics/tour-phuquoc-6n5d.png"
+                    alt="Du Lịch Phú Quốc: Hà Nội - Phú Quốc & Các Tỉnh Miền Tây - 6N5Đ">
+                <div class="tour-info">
+                    <h2>Du Lịch Phú Quốc: Hà Nội - Phú Quốc & Các Tỉnh Miền Tây - 6N5Đ + vé máy bay</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hà Nội</p>
+                        <p><b>Thời gian:</b> 6 ngày 5 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">10,290,000đ</span>
+                            <span class="current-price">8,470,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="phu-quoc" data-thoi-luong="3-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-kham-pha-mao-hiem,tour-di-san-lich-su">
+                <img class="tour-image" src="../pics/tour-phu-quoc-lan-san-ho-3n2d-hcm.png"
+                    alt="Du lịch Phú Quốc: Cầu Cả, Lặn Ngắm San Hô">
+                <div class="tour-info">
+                    <h2>Du lịch Phú Quốc: Cầu Cả, Lặn Ngắm San Hô - 3N2Đ, khách sạn 3 sao, vé máy bay - khởi hành từ TP
+                        HCM</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 3 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">5,269,000đ</span>
+                            <span class="current-price">4,390,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-item" data-khoi-hanh="ho-chi-minh"
+                data-diem-den="soc-trang, bac-lieu, ca-mau, chau-doc, can-tho" data-thoi-luong="4-ngay-3-dem"
+                data-loai-hinh-tour="tour-mien-tay,tour-di-san-lich-su,tour-le-hoi-mua-sam">
+                <img class="tour-image" src="../pics/tour-mien-tay.png"
+                    alt="Tour Miền Tây: Sóc Trăng - Bạc Liêu - Cà Mau">
+                <div class="tour-info">
+                    <h2>Tour Miền Tây: Sóc Trăng - Bạc Liêu - Cà Mau - Châu Đốc - Cần Thơ</h2>
+                    <div class="tour-details">
+                        <p><b>Khởi hành:</b> Hồ Chí Minh</p>
+                        <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
+                        <p><b>Ngày khởi hành:</b> Hàng ngày</p>
+                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Giá 1 khách:</b></p>
+                    </div>
+                    <div class="price-section">
+                        <div class="tour-pricing">
+                            <span class="original-price">7,389,000đ</span>
+                            <span class="current-price">6,090,000đ</span>
+                        </div>
+                        <a href="#" class="details-link">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div class="footer">
@@ -53,7 +924,8 @@
             </div>
         </div>
         <div style="width: 1000px; height: 2px;background: white; margin: 10px 0"></div>
-        <p>Travelulu là nền tảng du lịch trực tuyến, đồng hành cùng bạn trên mọi hành trình khám phá vẻ đẹp Việt Nam.
+        <p>Travelulu là nền tảng du lịch trực tuyến, đồng hành cùng bạn trên mọi hành trình khám phá vẻ đẹp
+            Việt Nam.
         </p>
         <p>Bản quyền © 2025 Travelulu. Bảo lưu mọi quyền.</p>
         <div class="bank-group">
@@ -63,6 +935,8 @@
         </div>
     </div>
 
+    </div>
+    <script src="../jvs/searchTour.js"></script>
 </body>
 
 </html>

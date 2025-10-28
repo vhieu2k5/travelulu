@@ -200,11 +200,6 @@
   transition: transform 0.3s ease;
 }
 
-/* hiệu ứng hover nhẹ */
-.image-box:hover img {
-  transform: scale(1.05);
-}
-
 /* Popular tours section */
 .popular-tours-section{
     width: 100%;
