@@ -59,9 +59,9 @@
                     <label class="the" for="pay-card">
                         <div class="option">Thẻ tín dụng / Ghi nợ</div>
                         <div class="anh">
-                            <img src="../pics/visa.png" class="hinhthuc">
-                            <img src="../pics/mastercard.png" class="hinhthuc">
-                            <img src="../pics/jcb.png" class="hinhthuc">
+                            <img src="../pics/visa.svg" alt="Visa" class="hinhthuc">
+                            <img src="../pics/mastercard.svg" alt="Mastercard" class="hinhthuc">
+                            <img src="../pics/jcb.svg" alt="JCB" class="hinhthuc">
                         </div>
                     </label>
 
@@ -89,9 +89,9 @@
                                 <span class="sao">*</span><span class="tit">Số thẻ tín dụng/thẻ ghi nợ:</span>
                                 <div class="so-the">
                                     <input type="text" class="o-trong">
-                                    
+
                                     <img src="../pics/lock.svg" class="khoa">
-                                    
+
                                 </div>
                             </li>
 
@@ -118,7 +118,7 @@
                     <label class="the" for="pay-wallet">
                         <div class="option">Thanh toán điện tử</div>
                         <div class="anh">
-                            <img src="../pics/paypal.png" class="hinhthuc">
+                            <img src="../pics/paypal.svg" alt="Paypal" class="hinhthuc">
                         </div>
                     </label>
                     <ul class="bang-dien" style="padding: 0 27px 0 27px;">
@@ -127,7 +127,7 @@
                             <li>
                                 <span class="sao">*</span><span class="tit">Hình thức thanh toán:</span>
                                 <div class="o-trong">
-                                    <img src="../pics/paypal.png" class="hinhthuc">
+                                    <img src="../pics/paypal.svg" alt="PayPal" class="hinhthuc">
                                 </div>
                             </li>
                         </ul>
@@ -146,15 +146,15 @@
             </div>
 
 
-            <div class="button">
-                <a href="complete-booking.html">ĐẶT NGAY</a>
+            <div class="button" >
+                <button id="dat-ngay">ĐẶT NGAY</button>
             </div>
         </div>
 
         <div class="cot-tt">
             <div class="gia">
                 <div class="ttchung">
-                    <img src="../pics/Đà Lạt ~ Vietnam 🇻🇳 (my fav place ❤️🤩) 3.png" class="anh-tour">
+                    <img src="../pics/Đà Lạt ~ Vietnam 🇻🇳 (my fav place ❤️🤩) 3.png" alt="Đà lạt" class="anh-tour">
 
                     <div>
                         <div class="tieude2">Tour Hà Giang 4N3Đ - khởi hành từ Đà Nẵng</div>
@@ -214,6 +214,35 @@
         </div>
     </div>
 
+    <div id="backdrop-overlay"></div>
+
+    <div id="visa-popup" class="popup-modal-base">
+        <div class="popup-text">
+            <img src="../pics/visa.svg" class="hinhthuc" alt="Visa Logo" style="height: 47px; width: 91px;">
+            <div class="load">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="tieude2">Đang xử lý giao dịch</div>
+            <div class="note" style="color: #636363;">Vui lòng không đóng hoặc làm mới trang này</div>
+        </div>
+    </div>
+
+    <div id="paypal-popup" class="popup-modal-base">
+        <div class="popup-text">
+            <img src="../pics/paypal.svg" class="hinhthuc" alt="PayPal Logo" style="height: 47px; width: 91px;">
+            <div class="load">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="tieude2">Đang chuyển hướng đến PayPal</div>
+            <div class="note" style="color: #636363;">Vui lòng không đóng hoặc làm mới trang này</div>            
+        </div>
+    </div>
+
+    <script src="../js/checkout.js"></script>
 
 </body>
 
