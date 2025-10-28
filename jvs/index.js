@@ -1,3 +1,5 @@
+
+// Tour pho bien - drag to scroll//
 const slider = document.querySelector('.tours-container');
 let isDown = false; // Trạng thái xem chuột có đang được giữ không
 let startX; // Vị trí X ban đầu của chuột khi click

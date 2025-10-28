@@ -1,8 +1,13 @@
+.mascot{
+    width: 10%;
+    margin-left: 45%;
+    margin-top: 30px;
+}
 
 .page-container{
     display: flex;
     flex-direction: row;
-    margin: 80px 155px;
+    margin: 30px 155px;
     gap: 30px;
 }
 

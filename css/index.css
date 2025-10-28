@@ -1,58 +1,60 @@
 .banner1 {
-  position: relative; 
+  position: relative;
   width: 100%;
   height: 80vh;
   background: url(../pics/banner1.png) no-repeat center center/cover;
 }
 
-.banner1>img{
-    width: 100vw;
-    height: auto;
+.banner1>img {
+  width: 100vw;
+  height: auto;
 }
 
-.banner1 h1{
-    position: absolute;
-    top: 23%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #FFF;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
+.banner1 h1 {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
 }
 
-.rectangle{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1200px;
-    height: 310px;
-    background-color: rgba(135, 206, 235, 0.5);
-    border-radius: 60px;
-}
-.banner-infors{
-    display: flex;
-    flex-direction: row;
-    color: #FFF;
-    justify-content: center;
-    gap: 60px;
-}
-.banner-infors div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 20px;
+.rectangle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 310px;
+  background-color: rgba(135, 206, 235, 0.5);
+  border-radius: 60px;
 }
 
-.banner-infors p{
-    margin: 2px 0;
+.banner-infors {
+  display: flex;
+  flex-direction: row;
+  color: #FFF;
+  justify-content: center;
+  gap: 60px;
 }
 
-.banner-infors b{
-    margin: 10px 0;
-    font-size: 20px;
+.banner-infors div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 20px;
+}
+
+.banner-infors p {
+  margin: 2px 0;
+}
+
+.banner-infors b {
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 /* Nhập điểm xuất phát và điểm đến */
@@ -111,34 +113,34 @@
   margin-top: 20px;
 }
 
-.date-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 12px;
+.date-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
 }
 
-.departure-date-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 22px 22px 22px 22px;
-    padding: 8px;
-    height: 40px;
-    width: 500px;
-    margin-right: 20px;
+.departure-date-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 22px 22px 22px 22px;
+  padding: 8px;
+  height: 40px;
+  width: 500px;
+  margin-right: 20px;
 }
 
-.return-date-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 22px 22px 22px 22px;
-    padding: 8px;
-    height: 40px;
-    width: 500px;
+.return-date-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 22px 22px 22px 22px;
+  padding: 8px;
+  height: 40px;
+  width: 500px;
 }
 
 .date-section input {
@@ -155,33 +157,42 @@
 }
 
 /* banner quang cao */
-.banner2{
-    width: 80%;
-    height: auto;
-    
+.banner2 {
+  width: 80%;
+  height: auto;
+
 }
 
-.banner-container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 155px;
+.banner-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 155px;
 }
 
-.quangcao1{
-    width: 100%;
-    height: auto;
+.quangcao1 {
+  width: 100%;
+  height: auto;
 }
 
 .image-row {
+  width: 100%;
   display: flex;
+  flex-wrap: nowrap; /* Không xuống dòng, cho phép cuộn ngang */
+  overflow-x: auto; /* Hiển thị thanh cuộn ngang nếu cần */
+  gap: 30px;
+  padding-bottom: 25px; /* Khoảng cách dưới cùng để tránh bị cắt */
+  padding-left: 155px;
   justify-content: flex-start;
-  align-items: center;
-  gap: 30px;          /* khoảng cách giữa các khung */
-  margin-left: 155px;
-  margin-bottom: 60px;
+  cursor: grab; /* Thay đổi con trỏ khi di chuyển */
+  user-select: none; /* Ngăn bôi đen text khi kéo */
+}
+
+.image-row::-webkit-scrollbar {
+  display: none;
+  /* Ẩn thanh cuộn */
 }
 
 .image-box {
@@ -195,136 +206,151 @@
 .image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* crop ảnh giữ tỉ lệ đẹp */
+  object-fit: cover;
+  /* crop ảnh giữ tỉ lệ đẹp */
   display: block;
   transition: transform 0.3s ease;
 }
 
 /* Popular tours section */
-.popular-tours-section{
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 60px;
-    margin-left: 155px;
+.popular-tours-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  margin-left: 155px;
 }
 
-.popular-tours-section h2{
-    align-self: center;
-    font-size: 22px;
+.popular-tours-section h2 {
+  align-self: center;
+  font-size: 22px;
 }
 
 .tours-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap; /* Không xuống dòng, cho phép cuộn ngang */
-    overflow-x: auto; /* Hiển thị thanh cuộn ngang nếu cần */
-    gap: 30px;
-    padding-bottom: 25px; /* Khoảng cách dưới cùng để tránh bị cắt */
-    padding-left: 15px;
-    padding-right: 15px;
-    justify-content: flex-start;
-    cursor: grab; /* Thay đổi con trỏ khi di chuyển */
-    user-select: none; /* Ngăn bôi đen text khi kéo */
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  /* Không xuống dòng, cho phép cuộn ngang */
+  overflow-x: auto;
+  /* Hiển thị thanh cuộn ngang nếu cần */
+  gap: 30px;
+  padding-bottom: 25px;
+  /* Khoảng cách dưới cùng để tránh bị cắt */
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: flex-start;
+  cursor: grab;
+  /* Thay đổi con trỏ khi di chuyển */
+  user-select: none;
+  /* Ngăn bôi đen text khi kéo */
 }
 
 .tours-container::-webkit-scrollbar {
-    display: none; /* Ẩn thanh cuộn */
+  display: none;
+  /* Ẩn thanh cuộn */
 }
 
 .tour-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 4px 4px 6.1px 0 rgba(0, 0, 0, 0.16);
-    border: 1px solid var(--mu-b-tr-2-vin-box-nu-cn, rgba(217, 217, 217, 0.50));
-    overflow: hidden; /* Bo tròn góc của hình ảnh bên trong */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 0 0 240px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 6.1px 0 rgba(0, 0, 0, 0.16);
+  border: 1px solid var(--mu-b-tr-2-vin-box-nu-cn, rgba(217, 217, 217, 0.50));
+  overflow: hidden;
+  /* Bo tròn góc của hình ảnh bên trong */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 240px;
 }
 
 /* Hiệu ứng khi di chuột vào card */
 .tour-card:hover {
-    transform: translateY(-5px); /* Nhấc card lên một chút */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Đổ bóng rõ hơn */
+  transform: translateY(-5px);
+  /* Nhấc card lên một chút */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  /* Đổ bóng rõ hơn */
 }
 
 /* Hình ảnh bên trong card */
 .tour-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover; /* Giữ tỉ lệ ảnh và cắt nếu cần */
-    display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  /* Giữ tỉ lệ ảnh và cắt nếu cần */
+  display: block;
 }
 
 /* Khu vực nội dung text bên dưới ảnh */
 .tour-content {
-    padding: 15px;
-    min-height: 105px; 
+  padding: 15px;
+  min-height: 105px;
 }
 
 .tour-content h3 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #222;
-    margin: 0 0 10px 0;
-    
-    /* Giới hạn text trong 4 dòng và thêm dấu "..." */
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: 76px; /* Chiều cao tương đương 4 dòng text */
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+  margin: 0 0 10px 0;
+
+  /* Giới hạn text trong 4 dòng và thêm dấu "..." */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 76px;
+  /* Chiều cao tương đương 4 dòng text */
 }
 
 .tour-pricing {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .original-price {
-    font-size: 14px;
-    color: #999;
-    text-decoration: line-through;
-    display: block; /* Hiển thị trên một dòng riêng */
-    margin-bottom: 5px;
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  display: block;
+  /* Hiển thị trên một dòng riêng */
+  margin-bottom: 5px;
 }
 
 .current-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #22ab1b;
-    display: block; /* Hiển thị trên một dòng riêng */
+  font-size: 18px;
+  font-weight: bold;
+  color: #22ab1b;
+  display: block;
+  /* Hiển thị trên một dòng riêng */
 }
 
 /* Lý do nên chọn travelulu */
-.reason-section{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
+.reason-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-.reason-section h2{
-    font-size: 22px;
+.reason-section h2 {
+  font-size: 22px;
 }
-.reason-box{
-    width: 1224px;
-    height: 135px;
-    border-radius: 26px 26px 26px 26px;
-    border: 1px solid rgba(217, 217, 217, 0.50);
-    box-shadow: 4px 4px 6.1px 0 rgba(0, 0, 0, 0.16);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
+
+.reason-box {
+  width: 1224px;
+  height: 135px;
+  border-radius: 26px 26px 26px 26px;
+  border: 1px solid rgba(217, 217, 217, 0.50);
+  box-shadow: 4px 4px 6.1px 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .reason-icon {
@@ -332,16 +358,16 @@
   margin-left: auto;
 }
 
-.reason-text{
+.reason-text {
   padding-left: 24px;
 }
 
-.reason-text h3{
+.reason-text h3 {
   font-size: 20px;
   margin: 0;
 }
 
-.reason-text p{
+.reason-text p {
   font-size: 16px;
   margin: 6px 0;
 }
