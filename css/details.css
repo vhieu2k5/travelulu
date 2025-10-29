@@ -372,6 +372,7 @@ body{
     padding-left: 10px;
     border-right: 2px solid gray;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -1096,12 +1097,13 @@ body{
     margin: 0;
     font-size: 16px;
     font-weight: 100;
-    padding-right: 140px;
+    padding-right: 100px;
     padding-left: 30px;
     border: none;
     border-right: 2px solid gray !important;
     background-color: rgba(183, 227, 255, 0.2);
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;

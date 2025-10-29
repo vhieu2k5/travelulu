@@ -29,7 +29,7 @@ if (heartIcon) {
         {
             window.location.href="../html/login.html";
         }
-        else {
+        else if (liked) {
             unfavPanel.style.display = "flex";
             favPanel.style.display = "none";
             sharePanel.style.display = "none";
