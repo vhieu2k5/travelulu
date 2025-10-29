@@ -452,7 +452,7 @@
 
 /* Khung ghi chú */
 .note-area {
-  width: 93%;
+  width: 100%;
   height: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -523,5 +523,80 @@
 
   .action-button.secondary {
     width: 100%;
+  }
+}
+
+/* Modal styles for tour detail cancel confirmation (kept here so detail page always has styles) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.confirm-dialog {
+  background: #ffffff;
+  border-radius: 18px;
+  width: min(760px, 100%);
+  max-width: 760px;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
+  padding: 22px 26px;
+  color: #0f172a;
+  text-align: center;
+}
+
+.confirm-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.confirm-body {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.btn-cancel-dialog,
+.btn-confirm-dialog {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-cancel-dialog {
+  background: #eef2f7;
+  color: #0f172a;
+}
+
+.btn-confirm-dialog {
+  background: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .confirm-dialog {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .confirm-title {
+    font-size: 16px;
+  }
+  .confirm-body {
+    font-size: 13px;
   }
 }

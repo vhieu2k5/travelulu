@@ -437,15 +437,19 @@ document.addEventListener("DOMContentLoaded", () => {
       card.appendChild(divider);
       card.appendChild(footer);
 
-      // Khi bấm vào thẻ tour, chuyển sang trang chi tiết (truyền bookingId để load thông tin)
-      card.style.cursor = "pointer";
-      card.addEventListener("click", (e) => {
-        // Nếu người dùng click vào một nút bên trong thẻ, các listener trên nút sẽ stopPropagation
-        // Điều hướng tới trang chi tiết (trong cùng thư mục html)
-        const targetUrl =
-          "./tourDetail.html?bookingId=" + encodeURIComponent(b.id);
-        window.location.href = targetUrl;
-      });
+      // Chỉ cho phép click chuyển trang chi tiết với các booking có trạng thái "Sắp tới"
+      if ((b.status || "").toLowerCase() === "sắp tới") {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", (e) => {
+          // Nếu người dùng click vào một nút bên trong thẻ, các listener trên nút sẽ stopPropagation
+          const targetUrl =
+            "./tourDetail.html?bookingId=" + encodeURIComponent(b.id);
+          window.location.href = targetUrl;
+        });
+      } else {
+        // Không phải tour sắp tới -> không hiển thị con trỏ pointer
+        card.style.cursor = "default";
+      }
 
       tourListEl.appendChild(card);
     });
