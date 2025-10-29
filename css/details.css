@@ -101,9 +101,9 @@ body{
     font-family: "League Spartan";
     font-style: normal;
     color: black;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     margin-top: 4px;
 }
 
@@ -249,7 +249,7 @@ body{
 
 .pic1, .pic2{
     width: 100%;
-    height: auto;
+    height: 300px;
 }
 
 .picslayout2 {
@@ -260,7 +260,7 @@ body{
 
 .pic3, .pic4, .pic5{
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .part2{

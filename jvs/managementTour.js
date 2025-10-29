@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const icon = document.createElement("img");
       icon.className = "empty-icon";
       // Dùng hình ảnh cục bộ nếu có, nếu không thì dùng SVG inline
-      icon.src = "../pics/manegamentTour/box.png";
+      icon.src = "../pics/mascot/sad.png";
       icon.alt = "empty";
       const text = document.createElement("div");
       text.className = "empty-text";
@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Nếu tour đã hủy, hiển thị nút "Đặt lại"
-      if ((b.status || "").toLowerCase() === "đã hủy") {
+      if ((b.status || "").toLowerCase() === "đã hủy" || ( b.status || "").toLowerCase() === "đã hoàn thành") {
         const rebookBtn = document.createElement("button");
         rebookBtn.className = "rebook-btn";
         rebookBtn.textContent = "Đặt lại";
@@ -446,7 +446,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "./tourDetail.html?bookingId=" + encodeURIComponent(b.id);
           window.location.href = targetUrl;
         });
-      } else {
+      }
+      else if ((b.status || " ").toLowerCase() === "đã huỷ" || (b.status || " ").toLowerCase() === "đã hoàn thành"){
+        card.style.cursor = "pointer";
+        card.addEventListener("click", (e) => {
+          window.location.href = "../html/completedTour.html";
+        });
+      }
+       else {
         // Không phải tour sắp tới -> không hiển thị con trỏ pointer
         card.style.cursor = "default";
       }
@@ -610,3 +617,39 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter") handleSearch();
     });
 });
+
+//Phần đánh giá sao của trang Complete
+
+document.querySelectorAll(".rate-stars").forEach(rateBox => {
+  const stars = rateBox.querySelectorAll("i");
+
+  stars.forEach((star, index) => {
+
+    star.addEventListener("mouseover", () => {
+      stars.forEach((s, i) => {
+        s.classList.toggle("fa-solid", i <= index);
+        s.classList.toggle("fa-regular", i > index);
+      });
+    });
+
+    // Mouseout: khôi phục theo lựa chọn hiện tại
+    star.addEventListener("mouseout", () => {
+      const selected = rateBox.getAttribute("data-rating") || 0;
+      stars.forEach((s, i) => {
+        s.classList.toggle("fa-solid", i < selected);
+        s.classList.toggle("fa-regular", i >= selected);
+      });
+    });
+
+    // Click: lưu mức sao được chọn
+    star.addEventListener("click", () => {
+      rateBox.setAttribute("data-rating", index + 1);
+      stars.forEach((s, i) => {
+        s.classList.toggle("fa-solid", i <= index);
+        s.classList.toggle("fa-regular", i > index);
+      });
+      
+    });
+  });
+});
+

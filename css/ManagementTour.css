@@ -81,7 +81,7 @@ h1 {
 }
 
 .search-btn {
-  background-color: #5ea8d9;
+  background-color: var(--main-color);
   color: white;
   border: none;
   padding: 10px 22px;
@@ -106,6 +106,10 @@ h1 {
   flex-wrap: wrap;
   width: 100%;
 }
+.filter-tabs a:first-child{
+  color: var(--main-color);
+  font-size: 22px;
+}
 
 .filter-tabs .tab-item {
   color: #000;
@@ -117,15 +121,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.18s, color 0.18s;
+  transition: all 0.18s, color 0.18s;
   cursor: pointer;
   min-width: 80px;
   box-sizing: border-box;
 }
 
 .filter-tabs .tab-item.active {
-  color: #34699a;
-  background: linear-gradient(90deg, #cce0eb 0%, #b1d0e0 100%);
+  color: white;
+  background: linear-gradient(90deg, #cce0eb 5%, #005a87 100%);
   font-weight: 700;
   box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.08);
 }
@@ -178,7 +182,7 @@ h1 {
 }
 
 .tour-info h2 {
-  font-size: 18px;
+  font-size: 23px;
   margin-bottom: 6px;
   color: #0f172a;
 }
@@ -246,7 +250,7 @@ h1 {
 }
 
 .rebook-btn {
-  background: #0b74ff;
+  background: var(--main-color);
   border: none;
   color: #fff;
   padding: 8px 14px;
@@ -347,12 +351,14 @@ h1 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   align-items: stretch;
   padding: 8px 24px 28px;
   margin-bottom: 50px;
   justify-content: flex-start;
+}
+.recommendation-list::-webkit-scrollbar{
+  display: none;
 }
 
 .recommended-card {
@@ -618,17 +624,21 @@ h1 {
   margin-bottom: 18px;
 }
 .explore-btn {
-  background: #0b74ff;
+  background: var(--main-color);
   color: #fff;
   border: none;
   padding: 10px 22px;
   border-radius: 8px;
   font-weight: 700;
+  font-size: 18px;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(11, 116, 255, 0.18);
+  transition: all 0.5s ease;
 }
 .explore-btn:hover {
-  background: #075fd6;
+  background:white;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
 }
 
 /* Hộp thoại xác nhận */
@@ -750,3 +760,34 @@ h1 {
   font-size: 16px;
   font-weight: 600;
 }
+.rate-stars{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.fa-star{
+  margin: 10px 5px;
+  font-size: 30px;
+  color: gray;
+}
+
+.rate-stars .fa-solid {
+  color: #FFD700; /* sao được chọn */
+}
+
+.rate-stars i:hover,
+.rate-stars i:hover ~ i {
+  color: #ccc; 
+}
+.action-button.secondary{
+  width: 200px;
+}
+.support-text p{
+  width: 600px;
+}
+.action-button.primary:hover{
+  border: 5px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+}
+
