@@ -350,85 +350,85 @@ document.addEventListener("DOMContentLoaded", () => {
       footer.className = "card-footer";
 
       // Nếu tour sắp tới, thêm nút hủy bên trái
-      if ((b.status || "").toLowerCase() === "sắp tới") {
-        const cancelBtn = document.createElement("button");
-        cancelBtn.className = "cancel-btn";
-        cancelBtn.textContent = "Hủy";
-        cancelBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          // Hiển thị hộp thoại xác nhận
-          const overlay = document.createElement("div");
-          overlay.className = "modal-overlay";
-          const dialog = document.createElement("div");
-          dialog.className = "confirm-dialog";
-          dialog.innerHTML = `
-            <div class="confirm-title">Hủy chuyến sắp tới</div>
-            <div class="confirm-body">Bạn có chắc chắn không?</div>
-            <div class="confirm-actions">
-              <button class="btn-cancel-dialog">Hủy</button>
-              <button class="btn-confirm-dialog">Có</button>
-            </div>
-          `;
-          overlay.appendChild(dialog);
-          document.body.appendChild(overlay);
+      // if ((b.status || "").toLowerCase() === "sắp tới") {
+      //   const cancelBtn = document.createElement("button");
+      //   cancelBtn.className = "cancel-btn";
+      //   cancelBtn.textContent = "Hủy";
+      //   cancelBtn.addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //     e.stopPropagation();
+      //     // Hiển thị hộp thoại xác nhận
+      //     const overlay = document.createElement("div");
+      //     overlay.className = "modal-overlay";
+      //     const dialog = document.createElement("div");
+      //     dialog.className = "confirm-dialog";
+      //     dialog.innerHTML = `
+      //       <div class="confirm-title">Hủy chuyến sắp tới</div>
+      //       <div class="confirm-body">Bạn có chắc chắn không?</div>
+      //       <div class="confirm-actions">
+      //         <button class="btn-cancel-dialog">Hủy</button>
+      //         <button class="btn-confirm-dialog">Có</button>
+      //       </div>
+      //     `;
+      //     overlay.appendChild(dialog);
+      //     document.body.appendChild(overlay);
 
-          const btnCancel = dialog.querySelector(".btn-cancel-dialog");
-          const btnConfirm = dialog.querySelector(".btn-confirm-dialog");
+      //     const btnCancel = dialog.querySelector(".btn-cancel-dialog");
+      //     const btnConfirm = dialog.querySelector(".btn-confirm-dialog");
 
-          function closeModal() {
-            if (overlay && overlay.parentNode)
-              overlay.parentNode.removeChild(overlay);
-          }
+      //     function closeModal() {
+      //       if (overlay && overlay.parentNode)
+      //         overlay.parentNode.removeChild(overlay);
+      //     }
 
-          btnCancel.addEventListener("click", () => {
-            closeModal();
-          });
+      //     btnCancel.addEventListener("click", () => {
+      //       closeModal();
+      //     });
 
-          btnConfirm.addEventListener("click", () => {
-            // Thực hiện hủy và render lại danh sách
-            window.TourAPI.cancelBooking(b.id);
-            closeModal();
-            renderBookedTours(window.TourAPI.getBookedTours());
-          });
-        });
-        footer.appendChild(cancelBtn);
-      }
+      //     btnConfirm.addEventListener("click", () => {
+      //       // Thực hiện hủy và render lại danh sách
+      //       window.TourAPI.cancelBooking(b.id);
+      //       closeModal();
+      //       renderBookedTours(window.TourAPI.getBookedTours());
+      //     });
+      //   });
+      //   footer.appendChild(cancelBtn);
+      // }
 
-      // Nếu tour đã hủy, hiển thị nút "Đặt lại"
-      if ((b.status || "").toLowerCase() === "đã hủy" || ( b.status || "").toLowerCase() === "đã hoàn thành") {
-        const rebookBtn = document.createElement("button");
-        rebookBtn.className = "rebook-btn";
-        rebookBtn.textContent = "Đặt lại";
-        rebookBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          window.location.href="../html/completedTour.html";
-          // // Hiển thị hộp thoại thông báo tour không thể đặt lại
-          // const overlay = document.createElement("div");
-          // overlay.className = "modal-overlay";
-          // const dialog = document.createElement("div");
-          // dialog.className = "info-dialog";
-          // dialog.innerHTML = `
-          //   <div style="text-align:center; padding:18px 22px;">
-          //     <div class="warning-icon" aria-hidden="true">
-          //       <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
-          //     </div>
-          //     <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
-          //     <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
-          //   </div>
-          // `;
-          // overlay.appendChild(dialog);
-          // document.body.appendChild(overlay);
+      // // Nếu tour đã hủy, hiển thị nút "Đặt lại"
+      // if ((b.status || "").toLowerCase() === "đã hủy" || ( b.status || "").toLowerCase() === "đã hoàn thành") {
+      //   const rebookBtn = document.createElement("button");
+      //   rebookBtn.className = "rebook-btn";
+      //   rebookBtn.textContent = "Đặt lại";
+      //   rebookBtn.addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //     e.stopPropagation();
+      //     window.location.href="../html/completedTour.html";
+      //     // // Hiển thị hộp thoại thông báo tour không thể đặt lại
+      //     // const overlay = document.createElement("div");
+      //     // overlay.className = "modal-overlay";
+      //     // const dialog = document.createElement("div");
+      //     // dialog.className = "info-dialog";
+      //     // dialog.innerHTML = `
+      //     //   <div style="text-align:center; padding:18px 22px;">
+      //     //     <div class="warning-icon" aria-hidden="true">
+      //     //       <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
+      //     //     </div>
+      //     //     <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
+      //     //     <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
+      //     //   </div>
+      //     // `;
+      //     // overlay.appendChild(dialog);
+      //     // document.body.appendChild(overlay);
 
-          // const btnClose = dialog.querySelector(".btn-close-info");
-          // btnClose.addEventListener("click", () => {
-          //   if (overlay && overlay.parentNode)
-          //     overlay.parentNode.removeChild(overlay);
-          // });
-        });
-        footer.appendChild(rebookBtn);
-      }
+      //     // const btnClose = dialog.querySelector(".btn-close-info");
+      //     // btnClose.addEventListener("click", () => {
+      //     //   if (overlay && overlay.parentNode)
+      //     //     overlay.parentNode.removeChild(overlay);
+      //     // });
+      //   });
+      //   footer.appendChild(rebookBtn);
+      // }
 
       footer.appendChild(pricing);
 
@@ -448,13 +448,13 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = targetUrl;
         });
       }
-      else if ((b.status || " ").toLowerCase() === "đã huỷ" || (b.status || " ").toLowerCase() === "đã hoàn thành"){
+      else if ((b.status || " ").toLowerCase() === "đã huỷ" || (b.status || " ").toLowerCase() === "đã hoàn thành") {
         card.style.cursor = "pointer";
         card.addEventListener("click", (e) => {
           window.location.href = "../html/completedTour.html";
         });
       }
-       else {
+      else {
         // Không phải tour sắp tới -> không hiển thị con trỏ pointer
         card.style.cursor = "default";
       }
@@ -649,8 +649,51 @@ document.querySelectorAll(".rate-stars").forEach(rateBox => {
         s.classList.toggle("fa-solid", i <= index);
         s.classList.toggle("fa-regular", i > index);
       });
-      
+
     });
   });
 });
 
+//Phần huỷ Tour của Linh mU
+const overlay = document.getElementById('backdrop-overlay');
+const huyTour = document.getElementById("CancelBtn");
+const hoiLai = document.getElementById('hoi-lai');
+const lydo = document.getElementById('ly-do');
+const loading = document.getElementById('loading');
+const hoantat = document.getElementById('hoan-tat');
+const quayLai = document.getElementById('quay-lai');
+const buttonHuy = document.getElementById('CancelBtn');
+const tieptuc = document.getElementById('tiep-tuc');
+
+huyTour.addEventListener('click', (event) => {
+  event.preventDefault();
+  overlay.classList.add('show');
+  hoiLai.classList.add('show');
+});
+
+quayLai.addEventListener('click', (event) => {
+  event.preventDefault();
+  overlay.classList.remove('show');
+  hoiLai.classList.remove('show');
+  lydo.classList.remove('show');
+});
+
+buttonHuy.addEventListener('click', (event) => {
+  event.preventDefault();
+  hoiLai.classList.remove('show');
+  lydo.classList.add('show');
+});
+
+tieptuc.addEventListener('click', (event) => {
+  event.preventDefault();
+  lydo.classList.remove('show');
+  loading.classList.add('show');
+  setTimeout(() => {
+    loading.classList.remove('show');
+    hoantat.classList.add('show');
+    // window.location.href="../html/ManagementTour.html";
+  }, 2000);
+  setTimeout(() => {
+    window.location.href = "../html/ManagementTour.html";
+  }, 4000);
+});

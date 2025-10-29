@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/tourdetail.css" />
     <link rel="stylesheet" href="../css/ManagementTour.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/checkout.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -205,7 +206,7 @@
                 <p class="date">Trong ngày 14/8</p>
               </div>
             </div>
-            <button class="action-button primary">Hủy tour</button>
+            <button id="CancelBtn" class="action-button primary">Hủy tour</button>
           </section>
 
           <section class="note-section card">
@@ -276,129 +277,98 @@
       </div>
     </div>
 
-    <script>
-      // Setup cancel confirmation modal for tour detail page
-      (function () {
-        function qs(sel) {
-          return document.querySelector(sel);
-        }
+<!-- Phần huỷ chuyến của Linh Mu -->
+<div id="backdrop-overlay"></div>
 
-        function parseBookingId() {
-          try {
-            const params = new URLSearchParams(window.location.search);
-            return params.get("bookingId");
-          } catch (e) {
-            return null;
-          }
-        }
-
-        const bookingId = parseBookingId();
-        const cancelBtn = qs(".refund-policy-section .action-button.primary");
-        if (!cancelBtn) return;
-
-        cancelBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          // create overlay
-          const overlay = document.createElement("div");
-          overlay.className = "modal-overlay";
-
-          const dialog = document.createElement("div");
-          dialog.className = "confirm-dialog";
-          dialog.innerHTML = `
-            <div class="confirm-title">Bạn có chắc chắn muốn hủy tour này không?</div>
-            <div class="confirm-body">Ưu đãi và giá cả có thể thay đổi liên tục nên ưu đãi này có thể sẽ không còn nếu quý khách hủy ngay bây giờ. Quý khách có chắc chắn muốn hủy không?</div>
-            <div class="confirm-actions">
-              <button class="btn-cancel-dialog">Quay lại</button>
-              <button class="btn-confirm-dialog">Hủy Tour</button>
+<div id="hoi-lai" class="popup-modal-base">
+    <div class="popup-text">
+        <div class="tieude2">Bạn có chắc chắn muốn hủy tour này không?</div>
+        <div class="note" style="color: #636363; margin: 20px 0 30px 0; width: 620px;">Ưu đãi và giá của chúng tôi
+            thay đổi liên
+            tục nên ưu đãi này có thể sẽ không còn nữa nếu quý khách hủy ngay bây giờ. Quý khách có chắc chắn muốn
+            hủy không?</div>
+        <div class="gr">
+            <div class="button" style="background-color: #D6D6D6;">
+                <button id="quay-lai">Quay lại</button>
             </div>
-          `;
 
-          overlay.appendChild(dialog);
-          document.body.appendChild(overlay);
+            <div class="button">
+                <button id="huy">Hủy tour</button>
+            </div>
+        </div>
 
-          // close helper
-          function close() {
-            if (overlay && overlay.parentNode)
-              overlay.parentNode.removeChild(overlay);
-          }
+    </div>
+</div>
 
-          // ESC to close
-          function onKey(e) {
-            if (e.key === "Escape") {
-              close();
-              document.removeEventListener("keydown", onKey);
-            }
-          }
+<div id="ly-do" class="popup-modal-base">
+    <div class="popup-text" style="margin: 0 20px;">
+        <div class="tieude2" style="margin: 0 250px;">Hủy tour</div>
+        <ul class="dong1 - dientt">
+            <li>
+                <div class="tit">Lý do hủy tour:</div>
 
-          document.addEventListener("keydown", onKey);
+                <div class="so-the">
+                    <select id="cancel-reason" class="o-trong">
+                        <option value="" disabled selected hidden>Chọn một trong số các lý do sau đây</option>
+                        <option>Đơn đặt chỗ không được xác nhận kịp thời</option>
+                        <option>Không thật sự tin tưởng vào uy tín của dịch vụ Travelulu</option>
+                        <option>Tìm được giá thấp hơn</option>
+                        <option>Thiên tai</option>
+                        <option>Sẽ đặt tour khác trên website của Travelulu</option>
+                    </select>
+                    <img src="../pics/Vector.svg" class="khoa">
+                </div>
 
-          const btnCancel = dialog.querySelector(".btn-cancel-dialog");
-          const btnConfirm = dialog.querySelector(".btn-confirm-dialog");
+            </li>
+        </ul>
 
-          btnCancel.addEventListener("click", function () {
-            close();
-            document.removeEventListener("keydown", onKey);
-          });
+        <ul class="dong2 - dientt">
+            <li>
+                <div class="tit">Vui lòng cung cấp thêm chi tiết:</div>
+                <textarea class="o-trong" placeholder="Nhập lý do chi tiết..."
+                    style="height: 124px; resize: none;"></textarea>
+            </li>
+        </ul>
 
-          btnConfirm.addEventListener("click", function () {
-            // Call fake API if available
-            if (
-              window.TourAPI &&
-              typeof window.TourAPI.cancelBooking === "function" &&
-              bookingId
-            ) {
-              const ok = window.TourAPI.cancelBooking(bookingId);
-              // Update UI: switch the detail page button to 'Đặt lại' so user can rebook (show info)
-              if (ok) {
-                // mark confirm button as completed
-                btnConfirm.textContent = "Đã hủy";
-                btnConfirm.disabled = true;
+        <div class="gr2">
+            <div class="note"><b style="color: red;">*</b>Hủy không mất phí!</div>
+            <div class="gr">
+                <div class="button" style="background-color: #D6D6D6;">
+                    <button id="quay-lai">Đóng</button>
+                </div>
 
-                // Replace the original cancel button with a 'Đặt lại' action
-                const newBtn = cancelBtn.cloneNode(true);
-                newBtn.textContent = "Đặt lại";
-                // ensure it's enabled for user to click
-                newBtn.disabled = false;
-                // swap in DOM
-                cancelBtn.parentNode.replaceChild(newBtn, cancelBtn);
+                <div class="button">
+                    <button id="tiep-tuc">Tiếp tục hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                // Attach 'Đặt lại' behavior: show info dialog (cannot rebook)
-                newBtn.addEventListener("click", function (ev) {
-                  ev.preventDefault();
-                  ev.stopPropagation();
-                  const ov = document.createElement("div");
-                  ov.className = "modal-overlay";
-                  const info = document.createElement("div");
-                  info.className = "info-dialog";
-                  info.innerHTML = `
-                    <div style="text-align:center; padding:18px 22px;">
-                      <div class="warning-icon" aria-hidden="true">
-                        <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
-                      </div>
-                      <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
-                      <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
-                    </div>
-                  `;
-                  ov.appendChild(info);
-                  document.body.appendChild(ov);
-                  const btnClose = info.querySelector(".btn-close-info");
-                  btnClose.addEventListener("click", function () {
-                    if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
-                  });
-                });
-              } else {
-                btnConfirm.textContent = "Thất bại";
-              }
-            }
-            // close after a short delay so user sees change
-            setTimeout(() => {
-              close();
-              document.removeEventListener("keydown", onKey);
-            }, 700);
-          });
-        });
-      })();
-    </script>
+
+<div id="loading" class="popup-modal-base">
+    <div class="popup-text">
+
+        <div class="load">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="tieude2" style="text-align: center; width: 426px; margin: 67px;">Vui lòng chờ trong lúc chúng
+            tôi cập nhật chi tiết đơn đặt chỗ của quý khách.</div>
+
+    </div>
+</div>
+
+<div id="hoan-tat" class="popup-modal-base">
+    <div class="popup-text">
+       <img width="10%" src="../pics/Mascot/sad.png" alt="">
+        <div class="tieude2" style="text-align: center; width: 326px; margin: 30px;">Đã hủy thành công đơn đặt chỗ
+            của quý khách.</div>
+    </div>
+</div>
+
     <script src="../jvs/managementTour.js"></script>
+    <script src="../js/checkout.js"></script>
   </body>
 </html>

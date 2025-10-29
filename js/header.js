@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const includes = document.querySelectorAll("[data-include]");
-
   const chatbot = document.querySelectorAll("[chatBot]");
+
   includes.forEach(el => {
     const file = el.getAttribute("data-include");
     fetch(file)
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => console.error("Lỗi include:", err));
   });
+  
 });
 
 
