@@ -15,6 +15,7 @@ body {
     justify-self: center;
     gap: 50px;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .thongtin {
@@ -299,11 +300,6 @@ body {
     border: 2px solid var(--main-color);
     cursor: pointer;
 }
-.button:hover{
-    background-color: white; color: var(--main-color);
-}
-
-
 
 .anh-tour {
     width: auto;

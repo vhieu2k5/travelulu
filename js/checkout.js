@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    const huyTour = document.getElementById();
+    const huyTour = document.getElementById('buttonhuy');
     const hoiLai = document.getElementById('hoi-lai');
     const lydo = document.getElementById('ly-do');
     const loading = document.getElementById('loading');
