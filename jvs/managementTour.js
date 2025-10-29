@@ -655,8 +655,7 @@ document.querySelectorAll(".rate-stars").forEach(rateBox => {
 });
 
 //Phần huỷ Tour của Linh mU
-const overlay = document.getElementById('backdrop-overlay');
-const huyTour = document.getElementById("CancelBtn");
+const overlayLinhmu = document.getElementById('backdrop-overlay');
 const hoiLai = document.getElementById('hoi-lai');
 const lydo = document.getElementById('ly-do');
 const loading = document.getElementById('loading');
@@ -665,15 +664,15 @@ const quayLai = document.getElementById('quay-lai');
 const buttonHuy = document.getElementById('CancelBtn');
 const tieptuc = document.getElementById('tiep-tuc');
 
-huyTour.addEventListener('click', (event) => {
+buttonHuy.addEventListener('click', (event) => {
   event.preventDefault();
-  overlay.classList.add('show');
+  overlayLinhmu.classList.add('show');
   hoiLai.classList.add('show');
 });
 
 quayLai.addEventListener('click', (event) => {
   event.preventDefault();
-  overlay.classList.remove('show');
+  overlayLinhmu.classList.remove('show');
   hoiLai.classList.remove('show');
   lydo.classList.remove('show');
 });
