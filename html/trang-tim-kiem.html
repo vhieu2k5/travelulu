@@ -31,9 +31,46 @@
     <div class="page-container"  >
         <!-- Navigation bar -->
         <div class="navigation-bar">
+            <!-- Loc khoang gia -->
             <div class="filter-group">
-                <h4>Khoảng giá</h4>
-                <div class="price-range">0 VNĐ - 4.000.000 VNĐ+</div>
+                <h3>Khoảng giá</h3>
+                <ul class="filter-list">
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-1"
+                            value="duoi-2-trieu">
+                        <label for="pr-1">Dưới 2 triệu</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-2"
+                            value="2-4-trieu">
+                        <label for="pr-2">2 triệu - 4 triệu</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-3"
+                            value="4-6-trieu">
+                        <label for="pr-3">4 triệu - 6 triệu</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-4"
+                            value="6-8-trieu">
+                        <label for="pr-4">6 triệu - 8 triệu</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-5"
+                            value="8-10-trieu">
+                        <label for="pr-5">8 triệu - 10 triệu</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" class="filter-check" data-filter-group="price-range" id="pr-6"
+                            value="10-trieu">
+                        <label for="pr-6">Trên 10 triệu</label>
+                    </li>
+                </ul>
             </div>
             <!-- Lọc điểm khởi hành -->
             <div class="filter-group">
@@ -338,7 +375,7 @@
                 <p>Tour cho lựa chọn này đang được cập nhật. Vui lòng thử lại sau!</p>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="4-ngay-3-dem"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-ha-giang-4n3d-danang.png"
                     alt="Tour Hà Giang 4N3Đ - khởi hành từ Đà Nẵng">
@@ -348,7 +385,7 @@
                         <p><b>Khởi hành:</b> Đà Nẵng</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -361,7 +398,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="da-nang" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-ha-giang-3n2d-danang.png"
                     alt="Tour Hà Giang 3N2Đ - khởi hành từ Đà Nẵng">
@@ -371,7 +408,7 @@
                         <p><b>Khởi hành:</b> Đà Nẵng</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -384,7 +421,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-hagiang-3n2d-song-nho-que-hanoi.png"
                     alt="Tour Hà Giang 3N2Đ - Du Thuyền Sông Nho Quế">
@@ -394,7 +431,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -407,7 +444,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="ha-noi" data-diem-den="ha-giang" data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-hagiang-3n2d-hoang-su-phi-hanoi.png"
                     alt="Tour Hà Giang Hoàng Su Phì">
@@ -418,7 +455,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -431,7 +468,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="4-ngay-3-dem"
+            <div class="tour-item" data-price-range="8-10-trieu" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-hagiang-4n3d-hoang-su-phi-hcm.png"
                     alt="Tour Hà Giang - Hoàng Su Phì 4N3Đ - từ TP HCM">
@@ -441,7 +478,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -454,7 +491,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="3-ngay-2-dem"
+            <div class="tour-item" data-price-range="6-8-trieu" data-diem-den="ha-giang" data-khoi-hanh="ho-chi-minh" data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-dong-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/tour-hagiang-3n2d-hcm.png" alt="Tour Hà Giang 3N2Đ - từ TP HCM">
                 <div class="tour-info">
@@ -463,7 +500,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -476,7 +513,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="da-nang" data-diem-den="ha-noi, ha-giang, cao-bang"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="da-nang" data-diem-den="ha-noi, ha-giang, cao-bang"
                 data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/dulich-mienbac-4n3d-danang.png"
@@ -487,7 +524,7 @@
                         <p><b>Khởi hành:</b> Đà Nẵng</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -500,7 +537,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-1-dem"
+            <div class="tour-item" data-price-range="duoi-2-trieu" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-1-dem"
                 data-loai-hinh-tour="tour-tay-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen">
                 <img class="tour-image" src="../pics/dulich-sapa-2n1d-hanoi.png"
                     alt="Du Lịch Sapa: Hà Nội - Sapa - Cát Cát - Fansipan">
@@ -511,7 +548,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -524,7 +561,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-2-dem"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="ha-noi" data-diem-den="lao-cai" data-thoi-luong="2-ngay-2-dem"
                 data-loai-hinh-tour="tour-tay-bac,tour-kham-pha-mao-hiem,tour-nui-cao-nguyen, tour-le-hoi-mua-sam">
                 <img class="tour-image" src="../pics/dulich-sapa-2n2d-hanoi.png"
                     alt="Du lịch Sapa - 2N2Đ (đi tàu hỏa, và ô tô)">
@@ -534,7 +571,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 2 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -547,7 +584,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+            <div class="tour-item" data-price-range="duoi-2-trieu" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
                 data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-halong-catamaran.png"
                     alt="Du thuyền 5 sao Catamaran thăm Vịnh Hạ Long">
@@ -557,7 +594,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 1 ngày</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -570,7 +607,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+            <div class="tour-item" data-price-range="duoi-2-trieu" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
                 data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-halong-symphony.png"
                     alt="Tour du thuyền 5 sao Symphony thăm Vịnh Hạ Long">
@@ -580,7 +617,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 1 ngày</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -593,7 +630,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="1-ngay"
                 data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-halong-queen.jpg"
                     alt="Tour du thuyền 5 sao Queen thăm Vịnh Hạ Long">
@@ -603,7 +640,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 1 ngày</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -616,7 +653,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
+            <div class="tour-item" data-price-range="8-10-trieu" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
                 data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-halong-ambassader.png"
                     alt="Tour du thuyền 5 sao Ambassador Signature - 2N1Đ">
@@ -626,7 +663,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -639,7 +676,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
+            <div class="tour-item" data-price-range="10-trieu" data-khoi-hanh="ha-noi" data-diem-den="quang-ninh" data-thoi-luong="2-ngay-1-dem"
                 data-loai-hinh-tour="tour-mien-bac,tour-bien-dao,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-halong-Grand-Pioneers.png" alt="Du thuyen Grand Pioneers">
                 <div class="tour-info">
@@ -648,7 +685,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 2 ngày 1 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 5.0</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -661,7 +698,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="da-nang, hoi-an, hue, quang-binh"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="ha-noi" data-diem-den="da-nang, hoi-an, hue, quang-binh"
                 data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam,tour-nghi-duong">
                 <img class="tour-image" src="../pics/tour-mientrung-4n3d-hn.png"
@@ -673,7 +710,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -686,7 +723,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, hue, quang-binh"
+            <div class="tour-item" data-price-range="4-6-trieu" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, hue, quang-binh"
                 data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam,tour-nghi-duong,tour-sinh-thai-rung-quoc-gia">
                 <img class="tour-image" src="../pics/tour-mientrung-4n3d-tphcm.png"
@@ -698,7 +735,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -711,7 +748,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, ba-na-hills, hue"
+            <div class="tour-item" data-price-range="4-6-trieu" data-khoi-hanh="ho-chi-minh" data-diem-den="da-nang, hoi-an, ba-na-hills, hue"
                 data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-le-hoi-mua-sam">
                 <img class="tour-image" src="../pics/tour-danang-hoian-3n2d.png"
@@ -722,7 +759,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -735,7 +772,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="quang-binh"
+            <div class="tour-item" data-price-range="2-4-trieu" data-khoi-hanh="ho-chi-minh" data-diem-den="quang-binh"
                 data-thoi-luong="3-ngay-2-dem"
                 data-loai-hinh-tour="tour-mien-trung,tour-di-san-lich-su,tour-sinh-thai-rung-quoc-gia, tour-kham-pha-mao-hiem">
                 <img class="tour-image" src="../pics/tour-dong-phongnha.png" alt="Tour Quảng Bình - Động Phong Nha">
@@ -745,7 +782,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 3 ngày 2 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -758,7 +795,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="quy-nhon" data-thoi-luong="5-ngay-4-dem"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="ha-noi" data-diem-den="quy-nhon" data-thoi-luong="5-ngay-4-dem"
                 data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-nghi-duong, tour-di-san-lich-su">
                 <img class="tour-image" src="../pics/tour-quy-nhon-5n4d.png" alt="Tour Hà Nội - Quy Nhơn - 5N4Đ">
                 <div class="tour-info">
@@ -767,7 +804,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 5 ngày 4 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -780,7 +817,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc" data-thoi-luong="4-ngay-3-dem"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc" data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-kham-pha-mao-hiem,tour-di-san-lich-su">
                 <img class="tour-image" src="../pics/tour-phuquoc-4n3d.png"
                     alt="Du Lịch Phú Quốc: Hà Nội - Đảo Ngọc Phú Quốc">
@@ -790,7 +827,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -803,7 +840,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, ben-tre, can-tho,rach-gia"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, ben-tre, can-tho,rach-gia"
                 data-thoi-luong="5-ngay-4-dem"
                 data-loai-hinh-tour="tour-mien-nam,tour-mien-tay,tour-bien-dao,tour-kham-pha-mao-hiem, tour-le-hoi-mua-sam">
                 <img class="tour-image" src="../pics/tour-phuquoc-5n4d.png"
@@ -814,7 +851,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 5 ngày 4 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.9</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -827,7 +864,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, my-tho,ben-tre,can-tho,rach-gia"
+            <div class="tour-item" data-price-range="8-10-trieu" data-khoi-hanh="ha-noi" data-diem-den="phu-quoc, my-tho,ben-tre,can-tho,rach-gia"
                 data-thoi-luong="6-ngay-5-dem"
                 data-loai-hinh-tour="tour-mien-nam,tour-mien-tay,tour-bien-dao,tour-kham-pha-mao-hiem, tour-le-hoi-mua-sam">
                 <img class="tour-image" src="../pics/tour-phuquoc-6n5d.png"
@@ -838,7 +875,7 @@
                         <p><b>Khởi hành:</b> Hà Nội</p>
                         <p><b>Thời gian:</b> 6 ngày 5 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -851,7 +888,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ho-chi-minh" data-diem-den="phu-quoc" data-thoi-luong="3-ngay-3-dem"
+            <div class="tour-item" data-price-range="4-6-trieu" data-khoi-hanh="ho-chi-minh" data-diem-den="phu-quoc" data-thoi-luong="3-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-nam,tour-bien-dao,tour-kham-pha-mao-hiem,tour-di-san-lich-su">
                 <img class="tour-image" src="../pics/tour-phu-quoc-lan-san-ho-3n2d-hcm.png"
                     alt="Du lịch Phú Quốc: Cầu Cả, Lặn Ngắm San Hô">
@@ -862,7 +899,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 3 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
@@ -875,7 +912,7 @@
                 </div>
             </div>
 
-            <div class="tour-item" data-khoi-hanh="ho-chi-minh"
+            <div class="tour-item" data-price-range="6-8-trieu" data-khoi-hanh="ho-chi-minh"
                 data-diem-den="soc-trang, bac-lieu, ca-mau, chau-doc, can-tho" data-thoi-luong="4-ngay-3-dem"
                 data-loai-hinh-tour="tour-mien-tay,tour-di-san-lich-su,tour-le-hoi-mua-sam">
                 <img class="tour-image" src="../pics/tour-mien-tay.png"
@@ -886,7 +923,7 @@
                         <p><b>Khởi hành:</b> Hồ Chí Minh</p>
                         <p><b>Thời gian:</b> 4 ngày 3 đêm</p>
                         <p><b>Ngày khởi hành:</b> Hàng ngày</p>
-                        <p><b>Đánh giá:</b> 4.8 (1911)</p>
+                        <p><b>Đánh giá:</b> 4.8</p>
                         <p><b>Giá 1 khách:</b></p>
                     </div>
                     <div class="price-section">
