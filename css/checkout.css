@@ -616,3 +616,33 @@ input[type="radio"] {
     align-items: center;
     justify-content: space-between;
 }
+
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+}
+
+.select-box:focus {
+  background-color: var(--main-color);
+  color: #000;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+}
+
+select.select-box option {
+  background-color: #fff;        /* màu nền dropdown */
+  color: #000;                   /* màu chữ */
+  padding: 20px;                 /* khoảng cách trong ô */
+  font-size: 15px;               /* cỡ chữ */
+}
