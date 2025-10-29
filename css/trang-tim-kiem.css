@@ -1,10 +1,10 @@
 .mascot{
     position: fixed;
     z-index: -1;
-    margin-left: 35%;
-    margin-top: -160px;
+    margin-left: 45%;
+    margin-top: -10px;
     width: 30vw;
-    opacity: 0.3;
+    opacity: 0.1;
 }
 body{
   background: linear-gradient(180deg, #FFF 0%, #c8e5ff 100%);
@@ -129,9 +129,12 @@ body{
 /* Ẩn thông báo này theo mặc định */
 #no-results-message {
     display: none; /* Sẽ được bật/tắt bằng JavaScript */
-    text-align: left;
+    position: fixed;
+    top: 50vh;
+    z-index: -1;
+    text-align: center;
     padding: 50px;
-    color: black;
-    width: 100%; /* Đảm bảo nó chiếm hết không gian cột bên phải */
+    color: rgb(78, 78, 78);
+    width: 55%; /* Đảm bảo nó chiếm hết không gian cột bên phải */
     font-size: 1.2em;
 }

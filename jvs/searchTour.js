@@ -66,8 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // HIEN THI THONG BAO KHONG CO KET QUA
         if (visibleTourCount === 0) {
+            document.querySelector(".mascot").src = "../pics/mascot/sad.png";
             noResultsMessage.style.display = 'block'; // Hiện thông báo
         } else {
+            document.querySelector(".mascot").src = "../pics/mascot/Chatbot@2x.png";
             noResultsMessage.style.display = 'none'; // Ẩn thông báo
         }
     }
