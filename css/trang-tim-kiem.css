@@ -10,7 +10,7 @@ body{
   background: linear-gradient(180deg, #FFF 0%, #c8e5ff 100%);
 }
 .banner1{
-    height: 150px;
+    height: 120px;
 }
 .page-container{
     display: flex;
@@ -116,7 +116,9 @@ body{
     font-weight: bold;
     color: #22ab1b;
 }
-
+.price-range{
+    margin-top:-10px;
+}
 .details-link{
     font-size: large;
     justify-content: flex-end;

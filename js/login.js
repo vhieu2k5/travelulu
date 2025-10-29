@@ -49,9 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
       passwordField.insertAdjacentElement("afterend", msg);
       return;
     }
-
-    form.submit();
-    window.location.href = "index.html";
+ form.submit(); // gửi nếu hợp lệ
+     // window.location.href = "index.html"; 
+      Loader.isLoaded = true;
+      window.location.href = "index.html";
   });
 
   // Hiển thị popup Facebook
