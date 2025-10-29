@@ -135,7 +135,7 @@
 .noti-icon-plane::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 100%;
     /* bắt đầu từ đuôi máy bay */
     width: 0;

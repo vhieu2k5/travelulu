@@ -32,6 +32,9 @@ body{
     padding: 20px;
     position: relative;
 }
+.navigation-bar div:first-child{
+    margin-top: -10px;
+}
 
 .filter-group::after {
     content: ""; /* Bắt buộc phải có để hiển thị */
@@ -53,7 +56,7 @@ body{
 .filter-list{
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin:  0;
 }
 
 .filter-list label {
