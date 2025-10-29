@@ -1,4 +1,8 @@
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "League Spartan";
@@ -77,7 +81,7 @@ h1 {
 }
 
 .search-btn {
-  background-color: var(--main-color);
+  background-color: #5ea8d9;
   color: white;
   border: none;
   padding: 10px 22px;
@@ -97,9 +101,9 @@ h1 {
 .filter-tabs {
   display: flex;
   gap: 50px;
-  margin: 30px auto 40px; 
+  margin: 30px auto 40px;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -113,25 +117,19 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.18s, color 0.18s;
+  transition: background 0.18s, color 0.18s;
   cursor: pointer;
   min-width: 80px;
   box-sizing: border-box;
 }
 
 .filter-tabs .tab-item.active {
-  color: white;
-  background: linear-gradient(180deg, var(--main-color) 0%, #b1d0e0 100%);
+  color: #34699a;
+  background: linear-gradient(90deg, #cce0eb 0%, #b1d0e0 100%);
   font-weight: 700;
-  box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.5);
+  box-shadow: 0 2px 8px 0 rgba(52, 105, 154, 0.08);
 }
-.filter-tabs a:first-child{
-  border: none;
- color: var(--main-color)
-}
-.tab-item{
-  border: 1px solid rgba(15, 23, 42, 0.1);
-}
+
 .tour-card {
   display: block;
   border: 1px solid rgba(15, 23, 42, 0.06);
@@ -140,11 +138,11 @@ h1 {
   margin-bottom: 20px;
   background: #fff;
   box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
-  position: relative; 
+  position: relative;
 }
 
 .tour-card.completed {
-  border-left: 5px solid var(--secondary-color); 
+  border-left: 5px solid var(--secondary-color);
 }
 
 .tour-image-container {
@@ -152,7 +150,7 @@ h1 {
   height: 180px; /* làm cho ảnh cao hơn để không bị cắt */
   background-size: cover;
   background-position: center center;
-  flex: 0 0 200px; 
+  flex: 0 0 200px;
 }
 
 /* bố cục thẻ (hàng) mới */
@@ -234,9 +232,9 @@ h1 {
 }
 
 .cancel-btn {
-  background: #dbdbdb;
+  background: #e6f2fb;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #0f5b8a;
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -274,7 +272,7 @@ h1 {
   margin-right: 8px;
   display: inline-block;
   position: relative;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 /* vẽ một đường gạch ngang liên tục qua số và đơn vị tiền */
@@ -292,7 +290,7 @@ h1 {
 
 .tour-pricing .original-price .currency {
   color: #9aa0a6;
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 13px;
 }
 
@@ -336,7 +334,6 @@ h1 {
   margin-left: 8px;
 }
 
-
 .recommendation-title {
   font-size: 20px;
   font-weight: 700;
@@ -350,14 +347,12 @@ h1 {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   align-items: stretch;
-  padding: 8px 24px 28px; 
+  padding: 8px 24px 28px;
   margin-bottom: 50px;
-  justify-content: flex-start; 
-}
-.recommendation-list::-webkit-scrollbar{
-  display: none;
+  justify-content: flex-start;
 }
 
 .recommended-card {
@@ -409,16 +404,15 @@ h1 {
   height: 36px;
   border-radius: 50%;
   background: #fff;
-  padding: 6px; 
+  padding: 6px;
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
   object-fit: contain;
 }
 
-
 .card-image-container .saved-badge {
   position: absolute;
   top: 12px;
-  right: 56px; 
+  right: 56px;
   background: #fff;
   border-radius: 10px;
   padding: 8px 10px;
@@ -508,6 +502,96 @@ h1 {
   font-weight: 800;
 }
 
+/* Chân trang */
+.footer {
+  background-image: url("https://i.imgur.com/48da40.png");
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+  padding: 30px 15px 10px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.payment-methods,
+.contact-info {
+  max-width: 500px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.policy {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.payment-icons .icon {
+  background-color: white;
+  color: var(--text-color);
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.airlines {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.airline-icon {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  opacity: 0.7;
+}
 
 /* Trạng thái trống khi chưa có tour được đặt */
 .empty-state-container {
@@ -534,7 +618,7 @@ h1 {
   margin-bottom: 18px;
 }
 .explore-btn {
-  background: var(--main-color);
+  background: #0b74ff;
   color: #fff;
   border: none;
   padding: 10px 22px;

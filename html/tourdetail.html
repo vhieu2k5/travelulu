@@ -9,10 +9,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../css/style.css" />
-
     <link rel="stylesheet" href="../css/tourdetail.css" />
     <link rel="stylesheet" href="../css/ManagementTour.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -216,7 +215,7 @@
         </div>
       </main>
 
-      <footer class="support-footer">
+      <div class="support-footer">
         <div class="support-content">
           <span class="support-icon"> </span>
           <div class="support-text">
@@ -231,7 +230,7 @@
         <button class="action-button secondary">
           Liên hệ chăm sóc khách hàng
         </button>
-      </footer>
+      </div>
     </div>
     <div class="container">
       <h2 class="recommendation-title">Một số tour bạn có thể thích</h2>
@@ -276,6 +275,130 @@
         <img src="../pics/bambooAirLine.png" alt="" />
       </div>
     </div>
+
+    <script>
+      // Setup cancel confirmation modal for tour detail page
+      (function () {
+        function qs(sel) {
+          return document.querySelector(sel);
+        }
+
+        function parseBookingId() {
+          try {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("bookingId");
+          } catch (e) {
+            return null;
+          }
+        }
+
+        const bookingId = parseBookingId();
+        const cancelBtn = qs(".refund-policy-section .action-button.primary");
+        if (!cancelBtn) return;
+
+        cancelBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          // create overlay
+          const overlay = document.createElement("div");
+          overlay.className = "modal-overlay";
+
+          const dialog = document.createElement("div");
+          dialog.className = "confirm-dialog";
+          dialog.innerHTML = `
+            <div class="confirm-title">Bạn có chắc chắn muốn hủy tour này không?</div>
+            <div class="confirm-body">Ưu đãi và giá cả có thể thay đổi liên tục nên ưu đãi này có thể sẽ không còn nếu quý khách hủy ngay bây giờ. Quý khách có chắc chắn muốn hủy không?</div>
+            <div class="confirm-actions">
+              <button class="btn-cancel-dialog">Quay lại</button>
+              <button class="btn-confirm-dialog">Hủy Tour</button>
+            </div>
+          `;
+
+          overlay.appendChild(dialog);
+          document.body.appendChild(overlay);
+
+          // close helper
+          function close() {
+            if (overlay && overlay.parentNode)
+              overlay.parentNode.removeChild(overlay);
+          }
+
+          // ESC to close
+          function onKey(e) {
+            if (e.key === "Escape") {
+              close();
+              document.removeEventListener("keydown", onKey);
+            }
+          }
+
+          document.addEventListener("keydown", onKey);
+
+          const btnCancel = dialog.querySelector(".btn-cancel-dialog");
+          const btnConfirm = dialog.querySelector(".btn-confirm-dialog");
+
+          btnCancel.addEventListener("click", function () {
+            close();
+            document.removeEventListener("keydown", onKey);
+          });
+
+          btnConfirm.addEventListener("click", function () {
+            // Call fake API if available
+            if (
+              window.TourAPI &&
+              typeof window.TourAPI.cancelBooking === "function" &&
+              bookingId
+            ) {
+              const ok = window.TourAPI.cancelBooking(bookingId);
+              // Update UI: switch the detail page button to 'Đặt lại' so user can rebook (show info)
+              if (ok) {
+                // mark confirm button as completed
+                btnConfirm.textContent = "Đã hủy";
+                btnConfirm.disabled = true;
+
+                // Replace the original cancel button with a 'Đặt lại' action
+                const newBtn = cancelBtn.cloneNode(true);
+                newBtn.textContent = "Đặt lại";
+                // ensure it's enabled for user to click
+                newBtn.disabled = false;
+                // swap in DOM
+                cancelBtn.parentNode.replaceChild(newBtn, cancelBtn);
+
+                // Attach 'Đặt lại' behavior: show info dialog (cannot rebook)
+                newBtn.addEventListener("click", function (ev) {
+                  ev.preventDefault();
+                  ev.stopPropagation();
+                  const ov = document.createElement("div");
+                  ov.className = "modal-overlay";
+                  const info = document.createElement("div");
+                  info.className = "info-dialog";
+                  info.innerHTML = `
+                    <div style="text-align:center; padding:18px 22px;">
+                      <div class="warning-icon" aria-hidden="true">
+                        <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
+                      </div>
+                      <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
+                      <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
+                    </div>
+                  `;
+                  ov.appendChild(info);
+                  document.body.appendChild(ov);
+                  const btnClose = info.querySelector(".btn-close-info");
+                  btnClose.addEventListener("click", function () {
+                    if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+                  });
+                });
+              } else {
+                btnConfirm.textContent = "Thất bại";
+              }
+            }
+            // close after a short delay so user sees change
+            setTimeout(() => {
+              close();
+              document.removeEventListener("keydown", onKey);
+            }, 700);
+          });
+        });
+      })();
+    </script>
     <script src="../jvs/managementTour.js"></script>
   </body>
 </html>
