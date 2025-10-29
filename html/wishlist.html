@@ -15,25 +15,30 @@
 <body>
     <div data-include="../html/header.html"></div>
 
-    <h1 style="color: var(--main-color); text-align: center;margin-top: 50px;">WishList</h1>
+    <h1>WishList</h1>
+    <div id="nullWishlist">
+        <img style="width: 100px;" src="../pics/Mascot/sad.png" alt="">
+        <div>Danh sách trống mất rồi</br>Khám phá ngay các chuyến đi của Travelulu nhé!</div>
+    </div>
+    <img src="../pics/Mascot/happy.png" alt="" id="mascot">
     <div class="wishlist-container">
         <div>
             <div class="hover-box-overlay">
-                <a href="#">Detail</a>
-                <div>Remove</div>
+                <a href="#">Xem chi tiết</a>
+                <div class="removeButton">Bỏ yêu thích</div>
             </div>
-            <img src="../pics/manegamentTour/halong1.jpeg" alt="">
-            <b>Vịnh Hạ Long 4N3Đ</b>
-            <p>Thành phố Hạ Long, tỉnh Quảng Ninh</p>
+            <img src="../pics/Rectangle 16.png" alt="">
+            <b>Khám phá miền Tây - Tour 2N1Đ</b>
+            <p>Mỹ Tho, Cần Thơ, Bến Tre</p>
             <div class="price-box">
-                <s>7,499,000</s>
-                <b>6,799,000</b>
+                <s>3.000.000</s>
+                <b>1.500.000</b>
             </div>
         </div>
         <div>
             <div class="hover-box-overlay">
-                <a href="#">Detail</a>
-                <div>Remove</div>
+                <a href="#">Xem chi tiết</a>
+                <div class="removeButton">Bỏ yêu thích</div>
             </div>
             <img src="../pics/manegamentTour/halong2.jpeg" alt="">
             <b>Vịnh Hạ Long 3N3Đ</b>
@@ -45,12 +50,12 @@
         </div>
         <div>
             <div class="hover-box-overlay">
-                <a href="#">Detail</a>
-                <div>Remove</div>
+                <a href="#">Xem chi tiết</a>
+                <div class="removeButton">Bỏ yêu thích</div>
             </div>
-            <img src="../pics/manegamentTour/halong1.jpeg" alt="">
-            <b>Vịnh Hạ Long 4N3Đ</b>
-            <p>Thành phố Hạ Long, tỉnh Quảng Ninh</p>
+            <img src="../pics/tour-ha-giang-4n3d-danang.png" alt="">
+            <b>Tour Hà Giang 4N3Đ - khởi hành từ Đà Nẵng</b>
+            <p>Đà Nẵng</p>
             <div class="price-box">
                 <s>7,499,000</s>
                 <b>6,799,000</b>
@@ -58,28 +63,28 @@
         </div>
         <div>
             <div class="hover-box-overlay">
-                <a href="#">Detail</a>
-                <div>Remove</div>
+                <a href="#">Xem chi tiết</a>
+                <div class="removeButton">Bỏ yêu thích</div>
             </div>
-            <img src="../pics/manegamentTour/halong1.jpeg" alt="">
-            <b>Vịnh Hạ Long 4N3Đ</b>
-            <p>Thành phố Hạ Long, tỉnh Quảng Ninh</p>
+            <img src="../pics/tour-ha-giang-3n2d-danang.png" alt="">
+            <b>Tour Hà Giang 3N2Đ - khởi hành từ Đà Nẵng</b>
+            <p>Đà Nẵng</p>
             <div class="price-box">
-                <s>7,499,000</s>
-                <b>6,799,000</b>
+                <s>2,799,000</s>
+                <b>2,650,000</b>
             </div>
         </div>
         <div>
             <div class="hover-box-overlay">
-                <a href="#">Detail</a>
-                <div>Remove</div>
+                <a href="#">Xem chi tiết</a>
+                <div class="removeButton">Bỏ yêu thích</div>
             </div>
-            <img src="../pics/manegamentTour/halong1.jpeg" alt="">
-            <b>Vịnh Hạ Long 4N3Đ</b>
-            <p>Thành phố Hạ Long, tỉnh Quảng Ninh</p>
+            <img src="../pics/tour-ha-giang-3n2d-danang.png" alt="">
+            <b>Tour Hà Giang 3N2Đ - Du Thuyền Sông Nho Quế - khởi hành từ Hà Nội</b>
+            <p>Hà Nội</p>
             <div class="price-box">
-                <s>7,499,000</s>
-                <b>6,799,000</b>
+                <s>2,959,000</s>
+                <b>2,650,000</b>
             </div>
         </div>
     </div>
@@ -122,9 +127,20 @@
             <img src="../pics/vietjet.png" alt="">
             <img src="../pics/bambooAirLine.png" alt="">
         </div>
-    </div>
+    </div>'
+<div id="overlay">
+    <div id="removePanel">
+<img id="OutputImg" src="../pics/Mascot/sad.png" alt="">
+<b id="OutputText">Bạn có chắc muốn xoá?</b>
+<div >
+    <p style="background-color: var(--main-color);" id ="cancelButton">Huỷ</p>
+    <p style="background-color: rgb(192, 192, 192);" id ="confirmButton">Xoá</p>
+</div>
+</div>
+</div>
 
     <script src="../jvs/managementTour.js"></script>
+    <script src="../js/wishlist.js"></script>
 </body>
 
 </html>

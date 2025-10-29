@@ -6,6 +6,25 @@
 .recommendation-list, .wishlist-container{
     margin: 40px;
 }
+body{
+  background: linear-gradient(180deg, #FFF 0%, #ddefff 100%);
+}
+h1{
+    font-size: 80px !important;
+    font-weight: 900 !important;
+    letter-spacing: 15px;
+    text-align: center;
+    margin-top: 50px !important;
+    margin-bottom: 20px;
+}
+#mascot{
+    width: 40%;
+    z-index: -1;
+    position: absolute;
+    margin-left: 30%;
+    top: 50px;
+    opacity: 0.1;
+}
 .wishlist-container>div{
     display: flex;
     flex-direction: column;
@@ -82,4 +101,62 @@ body{
     color: black;
     background-color: white;
 }
+}
+#overlay{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    top:0;
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+#removePanel{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px 0px;
+    width: fit-content;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#OutputImg{
+    width: 90px;
+    margin: 20px 0;
+}
+#OutputText{
+    font-size: 26px;
+    width: 70%;
+    text-wrap:wrap;
+    text-align: center;
+    line-height: 120%;
+}
+#removePanel>div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+#removePanel>div>p{
+    margin: 20px 50px;
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(229, 229, 229);
+    cursor: pointer;
+}
+#nullWishlist{
+    display: flex ;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 100px;
+    color: grey;
 }

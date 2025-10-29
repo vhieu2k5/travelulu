@@ -590,7 +590,6 @@ input[type="checkbox"] {
 
 .card:hover {
   transition: all 0.5s ease-in-out;
-  background: #6A95BC;
   filter: drop-shadow(2px -1px 26px rgba(0, 98, 197, 0.21));
 }
 
@@ -1245,6 +1244,7 @@ input[type="checkbox"] {
   color: white;
   position: relative;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .inputBankBox img:first-child {
@@ -1272,4 +1272,15 @@ input[type="checkbox"] {
 
 .credit-card-3 {
   top: -70px;
+}
+.saved{
+  background: url(../pics/Debit-Card-Vietcombank.png) no-repeat center center;
+  background-size: cover; /* make it fill the entire element */
+  border: none;            /* optional: remove border */
+  color: white;            /* optional: better contrast */
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.saved>img{
+  display: none;
 }

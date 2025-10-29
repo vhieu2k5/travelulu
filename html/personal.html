@@ -83,16 +83,16 @@
         <input type="text" placeholder="Kiên Trịnh">
 
         <div class="grid-3">
-          <div>
+          <div >
             <label>Giới tính</label>
-            <select>
+            <select id ="" >
               <option>Male</option>
               <option>Female</option>
             </select>
           </div>
           <div>
             <label>Ngày sinh</label>
-            <input type="date" name="" id="">
+            <input type="date" name="" id="" style="height: 18px;">
           </div>
         </div>
         <label>Thành phố cư trú</label>
@@ -210,7 +210,7 @@
         </form>
       </section>
     </div>
-    <!-- Hết phần Mật khẩu và bảo mật -->
+    <!-- Hết the ngan hang -->
     <div class="container section-3">
       <div class="title">
         <a href="#" class="title-sec">Thẻ của tôi</a>
@@ -222,7 +222,7 @@
           <div id="credit-card-2" class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
           <div id="credit-card-3" class="card"><img src="../pics/plus-circle.png" alt="" srcset=""></div>
         </div>
-        <div class="inputBankBox credit-card-1">
+        <div class="inputBankBox credit-card-1" data-card-id="credit-card-1">
 
           <img src="../pics/inputBankPanel.png" alt="">
           <p>Thêm thẻ thanh toán</p>
@@ -232,12 +232,12 @@
           <p>Số thẻ<b style="color: red;">*</b></p>
           <input type="text" name="" id="" placeholder="💳">
           <p>Ngày hết hạn<b style="color: red;">*</b></p>
-          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
-          <input type="button" value="Save">
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/YY">
+          <input type="button" value="Save" class="saveCardBtn">
           <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
             alt="">
         </div>
-        <div class="inputBankBox credit-card-2">
+        <div class="inputBankBox credit-card-2" data-card-id="credit-card-2">
 
           <img src="../pics/inputBankPanel.png" alt="">
           <p>Thêm thẻ thanh toán</p>
@@ -247,12 +247,12 @@
           <p>Số thẻ<b style="color: red;">*</b></p>
           <input type="text" name="" id="" placeholder="💳">
           <p>Ngày hết hạn<b style="color: red;">*</b></p>
-          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
-          <input type="button" value="Save">
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/YY">
+          <input type="button" value="Save" class="saveCardBtn">
           <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
             alt="">
         </div>
-        <div class="inputBankBox credit-card-3">
+        <div class="inputBankBox credit-card-3" data-card-id="credit-card-3">
 
           <img src="../pics/inputBankPanel.png" alt="">
           <p>Thêm thẻ thanh toán</p>
@@ -262,8 +262,8 @@
           <p>Số thẻ<b style="color: red;">*</b></p>
           <input type="text" name="" id="" placeholder="💳">
           <p>Ngày hết hạn<b style="color: red;">*</b></p>
-          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/DD">
-          <input type="button" value="Save">
+          <input type="text" name="" id="" style="font-size: 20px; width: 80px;" placeholder="MM/YY">
+          <input type="button" value="Save" class="saveCardBtn">
           <img style="position: absolute; z-index: 0; width: 300px; top: 0%; left: 58%" src="../pics/image 10@2x.png"
             alt="">
         </div>
@@ -272,6 +272,7 @@
           ‘click’</p>
       </div>
     </div>
+
     <div class="container section-6">
       <div class="title">
         <a href="#" class="title-sec" id="emailNotiBtn" data-target="">Email</a>
