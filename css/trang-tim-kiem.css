@@ -1,0 +1,137 @@
+.mascot{
+    position: fixed;
+    z-index: -1;
+    margin-left: 35%;
+    margin-top: -160px;
+    width: 30vw;
+    opacity: 0.3;
+}
+body{
+  background: linear-gradient(180deg, #FFF 0%, #c8e5ff 100%);
+}
+.banner1{
+    height: 150px;
+}
+.page-container{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 155px;
+    gap: 30px;
+}
+
+.navigation-bar{
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 270px;
+    height: 1530px;
+    border-radius: 20px;
+    border: 1px solid #34699A;
+}
+
+.filter-group{
+    padding: 20px;
+    position: relative;
+}
+
+.filter-group::after {
+    content: ""; /* Bắt buộc phải có để hiển thị */
+    display: block;
+    height: 1px;
+    background-color: #34699A80;
+
+    /* Đây là phần mấu chốt */
+    position: absolute;
+    bottom: 0;    /* Đặt vạch kẻ ở cạnh dưới */
+    left: 20px;   /* Cách lề trái 20px */
+    right: 20px;  /* Cách lề phải 20px */
+}
+
+.filter-group:last-child::after {
+    display: none;
+}
+
+.filter-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-list label {
+    font-weight: normal;
+}
+
+.tour-content{
+  display:flex ;
+  flex-direction: column;
+  gap: 50px; /* khoảng cách giữa các ô */
+  padding-top: 0;
+}
+
+.tour-item{ 
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: white;
+}
+
+/* Hiệu ứng khi di chuột vào card */
+.tour-item:hover {
+    transform: translateY(-5px); /* Nhấc card lên một chút */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Đổ bóng rõ hơn */
+}
+
+.tour-image{
+  height: 300px;
+  width: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.tour-info{
+  flex: 1;
+  padding: 15px;
+  padding-top: 0;
+}
+
+.tour-details p{
+  margin: 10px 0;
+}
+
+.tour-item.hidden {
+    display: none;
+}
+
+.original-price {
+    font-size: 16px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.current-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #22ab1b;
+}
+
+.details-link{
+    font-size: large;
+    justify-content: flex-end;
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    margin-left: 430px;
+}
+
+/* Ẩn thông báo này theo mặc định */
+#no-results-message {
+    display: none; /* Sẽ được bật/tắt bằng JavaScript */
+    text-align: left;
+    padding: 50px;
+    color: black;
+    width: 100%; /* Đảm bảo nó chiếm hết không gian cột bên phải */
+    font-size: 1.2em;
+}

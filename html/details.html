@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travelulu - Detail</title>
+    <meta content="charset=UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/header.js" defer></script>
+</head>
+
+<body>
+ <div data-include="../html/header.html"></div>
+    <!-- tat ca -->
+    <div class="all">
+        <!-- tat ca phan content -->
+        <div class="layout">
+            <!-- phan 1 gom title, gia va anh -->
+            <div class="phantren">
+                <div class="part1">
+                    <h2>Khám phá Miền Tây<br>(Mỹ Tho, Bến Tre & Cần Thơ) - Tour 2N1Đ</h2>
+                    <div class="price">
+                        <div class="discount">Tiết kiệm 50%</div>
+                        <div class="cacloaigia">
+                            <span class="oldprice">3.000.000VNĐ</span>
+                            <span class="newprice">1.500.000VNĐ</span>
+                        </div>
+                        <p class="luuy">Đã bao gồm thuế và các chi phí phát sinh</p>
+                    </div>
+                </div>
+                <div class="right-button">
+                    <div class="datvaicon">
+                        <i style="font-size: 20px;" class="fa-regular fa-heart"></i>
+                        <img src="../pics/share.png" alt="" class="shareicon">
+                       <a href="checkout.html"><button hr class="datngaybutton">Đặt ngay</button></a> 
+                    </div>
+                    <div class="danhgiachung">
+                        <div class="stars">
+                            <img src="../pics/Star.png" alt="" class="staricon">
+                            <img src="../pics/Star.png" alt="" class="staricon">
+                            <img src="../pics/Star.png" alt="" class="staricon">
+                            <img src="../pics/Star.png" alt="" class="staricon">
+                            <img src="../pics/Star.png" alt="" class="staricon">
+                        </div>
+                        <div class="like">
+                            <img src="../pics/like.png" alt="" class="likeicon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="picsall">
+                <div class="picslayout1">
+                    <img src="../pics/Rectangle 14.png" alt="" class="pic1">
+                    <img src="../pics/Rectangle 18.png" alt="" class="pic2">
+                </div>
+                <div class="picslayout2">
+                    <img src="../pics/Rectangle 17.png" alt="" class="pic3">
+                    <img src="../pics/Rectangle 16.png" alt="" class="pic4">
+                    <img src="../pics/Rectangle 15.png" alt="" class="pic5">
+                </div>
+            </div>
+            <div class="part2">
+                <div class="mota">
+                    <h2>Lịch trình tour</h2>
+                    <div class="noidunglichtrinh">
+                        <li class="hanhtrinh">07:30-15:00 Dịch vụ đưa đón miễn phí áp dụng cho các địa điểm sau tại quận
+                            1, thành phố Hồ Chí Minh: đường Đề Thám, Phạm Ngũ Lão, Bùi Viện, Bùi Thị Xuân, Lê Lai. Thời
+                            gian đón sẽ được nhà điều hành sắp xếp và thông báo đến khách ít nhất 1 ngày trước ngày đi
+                            tour<br><br>Khách nằm ngoài các địa điểm trên cần có mặt tại 57 Lê Thị Hồng Gấm (quận 1) ít
+                            nhất 15 phút trước giờ khởi hành để bắt đầu tour<br><br>Khởi hành đi Mỹ Tho</li>
+                    </div>
+                    <div class="xemlichtrinhdaydu">
+                        <p>Xem lịch trình đầy đủ <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="vetrong">
+                <p>Vé trống cho bạn</p>
+                <div class="chinhngay-soluong">
+                    <div class="box">
+                        <!-- //input -->
+                        <i style="position: absolute; left: 5px;" class="fa-solid fa-calendar"></i>
+                        <input type="text" id="lich">
+                        <i class="fa fa-caret-down" style="margin-left: -20px;"></i>
+
+                        <p id="soluongng" style="border:none"> <i class="fa fa-user"></i>2 Người - 0 trẻ em</p>
+                        <i class="fa fa-caret-down"></i>
+                        <div class="boxchinhsoluong">
+                            <div class="object">
+                                <p>Người lớn</p>
+                                <div class="increase_decrease">
+                                    <i class="fa-solid fa-minus"></i>
+                                    <p>2</p>
+                                    <i class="fa-regular fa-plus"></i>
+                                </div>
+                            </div>
+                            <div class="object">
+                                <div class="kid">
+                                    <p>Trẻ em</p>
+                                    <p>0 - 15 tuổi</p>
+                                </div>
+                                <div class="increase_decrease">
+                                    <i class="fa-solid fa-minus"></i>
+                                    <p>0</p>
+                                    <i class="fa-regular fa-plus"></i>
+                                </div>
+                            </div>
+                            <button id="confirmadjust">Xác nhận</button>
+                        </div>
+                    </div>
+                    <button type="text">Tìm kiếm</button>
+                </div>
+                <div class="chonve">
+                    <p>Tour ghép - Khởi hành từ TP Hồ Chí Minh (Lưu trú tại khách sạn 3 sao)</p>
+                    <p>Bao gồm 1 đêm nghỉ tại khách sạn 3 sao tiêu chuẩn</p>
+                    <div class="xemchitietve">
+                        <p id="xemchitietve">Xem chi tiết</p>
+                    </div>
+                    <div class="benphaicuachonve">
+                        <div class="giacuachonve">
+                            <span class="oldprice">3.000.000VNĐ</span>
+                            <span class="newprice">1.500.000VNĐ</span>
+                        </div>
+                        <button class="nutchonve">Chọn vé</button>
+                    </div>
+                </div>
+            </div>
+            <div class="part3">
+                <div class="motacuadiadiem">
+                    <h2>Về Khám phá Miền Tây (Mỹ Tho, Bến Tre & Cần Thơ) - Tour 2N1Đ</h2>
+                    <p>Trong chuyến đi 2 ngày 1 đêm đến 3 thành phố nổi tiếng của Đồng bằng sông Cửu Long này, bạn sẽ
+                        được ngắm nhìn những cảnh quan thiên nhiên bình dị và những nét văn hóa của con người và miền
+                        Nam Việt Nam. Ăn những món đặc sản của vùng Nam Bộ, chính mắt trải nghiệm chợ nổi nhộn nhịp, nếm
+                        thử trái cây mọng nước ngay tại vườn, nghe "đờn ca tài tử" — giá trị truyền thống mà đã chính
+                        thức được UNESCO công nhận là di sản phi vật thể, du ngoạn bằng thuyền trên những dòng sông lớn
+                        nhỏ — vì đó chính là cách sống của người dân nơi đây, và nhìn thấy nét duyên dáng mộc mạc và vẻ
+                        đẹp trong sự giản dị nhưng tràn đầy hạnh phúc của đồng bằng sông Cửu Long.</p>
+
+                </div>
+                <div class="danhgiacuakhach">
+                    <div class="switchcmtpage">
+                        <h2>Đánh giá của khách về Khám phá Miền Tây (Mỹ Tho, Bến Tre & Cần Thơ)</h2>
+                        <div class="page">
+                            <p>Trang
+                            <p>1</p>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <h2>Đánh giá của khách</h2>
+                    <div class="cacdanhgia">
+                        <div class="danhgia1">
+                            <p><img src="../pics/Profile.png" alt="usericon" width="25" height="25">Nguyễn Diệu Linh</p>
+                            <div class="stars">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                            </div>
+                            <p>Đúng lịch trình, khách sạn sạch đẹp, điểm đến hấp dẫn</p>
+                        </div>
+                        <div class="danhgia1">
+                            <p><img src="../pics/Profile.png" alt="usericon" width="25" height="25">Vũ Mạnh Hiếu</p>
+                            <div class="stars">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                            </div>
+                            <p>Giá cả hợp lý, đồ ăn và khách sạn quá oki so với giá tour ạ</p>
+                        </div>
+                        <div class="danhgia1">
+                            <p><img src="../pics/Profile.png" alt="usericon" width="25" height="25">Trịnh Trung Kiên</p>
+                            <div class="stars">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                                <img src="../pics/Star.png" alt="" class="staricon">
+                            </div>
+                            <p>HDV và bác tài xế nhiệt tình, thân thiện. Được xem nhiều quy trình làm các món ăn đặc
+                                sản. Tour cũng được đi khá nhiều địa điểm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="darkpanel">
+        <div class="favouritebox">
+            <p style="margin-top: 0; color: black">Đã thêm vào danh sách yêu thích!</p>
+            <div>
+                <button id="closefav">Đóng</button>
+                <button id="checklist-fav">Xem danh sách</button>
+            </div>
+        </div>
+        <div class="unfavouritebox">
+            <p style="margin-top: 0;margin-bottom: 0; color: black">Xóa khỏi danh sách yêu thích</p>
+            <p style="font-weight: 100;color: black;">Bạn có chắc chắn không?</p>
+            <div>
+                <button id="confirmRemove">Có</button>
+                <button id="cancelRemove">Hủy</button>
+            </div>
+        </div>
+        <div class="sharebox">
+            <i id="close-sharebox" style="cursor: pointer;" class="fa fa-times"></i>
+            <p style="color: black; font-size: 20px;">Chia sẻ tour này</p>
+            <div class="anh-text-link">
+                <img src="../pics/Rectangle 14.png" alt="anhshare">
+                <div class="text-linkbox">
+                    <p style="color: black; margin-bottom: 0;">Khám phá Miền Tây (Mỹ Tho, Bến Tre & Cần Thơ) - Tour 2N1Đ
+                    </p>
+                    <p style="color: black;font-weight: 100;">https://www.travelulu.com/tour/ten-tour <button>sao
+                            chép</button></p>
+                </div>
+            </div>
+            <div class="otherapps">
+                <div class="app">
+                    <img src="../pics/2023_Facebook_icon.svg.png" alt="fb">
+                    <p>Facebook</p>
+                </div>
+                <div class="app">
+                    <img src="../pics/twitter-icon-free-png.webp" alt="fb">
+                    <p>X</p>
+                </div>
+                <div class="app">
+                    <img src="../pics/Instagram_logo_2016.svg.webp" alt="fb">
+                    <p>Instagram</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="darkpanel1">
+        <div class="popup-lichtrinhtour">
+            <i id="close-lichtrinh" style="cursor: pointer;" class="fa fa-times"></i>
+            <h2 style="margin-top: 0;">Lịch trình tour</h2>
+            <div class="dayspanel">
+                <button class="daybutton active">Day 1</button>
+                <button class="daybutton">Day 2</button>
+            </div>
+            <div class="contentbox">
+                <div class="content_day active">
+                    <ul>
+                        <li>07:30 - 15:00 Dịch vụ đưa đón miễn phí áp dụng cho các địa điểm sau tại quận 1, thành phố Hồ
+                            Chí Minh: đường Đề Thám, Phạm Ngũ Lão, Bùi Viện, Bùi Thị Xuân, Lê Lai. Thời gian đón sẽ được
+                            nhà điều hành sắp xếp và thông báo đến khách ít nhất 1 ngày trước ngày đi tour</li>
+                        <br>
+                        <dt>Khách nằm ngoài các địa điểm trên cần có mặt tại 57 Lê Thị Hồng Gấm (quận 1) ít nhất 15 phút
+                            trước giờ khởi hành để bắt đầu tour</dt>
+                        <br>
+                        <dt>Khởi hành đi Mỹ Tho</dt>
+                        <br>
+                        <dt>Trên đường đi, ngắm nhìn những cánh đồng lúa dọc hai bên đường và ngắm nhìn sông Vàm Cỏ Đông
+                            và Thành phố Long An</dt>
+                        <br>
+                        <dt>Ghé thăm chùa Vĩnh Tràng, một trong những ngôi chưa lớn và nổi tiếng nơi đây</dt>
+                        <br>
+                        <dt>Đến đò Mỹ Tho, lên tàu du lịch và tham quan sông Tiền, ngắm cảnh bốn cù lao Long, Lân, Qui,
+                            Phụng và ngắm nhìn cầu Rạch Miễu</dt>
+                        <br>
+                        <dt>Đến cù lao Thới Sơn tham quan vườn trái cây, xem các tổ ong mật và cách lấy mật</dt>
+                        <br>
+                        <dt>Thưởng thức những tách trà mật ong nóng thơm lừng, tham quan lò sản xuất kẹo dừa, dừng chân
+                            thưởng thức trái cây bốn mùa và nghe biểu diễn ca nhạc tài tử Nam Bộ</dt>
+                        <br>
+                        <dt>Dùng cơm trưa và nghỉ ngơi hoặc đi xe đạp tham quan vườn cây trái và đồng lúa.</dt>
+                        <br>
+                        <li>15:00-17:00 Trở lại bến tàu và tiếp tục đi Cần Thơ.</li>
+                        <li>17:00-18:00 Check in khách sạn và nghỉ ngơi.</li>
+                        <li>17:59-18:00 Enjoy dinner (your own expense).</li>
+                    </ul>
+                </div>
+                <div class="content_day">
+                    <ul>
+                        <li>05:30-08:00 Ra bến tàu Cần Thơ, lên tàu đi tham quan chợ nổi Cái Răng và xem cảnh buôn bán
+                            tấp nập trên sông — một nét đặc trưng của chợ miền sông nước. Khách có thể trực tiếp mua
+                            trái cây trên ghe, thuyền, tham quan lò sản xuất hủ tiếu</li>
+                        <br>
+                        <dt>Sau đó tàu đưa quý khách trở lại bến tàu, tự do khám phá chợ miền Tây</dt>
+                        <div class="anhlichtrinh">
+                            <img src="../pics/anhlichtrinh1.png" alt="">
+                            <img src="../pics/anhlichtrinh2.png" alt="">
+                            <img src="../pics/anhlichtrinh3.png" alt="">
+                            <img src="../pics/anhlichtrinh4.png" alt="">
+                        </div>
+                        <br>
+                        <li>08:00-12:00 Về khách sạn dùng bữa sáng, làm thủ tục trả phòng khách sạn. Tự do tham quan,
+                            mua sắm tại thành phố Cần Thơ.</li>
+                        <li>12:00-17:00 Dùng bữa trưa. Sau đó trở về thành phố Hồ Chí Minh.</li>
+                        <li>16:59-17:00 Return to the pickup point. End of tour.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ticketinfo">
+            <div class="headerofticket">
+                <i id="close-ticketinfo" style="cursor: pointer;" class="fa fa-times"></i>
+                <h2>Tour ghép - Khởi hành từ TP Hồ Chí Minh (Lưu trú tại khách sạn 3 sao)</h2>
+
+            </div>
+            <div class="info-all">
+                <p>Thời lượng tour: 2 ngày 1 đêm <br><br>Thời gian và địa điểm tập trung: <br>- Dịch vụ đưa đón miễn phí
+                    áp dụng cho các địa điểm sau tại thành phố Hồ Chí Minh: đường Đề Thám, Phạm Ngũ Lão, Bùi Viện, Bùi
+                    Thị Xuân, Lê Lai. Thời gian đón sẽ được nhà điều hành sắp xếp và thông báo đến khách ít nhất 1 ngày
+                    trước ngày đi tour <br>- Khách nằm ngoài các địa điểm trên cần có mặt tại 57 Lê Thị Hồng Gấm, phường
+                    Sài Gòn, TP.HCM ít nhất 15 phút trước giờ khởi hành để bắt đầu tour</p>
+                <div class="ticketcont">
+                    <h3>Giá đã bao gồm</h3>
+                    <ul>
+                        <p>Hướng dẫn viên</p>
+                        <li>Hướng dẫn viên nói tiếng Việt và Anh</li>
+                    </ul>
+                    <ul>
+                        <p>Nơi lưu trú</p>
+                        <li>1x Đêm lưu trú tại khách sạn 3 sao tiêu chuẩn</li>
+                    </ul>
+                    <ul>
+                        <p>Bữa ăn</p>
+                        <li>1x Bữa sáng buffet</li>
+                        <li>2x Bữa trưa</li>
+                        <li>Có thể chọn bữa chay, vui lòng thông báo với nhà tour trước ngày đi</li>
+                        <li>Nước suối</li>
+                    </ul>
+                    <ul>
+                        <p>Phương tiện di chuyển</p>
+                        <li>Xe du lịch đưa đón có điều hòa suốt tuyến</li>
+                        <li>Thuyền để di chuyển</li>
+                    </ul>
+                    <ul>
+                        <p>Dịch vụ thêm</p>
+                        <li>Phí tham quan tại các địa điểm</li>
+                        <li>Bảo hiểm du lịch</li>
+                    </ul>
+                    <ul>
+                        <p>Giá không bao gồm</p>
+                        <li style="font-style: italic; font-weight: 700;">Phụ phí 400.000 VND/khách áp dụng cho phòng
+                            đơn</li>
+                        <li>Thức ăn và uống không nằm trong chương trình</li>
+                        <li>Các dịch vụ không nằm trong chương trình</li>
+                        <li>Chi phí cá nhân</li>
+                        <li>Tiền tip</li>
+                        <li>VAT</li>
+
+                    </ul>
+                </div>
+                <div class="ticketcont">
+                    <h3>Hiệu lực của voucher</h3>
+                    <ul>
+                        <p>Sử dụng vào ngày đã chọn</p>
+                        <li>Có hiệu lực vào mọi ngày bình thường</li>
+                        <li>Có hiệu lực vào mọi ngày lễ</li>
+                    </ul>
+                </div>
+                <div class="ticketcont">
+                    <h3>Phương thức quy đổi</h3>
+                    <ul>
+                        <p>Cách đổi phiếu</p>
+                        <li>Nếu đặt chỗ của bạn đã được xác nhận, nhân viên điều hành tour sẽ liên hệ với bạn qua điện
+                            thoại 1 ngày trước khi tour bắt đầu.</li>
+                        <li>Nếu nhân viên điều hành tour không liên hệ với bạn trong khoảng thời gian đó, vui lòng liên
+                            hệ với nhà điều hành tour qua số điện thoại trên voucher của bạn.</li>
+                        <li>Nếu chọn dịch vụ đón khách tại khách sạn, vui lòng nhập tên khách sạn và số phòng cùng các
+                            thông tin quan trọng khác vào ô “Yêu cầu đặc biệt” trước khi thanh toán.</li>
+                        <li>Vui lòng có mặt tại điểm đón khách theo đúng thời gian quy định. Nếu bạn không có mặt đúng
+                            giờ tại điểm đón khách, bạn sẽ không được tham gia tour và đặt chỗ của bạn sẽ bị hủy. Nếu
+                            nhân viên điều hành tour đồng ý và còn chỗ trống vào ngày khác, bạn có thể yêu cầu sắp xếp
+                            cho mình tham gia tour vào ngày khác.</li>
+                        <li>Khi xe đến đón, hãy trình phiếu thanh toán Traveloka hợp lệ của bạn (không phải giấy chứng
+                            nhận thanh toán hay hóa đơn) trên điện thoại cho nhân viên điều hành tour.</li>
+                    </ul>
+                </div>
+                <div class="ticketcont">
+                    <h3>Hoàn tiền và đổi lịch</h3>
+                    <ul>
+                        <li>Không thể đổi lịch</li>
+                        <dt>Bạn không thể đổi lịch ngày đến.</dt>
+                        <li>Easy Refund</li>
+                        <dt>Chỉ có thể yêu cầu xử lý hoàn tiền trước ngày chọn. Xem Chính sách hoàn tiền bên dưới để
+                            biết thêm thông tin.</dt>
+                        <p>Chính sách đổi lịch</p>
+                        <li>Đặt chỗ này không thể thay đổi lịch.</li>
+                        <p>Chính sách hoàn tiền</p>
+                        <li>Yêu cầu hoàn tiền muộn nhất là</li>
+                        <dd>2 ngày trước ngày đi đã chọn của bạn để nhận được 100% hoàn tiền</dd>
+                        <dd>1 ngày trước ngày đi đã chọn của bạn để nhận được 50% hoàn tiền</dd>
+                        <li>Đặt chỗ của bạn sẽ không được hoàn lại nếu bạn yêu cầu hoàn tiền ít hơn 1 ngày trước ngày đi
+                            đã chọn.</li>
+                        <li>Số tiền hoàn lại cuối cùng sẽ không bao gồm phí dịch vụ, phiếu giảm giá và / hoặc phí chuyển
+                            khoản ngân hàng mã duy nhất.</li>
+                        <li>Để hủy đặt chỗ của bạn và yêu cầu hoàn tiền, vui lòng truy cập mục Đặt chỗ của tôi. Trong
+                            phần Quản lý đặt chỗ, chạm vào Hoàn tiền và thực hiện theo quy trình gửi hoàn tiền.</li>
+                    </ul>
+                </div>
+                <div style="border: none;" class="ticketcont">
+                    <h3>Điều khoản & điều kiện</h3>
+                    <ul>
+                        <p>Thông tin chung</p>
+                        <li>Xin vui lòng thông báo trong phần Yêu cầu đặc biệt nếu bạn yêu cầu bữa ăn chay, bị dị ứng
+                            thực phẩm hoặc có chế độ ăn uống đặc biệt.</li>
+                        <li>Trẻ em phải đi cùng với người lớn.</li>
+                        <li>
+                            <p style="font-weight: 700; margin: 0; margin-bottom: 4px;">Đối với trẻ em cao dưới 3 tuổi:
+                            </p>Miễn phí cho 1 trẻ em khi đi cùng 2 người lớn và dùng chung bữa với bố mẹ. Phụ phí 50%
+                            giá vé người lớn sẽ được áp dụng từ trẻ em thứ 2 và được thanh toán trực tiếp tại chỗ với
+                            nhà điều hành.
+                        </li>
+                        <li>Vé trẻ em áp dụng cho khách 3 – 7 tuổi.</li>
+                        <li>Vé người lớn áp dụng cho khách 8 tuổi trở lên.</li>
+                        <li>SST Travel có quyền từ chối nhận khách nếu khách không thể xuất trình giấy tờ tùy thân hợp
+                            lệ (CMND, CCCD, hộ chiếu,...).</li>
+                        <li>Chính sách hủy tour được tính dựa trên ngày làm việc, không tính Thứ bảy, Chủ nhật, và các
+                            ngày Lễ Tết.</li>
+                        <li>Tour ghép sẽ có thêm những khách khác tham gia.</li>
+                        <li>Bạn phải thực hiện theo lịch trình và hướng dẫn của trưởng đoàn.</li>
+                        <li>Lịch trình có thể thay đổi tùy vào các yếu tố bên ngoài, bao gồm nhưng không giới hạn, như
+                            điều kiện thời tiết, tình trạng giao thông đường bộ và những tình huống phát sinh ngoài dự
+                            kiến.</li>
+                        <li>Nếu bạn không có mặt đúng giờ tại điểm đón khách, bạn sẽ không được tham gia tour và đặt chỗ
+                            của bạn sẽ bị hủy. Nếu nhân viên điều hành tour đồng ý và còn chỗ trống vào ngày khác, bạn
+                            có thể yêu cầu sắp xếp cho mình tham gia tour vào ngày khác.</li>
+                        <li>Nơi lưu trú, phương tiện di chuyển và các bữa ăn có thể thay đổi. Nhân viên điều hành tour
+                            sẽ thay thế các dịch vụ này bằng các dịch vụ tương tự dựa trên tình trạng sẵn có, loại và
+                            tiêu chuẩn đã quy định trong lịch trình.</li>
+                        <li>Bạn không thể tùy ý chọn nơi lưu trú. Nhân viên điều hành tour sẽ chọn nơi lưu trú dựa trên
+                            tình trạng sẵn có, loại và tiêu chuẩn đã được quy định trong lịch trình.</li>
+                        <li>Bữa ăn và thực đơn có thể thay đổi tùy vào tình trạng sẵn có. Nhân viên điều hành tour sẽ cố
+                            gắng tối đa để chuẩn bị các món ăn tươi ngon có thể đáp ứng nhu cầu của mọi người. Tuy
+                            nhiên, nhân viên điều hành tour không thể đảm bảo rằng các bữa ăn trong chương trình đáp ứng
+                            được chế độ ăn uống đặc biệt của bạn.</li>
+                        <p>Chính sách vào cửa</p>
+                        <li>Không có vé vào cửa miễn phí.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<div data-include="../html/chatboxBubble.html"></div>
+    <script src="../js/details.js"></script>
+</body>
+</html>

@@ -1,0 +1,1286 @@
+.main-body {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+}
+
+.personal-nav-site {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 25vw;
+  height: 810px;
+  border-radius: 20px;
+  border: 1px solid #CAC5C5;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.personal-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.personal-img>img {
+  /* margin-left: 25px; */
+  width: 200px;
+  padding: 50px 50px 10px 50px;
+}
+
+.option1-panel {
+  margin: 50px 20px;
+  width: 800px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #CAC5C5;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.section h2 {
+  color: var(--main-color);
+  margin-bottom: 15px;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.title-1,
+.section-5>p {
+  color: var(--main-color);
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 8px;
+  border-bottom: 2px solid #34699A;
+  width: 145px;
+}
+
+.section {
+  width: 55vw;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 10px 10px 10px 10px;
+  position: relative;
+}
+
+.section-3 {
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.section-3 .title-sec {
+  color: #34699A !important;
+  border-bottom: 2px solid #34699A;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+input,
+select {
+  width: 80%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-weight: 100;
+  font-size: 15px;
+  /* // color: #ccc; */
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  width: 300px;
+}
+
+.btn {
+  background: var(--main-color);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+}
+
+.btn:hover {
+  background: #4a93d7;
+  background: #4a93d7;
+}
+
+.link-accounts {
+  display: grid;
+  gap: 10px;
+}
+
+.account-link {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  align-items: center;
+}
+
+.account-link span {
+  font-weight: bold;
+}
+
+.account-link a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.account-link a:hover {
+  text-decoration: underline;
+}
+
+.option-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="checkbox"] {
+  width: 10%;
+}
+
+/* Phần nav của Kiên */
+.avt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 20px; */
+  cursor: pointer;
+}
+
+.avt-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avt-img {
+  width: 180px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+}
+
+.avt span {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 5px;
+  /* padding-bottom: 20px;
+    border-bottom: 1px solid #bcbcbc; */
+}
+
+.avt::after {
+  content: "";
+  display: block;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.change-avt {
+  position: absolute;
+  background: #f0f0f0;
+  border-radius: 100%;
+  font-size: 12px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  bottom: 5px;
+  right: 15px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.change-avt:hover {
+  background: var(--main-color);
+}
+
+.container {
+  position: relative;
+  height: fit-content;
+  flex-direction: column;
+  margin: 30px;
+}
+
+#nav-bar {
+  width: 380px;
+  background: #ffffff;
+  padding: 20px 5px 10px 5px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.left-tab {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 20px 20px;
+  margin-top: 25px;
+}
+
+.left-tab .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 15px 85px;
+}
+
+.left-tab .nav-item i {
+  width: 22px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0px 20px 0px 10px;
+  font-size: 20px;
+}
+
+.left-tab .nav-item span {
+  flex: 1;
+  font-size: var(--main-nav-size);
+  font-family: var(--font-family);
+  color: #000;
+  font-weight: 500;
+  width: 150px;
+}
+
+.nav-item:hover {
+  background: var(--main-color);
+
+  i,
+  a {
+    color: #ffffff !important;
+  }
+
+  span {
+    color: #ffffff;
+  }
+}
+
+.nav-item-selected {
+  background: var(--main-color);
+
+  i,
+  a {
+    color: #ffffff !important;
+  }
+
+  span {
+    color: #ffffff !important;
+  }
+}
+
+
+.id-name {
+  font-family: 'Titan One';
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.line {
+  width: 80%;
+  margin: 5px auto 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Section 2: MK và Bảo mật*/
+#sub-nav {
+  flex: 1;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  font-size: var(--main-note);
+  margin: 0 18px 5px 10px;
+}
+
+/* Tab-link điều hướng */
+.title-sec {
+  text-decoration: none;
+  font-weight: 600;
+  /* margin-bottom: 5px; */
+  color: grey;
+  font-size: 18px;
+}
+
+.title-selected {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  font-size: 18px;
+  color: #34699A;
+}
+
+.title-sec:hover {
+  color: var(--main-color);
+}
+
+/* Xác thực và xóa tài khoản */
+
+/* xác thực */
+.verify,
+.delete-account {
+  background: #ffffff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.verify span,
+.delete-account span {
+  font-size: var(--sub-main-note);
+  font-weight: 600;
+}
+
+
+.verify i {
+  position: absolute;
+  right: 20px;
+  bottom: 13px;
+  color: var(--grey-color);
+}
+
+.verify::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: #34699A;
+  border-radius: 2px;
+}
+
+.content-verify {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0 0 5px;
+  border-top: 1px solid #cac5c5;
+  padding-top: 8px;
+}
+
+.verify span1 {
+  font-size: var(--under-sub-note);
+  color: var(--grey-color);
+}
+
+.verify p {
+  font-size: 14px;
+  font-weight: 50;
+  color: #b8b8b8;
+  margin: 0;
+}
+
+/* xóa tk */
+
+.delete-account::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: #34699A;
+  border-radius: 2px;
+}
+
+.delete-account span2 {
+  font-size: var(--sub-note);
+  color: #34699A;
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.delete-account span2:hover{
+  color: #4a93d7;
+  cursor: pointer;
+}
+.delete-account span2:hover{
+  color: #4a93d7;
+}
+
+.content-delete {
+  margin-top: 10px;
+}
+
+.content-delete span1 {
+  color: black;
+  color: black;
+  font-size: var(--under-sub-note);
+  margin-left: 5px;
+}
+
+.btn-danger {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #34699A;
+  font-size: 12px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #4b84b8;
+}
+
+#security-panel .verify p {
+  font-weight: 50;
+  font-size: 15px;
+  color: #d7d7d7;
+}
+
+/* Quên mật khẩu */
+
+            /* mắt xem mật khẩu */
+            /* mắt xem mật khẩu */
+.input-eyes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.input-eyes input {
+  width: 98%;
+}
+
+.input-eyes i {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #5b5b5b;
+  position: absolute;
+}
+
+.icon-eye1 {
+  bottom: 249px;
+  right: 10px;
+}
+
+.icon-eye2 {
+  bottom: 168px;
+  right: 10px;
+}
+
+.icon-eye3 {
+  bottom: 88px;
+  right: 10px;
+}
+
+#password-panel {
+  margin-top: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#password-panel label {
+  margin-bottom: 0 !important;
+}
+#password-panel p{
+  margin: 0;
+  color: red;
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: none;
+}
+
+#password-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+#password-panel input {
+  padding: 10px 10px;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+#password-panel span1{
+  color: #a4a4a4;
+  font-size: var(--under-sub-note);
+  margin-bottom: 2px;
+}
+
+.forgot-password {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  margin: 30px 0px;
+  font-size: 15px;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+#password-panel .btn-primary {
+  margin-top: 20px;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #34699A;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  width: 300px;
+  height: 155px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25.02%, rgba(255, 255, 255, 0.39) 92.64%), #6A95BC;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  transition: all 0.5s ease-in-out;
+  filter: drop-shadow(2px -1px 26px rgba(0, 98, 197, 0.21));
+}
+
+/* Lấy lại mật khẩu panel */
+#overlay , #logout, #deleteAccPanel{
+  background: rgba(51, 51, 51, 0.74);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.retrieve-password span,
+.otp-panel span,
+.reinput-pass span {
+  color: #ffffff;
+  font-size: 25px;
+  padding: 0 180px;
+}
+
+.retrieval-panel,
+.enter-otp,
+.password-done {
+  width: 500px;
+  height: 220px;
+  border-radius: 10px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.retrieval-panel label,
+.enter-otp label {
+  font-size: var(--sub-main-note);
+  margin: 30px 0 0px 0;
+  font-weight: 300;
+  color: black;
+}
+
+.retrieval-panel #email-input,
+.input-newpass input {
+  height: 35px;
+  width: 478px;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 0px 10px;
+}
+
+.retrieval-panel .btn-continue,
+.enter-otp .btn-verify,
+.input-newpass .btn-newpass-verify,
+#link-bank-panel button, 
+#logout button, 
+#deleteAccPanel button{
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background: #34699A;
+  margin: 0;
+  height: 35px;
+  font-size: var(--font-button);
+  cursor: pointer;
+}
+
+.retrieval-panel .btn-continue,
+.enter-otp .btn-verify {
+  width: 500px;
+}
+
+.retrieval-panel a {
+  color: var(--grey-color);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--under-sub-note);
+  border: none;
+}
+
+.retrieval-panel>a:hover {
+  border-bottom: 1px solid var(--grey-color);
+}
+
+.retrieval-panel i,
+.enter-otp i,
+.input-newpass i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #4a93d7 !important;
+  background-color: #4a93d7 !important;
+}
+
+.btn-primary:active {
+  background-color: #777777 !important;
+}
+
+.notification-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.notification-section>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 15px;
+}
+
+.notification-section>div>div p:last-child {
+  font-weight: 100 !important;
+  font-size: 15px;
+  color: #747474;
+}
+
+.notification-section>div>div p {
+  margin: 2px 0;
+  color: #000;
+}
+
+.fa-toggle-off:before {
+  font-size: 30px;
+  color: #d4d4d4;
+}
+
+.fa-toggle-on:before {
+  font-size: 30px;
+  color: var(--main-color);
+}
+.verify.active .content-verify span1{
+  color: #000;
+}
+.verify.active .content-verify p {
+  color: rgb(116, 116, 116) !important;
+}
+
+.notification-section b {
+  font-size: 18px;
+}
+
+/*Lấy lại mật khẩu 2 - nhập OTP*/
+
+.otp-input input {
+  width: 30px;
+  min-height: 35px;
+  margin-top: 15px;
+  font-size: 25px;
+  border-radius: 10px;
+  border-color: #a4a4a4;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+.otp-input {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  justify-content: center;
+}
+
+.enter-otp span1 {
+  font-size: var(--sub-note);
+}
+
+.enter-otp label {
+  margin: 10px 0 20px 0;
+  font-weight: 700;
+}
+
+.enter-otp {
+  height: 270px !important;
+}
+
+.enter-otp .time-run {
+  color: var(--grey-color);
+  border-bottom: 1px solid #a4a4a4;
+  position: absolute;
+  top: 50px;
+  font-size: var(--under-sub-note);
+  margin-top: 10px;
+}
+
+.enter-otp .resend {
+  text-align: center;
+  font-size: var(--under-sub-note);
+
+  a {
+    color: var(--main-color);
+    border-bottom: 1px solid #34699A;
+  }
+
+  margin-top: -10px;
+}
+
+.enter-otp .btn-verify {
+  min-height: 35px;
+}
+
+.enter-otp p {
+  font-size: var(--under-sub-note);
+  margin: 8px 0 0 0;
+  text-align: center;
+  color: var(--grey-color);
+  font-weight: 100;
+  cursor: pointer;
+}
+
+/* Lấy lại mật khẩu 3 - newpassword*/
+.input-newpass {
+  padding: 15px;
+  width: 500px;
+  height: 260px;
+  border-radius: 10px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.input-newpass p {
+  margin: 0 0 10px 0;
+}
+
+
+.input-newpass .btn-newpass-verify {
+  margin-top: 15px;
+}
+
+/* Đổi mật khẩu thành công */
+.password-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 420px !important;
+  height: 180px;
+  margin-top: 30px !important;
+}
+
+.password-done span {
+  font-size: 25px;
+  color: #34699A;
+  padding-top: 20px;
+}
+
+.password-done .btn-done {
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  height: 35px;
+  width: 150px;
+  background: #34699A;
+  font-size: var(--font-button);
+  cursor: pointer;
+}
+
+/* Refund */
+
+.section-5>p {
+  width: 192px !important;
+}
+
+.section-5 .section {
+  padding: 0 !important;
+  width: 57.6vw !important;
+
+}
+
+#reFundPanel {
+  border-radius: 6px;
+  margin: 10;
+}
+
+.banner-refund {
+  height: 100px;
+  background: linear-gradient(90deg, #34699A 0%, #74a9d1 100%);
+  border-radius: 6px 6px 0px 0px;
+  position: relative;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #c3c3c3;
+  /* padding: 0 !important; */
+}
+
+.banner-refund img:nth-child(1) {
+  position: absolute;
+  width: 110px;
+  height: 95px;
+  bottom: 0;
+  left: 70px;
+}
+
+.banner-refund img:nth-child(4) {
+  position: absolute;
+  width: 300px;
+  height: 95px;
+  left: 574px;
+  bottom: 0;
+  margin: 0;
+  border: none;
+}
+
+.banner-refund img:nth-child(5) {
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  width: 80px;
+  height: 80px;
+}
+
+.banner-refund button {
+  width: 180px;
+  height: 40px;
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  border-radius: 30px;
+  border: none;
+  background: #98cdff;
+  cursor: pointer;
+}
+
+.banner-refund button:hover {
+  background: #ebf6ff;
+}
+
+.banner-refund h1,
+.banner-refund h2 {
+  color: white;
+  position: absolute;
+  font-size: 15px;
+  left: 200px;
+  top: 30px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+.banner-refund h2 {
+  top: 58px !important;
+  left: 266px !important;
+}
+
+.refund-tabs {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d4d4d4;
+}
+
+.refund-tabs a {
+  font-size: 17px;
+  color: #a4a4a4;
+  font-weight: bold;
+}
+
+.refund-content {
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.refund-card{
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  height: 250px;
+}
+.content-show{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 150px;
+  width: 100%;
+  color: white;
+  border-bottom: 2px dashed #34699A;
+  background: linear-gradient(135deg, #9AB8C2, #D6E0F0);
+  padding: 10px 30px;
+  position: relative;
+}
+.content-show p {
+  padding-left: 150px;
+}
+.content-show > img {
+  height: 100px;
+  position: absolute;
+  top: 30px;
+  border: 2px dashed #34699A;
+}
+.content-show h4{
+  position: absolute;
+  font-size: 23px;
+  top: 90px;
+  left: 62px;
+}
+/* 
+.refund-tabs a:first-child {
+  color: #34699A;
+  border-bottom: 3px solid #34699A;
+  padding: 11px;
+} */
+.refund-tabs a.active {
+  padding: 11px;
+  color: #34699A;                
+  border-bottom: 3px solid #34699A;
+} */
+.refund-tabs a.active {
+  padding: 11px;
+  color: #34699A;                
+  border-bottom: 3px solid #34699A;
+}
+
+
+
+              /* Link-bank-refund */
+              /* Link-bank-refund */
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #34699a;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 1px solid #34699A;
+  width: 245px;
+}
+
+#link-bank-panel .field {
+  width: 53.5vw !important;
+}
+#link-bank-panel > img {
+  position: absolute;
+  top: 97px;
+  right: 35px;
+  width: 20px;
+  cursor: pointer;
+}
+#link-bank-panel img:last-child{
+  width: 60%;
+  top: 123px;
+  right: 33px;
+}
+#link-bank-panel > img {
+  position: absolute;
+  top: 97px;
+  right: 35px;
+  width: 20px;
+  cursor: pointer;
+}
+#link-bank-panel img:last-child{
+  width: 60%;
+  top: 123px;
+  right: 33px;
+}
+
+#link-bank-panel .notice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #b3dafe;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #34699A;
+}
+
+#link-bank-panel>a:nth-of-type(1) {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #34699A;
+  font-size: 20px;
+}
+
+#link-bank-panel button {
+  width: 55vw !important;
+}
+#link-bank-panel button:hover{
+  background: #4a93d7;
+}
+#link-bank-panel button:hover{
+  background: #4a93d7;
+}
+
+#link-bank-panel .DK {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+#link-bank-panel{
+  position: relative;
+}
+#link-bank-panel > i{
+  position: absolute;
+  right: 35px;
+  top: 100px;
+  color: #a4a4a4;
+  cursor: pointer;
+}
+/*  */
+.agree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-size: 15px;
+  gap: 10px;
+  margin: 10px 0;
+}
+              /*Linked-bank-refund  */
+
+#linked-bank-panel{
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.315)),
+      url(../pics/anhnen_00000.png);
+    background-size: cover;
+    position: relative;
+}
+#linked-bank-panel h3{
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 5px;
+}
+#linked-bank-panel{
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.595)),
+      url(../pics/anhnen_00000.png);
+    
+  background-size: cover;
+}
+
+#linked-bank-panel img:first-child{
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  
+}
+#linked-bank-panel > div {
+  margin-left: 35px;
+}
+#linked-bank-panel button{
+  height: 25px;
+  width: 100px;
+  color: gray;
+  border-radius: 5px;
+  border: none;
+}
+#linked-bank-panel button:hover{
+  color: white;
+  background: #34699A;
+}
+
+#linked-bank-panel input{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  height: 20px;
+  width: 20px;
+}
+
+              /* conCuMeo */
+/* #mascot{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  right: -60px;
+  bottom: 0;
+  z-index: -1;
+
+} */
+#logout > img, #deleteAccPanel > img{
+  width: 100px;
+  height: 130px;
+  position: absolute;
+  top: 180px;
+  right: 47%;
+  z-index: -1;
+}
+
+              /* Đăng xuất */
+#logout > div, #deleteAccPanel > div{
+
+  height: 210px;
+  width: 400px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#logout p, #deleteAccPanel p{
+  padding: 0 40px;
+  margin: 0 0 30px 0;
+}
+
+
+              /*  */
+.inputBankBox {
+  transition: all 0.2s ease;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 70%;
+  height: 0;
+  padding: 20px 50px;
+  position: relative;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #8BAECE 0%, #FFF 100%);
+  box-shadow: 0 13px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.inputBankBox p,
+.inputBankBox input {
+  margin: 5px 0;
+  width: 70%;
+  z-index: 1;
+}
+
+.inputBankBox input[type="button"] {
+  width: 60px;
+  height: 30px;
+  background-color: var(--main-color);
+  color: white;
+  position: relative;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.inputBankBox img:first-child {
+  width: 50px;
+  position: absolute;
+  top: -15px;
+  z-index: 0;
+}
+
+.credit-card-2 img:first-child {
+  left: 47%;
+}
+
+.credit-card-3 img:first-child {
+  left: 85%;
+}
+
+.credit-card-1 {
+  top: 10px;
+}
+
+.credit-card-2 {
+  top: -30px;
+}
+
+.credit-card-3 {
+  top: -70px;
+}
+.saved{
+  background: url(../pics/Debit-Card-Vietcombank.png) no-repeat center center;
+  background-size: cover; /* make it fill the entire element */
+  border: none;            /* optional: remove border */
+  color: white;            /* optional: better contrast */
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.saved>img{
+  display: none;
+}
