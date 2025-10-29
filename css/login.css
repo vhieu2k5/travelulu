@@ -105,9 +105,7 @@ input[type="password"]::-ms-clear {
     margin-bottom: 10px;
     width: auto;
     transform: translateX(-140px);
-
 }
-
 
 .forgot {
     width: 474px;
@@ -354,8 +352,9 @@ input[type="password"]::-ms-clear {
 }
 
 #fbLoginPopup .error-message {
+    width: 380px;
     bottom: 41%;
-    transform: translate(-55px)
+    transform: translateX(-55px);
 }
 
 .popup-cont {
