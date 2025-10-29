@@ -12,9 +12,11 @@ let liked = false; // check tinh trang cua icon trai tim
 
 if (heartIcon) {
     darkPanel.style.display = "none";
+    document.body.style.overflow = "";
     heartIcon.addEventListener("click", () => {
         darkPanel.style.display = "flex";
-        if (!liked) {
+        document.body.style.overflow = "hidden";
+        if (!liked && Loader.isLoaded) {
             favPanel.style.display = "flex";
             unfavPanel.style.display = "none";
             sharePanel.style.display = "none";
@@ -22,6 +24,10 @@ if (heartIcon) {
             heartIcon.classList.toggle("fa-solid");
             heartIcon.style.color = "red";
             liked = true;
+        }
+        else if (!liked && !Loader.isLoaded)
+        {
+            window.location.href="../html/login.html";
         }
         else {
             unfavPanel.style.display = "flex";
@@ -34,6 +40,7 @@ if (heartIcon) {
 if (closeFavBtn) {
     closeFavBtn.addEventListener("click", () => {
         darkPanel.style.display = "none";
+        document.body.style.overflow = "";
 
     })
 }
@@ -42,10 +49,12 @@ confirmRemove.onclick = function () {
     heartIcon.classList.remove("fa-solid");
     heartIcon.style.color = "black";
     darkPanel.style.display = "none";
+    document.body.style.overflow = "";
     sharePanel.style.display = "none";
 }
 cancelRemove.onclick = function () {
     darkPanel.style.display = "none";
+    document.body.style.overflow = "";
 }
 
 if(shareIcon){
@@ -53,6 +62,7 @@ if(shareIcon){
     shareIcon.addEventListener("click", () => {
         darkPanel.style.display = "flex";
         sharePanel.style.display = "flex";
+        document.body.style.overflow = "hidden";
         favPanel.style.display = "none";
         unfavPanel.style.display = "none";
     })
@@ -61,6 +71,7 @@ if(shareIcon){
 if(closeShare){
     closeShare.addEventListener("click", () => {
         darkPanel.style.display = "none";
+        document.body.style.overflow = "";
     })
 }
 
@@ -76,6 +87,7 @@ const ticketInfoTab = document.querySelector(".ticketinfo");
 const popupLichTrinh = document.querySelector(".popup-lichtrinhtour")
 
 tab_day.forEach((daybutton, index) => {
+    
     daybutton.addEventListener("click", () => {
         tab_day.forEach(daybutton=>{daybutton.classList.remove("active")});
         daybutton.classList.add("active");
@@ -88,6 +100,7 @@ tab_day.forEach((daybutton, index) => {
 if (checkLichtrinh) {
     darkPanel1.style.display = "none";
     checkLichtrinh.addEventListener("click", () => {
+        document.body.style.overflow = "hidden";
         darkPanel1.style.display = "flex";
         popupLichTrinh.style.display = "flex";
         ticketInfoTab.style.display = "none";
@@ -97,12 +110,15 @@ if (checkLichtrinh) {
 if (closeLichtrinh) {
     closeLichtrinh.addEventListener("click", () => {
         darkPanel1.style.display = "none";
+        document.body.style.overflow = "";
     });
 }
 
 if (checktick_infoTab) {
     darkPanel1.style.display = "none";
+    
     checktick_infoTab.addEventListener("click", () => {
+        document.body.style.overflow = "hidden";
         darkPanel1.style.display = "flex";
         popupLichTrinh.style.display = "none";
         ticketInfoTab.style.display = "flex"; 
@@ -112,6 +128,7 @@ if (checktick_infoTab) {
 if (closetick_infoTab) {
     closetick_infoTab.addEventListener("click", () => {
         darkPanel1.style.display = "none";
+        document.body.style.overflow = "";
     });
 }
 // ket thuc cua lich trinh tour va chi tiet ve tour
