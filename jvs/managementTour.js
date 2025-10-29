@@ -356,6 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelBtn.textContent = "Hủy";
         cancelBtn.addEventListener("click", (e) => {
           e.preventDefault();
+          e.stopPropagation();
           // Hiển thị hộp thoại xác nhận
           const overlay = document.createElement("div");
           overlay.className = "modal-overlay";
@@ -401,6 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rebookBtn.textContent = "Đặt lại";
         rebookBtn.addEventListener("click", (e) => {
           e.preventDefault();
+          e.stopPropagation();
           // Hiển thị hộp thoại thông báo tour không thể đặt lại
           const overlay = document.createElement("div");
           overlay.className = "modal-overlay";
@@ -434,6 +436,16 @@ document.addEventListener("DOMContentLoaded", () => {
       card.appendChild(statusWrap);
       card.appendChild(divider);
       card.appendChild(footer);
+
+      // Khi bấm vào thẻ tour, chuyển sang trang chi tiết (truyền bookingId để load thông tin)
+      card.style.cursor = "pointer";
+      card.addEventListener("click", (e) => {
+        // Nếu người dùng click vào một nút bên trong thẻ, các listener trên nút sẽ stopPropagation
+        // Điều hướng tới trang chi tiết (trong cùng thư mục html)
+        const targetUrl =
+          "./tourDetail.html?bookingId=" + encodeURIComponent(b.id);
+        window.location.href = targetUrl;
+      });
 
       tourListEl.appendChild(card);
     });
