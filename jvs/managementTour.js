@@ -403,28 +403,29 @@ document.addEventListener("DOMContentLoaded", () => {
         rebookBtn.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
-          // Hiển thị hộp thoại thông báo tour không thể đặt lại
-          const overlay = document.createElement("div");
-          overlay.className = "modal-overlay";
-          const dialog = document.createElement("div");
-          dialog.className = "info-dialog";
-          dialog.innerHTML = `
-            <div style="text-align:center; padding:18px 22px;">
-              <div class="warning-icon" aria-hidden="true">
-                <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
-              </div>
-              <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
-              <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
-            </div>
-          `;
-          overlay.appendChild(dialog);
-          document.body.appendChild(overlay);
+          window.location.href="../html/completedTour.html";
+          // // Hiển thị hộp thoại thông báo tour không thể đặt lại
+          // const overlay = document.createElement("div");
+          // overlay.className = "modal-overlay";
+          // const dialog = document.createElement("div");
+          // dialog.className = "info-dialog";
+          // dialog.innerHTML = `
+          //   <div style="text-align:center; padding:18px 22px;">
+          //     <div class="warning-icon" aria-hidden="true">
+          //       <img src="../pics/manegamentTour/canhbao.png" alt="cảnh báo" />
+          //     </div>
+          //     <div class="info-text" style="margin-top:8px; color:#1f2937; font-weight:700;">Tour không còn khả dụng để đặt lại</div>
+          //     <div style="margin-top:14px; text-align:right;"><button class="btn-close-info">Quay lại</button></div>
+          //   </div>
+          // `;
+          // overlay.appendChild(dialog);
+          // document.body.appendChild(overlay);
 
-          const btnClose = dialog.querySelector(".btn-close-info");
-          btnClose.addEventListener("click", () => {
-            if (overlay && overlay.parentNode)
-              overlay.parentNode.removeChild(overlay);
-          });
+          // const btnClose = dialog.querySelector(".btn-close-info");
+          // btnClose.addEventListener("click", () => {
+          //   if (overlay && overlay.parentNode)
+          //     overlay.parentNode.removeChild(overlay);
+          // });
         });
         footer.appendChild(rebookBtn);
       }
