@@ -551,3 +551,9 @@ function addDoubleClickHandler(element, panelClass) {
 addDoubleClickHandler(creditCard1, "credit-card-1");
 addDoubleClickHandler(creditCard2, "credit-card-2");
 addDoubleClickHandler(creditCard3, "credit-card-3");
+
+//Đăng xuất ra trang chủ
+yeslogOut.onclick=function(){
+  Loader.isLoaded=false;
+  window.location.href ="index.html";
+}

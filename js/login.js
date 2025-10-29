@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
       password.classList.add('input-error');
     }
 
-    // Nếu có lỗi → hiện thông báo
     if (errorMessage) {
       const errorMsg = document.createElement('div');
       errorMsg.classList.add('error-message');

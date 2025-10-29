@@ -586,6 +586,7 @@ input[type="checkbox"] {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25.02%, rgba(255, 255, 255, 0.39) 92.64%), #6A95BC;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover {
