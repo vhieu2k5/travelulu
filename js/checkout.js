@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+
     const huyTour = document.getElementById("CancelBtn");
     const hoiLai = document.getElementById('hoi-lai');
     const lydo = document.getElementById('ly-do');
