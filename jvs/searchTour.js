@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            // HIEN THI THONG BAO KHONG CO KET QUA
+            //HIEN THI THONG BAO KHONG CO KET QUA
             if (shouldShow) {
                 tour.classList.remove('hidden');
                 visibleTourCount++; // Tăng biến đếm nếu tour được hiển thị
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // HIEN THI THONG BAO KHONG CO KET QUA
+        //HIEN THI THONG BAO KHONG CO KET QUA
         if (visibleTourCount === 0) {
             document.querySelector(".mascot").src = "../pics/mascot/sad.png";
             noResultsMessage.style.display = 'block'; // Hiện thông báo
