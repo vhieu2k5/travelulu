@@ -656,43 +656,51 @@ document.querySelectorAll(".rate-stars").forEach(rateBox => {
 
 //Phần huỷ Tour của Linh mU
 const overlayLinhmu = document.getElementById('backdrop-overlay');
-const hoiLai = document.getElementById('hoi-lai');
-const lydo = document.getElementById('ly-do');
-const loading = document.getElementById('loading');
-const hoantat = document.getElementById('hoan-tat');
-const quayLai = document.getElementById('quay-lai');
-const buttonHuy = document.getElementById('CancelBtn');
-const tieptuc = document.getElementById('tiep-tuc');
+const huyTour = document.getElementById('buttonhuy');
+    const hoiLai = document.getElementById('hoi-lai');
+    const lydo = document.getElementById('ly-do');
+    const loading = document.getElementById('loading');
+    const hoantat = document.getElementById('hoan-tat');
+    const quayLai = document.getElementById('quay-lai');
+    const buttonHuy = document.getElementById('huy');
+    const tieptuc = document.getElementById('tiep-tuc');
+    const dong = document.getElementById('dong');
 
-buttonHuy.addEventListener('click', (event) => {
-  event.preventDefault();
-  overlayLinhmu.classList.add('show');
-  hoiLai.classList.add('show');
-});
+    huyTour.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        overlayLinhmu.classList.add('show');
+        hoiLai.classList.add('show');
+    });
 
-quayLai.addEventListener('click', (event) => {
-  event.preventDefault();
-  overlayLinhmu.classList.remove('show');
-  hoiLai.classList.remove('show');
-  lydo.classList.remove('show');
-});
+    quayLai.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        overlayLinhmu.classList.remove('show');
+        hoiLai.classList.remove('show');
+        //lydo.classList.remove('show');
+    });
 
-buttonHuy.addEventListener('click', (event) => {
-  event.preventDefault();
-  hoiLai.classList.remove('show');
-  lydo.classList.add('show');
-});
+      dong.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        overlayLinhmu.classList.remove('show');
+       // hoiLai.classList.remove('show');
+        lydo.classList.remove('show');
+    });
 
-tieptuc.addEventListener('click', (event) => {
-  event.preventDefault();
-  lydo.classList.remove('show');
-  loading.classList.add('show');
-  setTimeout(() => {
-    loading.classList.remove('show');
-    hoantat.classList.add('show');
-    // window.location.href="../html/ManagementTour.html";
-  }, 2000);
-  setTimeout(() => {
-    window.location.href = "../html/ManagementTour.html";
-  }, 4000);
-});
+    buttonHuy.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        hoiLai.classList.remove('show');
+        lydo.classList.add('show');
+    });
+
+    tieptuc.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        lydo.classList.remove('show');
+        loading.classList.add('show');
+        setTimeout(() => {
+            loading.classList.remove('show');
+            hoantat.classList.add('show');
+        }, 2000);
+        setTimeout(() => {
+           window.location.href="../html/ManagementTour.html";
+        }, 4000);
+    });

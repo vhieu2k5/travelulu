@@ -285,6 +285,7 @@ body {
 }
 
 .button {
+    transition: all 0.5s ease;
     display: flex;
     justify-content: center;
   color: white;
@@ -301,9 +302,6 @@ body {
     text-align: center;
     border: 2px solid var(--main-color);
     cursor: pointer;
-}
-.button:hover{
-    background-color: white; color: var(--main-color);
 }
 
 
@@ -595,18 +593,8 @@ input[type="radio"] {
     width: 50%;
 }
 
-#quay-lai {
-    width: 100%; 
-    height: 100%;
-    background-color: #D6D6D6; 
-    border: none; 
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-align: center;
-}
 
-#huy {
+#tiep-tuc, #dong, #huy , #quay-lai{
     width: 100%; 
     height: 100%;
     background-color: var(--main-color); 
@@ -615,18 +603,10 @@ input[type="radio"] {
     font-size: 16px;
     text-decoration: none;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-#tiep-tuc {
-    width: 100%; 
-    height: 100%;
-    background-color: var(--main-color); 
-    border: none; 
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    text-align: center;
-}
 
 .gr2 {
     display: flex;

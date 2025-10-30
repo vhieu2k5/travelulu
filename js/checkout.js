@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    const huyTour = document.getElementById("CancelBtn");
+    const huyTour = document.getElementById('buttonhuy');
     const hoiLai = document.getElementById('hoi-lai');
     const lydo = document.getElementById('ly-do');
     const loading = document.getElementById('loading');
     const hoantat = document.getElementById('hoan-tat');
     const quayLai = document.getElementById('quay-lai');
-    const buttonHuy = document.getElementById('CancelBtn');
-    const tieptuc = document.getElementById('tiep-tuc');
+    const buttonHuy = document.getElementById('huy')
+    const tieptuc = document.getElementById('tiep-tuc')
 
     huyTour.addEventListener('click', (event) => {
         event.preventDefault(); 
