@@ -50,12 +50,14 @@
                     <ul class="dong1 - dientt">
                         <li>
                             <span class="sao">*</span><span class="tit">Họ:</span>
-                            <input type="text" class="o-trong" placeholder="Nguyen">
+                            <input type="text" class="o-trong" placeholder="Nguyen" id="ho_lienhe">
+                            <div class="error-message" id="error_ho_lienhe">Thông tin bắt buộc.</div>
                         </li>
 
                         <li>
                             <span class="sao">*</span><span class="tit">Tên:</span>
-                            <input type="text" class="o-trong" placeholder="Dieu Linh">
+                            <input type="text" class="o-trong" placeholder="Dieu Linh" id="ten_lienhe">
+                            <div class="error-message" id="error_ten_lienhe">Thông tin bắt buộc.</div>
                         </li>
 
                     </ul>
@@ -64,24 +66,28 @@
 
                         <li>
                             <span class="sao">*</span><span class="tit">Email:</span>
-                            <input type="text" class="o-trong">
+                            <input type="text" class="o-trong" id="email_lienhe">
+                            <div class="error-message" id="error_email_lienhe">Thông tin bắt buộc.</div>
                         </li>
 
                         <li>
                             <span class="sao">*</span><span class="tit">Quốc tịch:</span>
-                            <input type="text" class="o-trong">
+                            <input type="text" class="o-trong" id="quoctich_lienhe">
+                            <div class="error-message" id="error_quoctich_lienhe">Thông tin bắt buộc.</div>
                         </li>
                     </ul>
 
                     <ul class="dong3 - dientt">
                         <li>
                             <span class="sao">*</span><span class="tit">Số điện thoại:</span>
-                            <input type="text" class="o-trong">
+                            <input type="text" class="o-trong" id="sdt_lienhe">
+                            <div class="error-message" id="error_sdt_lienhe">Thông tin bắt buộc.</div>
                         </li>
 
                         <li>
                             <span class="sao">*</span><span class="tit">Số CCCD:</span>
-                            <input type="text" class="o-trong">
+                            <input type="text" class="o-trong" id="cccd_lienhe">
+                            <div class="error-message" id="error_cccd_lienhe">Thông tin bắt buộc.</div>
                         </li>
                     </ul>
                 </ul>
@@ -118,7 +124,6 @@
                         <li>
                             <span class="sao">*</span><span class="tit">Họ:</span>
                             <input type="text" class="o-trong">
-                        </li>
 
                         <li>
                             <span class="sao">*</span><span class="tit">Tên:</span>
@@ -132,11 +137,10 @@
                         <li>
                             <span class="sao">*</span><span class="tit">Ngày sinh:</span>
                             <input type="text" class="o-trong" placeholder="DD">
-                        </li>
+                           
 
                         <li>
                             <input type="text" class="o-trong" placeholder="MM">
-                        </li>
 
                         <li>
                             <input type="text" class="o-trong" placeholder="YY">
@@ -357,7 +361,7 @@
 
             </div>
             
-                <a class="button"  href="payment-method.html">THANH TOÁN</a>
+                <a class="button"  href="payment-method.html" id="thanhtoan">THANH TOÁN</a>
             
         </div>
     </div>
@@ -398,6 +402,8 @@
       <img src="../pics/bambooAirLine.png" alt="" />
     </div>
   </div>
+
+  <script src="../js/checkout.js"></script>
 
 </body>
 

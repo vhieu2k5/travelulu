@@ -157,6 +157,24 @@ body {
     padding: 15px;
 }
 
+.o-trong.error {
+  border-color: red;
+  border-width: 1px; 
+}
+
+.error-message {
+    color: red;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: -15px; 
+    margin-bottom: 10px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
 .dientt {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
