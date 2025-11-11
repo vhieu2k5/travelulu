@@ -11,6 +11,7 @@ import java.awt.*;
 import java.sql.Date;
 import java.util.List;
 import java.util.Calendar;
+import javax.swing.table.DefaultTableCellRenderer;
 public class CardFrame extends JFrame {
     private DAO dao;
 
@@ -19,10 +20,10 @@ public class CardFrame extends JFrame {
     private JTextField txtSearch;
     private JComboBox<String> cmbBank;
     private JLabel lblTotalBalance;
-
-    public CardFrame() {
+private JComboBox<String> cmbStatus;
+        public CardFrame() {
         setTitle("Card Management");
-        setSize(1000, 600);
+        setSize(1100, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -32,48 +33,75 @@ public class CardFrame extends JFrame {
         JPanel topPanel = new JPanel();
         txtSearch = new JTextField(20);
         JButton btnSearch = new JButton("Search");
+
         cmbBank = new JComboBox<>();
+        cmbStatus = new JComboBox<>(new String[]{"All", "Valid", "Expired"}); // Filter trạng thái
         JButton btnFilter = new JButton("Filter");
+
         topPanel.add(new JLabel("Search (Email/Phone/CCCD):"));
         topPanel.add(txtSearch);
         topPanel.add(btnSearch);
         topPanel.add(new JLabel("Filter by Bank:"));
         topPanel.add(cmbBank);
+        topPanel.add(new JLabel("Status:"));
+        topPanel.add(cmbStatus);
         topPanel.add(btnFilter);
         add(topPanel, BorderLayout.NORTH);
 
-        // Table
-        model = new DefaultTableModel(new String[]{"ID","Customer","Bank","Cardholder","Card Number","Expiry"}, 0);
+        // Table với cột Status
+        model = new DefaultTableModel(new String[]{
+                "ID", "Customer", "Bank", "Cardholder", "Card Number", "Expiry Date", "Status"
+        }, 0);
         table = new JTable(model);
+
+        // Renderer màu cho hết hạn
+        table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable tbl, Object value, boolean isSelected,
+                                                           boolean hasFocus, int row, int column) {
+                Component c = super.getTableCellRendererComponent(tbl, value, isSelected, hasFocus, row, column);
+                String status = (String) tbl.getValueAt(row, 6);
+                if ("Expired".equals(status)) {
+                    c.setBackground(new Color(255, 180, 180)); // đỏ nhạt
+                } else {
+                    c.setBackground(Color.WHITE);
+                }
+                if (isSelected) {
+                    c.setBackground(new Color(184, 207, 229));
+                }
+                return c;
+            }
+        });
+
         add(new JScrollPane(table), BorderLayout.CENTER);
 
-        // Bottom panel: CRUD + Total balance
+        // Bottom panel: CRUD + Show Total Balance
         JPanel bottomPanel = new JPanel();
         JButton btnAdd = new JButton("Add Card");
         JButton btnEdit = new JButton("Edit Card");
         JButton btnDelete = new JButton("Delete Card");
-        lblTotalBalance = new JLabel("Total Balance for Selected Customer: 0");
+        JButton btnShowTotal = new JButton("Show Total Balance");
+        lblTotalBalance = new JLabel("Total Balance: 0");
+
         bottomPanel.add(btnAdd);
         bottomPanel.add(btnEdit);
         bottomPanel.add(btnDelete);
+        bottomPanel.add(btnShowTotal);
         bottomPanel.add(lblTotalBalance);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // Load banks and cards
+        // Load data
         loadBanks();
         loadCards();
 
-        // Button actions
+        // Actions
         btnSearch.addActionListener(e -> searchCards());
         btnFilter.addActionListener(e -> filterCards());
         btnAdd.addActionListener(e -> addCardDialog());
         btnEdit.addActionListener(e -> editCardDialog());
         btnDelete.addActionListener(e -> deleteCard());
-
-        // Table row click to calculate total balance
-        table.getSelectionModel().addListSelectionListener(e -> updateTotalBalance());
+        btnShowTotal.addActionListener(e -> showCustomerTotalBalance());
     }
-
     private void loadBanks() {
         try {
             List<Bank> banks = dao.getAllBanks();
@@ -126,21 +154,27 @@ public class CardFrame extends JFrame {
     private void filterCards() {
         try {
             String bankName = cmbBank.getSelectedItem().toString();
-            List<Card> cards;
-            if (bankName.equals("All")) {
-                cards = dao.getAllCards();
-            } else {
-                cards = dao.filterByBank(bankName);
-            }
+            String statusFilter = cmbStatus.getSelectedItem().toString();
+
+            List<Card> cards = bankName.equals("All") ? dao.getAllCards() : dao.filterByBank(bankName);
             model.setRowCount(0);
+            Date today = new Date(System.currentTimeMillis());
+
             for (Card c : cards) {
+                boolean expired = c.getExpiryDate().before(today);
+                String status = expired ? "Expired" : "Valid";
+
+                if (statusFilter.equals("Expired") && !expired) continue;
+                if (statusFilter.equals("Valid") && expired) continue;
+
                 model.addRow(new Object[]{
                         c.getCardId(),
                         c.getCustomer().getFullName(),
                         c.getBank().getBankName(),
                         c.getCardholderName(),
                         c.getCardNumber(),
-                        c.getExpiryDate()
+                        c.getExpiryDate(),
+                        status
                 });
             }
         } catch (Exception e) { e.printStackTrace(); }
@@ -375,7 +409,26 @@ private void addCardDialog() {
             }
         } catch (Exception e) { e.printStackTrace(); }
     }
-
+ private void showCustomerTotalBalance() {
+        try {
+            String key = txtSearch.getText().trim();
+            if (key.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Nhập Email/Phone/CCCD của khách hàng để tính tổng số dư");
+                return;
+            }
+            List<Customer> customers = dao.searchCustomer(key);
+            if (customers.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng");
+                return;
+            }
+            Customer c = customers.get(0);
+            double total = dao.getTotalBalanceByCustomer(c.getId());
+            lblTotalBalance.setText("Total Balance for " + c.getFullName() + ": " + total);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi khi tính tổng số dư");
+        }
+    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CardFrame().setVisible(true));
     }
