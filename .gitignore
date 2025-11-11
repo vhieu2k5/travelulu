@@ -205,3 +205,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+/Database/Customer/est/nbproject/private/
+/Database/CreditCard_App/nbproject/private/
