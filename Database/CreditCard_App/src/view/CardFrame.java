@@ -112,21 +112,28 @@ private JComboBox<String> cmbStatus;
         } catch (Exception e) { e.printStackTrace(); }
     }
 
+     // Load toàn bộ thẻ với cột Status
     private void loadCards() {
         try {
             List<Card> cards = dao.getAllCards();
             model.setRowCount(0);
+            Date today = new Date(System.currentTimeMillis());
+
             for (Card c : cards) {
+                String status = c.getExpiryDate().before(today) ? "Expired" : "Valid";
                 model.addRow(new Object[]{
                         c.getCardId(),
                         c.getCustomer().getFullName(),
                         c.getBank().getBankName(),
                         c.getCardholderName(),
                         c.getCardNumber(),
-                        c.getExpiryDate()
+                        c.getExpiryDate(),
+                        status
                 });
             }
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void searchCards() {
