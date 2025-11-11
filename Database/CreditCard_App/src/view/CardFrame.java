@@ -6,62 +6,63 @@ import model.Card;
 import model.Customer;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.Date;
 import java.util.List;
 import java.util.Calendar;
-import javax.swing.table.DefaultTableCellRenderer;
+
 public class CardFrame extends JFrame {
     private DAO dao;
 
     private JTable table;
     private DefaultTableModel model;
-    private JTextField txtSearch;
-    private JComboBox<String> cmbBank;
-    private JLabel lblTotalBalance;
-private JComboBox<String> cmbStatus;
-        public CardFrame() {
-        setTitle("Card Management");
+    private JTextField txtTimKiem;
+    private JComboBox<String> cmbNganHang;
+    private JComboBox<String> cmbTrangThai;
+
+    public CardFrame() {
+        setTitle("Quản Lý Thẻ Ngân Hàng");
         setSize(1100, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
         dao = new DAO();
 
-        // Top panel: Search + Filter
+        // Panel trên: Tìm kiếm + Lọc
         JPanel topPanel = new JPanel();
-        txtSearch = new JTextField(20);
-        JButton btnSearch = new JButton("Search");
+        txtTimKiem = new JTextField(20);
+        JButton btnTimKiem = new JButton("Tìm kiếm");
 
-        cmbBank = new JComboBox<>();
-        cmbStatus = new JComboBox<>(new String[]{"All", "Valid", "Expired"}); // Filter trạng thái
-        JButton btnFilter = new JButton("Filter");
+        cmbNganHang = new JComboBox<>();
+        cmbTrangThai = new JComboBox<>(new String[]{"Tất cả", "Còn hạn", "Hết hạn"});
+        JButton btnLoc = new JButton("Lọc");
 
-        topPanel.add(new JLabel("Search (Email/Phone/CCCD):"));
-        topPanel.add(txtSearch);
-        topPanel.add(btnSearch);
-        topPanel.add(new JLabel("Filter by Bank:"));
-        topPanel.add(cmbBank);
-        topPanel.add(new JLabel("Status:"));
-        topPanel.add(cmbStatus);
-        topPanel.add(btnFilter);
+        topPanel.add(new JLabel("Tìm kiếm (Email/SĐT/CCCD):"));
+        topPanel.add(txtTimKiem);
+        topPanel.add(btnTimKiem);
+        topPanel.add(new JLabel("Ngân hàng:"));
+        topPanel.add(cmbNganHang);
+        topPanel.add(new JLabel("Trạng thái:"));
+        topPanel.add(cmbTrangThai);
+        topPanel.add(btnLoc);
         add(topPanel, BorderLayout.NORTH);
 
-        // Table với cột Status
+        // Bảng với cột Trạng thái
         model = new DefaultTableModel(new String[]{
-                "ID", "Customer", "Bank", "Cardholder", "Card Number", "Expiry Date", "Status"
+                "ID", "Khách hàng", "Ngân hàng", "Tên chủ thẻ", "Số thẻ", "Ngày hết hạn", "Trạng thái"
         }, 0);
         table = new JTable(model);
 
-        // Renderer màu cho hết hạn
+        // Renderer màu cho thẻ hết hạn
         table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable tbl, Object value, boolean isSelected,
                                                            boolean hasFocus, int row, int column) {
                 Component c = super.getTableCellRendererComponent(tbl, value, isSelected, hasFocus, row, column);
-                String status = (String) tbl.getValueAt(row, 6);
-                if ("Expired".equals(status)) {
+                String trangThai = (String) tbl.getValueAt(row, 6);
+                if ("Hết hạn".equals(trangThai)) {
                     c.setBackground(new Color(255, 180, 180)); // đỏ nhạt
                 } else {
                     c.setBackground(Color.WHITE);
@@ -75,44 +76,44 @@ private JComboBox<String> cmbStatus;
 
         add(new JScrollPane(table), BorderLayout.CENTER);
 
-        // Bottom panel: CRUD + Show Total Balance
+        // Panel dưới: CRUD + Tổng số dư
         JPanel bottomPanel = new JPanel();
-        JButton btnAdd = new JButton("Add Card");
-        JButton btnEdit = new JButton("Edit Card");
-        JButton btnDelete = new JButton("Delete Card");
-        JButton btnShowTotal = new JButton("Show Total Balance");
-        lblTotalBalance = new JLabel("Total Balance: 0");
+        JButton btnThem = new JButton("Thêm thẻ");
+        JButton btnSua = new JButton("Sửa thẻ");
+        JButton btnXoa = new JButton("Xóa thẻ");
+        JButton btnTongSoDu = new JButton("Tổng số dư");
 
-        bottomPanel.add(btnAdd);
-        bottomPanel.add(btnEdit);
-        bottomPanel.add(btnDelete);
-        bottomPanel.add(btnShowTotal);
-        bottomPanel.add(lblTotalBalance);
+        bottomPanel.add(btnThem);
+        bottomPanel.add(btnSua);
+        bottomPanel.add(btnXoa);
+        bottomPanel.add(btnTongSoDu);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // Load data
-        loadBanks();
+        // Load dữ liệu
+        loadNganHang();
         loadCards();
 
         // Actions
-        btnSearch.addActionListener(e -> searchCards());
-        btnFilter.addActionListener(e -> filterCards());
-        btnAdd.addActionListener(e -> addCardDialog());
-        btnEdit.addActionListener(e -> editCardDialog());
-        btnDelete.addActionListener(e -> deleteCard());
-        btnShowTotal.addActionListener(e -> showCustomerTotalBalance());
-    }
-    private void loadBanks() {
-        try {
-            List<Bank> banks = dao.getAllBanks();
-            cmbBank.addItem("All");
-            for (Bank b : banks) {
-                cmbBank.addItem(b.getBankName());
-            }
-        } catch (Exception e) { e.printStackTrace(); }
+        btnTimKiem.addActionListener(e -> timKiemThe());
+        btnLoc.addActionListener(e -> locThe());
+        btnThem.addActionListener(e -> themTheDialog());
+        btnSua.addActionListener(e -> suaTheDialog());
+        btnXoa.addActionListener(e -> xoaThe());
+        btnTongSoDu.addActionListener(e -> tinhTongSoDu());
     }
 
-     // Load toàn bộ thẻ với cột Status
+    private void loadNganHang() {
+        try {
+            List<Bank> banks = dao.getAllBanks();
+            cmbNganHang.addItem("Tất cả");
+            for (Bank b : banks) {
+                cmbNganHang.addItem(b.getBankName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void loadCards() {
         try {
             List<Card> cards = dao.getAllCards();
@@ -120,7 +121,7 @@ private JComboBox<String> cmbStatus;
             Date today = new Date(System.currentTimeMillis());
 
             for (Card c : cards) {
-                String status = c.getExpiryDate().before(today) ? "Expired" : "Valid";
+                String trangThai = c.getExpiryDate().before(today) ? "Hết hạn" : "Còn hạn";
                 model.addRow(new Object[]{
                         c.getCardId(),
                         c.getCustomer().getFullName(),
@@ -128,7 +129,7 @@ private JComboBox<String> cmbStatus;
                         c.getCardholderName(),
                         c.getCardNumber(),
                         c.getExpiryDate(),
-                        status
+                        trangThai
                 });
             }
         } catch (Exception e) {
@@ -136,43 +137,49 @@ private JComboBox<String> cmbStatus;
         }
     }
 
-    private void searchCards() {
+    private void timKiemThe() {
         try {
-            String keyword = txtSearch.getText().trim();
+            String keyword = txtTimKiem.getText().trim().toLowerCase();
             List<Card> cards = dao.getAllCards();
             model.setRowCount(0);
+            Date today = new Date(System.currentTimeMillis());
+
             for (Card c : cards) {
-                if (c.getCustomer().getEmail().contains(keyword)
-                        || c.getCustomer().getPhoneNumber().contains(keyword)
-                        || c.getCustomer().getCccd().contains(keyword)) {
+                boolean match = c.getCustomer().getEmail().toLowerCase().contains(keyword)
+                        || c.getCustomer().getPhoneNumber().toLowerCase().contains(keyword)
+                        || c.getCustomer().getCccd().toLowerCase().contains(keyword);
+                if (match) {
+                    String trangThai = c.getExpiryDate().before(today) ? "Hết hạn" : "Còn hạn";
                     model.addRow(new Object[]{
                             c.getCardId(),
                             c.getCustomer().getFullName(),
                             c.getBank().getBankName(),
                             c.getCardholderName(),
                             c.getCardNumber(),
-                            c.getExpiryDate()
+                            c.getExpiryDate(),
+                            trangThai
                     });
                 }
             }
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private void filterCards() {
+    private void locThe() {
         try {
-            String bankName = cmbBank.getSelectedItem().toString();
-            String statusFilter = cmbStatus.getSelectedItem().toString();
-
-            List<Card> cards = bankName.equals("All") ? dao.getAllCards() : dao.filterByBank(bankName);
+            String nganHang = cmbNganHang.getSelectedItem().toString();
+            String trangThaiLoc = cmbTrangThai.getSelectedItem().toString();
+            List<Card> cards = nganHang.equals("Tất cả") ? dao.getAllCards() : dao.filterByBank(nganHang);
             model.setRowCount(0);
             Date today = new Date(System.currentTimeMillis());
 
             for (Card c : cards) {
-                boolean expired = c.getExpiryDate().before(today);
-                String status = expired ? "Expired" : "Valid";
+                boolean hetHan = c.getExpiryDate().before(today);
+                String trangThai = hetHan ? "Hết hạn" : "Còn hạn";
 
-                if (statusFilter.equals("Expired") && !expired) continue;
-                if (statusFilter.equals("Valid") && expired) continue;
+                if (trangThaiLoc.equals("Hết hạn") && !hetHan) continue;
+                if (trangThaiLoc.equals("Còn hạn") && hetHan) continue;
 
                 model.addRow(new Object[]{
                         c.getCardId(),
@@ -181,26 +188,46 @@ private JComboBox<String> cmbStatus;
                         c.getCardholderName(),
                         c.getCardNumber(),
                         c.getExpiryDate(),
-                        status
+                        trangThai
                 });
             }
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private void updateTotalBalance() {
+    // Tính tổng số dư: hiển thị dialog nhập Email/SĐT/CCCD
+    private void tinhTongSoDu() {
         try {
-            int selectedRow = table.getSelectedRow();
-            if (selectedRow >= 0) {
-                int customerId = dao.getAllCards().get(selectedRow).getCustomer().getId();
-                double total = dao.getTotalBalanceByCustomer(customerId);
-                lblTotalBalance.setText("Total Balance for Selected Customer: " + total);
+            String input = JOptionPane.showInputDialog(this,
+                    "Nhập Email / SĐT / CCCD của khách hàng để tính tổng số dư:",
+                    "Tổng số dư", JOptionPane.QUESTION_MESSAGE);
+
+            if (input == null || input.trim().isEmpty()) return;
+
+            String key = input.trim();
+            List<Customer> customers = dao.searchCustomer(key);
+            if (customers.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng");
+                return;
             }
-        } catch (Exception e) { e.printStackTrace(); }
+
+            Customer c = customers.get(0);
+            double total = dao.getTotalBalanceByCustomer(c.getId());
+
+            JOptionPane.showMessageDialog(this,
+                    "Tổng số dư tất cả thẻ của " + c.getFullName() + ": " + total,
+                    "Tổng số dư", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi khi tính tổng số dư");
+        }
     }
 
-    // ----------------- CRUD -----------------
+       // ----------------- CRUD -----------------
 
-private void addCardDialog() {
+private void themTheDialog() {
     try {
         // ---------- Chuẩn bị dữ liệu ----------
         List<Bank> banks = dao.getAllBanks();
@@ -221,62 +248,62 @@ private void addCardDialog() {
 
         // ---------- Tạo Panel Form ----------
         JPanel panel = new JPanel(new GridLayout(0, 2, 5, 5));
-        panel.add(new JLabel("Customer (Email/Phone/CCCD):"));
+        panel.add(new JLabel("Khách hàng (Email/SĐT/CCCD):"));
         panel.add(txtCustomerKey);
-        panel.add(new JLabel("Bank:"));
+        panel.add(new JLabel("Ngân hàng:"));
         panel.add(cmbBank);
-        panel.add(new JLabel("Cardholder Name:"));
+        panel.add(new JLabel("Tên chủ thẻ:"));
         panel.add(txtCardholder);
-        panel.add(new JLabel("Card Number (16 digits):"));
+        panel.add(new JLabel("Số thẻ (16 chữ số):"));
         panel.add(txtCardNumber);
-        panel.add(new JLabel("Expiry Date:"));
+        panel.add(new JLabel("Ngày hết hạn:"));
         panel.add(spinnerExpiry);
-        panel.add(new JLabel("CVV (3–4 digits):"));
+        panel.add(new JLabel("CVV (3–4 chữ số):"));
         panel.add(txtCVV);
-        panel.add(new JLabel("Balance:"));
+        panel.add(new JLabel("Số dư:"));
         panel.add(txtBalance);
 
         boolean valid = false;
         while (!valid) {
-            int option = JOptionPane.showConfirmDialog(this, panel, "Add Card", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            int option = JOptionPane.showConfirmDialog(this, panel, "Thêm thẻ", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
             if (option != JOptionPane.OK_OPTION) return;
 
             String message = "";
 
             // ---- Validate từng field ----
             String key = txtCustomerKey.getText().trim();
-            if (key.isEmpty()) message += "• Customer cannot be empty\n";
+            if (key.isEmpty()) message += "• Khách hàng không được để trống\n";
             List<Customer> customers = key.isEmpty() ? List.of() : dao.searchCustomer(key);
-            if (customers.isEmpty()) message += "• Customer not found\n";
+            if (customers.isEmpty()) message += "• Không tìm thấy khách hàng\n";
 
             String bankName = (String) cmbBank.getSelectedItem();
             Bank bank = banks.stream().filter(b -> b.getBankName().equals(bankName)).findFirst().orElse(null);
-            if (bank == null) message += "• Bank not selected\n";
+            if (bank == null) message += "• Chưa chọn ngân hàng\n";
 
             String cardholder = txtCardholder.getText().trim();
-            if (cardholder.isEmpty()) message += "• Cardholder name required\n";
+            if (cardholder.isEmpty()) message += "• Tên chủ thẻ không được để trống\n";
 
             String cardNumber = txtCardNumber.getText().trim();
-            if (!cardNumber.matches("\\d{16}")) message += "• Card number must be 16 digits\n";
+            if (!cardNumber.matches("\\d{16}")) message += "• Số thẻ phải đủ 16 chữ số\n";
 
             java.util.Date selectedDate = (java.util.Date) spinnerExpiry.getValue();
             java.sql.Date expiry = new java.sql.Date(selectedDate.getTime());
             if (expiry.before(new java.sql.Date(System.currentTimeMillis())))
-                message += "• Expiry date cannot be in the past\n";
+                message += "• Ngày hết hạn không được ở quá khứ\n";
 
             String cvv = txtCVV.getText().trim();
-            if (!cvv.matches("\\d{3,4}")) message += "• CVV must be 3 or 4 digits\n";
+            if (!cvv.matches("\\d{3,4}")) message += "• CVV phải là 3 hoặc 4 chữ số\n";
 
             double balance = -1;
             try {
                 balance = Double.parseDouble(txtBalance.getText().trim());
-                if (balance < 0) message += "• Balance must be ≥ 0\n";
+                if (balance < 0) message += "• Số dư phải ≥ 0\n";
             } catch (Exception ex) {
-                message += "• Invalid balance format\n";
+                message += "• Số dư không hợp lệ\n";
             }
 
             if (!message.isEmpty()) {
-                JOptionPane.showMessageDialog(this, message, "Validation Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, message, "Lỗi nhập liệu", JOptionPane.WARNING_MESSAGE);
                 continue; // giữ nguyên form để người dùng sửa
             }
 
@@ -285,28 +312,21 @@ private void addCardDialog() {
             Card card = new Card(0, customer, bank, cardholder, cardNumber, expiry, cvv, balance);
             dao.addCard(card);
             loadCards();
-            JOptionPane.showMessageDialog(this, "Card added successfully!");
+            JOptionPane.showMessageDialog(this, "Thêm thẻ thành công!");
             valid = true;
         }
 
     } catch (Exception e) {
         e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error adding card: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Lỗi khi thêm thẻ: " + e.getMessage());
     }
 }
 
-
-
-
-
-
-
-
-    private void editCardDialog() {
+private void suaTheDialog() {
     try {
         int selectedRow = table.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Select a card to edit!");
+            JOptionPane.showMessageDialog(this, "Chọn thẻ để sửa!");
             return;
         }
 
@@ -317,7 +337,7 @@ private void addCardDialog() {
                 .orElse(null);
 
         if (card == null) {
-            JOptionPane.showMessageDialog(this, "Card not found!");
+            JOptionPane.showMessageDialog(this, "Không tìm thấy thẻ!");
             return;
         }
 
@@ -335,49 +355,49 @@ private void addCardDialog() {
         spinnerExpiry.setEditor(dateEditor);
 
         JPanel panel = new JPanel(new GridLayout(0, 2, 5, 5));
-        panel.add(new JLabel("Cardholder Name:"));
+        panel.add(new JLabel("Tên chủ thẻ:"));
         panel.add(txtCardholder);
-        panel.add(new JLabel("Card Number (16 digits):"));
+        panel.add(new JLabel("Số thẻ (16 chữ số):"));
         panel.add(txtCardNumber);
-        panel.add(new JLabel("Expiry Date:"));
+        panel.add(new JLabel("Ngày hết hạn:"));
         panel.add(spinnerExpiry);
-        panel.add(new JLabel("CVV (3–4 digits):"));
+        panel.add(new JLabel("CVV (3–4 chữ số):"));
         panel.add(txtCVV);
-        panel.add(new JLabel("Balance:"));
+        panel.add(new JLabel("Số dư:"));
         panel.add(txtBalance);
 
         boolean valid = false;
         while (!valid) {
-            int option = JOptionPane.showConfirmDialog(this, panel, "Edit Card", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            int option = JOptionPane.showConfirmDialog(this, panel, "Sửa thẻ", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
             if (option != JOptionPane.OK_OPTION) return;
 
             String message = "";
 
             // ---- Validate ----
             String cardholder = txtCardholder.getText().trim();
-            if (cardholder.isEmpty()) message += "• Cardholder name required\n";
+            if (cardholder.isEmpty()) message += "• Tên chủ thẻ không được để trống\n";
 
             String cardNumber = txtCardNumber.getText().trim();
-            if (!cardNumber.matches("\\d{16}")) message += "• Card number must be 16 digits\n";
+            if (!cardNumber.matches("\\d{16}")) message += "• Số thẻ phải đủ 16 chữ số\n";
 
             java.util.Date selectedDate = (java.util.Date) spinnerExpiry.getValue();
             java.sql.Date expiry = new java.sql.Date(selectedDate.getTime());
             if (expiry.before(new java.sql.Date(System.currentTimeMillis())))
-                message += "• Expiry date cannot be in the past\n";
+                message += "• Ngày hết hạn không được ở quá khứ\n";
 
             String cvv = txtCVV.getText().trim();
-            if (!cvv.matches("\\d{3,4}")) message += "• CVV must be 3–4 digits\n";
+            if (!cvv.matches("\\d{3,4}")) message += "• CVV phải là 3 hoặc 4 chữ số\n";
 
             double balance = -1;
             try {
                 balance = Double.parseDouble(txtBalance.getText().trim());
-                if (balance < 0) message += "• Balance must be ≥ 0\n";
+                if (balance < 0) message += "• Số dư phải ≥ 0\n";
             } catch (Exception ex) {
-                message += "• Invalid balance format\n";
+                message += "• Số dư không hợp lệ\n";
             }
 
             if (!message.isEmpty()) {
-                JOptionPane.showMessageDialog(this, message, "Validation Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, message, "Lỗi nhập liệu", JOptionPane.WARNING_MESSAGE);
                 continue; // giữ nguyên form
             }
 
@@ -388,54 +408,37 @@ private void addCardDialog() {
             card.setCvv(cvv);
             card.setBalance(balance);
 
-            dao.updateCard(card); // phải có method updateCard() trong DAO
+            dao.updateCard(card); // cần có method updateCard() trong DAO
             loadCards();
-            JOptionPane.showMessageDialog(this, "Card updated successfully!");
+            JOptionPane.showMessageDialog(this, "Cập nhật thẻ thành công!");
             valid = true;
         }
 
     } catch (Exception e) {
         e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error editing card: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Lỗi khi sửa thẻ: " + e.getMessage());
     }
 }
 
 
-    private void deleteCard() {
+    private void xoaThe() {
         try {
             int selectedRow = table.getSelectedRow();
             if (selectedRow < 0) {
-                JOptionPane.showMessageDialog(this, "Select a card to delete!");
+                JOptionPane.showMessageDialog(this, "Chọn thẻ để xóa!");
                 return;
             }
             int cardId = (int) table.getValueAt(selectedRow, 0);
-            int option = JOptionPane.showConfirmDialog(this, "Delete card ID " + cardId + "?", "Confirm", JOptionPane.YES_NO_OPTION);
+            int option = JOptionPane.showConfirmDialog(this, "Xóa thẻ ID " + cardId + "?", "Xác nhận", JOptionPane.YES_NO_OPTION);
             if (option == JOptionPane.YES_OPTION) {
-                dao.deleteCard(cardId); // cần viết method deleteCard trong DAO
+                dao.deleteCard(cardId);
                 loadCards();
             }
-        } catch (Exception e) { e.printStackTrace(); }
-    }
- private void showCustomerTotalBalance() {
-        try {
-            String key = txtSearch.getText().trim();
-            if (key.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Nhập Email/Phone/CCCD của khách hàng để tính tổng số dư");
-                return;
-            }
-            List<Customer> customers = dao.searchCustomer(key);
-            if (customers.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng");
-                return;
-            }
-            Customer c = customers.get(0);
-            double total = dao.getTotalBalanceByCustomer(c.getId());
-            lblTotalBalance.setText("Total Balance for " + c.getFullName() + ": " + total);
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi khi tính tổng số dư");
         }
     }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CardFrame().setVisible(true));
     }
