@@ -8,15 +8,19 @@ package creditcard_app;
  *
  * @author PC
  */
-import view.LoginFrame;
+import javax.swing.SwingUtilities;
+import view.CardFrame;
 public class CreditCard_App {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        new LoginFrame().setVisible(true);
+        // Khởi chạy GUI trên Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            CardFrame frame = new CardFrame();
+            frame.setVisible(true);
+        });
     }
     
 }
