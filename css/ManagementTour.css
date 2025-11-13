@@ -106,7 +106,7 @@ h1 {
   flex-wrap: wrap;
   width: 100%;
 }
-.filter-tabs a:first-child{
+.filter-tabs a:first-child {
   color: var(--main-color);
   font-size: 22px;
 }
@@ -357,7 +357,7 @@ h1 {
   margin-bottom: 50px;
   justify-content: flex-start;
 }
-.recommendation-list::-webkit-scrollbar{
+.recommendation-list::-webkit-scrollbar {
   display: none;
 }
 
@@ -508,8 +508,6 @@ h1 {
   font-weight: 800;
 }
 
-
-
 .section-title {
   font-size: 16px;
   font-weight: bold;
@@ -605,20 +603,32 @@ h1 {
   transition: all 0.5s ease;
 }
 .explore-btn:hover {
-  background:white;
+  background: white;
   color: var(--main-color);
   border: 2px solid var(--main-color);
 }
 
 /* Hộp thoại xác nhận */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed; /* Đảm bảo modal cố định trên màn hình */
+  inset: 0; /* Chiếm toàn bộ không gian màn hình */
   background: rgba(0, 0, 0, 0.45);
+
+  /* THÊM/ĐẢM BẢO CÁC THUỘC TÍNH CĂN GIỮA NÀY */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 2000;
+  padding: 20px;
+}
+.confirm-dialog {
+  background: #ffffff; /* THÊM/ĐẢM BẢO NỀN TRẮNG */
+  border-radius: 18px; /* Bo tròn góc */
+  padding: 20px; /* Thêm khoảng đệm bên trong */
+  width: 350px; /* Giới hạn chiều rộng để nổi bật */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Tạo bóng đổ */
+  z-index: 2001; /* Cao hơn lớp phủ (modal-overlay) */
 }
 .confirm-title {
   font-weight: 700;
@@ -720,34 +730,33 @@ h1 {
   font-size: 16px;
   font-weight: 600;
 }
-.rate-stars{
+.rate-stars {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.fa-star{
+.fa-star {
   margin: 10px 5px;
   font-size: 30px;
   color: gray;
 }
 
 .rate-stars .fa-solid {
-  color: #FFD700; /* sao được chọn */
+  color: #ffd700; /* sao được chọn */
 }
 
 .rate-stars i:hover,
 .rate-stars i:hover ~ i {
-  color: #ccc; 
+  color: #ccc;
 }
-.action-button.secondary{
+.action-button.secondary {
   width: 200px;
 }
-.support-text p{
+.support-text p {
   width: 600px;
 }
-.action-button.primary:hover{
+.action-button.primary:hover {
   border: 5px solid var(--main-color);
   background-color: white;
   color: var(--main-color);
 }
-
